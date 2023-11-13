@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>CEMPRA Guidance Document - References</title>
+<title>CEMPRA Guidance Document - 4&nbsp; Setup and Installation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,26 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
 }
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -49,8 +64,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./appendix_interaction_matrix.html" rel="next">
-<link href="./11_conclusions.html" rel="prev">
+<link href="./05_data_inputs.html" rel="next">
+<link href="./03_pathways_endpoints.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -93,7 +108,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./references.html">References</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04_initial_setup.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Setup and Installation</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -144,7 +159,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04_initial_setup.html" class="sidebar-item-text sidebar-link">
+  <a href="./04_initial_setup.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Setup and Installation</span></span></a>
   </div>
 </li>
@@ -192,7 +207,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link active">
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
 </li>
@@ -219,14 +234,22 @@ div.csl-indent {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#r-package" id="toc-r-package" class="nav-link active" data-scroll-target="#r-package"><span class="header-section-number">4.1</span> R-Package</a></li>
+  <li><a href="#r-shiny-application" id="toc-r-shiny-application" class="nav-link" data-scroll-target="#r-shiny-application"><span class="header-section-number">4.2</span> R Shiny Application</a></li>
+  <li><a href="#initial-setup-and-installation" id="toc-initial-setup-and-installation" class="nav-link" data-scroll-target="#initial-setup-and-installation"><span class="header-section-number">4.3</span> Initial Setup and Installation</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">References</h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Setup and Installation</span></h1>
 </div>
 
 
@@ -241,149 +264,98 @@ div.csl-indent {
 
 </header>
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list">
-<div id="ref-alexander2019bridging" class="csl-entry" role="listitem">
-Alexander, S. M., Provencher, J. F., Henri, D. A., Taylor, J. J.,
-Lloren, J. I., Nanayakkara, L., et al. (2019). Bridging indigenous and
-science-based knowledge in coastal and marine research, monitoring, and
-management in canada. <em>Environmental Evidence</em>, <em>8</em>(1),
-1–24.
+<p>There are two ways to interact with the CEMPRA (Joe Model): through the R Shiny web application or directly using the stand alone CEMPRA R package, which can be downloaded to the users personal computer. Individuals unfamiliar with R can access the web application currently available here:</p>
+<p><em>The web version of the CEMPRA Tool</em>: <a href="https://essa.shinyapps.io/CEMPRAShiny/" class="uri">https://essa.shinyapps.io/CEMPRAShiny/</a></p>
+<p>However, we strongly recommend that individuals familiar with R download a local copy of the CEMPRA (Joe Model) Shiny application and run it on their own computers through RStudio. Running the application from your own computer reduces latency and other issues.</p>
+<p>The CEMPRA framework is available as an R package and an R Shiny application. All components of the project are freely available and open source. Both the R package and the R Shiny application are freely available for download from GitHub:</p>
+<p><em>R package</em>: <a href="https://github.com/essatech/CEMPRA/" class="uri">https://github.com/essatech/CEMPRA/</a></p>
+<p><em>R Shiny application</em>: <a href="https://github.com/essatech/CEMPRAShiny" class="uri">https://github.com/essatech/CEMPRAShiny</a></p>
+<section id="r-package" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="r-package"><span class="header-section-number">4.1</span> R-Package</h2>
+<div id="fig-figure6" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/image010.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;4.1: CEMPRA package repository available on GitHub (https://github.com/essatech/CEMPRA/).</figcaption>
+</figure>
 </div>
-<div id="ref-beechie2021modeling" class="csl-entry" role="listitem">
-Beechie, T. J., Nicol, C., Fogel, C., Jorgensen, J., Thompson, J.,
-Seixas, G., Chamberlin, J., Hall, J., Timpane-Padgham, B., Kiffney, P.,
-Kubo, S., &amp; Keaton, J. (2021). <em>Modeling effects of habitat
-change and restoration alternatives on salmon in the chehalis river
-basin using a salmonid life-cycle model</em> (NMFS-NWFSC-CR-2021-01).
-U.S. Department of Commerce, NOAA.
+<p>The <em>CEMPRA</em> package is part of a larger initiative to develop a framework for modelling cumulative impacts to Species-at-Risk (SAR) to guide recovery planning and adaptive management based on stressor-response functions related to taxa-specific threats. This framework allows users to generate models across a range of complexity and data quality, treating stressor-response functions as modular entities. The long-term vision is to build a library of stressor-response functions to allow users to accelerate the transition to quantitative modelling and adaptive management for Species at Risk and to encourage the archiving of CEMPRA models along with Species at Risk recovery strategies.</p>
+<p>A quick start guide is provided below, but see Appendix D for tutorials and function documentation.</p>
+</section>
+<section id="r-shiny-application" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="r-shiny-application"><span class="header-section-number">4.2</span> R Shiny Application</h2>
+<div id="04_initial_setup-fig-figure7" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/image011.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Map Overview of results in the CEMPRA Shiny web application.</figcaption>
+</figure>
 </div>
-<div id="ref-halpern2013assumptions" class="csl-entry" role="listitem">
-Halpern, B. S., &amp; Fujita, R. (2013). Assumptions, challenges, and
-future directions in cumulative impact analysis. <em>Ecosphere</em>,
-<em>4</em>, 1–11.
+<p>The CEMPRA modelling tool includes the <em>CEMPRA</em> R package, which is accompanied by an interactive R Shiny web application (https://essa.shinyapps.io/CEMPRAShiny; also available as the stand-alone Shiny app). This application acts as a flexible, user-friendly interface to interact with key components of the CEMPRA tool. It accepts user inputs for stressor-response functions, stressor magnitude, spatial units/polygons, and vital rates (for the life cycle model portion). Results are easily mapped, summarized, and plotted within the <strong>Map Overview</strong> page of the web application. Scenario results generated from the tool (and the associated life cycle model) can be exported directly from the application as an Excel spreadsheet (.xlsx). See Section 5 for details on data inputs and Section 6 for a complete walkthrough of the application.</p>
+</section>
+<section id="initial-setup-and-installation" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="initial-setup-and-installation"><span class="header-section-number">4.3</span> Initial Setup and Installation</h2>
+<p>Inexperienced R users can run the Joe Model directly through the web application (<a href="https://essa.shinyapps.io/CEMPRAShiny/" class="uri">https://essa.shinyapps.io/CEMPRAShiny/</a>). However, downloading and running the model directly in RStudio is recommended for improved performance. Running the application locally (outside of shinyapps.io) also guarantees data privacy. To run the application locally, users must first have R and RStudio downloaded and installed on their computers. The <em>CEMPRA</em> R package (<a href="https://github.com/essatech/CEMPRA/" class="uri">https://github.com/essatech/CEMPRA/</a>) and the local version of the R Shiny web application (<a href="https://github.com/essatech/CEMPRAShiny" class="uri">https://github.com/essatech/CEMPRAShiny</a>) can be downloaded from GitHub.</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/m8QIGQWBaf4" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p>To install R and RStudio on your computer:</p>
+<ol type="1">
+<li>Go to the R website (<a href="https://cran.r-project.org/" class="uri">https://cran.r-project.org/</a>) and follow the instructions to download the latest version of R for your operating system (Windows, Mac, or Linux).</li>
+<li>Once the download is complete, double-click (open) the installer file and follow the prompts to install R on your computer.</li>
+<li>To open and run R scripts (files ending in .R), you can use RStudio, a popular Integrated Development Environment (IDE) for R. You can download the latest version of RStudio from: <a href="https://rstudio.com/products/rstudio/download/" class="uri">https://rstudio.com/products/rstudio/download/</a>.</li>
+</ol>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/WJPI41mb2F8" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p>To install the <em>CEMPRA</em> R package on your computer:</p>
+<ol type="1">
+<li>Download the <em>CEMPRA</em> R package from GitHub (<a href="https://github.com/essatech/CEMPRA/" class="uri">https://github.com/essatech/CEMPRA/</a>) onto your computer by clicking the green “Code” button and selecting “Download ZIP” from the dropdown. Unzip the folder once the download is complete.</li>
+<li>Install the <em>CEMPRA</em> R Package. The easiest way to install the <em>CEMPRA</em> package is from within RStudio using <code>remotes::install_github()</code>. At this time, the package has not been published to CRAN, so the default <code>install.packages()</code> will not work for installing the <em>CEMPRA</em> package. Instead, use the <code>remotes</code> package (or <code>devtools</code>). Open RStudio and install the <code>remotes</code> package using the <code>install.packages("remotes")</code> command in the Console. Next, install the <em>CEMPRA</em> package from GitHub using the following commands in the Console:</li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"remotes"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(remotes)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"essatech/CEMPRA"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Once installed, use the <code>library(CEMPRA)</code> command to call the <em>CEMPRA</em> package into RStudio. You should only have to do the above steps once on your computer.</p>
+<div id="04_initial_setup-fig-picture45" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/image015.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Graphical user interface, text, application, email. Description automatically generated.</figcaption>
+</figure>
 </div>
-<div id="ref-houde2007six" class="csl-entry" role="listitem">
-Houde, N. (2007). The six faces of traditional ecological knowledge:
-Challenges and opportunities for canadian co-management arrangements.
-<em>Ecology and Society</em>, <em>12</em>(2).
+<p><strong>To access the raw code and example data for the R Shiny application:</strong></p>
+<ol type="1">
+<li><p>Download the <em>CEMPRAShiny</em> repository from GitHub (<a href="https://github.com/essatech/CEMPRAShiny" class="uri">https://github.com/essatech/CEMPRAShiny</a>) onto your computer by clicking the green “Code” button and selecting “Download ZIP” from the dropdown. Unzip the folder once the download is complete.</p></li>
+<li><p>Open the .Rproj file in R-Studio by double-clicking on it.</p></li>
+</ol>
+<div id="04_initial_setup-fig-picture48" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/image017.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Graphical user interface, application. Description automatically generated.</figcaption>
+</figure>
 </div>
-<div id="ref-jarvis2023process" class="csl-entry" role="listitem">
-Jarvis, L., Rosenfeld, J., Gonzalez-Espinosa, P., &amp; Enders, E.
-(2023). A process framework for integrating stressor-response functions
-into cumulative effects models. <em>Science of the Total
-Environment</em>, <em>XXX</em>, 167456.
+<ol start="3" type="1">
+<li>Open a script called global.R by double-clicking on it in the bottom right corner. Next, click the ‘Install’ link on the yellow banner to install additional dependencies. Once complete, click the green arrow labelled ‘Run App’ to launch the application.</li>
+</ol>
+<div id="04_initial_setup-fig-picture47" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/image018.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Graphical user interface, text, application. Description automatically generated.</figcaption>
+</figure>
 </div>
-<div id="ref-jensen2009impact" class="csl-entry" role="listitem">
-Jensen, D. W., Steel, E. A., Fullerton, A. H., &amp; Pess, G. R. (2009).
-Impact of fine sediment on incubation survival of pacific salmon: A
-meta-analysis of published studies. <em>Reviews in Fisheries
-Science</em>, <em>17</em>(3), 348–359. <a href="https://doi.org/10.1080/10641260902716954">https://doi.org/10.1080/10641260902716954</a>
-</div>
-<div id="ref-jorgensen2021identifying" class="csl-entry" role="listitem">
-Jorgensen, J. C., Nicol, C., Fogel, C., &amp; Beechie, T. J. (2021).
-Identifying the potential of anadromous salmonid habitat restoration
-with life cycle models. <em>Plos One</em>, <em>16</em>(9), e0256792.
-</div>
-<div id="ref-kendall2023life" class="csl-entry" role="listitem">
-Kendall, N. W., Unrein, J., Volk, C., Beauchamp, D. A., Fresh, K. L.,
-&amp; Quinn, T. P. (2023). Life cycle model reveals sensitive life
-stages and evaluates recovery options for a dwindling pacific salmon
-population. <em>North American Journal of Fisheries Management</em>,
-<em>43</em>(1), 203–230.
-</div>
-<div id="ref-larned2019stressor" class="csl-entry" role="listitem">
-Larned, S. T., &amp; Schallenberg, M. (2019). Stressor-response
-relationships and the prospective management of aquatic ecosystems.
-<em>New Zealand Journal of Marine and Freshwater Research</em>,
-<em>53</em>, 489–512.
-</div>
-<div id="ref-macpherson2023prioritizing" class="csl-entry" role="listitem">
-MacPherson, L. M., Reilly, J. R., Neufeld, K. R., Sullivan, M. G., Paul,
-A. J., &amp; Johnston, F. D. (2023). Prioritizing bull trout recovery
-actions using a novel cumulative effects modelling framework.
-<em>Fisheries Management and Ecology</em>, 1–17.
-</div>
-<div id="ref-macpherson2020alberta" class="csl-entry" role="listitem">
-MacPherson, L., Sullivan, M., Reilly, J., &amp; Paul, A. (2020).
-<em>Alberta’s fisheries sustainability assessment: A guide to assessing
-population status, and quantifying cumulative effects using the joe
-modelling technique</em>. Canadian Science Advisory Secretariat (CSAS).
-</div>
-<div id="ref-murray2012tribute" class="csl-entry" role="listitem">
-Murray, A. M., Sullivan, M. G., &amp; Acorn, J. (2012). A tribute to
-joseph schieser nelson, 1937–2011. <em>Canadian Field-Naturalist</em>,
-<em>125</em>, 373–380.
-</div>
-<div id="ref-pearsall2022nicola" class="csl-entry" role="listitem">
-Pearsall, et al. (2022). <em>Nicola watershed RAMS final report 2022:
-Nicola basin chinook risk assessment final report. A process developed
-with the nicola collaborative research and technical committee</em>.
-</div>
-<div id="ref-piet2021roadmap" class="csl-entry" role="listitem">
-Piet, G. J., Tamis, J. E., Volwater, J., Vries, P. de, Wal, J. T. van
-der, &amp; Jongbloed, R. H. (2021). A roadmap towards quantitative
-cumulative impact assessments: Every step of the way. <em>Science of The
-Total Environment</em>, <em>784</em>, 146847.
-</div>
-<div id="ref-pirotta2022understanding" class="csl-entry" role="listitem">
-Pirotta, E., Thomas, L., Costa, D. P., Hall, A. J., Harris, C. M.,
-Harwood, J., et al. (2022). Understanding the combined effects of
-multiple stressors: A new perspective on a longstanding challenge.
-<em>Science of the Total Environment</em>, <em>821</em>, 153322.
-</div>
-<div id="ref-roni2018review" class="csl-entry" role="listitem">
-Roni, P., Anders, P. J., Beechie, T. J., &amp; Kaplowe, D. J. (2018).
-Review of tools for identifying, planning, and implementing habitat
-restoration for pacific salmon and steelhead. <em>North American Journal
-of Fisheries Management</em>, <em>38</em>(2), 355–376.
-</div>
-<div id="ref-rosenfeld2017developing" class="csl-entry" role="listitem">
-Rosenfeld, J. S. (2017). Developing flow–ecology relationships:
-Implications of nonlinear biological responses for water management.
-<em>Freshwater Biology</em>, <em>62</em>, 1305–1324.
-</div>
-<div id="ref-rosenfeld2024determinants" class="csl-entry" role="listitem">
-Rosenfeld, J. S., Ayllón, D., Grant, J. W., Naman, S. M., Post, J. R.,
-Matte, J.-M., et al. (2024). Determinants of productive capacity for
-stream salmonids. In J. Lobon-Cervia, P. Budy, &amp; R. Gresswell
-(Eds.), <em>Advances in the ecology of stream-dwelling salmonids</em>
-(pp. 1–12). Springer Life Sciences.
-</div>
-<div id="ref-rosenfeld2022stressor" class="csl-entry" role="listitem">
-Rosenfeld, J., Gonzalez-Espinosa, P., Jarvis, L., Enders, E., Bayly, M.,
-Paul, A., MacPherson, L., Moore, J., Sullivan, M., Ulaski, M., et al.
-(2022). Stressor-response functions as a generalizable model for context
-dependence. <em>Trends in Ecology &amp; Evolution</em>.
-</div>
-<div id="ref-schafer2018advancing" class="csl-entry" role="listitem">
-Schäfer, R. B., &amp; Piggott, J. J. (2018). Advancing understanding and
-prediction in multiple stressor research through a mechanistic basis for
-null models. <em>Global Change Biology</em>, <em>24</em>, 1817–1826.
-</div>
-<div id="ref-sorel2022informing" class="csl-entry" role="listitem">
-Sorel, M. (2022). <em>Informing salmon conservation with life cycle
-models that account for individual heterogeneity</em> [PhD thesis].
-University of Washington.
-</div>
-<div id="ref-sullivan2017adaptive" class="csl-entry" role="listitem">
-Sullivan, M. (2017). <em>Adaptive management of athabasca rainbow trout;
-cumulative effects modelling and potential management actions</em>.
-Alberta Environment; Parks; Fisheries Management Branch.
-</div>
-<div id="ref-walters1997challenges" class="csl-entry" role="listitem">
-Walters, C. (1997). Challenges in adaptive management of riparian and
-coastal ecosystems. <em>Conservation Ecology [Online]</em>,
-<em>1</em>(2), 1.
-</div>
-<div id="ref-ward1993egg" class="csl-entry" role="listitem">
-Ward, B. R., &amp; Slaney, P. A. (1993). Egg-to-smolt survival and
-fry-to-smolt density dependence of keough river steelhead trout.
-<em>Canadian Special Publication of Fisheries and Aquatic Sciences</em>,
-209–217.
-</div>
-</div>
+<p>Within the <em>CEMPRAShiny</em> repository, example datasets are stored in the “demo” subfolder within the “data” folder:</p>
+<p><a href="https://github.com/essatech/CEMPRAShiny/tree/main/data/demo" class="uri">https://github.com/essatech/CEMPRAShiny/tree/main/data/demo</a></p>
+<p>You only need to do the above steps once on your computer. Next time you need to launch the application, simply click on the CEMPRAShiny.Rproj file to open it in R Studio, then click on the green ‘Run App’ button or simply type ‘shiny::runApp()’ in the console to launch the application.</p>
+<p><strong>(Advanced) Using Windows command line to clone a GitHub repository:</strong></p>
+<p>For users comfortable using the command line who wish to contribute to the project, GitHub repositories can be quickly cloned into a local directory using this alternative method:</p>
+<p><em>Note: Prior to using Git commands in the command line, you must download and install Git on your computer (<a href="https://github.com/git-guides/install-git">link</a>).</em></p>
+<ol type="1">
+<li><p>Navigate to the desired GitHub repository (<em>CEMPRA</em> R package: <a href="https://github.com/essatech/CEMPRA/" class="uri">https://github.com/essatech/CEMPRA/</a>; <em>CEMPRAShiny</em> application: <a href="https://github.com/essatech/CEMPRAShiny" class="uri">https://github.com/essatech/CEMPRAShiny</a>).</p></li>
+<li><p>Click the green “Code” button and copy the URL from the HTTPS tab.</p></li>
+<li><p>Open the Windows Command Prompt window on your computer. Set your working directory using the following command:</p></li>
+</ol>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> “<span class="op">&lt;</span>file path<span class="op">&gt;</span>”</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="4" type="1">
+<li>Next, use the git clone command to clone the GitHub repository into a folder in your working directory. For example:</li>
+</ol>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/essatech/CEMPRA.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -621,13 +593,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./11_conclusions.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Concluding Remarks</span></span>
+      <a href="./03_pathways_endpoints.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Modelling Pathways and Assessment Endpoints</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./appendix_interaction_matrix.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Multi-Stressor Interaction Matrix</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./05_data_inputs.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data Inputs</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

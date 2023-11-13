@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>CEMPRA Guidance Document - 8&nbsp; Summary</title>
+<title>CEMPRA Guidance Document - 3&nbsp; Modelling Pathways and Assessment Endpoints</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,41 +20,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
 }
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
 }
-</style>
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -64,8 +49,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./references.html" rel="next">
-<link href="./07_life_cycle_model.html" rel="prev">
+<link href="./04_initial_setup.html" rel="next">
+<link href="./02_stressor_response.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -108,7 +93,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./summary.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Summary</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03_pathways_endpoints.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Modelling Pathways and Assessment Endpoints</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -153,14 +138,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03_pathways_endpoints.html" class="sidebar-item-text sidebar-link">
+  <a href="./03_pathways_endpoints.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Modelling Pathways and Assessment Endpoints</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./04_initial_setup.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Initial Setup</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Setup and Installation</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -172,19 +157,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./06_r_shiny_app.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">6 R-Shiny Application Walkthrough</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">R-Shiny Application</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./07_life_cycle_model.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Initial Setup</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Life Cycle Model</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  <a href="./08_stressor_response_library.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Stressor-Response Library</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09_case_study_applications.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Example Datasets</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10_r_package_tutorials.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">R Package Tutorials</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11_conclusions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Concluding Remarks</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -204,14 +207,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  <a href="./appendix_interaction_matrix.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Multi-Stressor Interaction Matrix</span></span></a>
   </div>
 </li>
       </ul>
@@ -222,14 +219,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#individual-stressor-assessments-univariate" id="toc-individual-stressor-assessments-univariate" class="nav-link active" data-scroll-target="#individual-stressor-assessments-univariate"><span class="header-section-number">3.1</span> Individual Stressor Assessments (univariate)</a></li>
+  <li><a href="#joe-model-simplified-stressor-roll-up-summaries" id="toc-joe-model-simplified-stressor-roll-up-summaries" class="nav-link" data-scroll-target="#joe-model-simplified-stressor-roll-up-summaries"><span class="header-section-number">3.2</span> Joe Model: Simplified Stressor Roll-up Summaries</a></li>
+  <li><a href="#life-cycle-model" id="toc-life-cycle-model" class="nav-link" data-scroll-target="#life-cycle-model"><span class="header-section-number">3.3</span> Life Cycle Model</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Summary</span></h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Modelling Pathways and Assessment Endpoints</span></h1>
 </div>
 
 
@@ -244,15 +249,56 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>In summary, this book has no content whatsoever.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
+<p>The CEMPRA framework offers several different modelling options and assessment endpoints to choose from (<a href="appendix_interaction_matrix.html#fig-figure2">Figure&nbsp;<span>A.2</span></a>). The specific endpoint to use will depend on the application, data availability, and overall objectives of the assessment. In the following section, we will describe stressor-response functions and the simplified “Joe Model” that combines the effects of multiple stressors on the single adult life stage. We will also discuss the integrated life cycle model, which links stressors to vital rates for multiple life history stages to project productivity and capacity of the target system. Although assessment endpoints differ between the modelling streams, they all rely on stressor-response functions as the central theme of the modelling process.</p>
+<div id="fig-figure2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/image006.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.1: Overview of alternative assessment endpoints within the CEMPRA framework.</figcaption>
+</figure>
 </div>
+<section id="individual-stressor-assessments-univariate" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="individual-stressor-assessments-univariate"><span class="header-section-number">3.1</span> Individual Stressor Assessments (univariate)</h2>
+<p>When setting up a cumulative effects model, it is often essential to visualize the spatial distribution of stressor magnitudes. The CEMPRA visual interface is organized around a centralized map interface (see Section 6), which allows users to flip through stressors individually to produce univariate heatmaps (choropleth maps) of each stressor distribution (see <a href="appendix_interaction_matrix.html#fig-figure3">Figure&nbsp;<span>A.3</span></a>). These summaries are simple yet useful to provide a general overview of the study area, stressors, and associated stressor-response functions. The visual interpretation of univariate stressor summaries is largely qualitative. The intent is to visually identify hotspots and/or determine which stressors are high everywhere or low everywhere based on the input stressor magnitude data for each location and the corresponding predicted habitat capacity.</p>
+<div id="fig-figure3" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/image007.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.2: Example of single (univariate) assessment of stressors and stressor-response relationship for hypothetical stressors A &amp; B with univariate heatmaps of predicted single-stressor habitat capacity (“Response” from 0-100%) generated for the study area.</figcaption>
+</figure>
+</div>
+</section>
+<section id="joe-model-simplified-stressor-roll-up-summaries" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="joe-model-simplified-stressor-roll-up-summaries"><span class="header-section-number">3.2</span> Joe Model: Simplified Stressor Roll-up Summaries</h2>
+<p>The Joe Model component of the CEMPRA tool leverages the library of stressor-response functions, defined and uploaded by the user, to generate a simplified roll-up summary (cumulative effects score) across multiple stressors. These summaries are simply the product of the scaled response values (from 0 to 1, equivalent to 0-100% of the system carrying capacity for adults) of all stressors for each location (<a href="appendix_interaction_matrix.html#fig-figure4">Figure&nbsp;<span>A.4</span></a>). Different stressors can be selected (or omitted) from this summary depending on data availability or to characterize different potential impact pathways.</p>
+<p>In the Joe Model, the response component of each stressor-response function (y-axis) is characterized broadly as the ‘Mean System Capacity’ of the target study system. ‘Mean System Capacity’ specifically refers to the adult carrying capacity since the basic Joe model is single-stage and assumes that each stressor-response function is calibrated to the adult system capacity; for example, even though in reality, it is salmonid egg and fry survival that are directly impacted by high Selenium concentrations, the effect of selenium dose will be scaled to the impact on the adult population size in the Selenium stressor-response function. This simplification of stage-structured dynamics into a single life stage is one of the key features of the Joe model that allows application to data-deficient species.</p>
+<p>The calculated Mean System Capacity (<a href="appendix_interaction_matrix.html#fig-figure4">Figure&nbsp;<span>A.4</span></a>) is also referred to as a “cumulative effect score”. Although it can logically be considered an estimate of adult carrying capacity as described above, it also represents a scoring procedure for multiple stressors. In the Joe Model summaries, the cumulative effect score across stressors is calculated by multiplying the mean system capacity metrics together (<a href="appendix_interaction_matrix.html#fig-figure4">Figure&nbsp;<span>A.4</span></a>). However, the model also offers the option for users to custom-define the scoring algorithm (e.g., so that it is not multiplicative; see Sandbox section), in which case it may no longer represent carrying capacity. The Joe Model does not require the weighting of individual stressors; since each stressor is scaled to a maximum of 1, they are all weighed equally by default. By doing this, the Joe Model avoids long-standing difficulties associated with weighting impacts (<span class="citation" data-cites="walters1997challenges">(<a href="references.html#ref-walters1997challenges" role="doc-biblioref">Walters, 1997</a>)</span>). In effect, the weights of stressors are represented by the response value (0-1) associated with any given stressor magnitude (<a href="appendix_interaction_matrix.html#fig-figure4">Figure&nbsp;<span>A.4</span></a>).</p>
+<div id="fig-figure4" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/image008.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.3: Additive effect of multiple stressors in the Joe Model. Figure modified from <span class="citation" data-cites="macpherson2020alberta">(<a href="references.html#ref-macpherson2020alberta" role="doc-biblioref">MacPherson et al., 2020</a>)</span></figcaption>
+</figure>
+</div>
+<p>The full implementation of the “Joe Model” extends this basic summary to include stochastic simulations with uncertainty represented in both the raw stressor values for each location and the response function (described further in Section 5). These summaries are useful to represent the risk of cumulative effects or current conditions as a distribution rather than a fixed value.</p>
+</section>
+<section id="life-cycle-model" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="life-cycle-model"><span class="header-section-number">3.3</span> Life Cycle Model</h2>
+<p>An integrated life cycle modelling framework is also included within the CEMPRA tool to evaluate the effects of stressors on population-level productivity and capacity (<a href="#fig-figure5">Figure&nbsp;<span>3.4</span></a>). The embedded life cycle modelling framework consists of a stage-structured matrix model that allows users to link stressor-response functions to vital rates for specific life stages (e.g., egg survivorship, fry capacity etc.), unlike the Joe model, where the impact of stressors across multiple life stages are integrated into a single stressor-response function linked to adult capacity. The life cycle model estimates relative changes to population-level productivity and capacity through simulations. A flexible species profile input dataset is available so that users can change values in the species profile to represent different study systems with different life history stages or demographic parameters (e.g., Athabasca Rainbow Trout, Chinook Salmon, etc.). See sections 6.4 and 7 for a detailed summary of the life cycle modelling framework within the CEMPRA tool.</p>
+<div id="fig-figure5" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/image009.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;3.4: Sample outputs from the Life Cycle Modelling component of the CEMPRA tool.</figcaption>
+</figure>
 </div>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-macpherson2020alberta" class="csl-entry" role="listitem">
+MacPherson, L., Sullivan, M., Reilly, J., &amp; Paul, A. (2020). <em>Alberta’s fisheries sustainability assessment: A guide to assessing population status, and quantifying cumulative effects using the joe modelling technique</em>. Canadian Science Advisory Secretariat (CSAS).
+</div>
+<div id="ref-walters1997challenges" class="csl-entry" role="listitem">
+Walters, C. (1997). Challenges in adaptive management of riparian and coastal ecosystems. <em>Conservation Ecology [Online]</em>, <em>1</em>(2), 1.
+</div>
+</div>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -490,13 +536,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./07_life_cycle_model.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Initial Setup</span></span>
+      <a href="./02_stressor_response.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Stressor-Response Functions</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./references.html" class="pagination-link">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./04_initial_setup.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Setup and Installation</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

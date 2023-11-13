@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>CEMPRA Guidance Document - 10&nbsp; Initial Setup</title>
+<title>CEMPRA Guidance Document - 2&nbsp; Stressor-Response Functions</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,41 +20,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
 }
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
 }
-</style>
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -64,8 +49,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./intro.html" rel="next">
-<link href="./09_case_study_applications.html" rel="prev">
+<link href="./03_pathways_endpoints.html" rel="next">
+<link href="./01_intro.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -108,7 +93,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10_conclusions.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Initial Setup</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02_stressor_response.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Stressor-Response Functions</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -147,7 +132,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02_stressor_response.html" class="sidebar-item-text sidebar-link">
+  <a href="./02_stressor_response.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Stressor-Response Functions</span></span></a>
   </div>
 </li>
@@ -184,19 +169,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./08_stressor_response_library.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Stressor-Response Library/Database</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Stressor-Response Library</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./09_case_study_applications.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Initial Setup</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Example Datasets</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./10_conclusions.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Initial Setup</span></span></a>
+  <a href="./10_r_package_tutorials.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">R Package Tutorials</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11_conclusions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Concluding Remarks</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -210,14 +207,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  <a href="./appendix_interaction_matrix.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Multi-Stressor Interaction Matrix</span></span></a>
   </div>
 </li>
       </ul>
@@ -228,22 +219,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#r-package" id="toc-r-package" class="nav-link active" data-scroll-target="#r-package"><span class="header-section-number">10.1</span> R-Package</a></li>
-  <li><a href="#r-shiny-application" id="toc-r-shiny-application" class="nav-link" data-scroll-target="#r-shiny-application"><span class="header-section-number">10.2</span> R Shiny Application</a></li>
-  <li><a href="#initial-setup-and-installation" id="toc-initial-setup-and-installation" class="nav-link" data-scroll-target="#initial-setup-and-installation"><span class="header-section-number">10.3</span> Initial Setup and Installation</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Initial Setup</span></h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Stressor-Response Functions</span></h1>
 </div>
 
 
@@ -258,95 +241,59 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>There are two ways to interact with the CEMPRA (Joe Model): through the R Shiny web application or directly using the stand alone CEMPRA R package, which can be downloaded to the users personal computer. Individuals unfamiliar with R can access the web application currently available here:</p>
-<p><em>The web version of the CEMPRA Tool</em>: <a href="https://essa.shinyapps.io/CEMPRAShiny/" class="uri">https://essa.shinyapps.io/CEMPRAShiny/</a></p>
-<p>However, we strongly recommend that individuals familiar with R download a local copy of the CEMPRA (Joe Model) Shiny application and run it on their own computers through RStudio. Running the application from your own computer reduces latency and other issues.</p>
-<p>The CEMPRA framework is available as an R package and an R Shiny application. All components of the project are freely available and open source. Both the R package and the R Shiny application are freely available for download from GitHub:</p>
-<p><em>R package</em>: <a href="https://github.com/essatech/CEMPRA/" class="uri">https://github.com/essatech/CEMPRA/</a></p>
-<p><em>R Shiny application</em>: <a href="https://github.com/essatech/CEMPRAShiny" class="uri">https://github.com/essatech/CEMPRAShiny</a></p>
-<section id="r-package" class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="r-package"><span class="header-section-number">10.1</span> R-Package</h2>
-<div id="fig-figure6" class="quarto-figure quarto-figure-center anchored">
+<p>Stressor-response functions describe the relationship between a specific stressor (such as habitat loss, temperature, or a specific pollutant) and the response of a target species, where responses can include abundance, growth rate, reproduction, or mortality (<span class="citation" data-cites="rosenfeld2024determinants">(<a href="references.html#ref-rosenfeld2024determinants" role="doc-biblioref">Rosenfeld et al., 2024</a>)</span>; <span class="citation" data-cites="jarvis2023process">(<a href="references.html#ref-jarvis2023process" role="doc-biblioref">Jarvis et al., 2023</a>)</span>). Stressor-response functions are used to predict how a population (or study system) will respond to changes in the environment and to help identify thresholds or “critical levels” at which a stressor becomes harmful. Stressor-response functions are often used to inform environmental policy and management decisions, for example, by identifying risk levels of pollution or temperature change for a particular species or ecosystem<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Stressor-response functions are generally developed through primary research (i.e., mechanistic, empirical, experimental etc.) and expert opinion (<span class="citation" data-cites="pirotta2022understanding">(<a href="references.html#ref-pirotta2022understanding" role="doc-biblioref">Pirotta et al., 2022</a>)</span>; <span class="citation" data-cites="jarvis2023process">(<a href="references.html#ref-jarvis2023process" role="doc-biblioref">Jarvis et al., 2023</a>)</span>). Note, however, that stressor-response functions are often continuous empirical or mechanistic relationships and identification of specific thresholds as harmful or benign will often be a subjective user-defined activity for stressors and responses that are without direct regulatory guidance (e.g., habitat area, population size).</p>
+<div id="fig-1" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="images/image010.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;10.1: CEMPRA package repository available on GitHub (https://github.com/essatech/CEMPRA/).</figcaption>
+<p><img src="images/image005.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;2.1: An example of a stressor-response function for Pacific salmon from <span class="citation" data-cites="jensen2009impact">Jensen et al. (<a href="references.html#ref-jensen2009impact" role="doc-biblioref">2009</a>)</span> shows the relationship between a stressor (percent fine sediment) on the x-axis and the biological response (percent egg-to-fry survivorship) on the y-axis.</figcaption>
 </figure>
 </div>
-<p>The <em>CEMPRA</em> package is part of a larger initiative to develop a framework for modelling cumulative impacts to Species-at-Risk (SAR) to guide recovery planning and adaptive management based on stressor-response functions related to taxa-specific threats. This framework allows users to generate models across a range of complexity and data quality, treating stressor-response functions as modular entities. The long-term vision is to build a library of stressor-response functions to allow users to accelerate the transition to quantitative modelling and adaptive management for Species at Risk and to encourage the archiving of CEMPRA models along with Species at Risk recovery strategies.</p>
-<p>A quick start guide is provided below, but see Appendix D for tutorials and function documentation.</p>
-</section>
-<section id="r-shiny-application" class="level2" data-number="10.2">
-<h2 data-number="10.2" class="anchored" data-anchor-id="r-shiny-application"><span class="header-section-number">10.2</span> R Shiny Application</h2>
-<div id="07_life_cycle_model-fig-figure7" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="images/image011.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Map Overview of results in the CEMPRA Shiny web application.</figcaption>
-</figure>
-</div>
-<p>The CEMPRA modelling tool includes the <em>CEMPRA</em> R package, which is accompanied by an interactive R Shiny web application (https://essa.shinyapps.io/CEMPRAShiny; also available as the stand-alone Shiny app). This application acts as a flexible, user-friendly interface to interact with key components of the CEMPRA tool. It accepts user inputs for stressor-response functions, stressor magnitude, spatial units/polygons, and vital rates (for the life cycle model portion). Results are easily mapped, summarized, and plotted within the <strong>Map Overview</strong> page of the web application. Scenario results generated from the tool (and the associated life cycle model) can be exported directly from the application as an Excel spreadsheet (.xlsx). See Section 5 for details on data inputs and Section 6 for a complete walkthrough of the application.</p>
-</section>
-<section id="initial-setup-and-installation" class="level2" data-number="10.3">
-<h2 data-number="10.3" class="anchored" data-anchor-id="initial-setup-and-installation"><span class="header-section-number">10.3</span> Initial Setup and Installation</h2>
-<p>Inexperienced R users can run the Joe Model directly through the web application (<a href="https://essa.shinyapps.io/CEMPRAShiny/" class="uri">https://essa.shinyapps.io/CEMPRAShiny/</a>). However, downloading and running the model directly in RStudio is recommended for improved performance. Running the application locally (outside of shinyapps.io) also guarantees data privacy. To run the application locally, users must first have R and RStudio downloaded and installed on their computers. The <em>CEMPRA</em> R package (<a href="https://github.com/essatech/CEMPRA/" class="uri">https://github.com/essatech/CEMPRA/</a>) and the local version of the R Shiny web application (<a href="https://github.com/essatech/CEMPRAShiny" class="uri">https://github.com/essatech/CEMPRAShiny</a>) can be downloaded from GitHub.</p>
-<p>To install R and RStudio on your computer:</p>
-<ol type="1">
-<li>Go to the R website (<a href="https://cran.r-project.org/" class="uri">https://cran.r-project.org/</a>) and follow the instructions to download the latest version of R for your operating system (Windows, Mac, or Linux).</li>
-<li>Once the download is complete, double-click (open) the installer file and follow the prompts to install R on your computer.</li>
-<li>To open and run R scripts (files ending in .R), you can use RStudio, a popular Integrated Development Environment (IDE) for R. You can download the latest version of RStudio from: <a href="https://rstudio.com/products/rstudio/download/" class="uri">https://rstudio.com/products/rstudio/download/</a>.</li>
-</ol>
-<p>To install the <em>CEMPRA</em> R package on your computer:</p>
-<ol type="1">
-<li>Download the <em>CEMPRA</em> R package from GitHub (<a href="https://github.com/essatech/CEMPRA/" class="uri">https://github.com/essatech/CEMPRA/</a>) onto your computer by clicking the green “Code” button and selecting “Download ZIP” from the dropdown. Unzip the folder once the download is complete.</li>
-<li>Install the <em>CEMPRA</em> R Package. The easiest way to install the <em>CEMPRA</em> package is from within RStudio using <code>remotes::install_github()</code>. At this time, the package has not been published to CRAN, so the default <code>install.packages()</code> will not work for installing the <em>CEMPRA</em> package. Instead, use the <code>remotes</code> package (or <code>devtools</code>). Open RStudio and install the <code>remotes</code> package using the <code>install.packages("remotes")</code> command in the Console. Next, install the <em>CEMPRA</em> package from GitHub using the following commands in the Console:</li>
-</ol>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"remotes"</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(remotes)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"essatech/CEMPRA"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Once installed, use the <code>library(CEMPRA)</code> command to call the <em>CEMPRA</em> package into RStudio. You should only have to do the above steps once on your computer.</p>
-<div id="07_life_cycle_model-fig-picture45" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="images/image015.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Graphical user interface, text, application, email. Description automatically generated.</figcaption>
-</figure>
-</div>
-<p><strong>To access the raw code and example data for the R Shiny application:</strong></p>
-<ol type="1">
-<li><p>Download the <em>CEMPRAShiny</em> repository from GitHub (<a href="https://github.com/essatech/CEMPRAShiny" class="uri">https://github.com/essatech/CEMPRAShiny</a>) onto your computer by clicking the green “Code” button and selecting “Download ZIP” from the dropdown. Unzip the folder once the download is complete.</p></li>
-<li><p>Open the .Rproj file in R-Studio by double-clicking on it.</p></li>
-</ol>
-<div id="07_life_cycle_model-fig-picture48" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="images/image017.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Graphical user interface, application. Description automatically generated.</figcaption>
-</figure>
-</div>
-<ol start="3" type="1">
-<li>Open a script called global.R by double-clicking on it in the bottom right corner. Next, click the ‘Install’ link on the yellow banner to install additional dependencies. Once complete, click the green arrow labelled ‘Run App’ to launch the application.</li>
-</ol>
-<div id="07_life_cycle_model-fig-picture47" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="images/image018.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Graphical user interface, text, application. Description automatically generated.</figcaption>
-</figure>
-</div>
-<p>Within the <em>CEMPRAShiny</em> repository, example datasets are stored in the “demo” subfolder within the “data” folder:</p>
-<p><a href="https://github.com/essatech/CEMPRAShiny/tree/main/data/demo" class="uri">https://github.com/essatech/CEMPRAShiny/tree/main/data/demo</a></p>
-<p>You only need to do the above steps once on your computer. Next time you need to launch the application, simply click on the CEMPRAShiny.Rproj file to open it in R Studio, then click on the green ‘Run App’ button or simply type ‘shiny::runApp()’ in the console to launch the application.</p>
-<p><strong>(Advanced) Using Windows command line to clone a GitHub repository:</strong></p>
-<p>For users comfortable using the command line who wish to contribute to the project, GitHub repositories can be quickly cloned into a local directory using this alternative method:</p>
-<p><em>Note: Prior to using Git commands in the command line, you must download and install Git on your computer (<a href="https://github.com/git-guides/install-git">link</a>).</em></p>
-<ol type="1">
-<li><p>Navigate to the desired GitHub repository (<em>CEMPRA</em> R package: <a href="https://github.com/essatech/CEMPRA/" class="uri">https://github.com/essatech/CEMPRA/</a>; <em>CEMPRAShiny</em> application: <a href="https://github.com/essatech/CEMPRAShiny" class="uri">https://github.com/essatech/CEMPRAShiny</a>).</p></li>
-<li><p>Click the green “Code” button and copy the URL from the HTTPS tab.</p></li>
-<li><p>Open the Windows Command Prompt window on your computer. Set your working directory using the following command:</p></li>
-</ol>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> “<span class="op">&lt;</span>file path<span class="op">&gt;</span>”</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="4" type="1">
-<li>Next, use the git clone command to clone the GitHub repository into a folder in your working directory. For example:</li>
-</ol>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/essatech/CEMPRA.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>There are many types of stressor-response functions, including linear, threshold, and non-linear (<span class="citation" data-cites="rosenfeld2017developing">(<a href="references.html#ref-rosenfeld2017developing" role="doc-biblioref">Rosenfeld, 2017</a>)</span>; <span class="citation" data-cites="larned2019stressor">(<a href="references.html#ref-larned2019stressor" role="doc-biblioref">Larned &amp; Schallenberg, 2019</a>)</span>). Linear functions describe a simple, linear relationship between the stressor and the response, with the response increasing or decreasing at a constant rate as the stressor increases. Threshold functions describe a breakpoint at which a stressor becomes harmful, beyond which the response increases rapidly. Non-linear functions describe more complex relationships, with the response changing at different rates as the stressor increases. The example provided in <a href="#fig-1">Figure&nbsp;<span>2.1</span></a> shows a customized non-linear stressor-response function fit to empirical data (reference points). Stressors do not always act independently (<span class="citation" data-cites="schafer2018advancing">(<a href="references.html#ref-schafer2018advancing" role="doc-biblioref">Schäfer &amp; Piggott, 2018</a>)</span>; <span class="citation" data-cites="jarvis2023process">(<a href="references.html#ref-jarvis2023process" role="doc-biblioref">Jarvis et al., 2023</a>)</span>), and it is also possible to include interactions among variables in stressor-response functions, such as the risk of exposure to a harmful pathogen being temperature dependent.</p>
+<p>For a more in-depth discussion on the foundations of stressor-response functions, refer to the following resources:</p>
+<ul>
+<li><span class="citation" data-cites="rosenfeld2024determinants">(<a href="references.html#ref-rosenfeld2024determinants" role="doc-biblioref">Rosenfeld et al., 2024</a>)</span><strong>; <span class="citation" data-cites="jarvis2023process">(<a href="references.html#ref-jarvis2023process" role="doc-biblioref">Jarvis et al., 2023</a>)</span></strong>: Conceptual overviews of stressor-response functions as a generalizable model for context dependence. This paper provides a valuable overview to conceptualize stressors as a mechanism to characterize the state of a system and ecological process. <span class="citation" data-cites="jarvis2023process">(<a href="references.html#ref-jarvis2023process" role="doc-biblioref">Jarvis et al., 2023</a>)</span> also outline common forms of stressor-response functions and key considerations for the creation of a stressor-response function from empirical data.</li>
+<li><span class="citation" data-cites="piet2021roadmap">(<a href="references.html#ref-piet2021roadmap" role="doc-biblioref">Piet et al., 2021</a>)</span>: <em>A roadmap towards quantitative cumulative impact assessments: Every step of the way</em>. Provides an important roadmap for working groups to consider linkages between land-use activities, resulting ecosystem pressures, functional linkages in space and time (exposure) and the consideration of endpoints to target study systems.</li>
+<li><strong>Incorporating Indigenous Knowledge</strong>: In many instances, stressor-response functions may be developed through expert opinion from local communities based on value systems. Where appropriate, working groups may include a customized stressor-response function to represent potential risks and values based on traditional knowledge systems and expert opinion. Refer to <span class="citation" data-cites="houde2007six">(<a href="references.html#ref-houde2007six" role="doc-biblioref">Houde, 2007</a>)</span> and <span class="citation" data-cites="alexander2019bridging">(<a href="references.html#ref-alexander2019bridging" role="doc-biblioref">Alexander et al., 2019</a>)</span> for further discussion. Examples of many other values-based Indigenous-led cumulative effects management programs exist across Canada.</li>
+</ul>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-alexander2019bridging" class="csl-entry" role="listitem">
+Alexander, S. M., Provencher, J. F., Henri, D. A., Taylor, J. J., Lloren, J. I., Nanayakkara, L., et al. (2019). Bridging indigenous and science-based knowledge in coastal and marine research, monitoring, and management in canada. <em>Environmental Evidence</em>, <em>8</em>(1), 1–24.
+</div>
+<div id="ref-houde2007six" class="csl-entry" role="listitem">
+Houde, N. (2007). The six faces of traditional ecological knowledge: Challenges and opportunities for canadian co-management arrangements. <em>Ecology and Society</em>, <em>12</em>(2).
+</div>
+<div id="ref-jarvis2023process" class="csl-entry" role="listitem">
+Jarvis, L., Rosenfeld, J., Gonzalez-Espinosa, P., &amp; Enders, E. (2023). A process framework for integrating stressor-response functions into cumulative effects models. <em>Science of the Total Environment</em>, <em>XXX</em>, 167456.
+</div>
+<div id="ref-jensen2009impact" class="csl-entry" role="listitem">
+Jensen, D. W., Steel, E. A., Fullerton, A. H., &amp; Pess, G. R. (2009). Impact of fine sediment on incubation survival of pacific salmon: A meta-analysis of published studies. <em>Reviews in Fisheries Science</em>, <em>17</em>(3), 348–359. <a href="https://doi.org/10.1080/10641260902716954">https://doi.org/10.1080/10641260902716954</a>
+</div>
+<div id="ref-larned2019stressor" class="csl-entry" role="listitem">
+Larned, S. T., &amp; Schallenberg, M. (2019). Stressor-response relationships and the prospective management of aquatic ecosystems. <em>New Zealand Journal of Marine and Freshwater Research</em>, <em>53</em>, 489–512.
+</div>
+<div id="ref-piet2021roadmap" class="csl-entry" role="listitem">
+Piet, G. J., Tamis, J. E., Volwater, J., Vries, P. de, Wal, J. T. van der, &amp; Jongbloed, R. H. (2021). A roadmap towards quantitative cumulative impact assessments: Every step of the way. <em>Science of The Total Environment</em>, <em>784</em>, 146847.
+</div>
+<div id="ref-pirotta2022understanding" class="csl-entry" role="listitem">
+Pirotta, E., Thomas, L., Costa, D. P., Hall, A. J., Harris, C. M., Harwood, J., et al. (2022). Understanding the combined effects of multiple stressors: A new perspective on a longstanding challenge. <em>Science of the Total Environment</em>, <em>821</em>, 153322.
+</div>
+<div id="ref-rosenfeld2017developing" class="csl-entry" role="listitem">
+Rosenfeld, J. S. (2017). Developing flow–ecology relationships: Implications of nonlinear biological responses for water management. <em>Freshwater Biology</em>, <em>62</em>, 1305–1324.
+</div>
+<div id="ref-rosenfeld2024determinants" class="csl-entry" role="listitem">
+Rosenfeld, J. S., Ayllón, D., Grant, J. W., Naman, S. M., Post, J. R., Matte, J.-M., et al. (2024). Determinants of productive capacity for stream salmonids. In J. Lobon-Cervia, P. Budy, &amp; R. Gresswell (Eds.), <em>Advances in the ecology of stream-dwelling salmonids</em> (pp. 1–12). Springer Life Sciences.
+</div>
+<div id="ref-schafer2018advancing" class="csl-entry" role="listitem">
+Schäfer, R. B., &amp; Piggott, J. J. (2018). Advancing understanding and prediction in multiple stressor research through a mechanistic basis for null models. <em>Global Change Biology</em>, <em>24</em>, 1817–1826.
+</div>
+</div>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>https://www2.gov.bc.ca/assets/gov/environment/air-land-water/water/waterquality/water-quality-guidelines/approved-wqgs/wqg_summary_aquaticlife_wildlife_agri.pdf.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
@@ -585,13 +532,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./09_case_study_applications.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Initial Setup</span></span>
+      <a href="./01_intro.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./intro.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Introduction</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./03_pathways_endpoints.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Modelling Pathways and Assessment Endpoints</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
