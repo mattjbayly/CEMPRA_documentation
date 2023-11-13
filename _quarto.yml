@@ -24,6 +24,9 @@ book:
     - references.qmd
   appendices:
     - appendix_interaction_matrix.qmd
+  comments: 
+    utterances:
+      repo: mattjbayly/CEMPRA_documentation
 
 bibliography: references.bib
 csl: apa.csl
