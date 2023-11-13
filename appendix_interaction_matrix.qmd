@@ -8,13 +8,13 @@ The 2-factor interaction matrices are defined in the Stressor-Response Excel wor
 
 A hypothetical example (Figure 1) is included to show the interaction between stream canopy cover (low to high) and nutrients (as total Phosphorous). At low nutrients, habitat capacity for trout is highest under low canopy cover, where high light maximizes algal and invertebrate production (red circle). However, at high nutrients (eutrophic conditions), habitat capacity is highest under a closed canopy that suppresses algal growth and associated high temperatures and poor water quality (blue circle).
 
-![Example interaction surface for the CEMPRA 2-factor interaction matrix between trout capacity canopy cover and nutrients.](/assets/images/image001.png){#fig-figure1}
+![Example interaction surface for the CEMPRA 2-factor interaction matrix between trout capacity canopy cover and nutrients.](images/image001.png){#fig-figure1}
 
 ## Data Preparation
 
 The 2-factor interaction matrices are optionally included as additional tabs in the stressor response workbook. The formatting must follow Figure 2. The worksheet name must begin with “**MInt_**” followed by a unique name (ideally without spaces). In this example we used “MInt_AB”.
 
-![Example Matrix interaction surface for stressor variables A and B.](/assets/images/image002.png){#fig-figure2}
+![Example Matrix interaction surface for stressor variables A and B.](images/image002.png){#fig-figure2}
 
 The header section of the workbook must include several inputs:
 
@@ -36,11 +36,11 @@ The header section of the workbook must include several inputs:
 
 The difference between the 2-factor interaction matrix calculations with the main effects “Included” and “Excluded” is further illustrated in the following figure:
 
-![Difference between main effects being included or excluded from 2-factor interaction matrix summary. The Interaction factor for main effects Excluded (X) will be different (in this case lower) than for main effects Included.](/assets/images/image003.png){#fig-figure3}
+![Difference between main effects being included or excluded from 2-factor interaction matrix summary. The Interaction factor for main effects Excluded (X) will be different (in this case lower) than for main effects Included.](images/image003.png){#fig-figure3}
 
 The formatting of the matrix worksheet allows for some flexibility (see example below), but the variable inputs in cells B1:B4 must be kept in their original positions. For each stressor variable, the user can define any number of steps (intervals) provided that the stressor column variable (x-axis) starts in cell C6 and extends right (associated with columns – B2), and the stressor row variable (y-axis) starts in cell B7 and extends downward (associated with rows – B3 stressor). See figure Figure 4.
 
-![Matrices of different resolutions.](/assets/images/image004.png){#fig-figure4}
+![Matrices of different resolutions.](images/image004.png){#fig-figure4}
 
 If values in the stressor magnitude workbook do not align exactly with stressor values in the column and row heads of the interaction matrix, then the system capacity value will be calculated with linear interpolation. NULL or missing values from the stressor magnitude workbook will omit the HUC or subbasin assessment unit from any calculation of habitat capacity or cumulative effects.
 

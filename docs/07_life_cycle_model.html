@@ -305,7 +305,7 @@ div.csl-indent {
 </ul>
 <div id="fig-figure27" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src=".\assets/images/image039.png" class="img-fluid figure-img"></p>
+<p><img src="images/image039.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Figure&nbsp;7.1: Example of a life cycle profile CSV input file with four stage classes.</figcaption>
 </figure>
 </div>
@@ -318,7 +318,7 @@ div.csl-indent {
 <p>The life cycle diagram figure shows the sample life cycle profile. <a href="#fig-figure27">Figure&nbsp;<span>7.1</span></a> is represented as a life cycle diagram. In the diagram and input file, we see that there are four main stages (stage_1 to stage_4). stage_1 individuals can become stage_4 individuals after three years in the simulation, but it is also possible for some individuals to spend more than one year in stages 2, 3, and 4 (denoted by the circular loop). We also see that stage_4 individuals are sexually mature and have the capacity to generate new stage_1 individuals. There are also special year 0 (Age-0) events that occur before new stage_1 (Age-1) individuals are secured in the simulation. These events include egg survival (SE) and Age-0 fry survival (S0).</p>
 <div id="07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-fig-figure28" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src=".\assets/images/image040.png" class="img-fluid figure-img"></p>
+<p><img src="images/image040.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">The life cycle diagram for the demo life cycle profile is shown in <a href="#fig-figure27">Figure&nbsp;<span>7.1</span></a>.</figcaption>
 </figure>
 </div>
@@ -366,7 +366,7 @@ div.csl-indent {
 <p><em>Sample fecundity function for stage class 4:</em></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src=".\assets/images/image041.png" class="img-fluid figure-img"></p>
+<p><img src="images/image041.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Sample fecundity function</figcaption>
 </figure>
 </div>
@@ -464,7 +464,7 @@ div.csl-indent {
 <p>The stage-to-stage transition probabilities are also expressed as functions from <code>surv_X</code> (annual survivorship with stage X) and <code>year_X</code> (number of simulation years within stage X). <code>surv_X</code> is the total annual probability of survival (i.e., regardless of staying within the current stage OR advancing to the next subsequent stage). The example below illustrates how the combined probability of staying within a stage or advancing to the next stage always equals <code>surv_X</code> regardless of n-years in each stage. <em>Note that the sum of the yellow cells equals 0.6 (for both fates of staying within stage or advancing to the next stage).</em></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src=".\assets/images/image042.png" class="img-fluid figure-img"></p>
+<p><img src="images/image042.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Stage-to-stage transition probabilities</figcaption>
 </figure>
 </div>
@@ -526,14 +526,14 @@ div.csl-indent {
 <p>The Beverton-Holt function calculates the expected number of individuals in the next time step (N at time + 1, or density) as a function of the number of individuals in the current time step (N at time). In the case of stage-structured matrix models, this relationship is expressed as the number of individuals transitioning between two stages (e.g., from stage 2 to stage 3). In the Beverton-Holt function, input parameters governing this relationship include an estimate of stage-specific carrying capacity (K), a baseline estimate of density-independent survival (S) (surv_X from the species profile) for the transition probability, and the number of individuals in the current stage class (Nt) for the simulation year.</p>
 <div id="07_life_cycle_model-07_life_cycle_model-fig-beverton-holt" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src=".\assets/images/image043.png" class="img-fluid figure-img"></p>
+<p><img src="images/image043.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Beverton-Holt function for density-dependent growth</figcaption>
 </figure>
 </div>
 <p>The following figure provides an overview of the Beverton-Holt function, showing the number of individuals at time (t) on the x-axis and the number of individuals at time + 1 on the y-axis. For example, this could be the number of Age-0 fry on the x-axis and the number of Age-1+ parr recruits on the y-axis. The curved black line shows the effects of density-dependent growth (limited recruitment as the number of individuals in the first stage is increased). The steep red line is the intrinsic productivity (survivorship, surv_X), which is 0.8 under hypothetical density-independent growth conditions. The blue line is the hypothetical carrying capacity of 100.</p>
 <div id="07_life_cycle_model-07_life_cycle_model-fig-density-dependent" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src=".\assets/images/image044.jpg" class="img-fluid figure-img"></p>
+<p><img src="images/image044.jpg" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Beverton-Holt function for density-dependent growth</figcaption>
 </figure>
 </div>
@@ -545,7 +545,7 @@ div.csl-indent {
 <p>For more systems with ample habitat data and known relationships between habitat availability and maximum densities, it is possible to use location-specific carrying capacities for one or more rate-limiting life stages (e.g., <em>Location X can produce up to 1,200 parr</em>). If this is the case, a special table can be included that specifies the maximum number of individuals per stage class per life stage per location:</p>
 <div id="07_life_cycle_model-07_life_cycle_model-fig-location-specific" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src=".\assets/images/image045.png" class="img-fluid figure-img"></p>
+<p><img src="images/image045.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Location and stage-specific carrying capacity input data table</figcaption>
 </figure>
 </div>
@@ -558,7 +558,7 @@ div.csl-indent {
 <p>If the locations carrying capacity table is provided, the population projections will implement density-dependent growth constraints for species-specific life stages according to the stage-specific carrying capacities (with Beverton-Holt constraint on growth), and intrinsic density-independent survivorship estimates. The steel head spawners figure shows an example simulation for Steelhead from the CEMPRA tool with adult spawning on the y-axis and a stage-1 (parr) carrying capacity constraint set to 160,000 individuals. In the Steelhead example, the only density-dependent constraint is the parr carrying capacity of the system (set to 160,000). The number of adult spawners is, therefore, a derived metric from the life cycle model. Implementing density-dependent constraints with <em>location and stage-specific carrying capacities</em> is different from the approach with <em>compensation ratios</em>, where users are required to first input an estimate of the adult carrying capacity and work backwards from there.</p>
 <div id="07_life_cycle_model-07_life_cycle_model-fig-steelhead-spawners" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src=".\assets/images/image047.png" class="img-fluid figure-img"></p>
+<p><img src="images/image047.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Simulation of Steelhead Spawners with stage_1 capacity set to 160,000</figcaption>
 </figure>
 </div>
@@ -599,7 +599,7 @@ div.csl-indent {
 <p>The compensation ratio for life stage i adjusts the survivorship of each life stage based on the observed densities (abundance, Ni,t) and stage-specific carrying capacities (Ki):</p>
 <div id="07_life_cycle_model-07_life_cycle_model-fig-compensation-ratio" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src=".\assets/images/image048.png" class="img-fluid figure-img"></p>
+<p><img src="images/image048.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Compensation Ratio CR for life stage i</figcaption>
 </figure>
 </div>
@@ -607,7 +607,7 @@ div.csl-indent {
 <p>A plot of compensation ratios is provided below to illustrate their effects on stage-specific survivorship transitions. In this example, abundance values of a hypothetical stage class (i) are plotted along the x-axis with a carrying capacity (Ki) set to 100 individuals (blue vertical line). The hypothetical stage class (i) has a baseline survivorship (productivity) value of 0.8 in the absence of density-dependent growth conditions (horizontal red line). The y-axis on the plot shows how the default survivorship value of 0.8 is modified based on the stage-specific compensation ratio for stage class (CRi). The survivorship value for the stage class is suppressed as the abundance values exceed the carrying capacity K. The effects are amplified as compensation ratios are increased. Compensation ratios of 1.0 leave the vital rate unmodified. Compensation ratios less than 1.0 increase survivorship values (allowing for a potential positive effect of density). When the abundance of the age class is less than the carrying capacity, baseline survivorship values can actually increase. However, within the model code, adjusted survivorship values are fixed so that they never exceed 1.0 for any stage transition.</p>
 <div id="07_life_cycle_model-07_life_cycle_model-fig-compensation-ratios-effect" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src=".\assets/images/image049.jpg" class="img-fluid figure-img"></p>
+<p><img src="images/image049.jpg" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Influence of compensation ratios on stage-specific survivorship</figcaption>
 </figure>
 </div>
@@ -633,7 +633,7 @@ div.csl-indent {
 <h4 data-number="7.4.2.3" class="anchored" data-anchor-id="stable-stage-distributions-as-a-fraction-0---1-stage-specific-carrying-capacities-k"><span class="header-section-number">7.4.2.3</span> Stable Stage Distributions (as a fraction 0 - 1) &amp; Stage-specific Carrying Capacities (K):</h4>
 <div id="07_life_cycle_model-07_life_cycle_model-fig-stable-stage-distributions" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src=".\assets/images/image050.png" class="img-fluid figure-img"></p>
+<p><img src="images/image050.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Stable Stage Distributions and Stage-specific Carrying Capacities</figcaption>
 </figure>
 </div>
@@ -706,7 +706,7 @@ div.csl-indent {
 </table>
 <div id="07_life_cycle_model-07_life_cycle_model-fig-eps-sd" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src=".\assets/images/image051.png" class="img-fluid figure-img"></p>
+<p><img src="images/image051.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">eps_sd Standard Deviation in Eggs-per-Spawner</figcaption>
 </figure>
 </div>
@@ -736,7 +736,7 @@ div.csl-indent {
 </table>
 <div id="07_life_cycle_model-07_life_cycle_model-fig-egg-rho" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src=".\assets/images/image052.png" class="img-fluid figure-img"></p>
+<p><img src="images/image052.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">egg_rho: correlation in egg fecundity through time</figcaption>
 </figure>
 </div>
@@ -787,7 +787,7 @@ div.csl-indent {
 </table>
 <div id="07_life_cycle_model-07_life_cycle_model-fig-m-rho" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src=".\assets/images/image053.png" class="img-fluid figure-img"></p>
+<p><img src="images/image053.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">M.rho: correlation in survivorship through time</figcaption>
 </figure>
 </div>
@@ -817,7 +817,7 @@ div.csl-indent {
 </table>
 <div id="07_life_cycle_model-07_life_cycle_model-fig-p-cat" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src=".\assets/images/image054.png" class="img-fluid figure-img"></p>
+<p><img src="images/image054.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Probability of Catastrophe per Generation</figcaption>
 </figure>
 </div>
@@ -833,7 +833,7 @@ div.csl-indent {
 <p>It’s recommended to first summarize the species’ life cycle using a simple diagram to represent key life stages. This diagram can be converted into a periodicity table (or life history schedule) to represent time spent in each life stage, as shown in the figure. A life history diagram coupled with a periodicity table can be helpful in mapping out transitions between key stages in the life cycle model. Recall that the life cycle model works with annual time steps. “Census” periods within the matrix model do not need to fall precisely at the one-year interval, but care should be taken to ensure that key transitions are not missed or double-counted. It is best to start from the spawning period and work forward, following a whole generation to its progeny</p>
 <div id="07_life_cycle_model-07_life_cycle_model-fig-coho-salmon-lifecycle" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src=".\assets/images/image055.png" class="img-fluid figure-img"></p>
+<p><img src="images/image055.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Sample life cycle diagram and periodicity table for Coho Salmon</figcaption>
 </figure>
 </div>

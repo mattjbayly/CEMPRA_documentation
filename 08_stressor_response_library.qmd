@@ -10,7 +10,7 @@ Example stressor-response functions for Coho Salmon and Steelhead responses to t
 
 ### Stressor-Response Library Schema {#08_stressor_response_library-sec-library-schema}
 
-![Data structure within the SR library, where the table hierarchy starts at the SR Library Main folder (left) and ends at the references and documentation for individual stressor-response functions (right).](/assets/images/image056.png){#08_stressor_response_library-fig-stressor-response-schema}
+![Data structure within the SR library, where the table hierarchy starts at the SR Library Main folder (left) and ends at the references and documentation for individual stressor-response functions (right).](images/image056.png){#08_stressor_response_library-fig-stressor-response-schema}
 
 ::: {#08_stressor_response_library-fig-stressor-response-schema}
 Data structure within the SR library.
@@ -38,7 +38,7 @@ Within each of the stressor folders, the references folder contains copies of al
 
 The primary stressor-response library (database) contains functions as individual Excel worksheets. These Excel worksheets are used to form a custom Excel SR workbook. The SR workbook is then used as one of the main inputs in the CEMPRA (see Data Inputs).
 
-![Use of the SR library in the CEMPRA (Joe Model). The SR library contains individual worksheets which can be selected to create a custom SR workbook for use in the model.](/assets/images/image057.jpg){#08_stressor_response_library-fig-sr-library-use}
+![Use of the SR library in the CEMPRA (Joe Model). The SR library contains individual worksheets which can be selected to create a custom SR workbook for use in the model.](images/image057.jpg){#08_stressor_response_library-fig-sr-library-use}
 
 ::: {#08_stressor_response_library-fig-sr-library-use}
 Use of the SR library in the CEMPRA.
