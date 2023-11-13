@@ -35,13 +35,6 @@ _output/
 *.fls
 *.fdb_latexmk
 
-# Ignore generated figure files
-*.png
-*.pdf
-*.jpg
-*.jpeg
-*.tiff
-
 # Ignore Jupyter notebook checkpoints
 .ipynb_checkpoints/
 
