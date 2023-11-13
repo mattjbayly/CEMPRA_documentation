@@ -255,7 +255,7 @@ div.csl-indent {
 <p>The CEMPRA framework offers several different modelling options and assessment endpoints to choose from (<a href="appendix_interaction_matrix.html#fig-figure2">Figure&nbsp;<span>A.2</span></a>). The specific endpoint to use will depend on the application, data availability, and overall objectives of the assessment. In the following section, we will describe stressor-response functions and the simplified “Joe Model” that combines the effects of multiple stressors on the single adult life stage. We will also discuss the integrated life cycle model, which links stressors to vital rates for multiple life history stages to project productivity and capacity of the target system. Although assessment endpoints differ between the modelling streams, they all rely on stressor-response functions as the central theme of the modelling process.</p>
 <div id="fig-figure2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="images/image006.png" class="img-fluid figure-img"></p>
+<p><img src="assets/images/image006.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Figure&nbsp;3.1: Overview of alternative assessment endpoints within the CEMPRA framework.</figcaption>
 </figure>
 </div>
@@ -264,7 +264,7 @@ div.csl-indent {
 <p>When setting up a cumulative effects model, it is often essential to visualize the spatial distribution of stressor magnitudes. The CEMPRA visual interface is organized around a centralized map interface (see Section 6), which allows users to flip through stressors individually to produce univariate heatmaps (choropleth maps) of each stressor distribution (see <a href="appendix_interaction_matrix.html#fig-figure3">Figure&nbsp;<span>A.3</span></a>). These summaries are simple yet useful to provide a general overview of the study area, stressors, and associated stressor-response functions. The visual interpretation of univariate stressor summaries is largely qualitative. The intent is to visually identify hotspots and/or determine which stressors are high everywhere or low everywhere based on the input stressor magnitude data for each location and the corresponding predicted habitat capacity.</p>
 <div id="fig-figure3" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="images/image007.png" class="img-fluid figure-img"></p>
+<p><img src="assets/images/image007.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Figure&nbsp;3.2: Example of single (univariate) assessment of stressors and stressor-response relationship for hypothetical stressors A &amp; B with univariate heatmaps of predicted single-stressor habitat capacity (“Response” from 0-100%) generated for the study area.</figcaption>
 </figure>
 </div>
@@ -276,7 +276,7 @@ div.csl-indent {
 <p>The calculated Mean System Capacity (<a href="appendix_interaction_matrix.html#fig-figure4">Figure&nbsp;<span>A.4</span></a>) is also referred to as a “cumulative effect score”. Although it can logically be considered an estimate of adult carrying capacity as described above, it also represents a scoring procedure for multiple stressors. In the Joe Model summaries, the cumulative effect score across stressors is calculated by multiplying the mean system capacity metrics together (<a href="appendix_interaction_matrix.html#fig-figure4">Figure&nbsp;<span>A.4</span></a>). However, the model also offers the option for users to custom-define the scoring algorithm (e.g., so that it is not multiplicative; see Sandbox section), in which case it may no longer represent carrying capacity. The Joe Model does not require the weighting of individual stressors; since each stressor is scaled to a maximum of 1, they are all weighed equally by default. By doing this, the Joe Model avoids long-standing difficulties associated with weighting impacts (<span class="citation" data-cites="walters1997challenges">(<a href="references.html#ref-walters1997challenges" role="doc-biblioref">Walters, 1997</a>)</span>). In effect, the weights of stressors are represented by the response value (0-1) associated with any given stressor magnitude (<a href="appendix_interaction_matrix.html#fig-figure4">Figure&nbsp;<span>A.4</span></a>).</p>
 <div id="fig-figure4" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="images/image008.png" class="img-fluid figure-img"></p>
+<p><img src="assets/images/image008.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Figure&nbsp;3.3: Additive effect of multiple stressors in the Joe Model. Figure modified from <span class="citation" data-cites="macpherson2020alberta">(<a href="references.html#ref-macpherson2020alberta" role="doc-biblioref">MacPherson et al., 2020</a>)</span></figcaption>
 </figure>
 </div>
@@ -287,7 +287,7 @@ div.csl-indent {
 <p>An integrated life cycle modelling framework is also included within the CEMPRA tool to evaluate the effects of stressors on population-level productivity and capacity (<a href="#fig-figure5">Figure&nbsp;<span>3.4</span></a>). The embedded life cycle modelling framework consists of a stage-structured matrix model that allows users to link stressor-response functions to vital rates for specific life stages (e.g., egg survivorship, fry capacity etc.), unlike the Joe model, where the impact of stressors across multiple life stages are integrated into a single stressor-response function linked to adult capacity. The life cycle model estimates relative changes to population-level productivity and capacity through simulations. A flexible species profile input dataset is available so that users can change values in the species profile to represent different study systems with different life history stages or demographic parameters (e.g., Athabasca Rainbow Trout, Chinook Salmon, etc.). See sections 6.4 and 7 for a detailed summary of the life cycle modelling framework within the CEMPRA tool.</p>
 <div id="fig-figure5" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="images/image009.png" class="img-fluid figure-img"></p>
+<p><img src="assets/images/image009.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Figure&nbsp;3.4: Sample outputs from the Life Cycle Modelling component of the CEMPRA tool.</figcaption>
 </figure>
 </div>

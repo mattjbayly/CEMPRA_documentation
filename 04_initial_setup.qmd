@@ -15,7 +15,7 @@ The CEMPRA framework is available as an R package and an R Shiny application. Al
 
 ## R-Package
 
-![CEMPRA package repository available on GitHub (https://github.com/essatech/CEMPRA/).](images/image010.png){#fig-figure6}
+![CEMPRA package repository available on GitHub (https://github.com/essatech/CEMPRA/).](assets/images/image010.png){#fig-figure6}
 
 The *CEMPRA* package is part of a larger initiative to develop a framework for modelling cumulative impacts to Species-at-Risk (SAR) to guide recovery planning and adaptive management based on stressor-response functions related to taxa-specific threats. This framework allows users to generate models across a range of complexity and data quality, treating stressor-response functions as modular entities. The long-term vision is to build a library of stressor-response functions to allow users to accelerate the transition to quantitative modelling and adaptive management for Species at Risk and to encourage the archiving of CEMPRA models along with Species at Risk recovery strategies.
 
@@ -23,7 +23,7 @@ A quick start guide is provided below, but see Appendix D for tutorials and func
 
 ## R Shiny Application
 
-![Map Overview of results in the CEMPRA Shiny web application.](images/image011.png){#04_initial_setup-fig-figure7}
+![Map Overview of results in the CEMPRA Shiny web application.](assets/images/image011.png){#04_initial_setup-fig-figure7}
 
 The CEMPRA modelling tool includes the *CEMPRA* R package, which is accompanied by an interactive R Shiny web application (https://essa.shinyapps.io/CEMPRAShiny; also available as the stand-alone Shiny app). This application acts as a flexible, user-friendly interface to interact with key components of the CEMPRA tool. It accepts user inputs for stressor-response functions, stressor magnitude, spatial units/polygons, and vital rates (for the life cycle model portion). Results are easily mapped, summarized, and plotted within the **Map Overview** page of the web application. Scenario results generated from the tool (and the associated life cycle model) can be exported directly from the application as an Excel spreadsheet (.xlsx). See Section 5 for details on data inputs and Section 6 for a complete walkthrough of the application.
 
@@ -55,7 +55,7 @@ remotes::install_github("essatech/CEMPRA")
 
 Once installed, use the `library(CEMPRA)` command to call the *CEMPRA* package into RStudio. You should only have to do the above steps once on your computer.
 
-![Graphical user interface, text, application, email. Description automatically generated.](images/image015.png){#04_initial_setup-fig-picture45}
+![Graphical user interface, text, application, email. Description automatically generated.](assets/images/image015.png){#04_initial_setup-fig-picture45}
 
 **To access the raw code and example data for the R Shiny application:**
 
@@ -63,11 +63,11 @@ Once installed, use the `library(CEMPRA)` command to call the *CEMPRA* package i
 
 2.  Open the .Rproj file in R-Studio by double-clicking on it.
 
-![Graphical user interface, application. Description automatically generated.](images/image017.png){#04_initial_setup-fig-picture48}
+![Graphical user interface, application. Description automatically generated.](assets/images/image017.png){#04_initial_setup-fig-picture48}
 
 3.  Open a script called global.R by double-clicking on it in the bottom right corner. Next, click the 'Install' link on the yellow banner to install additional dependencies. Once complete, click the green arrow labelled 'Run App' to launch the application.
 
-![Graphical user interface, text, application. Description automatically generated.](images/image018.png){#04_initial_setup-fig-picture47}
+![Graphical user interface, text, application. Description automatically generated.](assets/images/image018.png){#04_initial_setup-fig-picture47}
 
 Within the *CEMPRAShiny* repository, example datasets are stored in the "demo" subfolder within the "data" folder:
 
