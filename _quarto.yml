@@ -6,6 +6,8 @@ book:
   title: "CEMPRA Guidance Document"
   subtitle: "Cumulative Effects Model for Prioritizing Recovery Actions (CEMPRA)"
   date: "2023-11-10"
+  site-url: https://mattjbayly.github.io/CEMPRA_documentation/
+  repo-url: https://github.com/mattjbayly/CEMPRA_documentation/
   chapters:
     - index.qmd
     - 01_intro.qmd
