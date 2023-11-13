@@ -1,59 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://mattjbayly.github.io/CEMPRA_documentation/05_data_inputs.html</loc>
-    <lastmod>2023-11-13T00:58:42.140Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mattjbayly.github.io/CEMPRA_documentation/10_r_package_tutorials.html</loc>
-    <lastmod>2023-11-13T00:53:20.548Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mattjbayly.github.io/CEMPRA_documentation/index.html</loc>
-    <lastmod>2023-11-13T00:52:52.833Z</lastmod>
-  </url>
-  <url>
     <loc>https://mattjbayly.github.io/CEMPRA_documentation/01_intro.html</loc>
-    <lastmod>2023-11-13T00:58:43.703Z</lastmod>
+    <lastmod>2023-11-13T01:06:55.748Z</lastmod>
   </url>
   <url>
     <loc>https://mattjbayly.github.io/CEMPRA_documentation/02_stressor_response.html</loc>
-    <lastmod>2023-11-13T00:58:45.801Z</lastmod>
+    <lastmod>2023-11-13T01:06:58.507Z</lastmod>
   </url>
   <url>
     <loc>https://mattjbayly.github.io/CEMPRA_documentation/03_pathways_endpoints.html</loc>
-    <lastmod>2023-11-13T00:58:42.127Z</lastmod>
+    <lastmod>2023-11-13T01:06:59.948Z</lastmod>
   </url>
   <url>
     <loc>https://mattjbayly.github.io/CEMPRA_documentation/04_initial_setup.html</loc>
-    <lastmod>2023-11-13T00:58:42.134Z</lastmod>
+    <lastmod>2023-11-13T01:07:02.949Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mattjbayly.github.io/CEMPRA_documentation/05_data_inputs.html</loc>
+    <lastmod>2023-11-13T01:07:03.766Z</lastmod>
   </url>
   <url>
     <loc>https://mattjbayly.github.io/CEMPRA_documentation/06_r_shiny_app.html</loc>
-    <lastmod>2023-11-13T00:58:42.155Z</lastmod>
+    <lastmod>2023-11-13T01:07:05.265Z</lastmod>
   </url>
   <url>
     <loc>https://mattjbayly.github.io/CEMPRA_documentation/07_life_cycle_model.html</loc>
-    <lastmod>2023-11-13T00:58:42.171Z</lastmod>
+    <lastmod>2023-11-13T01:07:09.817Z</lastmod>
   </url>
   <url>
     <loc>https://mattjbayly.github.io/CEMPRA_documentation/08_stressor_response_library.html</loc>
-    <lastmod>2023-11-13T00:58:42.187Z</lastmod>
+    <lastmod>2023-11-13T01:07:10.501Z</lastmod>
   </url>
   <url>
     <loc>https://mattjbayly.github.io/CEMPRA_documentation/09_case_study_applications.html</loc>
-    <lastmod>2023-11-13T00:53:18.260Z</lastmod>
+    <lastmod>2023-11-13T01:01:13.837Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mattjbayly.github.io/CEMPRA_documentation/10_r_package_tutorials.html</loc>
+    <lastmod>2023-11-13T01:01:13.837Z</lastmod>
   </url>
   <url>
     <loc>https://mattjbayly.github.io/CEMPRA_documentation/11_conclusions.html</loc>
-    <lastmod>2023-11-13T00:53:22.454Z</lastmod>
+    <lastmod>2023-11-13T01:01:13.837Z</lastmod>
   </url>
   <url>
     <loc>https://mattjbayly.github.io/CEMPRA_documentation/references.html</loc>
-    <lastmod>2023-11-13T00:53:24.754Z</lastmod>
+    <lastmod>2023-11-13T01:01:13.855Z</lastmod>
   </url>
   <url>
     <loc>https://mattjbayly.github.io/CEMPRA_documentation/appendix_interaction_matrix.html</loc>
-    <lastmod>2023-11-13T00:58:42.187Z</lastmod>
+    <lastmod>2023-11-13T01:01:13.866Z</lastmod>
   </url>
 </urlset>
