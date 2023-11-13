@@ -23,7 +23,7 @@ The stressor-response workbook is an Excel workbook containing all stressor-resp
 
 #### Main Worksheet
 
-![Main worksheet in the Stressor-Response workbook.](assets/images/image019.jpg){#fig-main-worksheet}
+![Main worksheet in the Stressor-Response workbook.](/assets/images/image019.jpg){#fig-main-worksheet}
 
 @fig-main-worksheet shows the main worksheet in the Stressor-Response workbook.
 
@@ -35,7 +35,7 @@ The purpose of the “Main” worksheet is to organize and summarize stressor-re
 
 The remaining worksheets in the Stressor-response workbook are all used to describe the relationships between raw stressor values (on the x-axis) and the biological response (on the y-axis) (i.e., the stressor-response data).
 
-![Example of an individual stressor worksheet within the stressor response Excel workbook.](assets/images/image020.png){#fig-individual-stressor}
+![Example of an individual stressor worksheet within the stressor response Excel workbook.](/assets/images/image020.png){#fig-individual-stressor}
 
 @fig-individual-stressor. Example of an individual stressor worksheet within the stressor response Excel workbook.
 
@@ -61,7 +61,7 @@ The stressor magnitude file is an Excel worksheet which defines and bounds each 
 
 <!-- Additional details about the purpose of the stressor magnitude file -->
 
-![Example of a stressor magnitude workbook.](assets/images/image021.jpg){#fig-stressor-magnitude}
+![Example of a stressor magnitude workbook.](/assets/images/image021.jpg){#fig-stressor-magnitude}
 
 ### Layout
 
@@ -73,7 +73,7 @@ Each row in the stressor magnitude workbook specifies a relationship between a u
 
 Data for stressor magnitude estimates can come from a variety of sources, including GIS data, modelled data, field data, expert opinion, regional trends, or estimates from the literature. When assembling your own stressor magnitude data, stressor magnitudes and ranges will need to be assigned to the individual locations (spatial units) being represented in the model. Stressors within each location must be assigned a magnitude, and distribution or the SD value must be set to 0 for simulations with no stochasticity. Within each spatial unit, users can specify the mean value, standard deviation, distribution (normal or lognormal), and upper and lower limits of each stressor, as discussed in the previous section.
 
-![Example of assigning stressor magnitudes values (stream temperature) to spatial units (locations).](assets/images/image022.png){#fig-stressor-magnitudes-values}
+![Example of assigning stressor magnitudes values (stream temperature) to spatial units (locations).](/assets/images/image022.png){#fig-stressor-magnitudes-values}
 
 Stressor magnitude values should be aggregated to locations to represent location-averaged estimates. Locations can be split and aggregated as needed such that each location represents averaged generalized conditions.
 
@@ -83,13 +83,13 @@ Locations are represented in the CEMPRA tool as spatial polygons. Locations shou
 
 <!-- Further details on spatial polygons and their role in the CEMPRA tool -->
 
-![Example of a spatial polygons (locations) file and its associated attribute table with fields HUC_ID and NAME.](assets/images/image023.jpg){#fig-spatial-polygons}
+![Example of a spatial polygons (locations) file and its associated attribute table with fields HUC_ID and NAME.](/assets/images/image023.jpg){#fig-spatial-polygons}
 
 
 ## Life Cycles Profile
 
 The life cycle profile (csv file) is an optional input applicable to users who are interested in running the integrated life cycle model. The life cycles profile file specifies all input parameters required to run the life cycle model (e.g., number of stages, survival rates, fecundity, etc.). The format of the life cycles profile is a generic template, but once populated, it is used to parameterize the life cycle model for a specific study system. Usually, this consists of a target population (e.g., Athabasca Rainbow Trout, Nicola Basin Chinook Salmon, etc.).
 
-![Example life cycles profile CSV file.](assets/images/image024.png){#fig-life-cycles-profile}
+![Example life cycles profile CSV file.](/assets/images/image024.png){#fig-life-cycles-profile}
 
 A detailed discussion of the life cycles profile (csv file) is included in Section 8.2 with accompanying background information. It’s possible to run the Joe Model and omit the life cycle model entirely. Therefore, the life cycles profile csv should be considered as an optional input for advanced use cases of the CEMPRA tool.

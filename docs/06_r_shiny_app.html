@@ -249,7 +249,7 @@ ul.task-list li input[type="checkbox"] {
 <p>When you first access the R Shiny web application for the CEMPRA, you will be automatically directed to the <strong>About</strong> page. This page contains a brief introduction to the application and the CEMPRA (Joe Model) tool, a list of contributors, and a list of features for users to explore. A tutorial video is also embedded on this webpage to guide users through the application.</p>
 <div id="fig-figure14" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="assets/images/image025.png" class="img-fluid figure-img"></p>
+<p><img src=".\assets/images/image025.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Figure&nbsp;6.1: About page in the R Shiny web application. 1) Tutorial video for using the R Shiny application. 2) Brief introduction to the CEMPRA and associated life cycle model. 3) List of contributors to the CEMPRA. 4) List of features included in the R Shiny web application. 5) Menu for the R Shiny application</figcaption>
 </figure>
 </div>
@@ -259,7 +259,7 @@ ul.task-list li input[type="checkbox"] {
 <p>If you would like to import a custom set of stressor-response functions, spatial polygons, or vital rates (for the life cycle model), select the <strong>Upload Data</strong> page in the menu on the left side of the screen. This page allows you to upload four key input files from your computer: the stressor-response workbook (.xlsx), the stressor-magnitude workbook (.xlsx), a spatial polygons file (.gpkg or .shp), and a life cycle profile (.csv). To upload a file from your computer, click “Browse…” on the toolbar below the associated file heading. Next, select the desired file from the file window and click “Open”. The file will begin to upload. A status bar will appear below the file name, indicating the upload status. Once the file has been successfully uploaded, the status bar will display “Upload complete”.</p>
 <div id="fig-figure15" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="assets/images/image026.png" class="img-fluid figure-img"></p>
+<p><img src=".\assets/images/image026.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Figure&nbsp;6.2: Data upload page of the R Shiny web application. 1) Instructions for uploading files. 2) Location to upload stressor-response workbook (.xlsx). 3) Location to upload stressor magnitude workbook (.xlsx). 4) Location to upload spatial polygons file (.gpkg or .shp). 5) Location to upload life cycle profile (.csv).</figcaption>
 </figure>
 </div>
@@ -275,7 +275,7 @@ ul.task-list li input[type="checkbox"] {
 <p>On the <strong>Map Overview</strong> page, users can view stressor-response relationships for each of the stressors included in the input stressor-response Excel workbook. A list of these stressors is on the screen’s right side. Clicking on the chart icon next to one of the stressors opens a pop-up window to view the stressor-response curve and raw stressor-response table associated with that specific stressor. You can edit cell values within the stressor-response table by double-clicking on the cell you want to edit. Any edits to the stressor-response table will automatically appear in the stressor-response curve.</p>
 <div id="fig-figure16" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="assets/images/image028.png" class="img-fluid figure-img"></p>
+<p><img src=".\assets/images/image028.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Figure&nbsp;6.3: Stressor-response relationship pop-up window example. 1) Description of table and stressor-response curve. 2) Stressor-response curve plot. 3) Stressor-response curve input table. 4) List of stressors used in the CEMPRA (Joe Model).</figcaption>
 </figure>
 </div>
@@ -285,7 +285,7 @@ ul.task-list li input[type="checkbox"] {
 <p>To run the Joe Model, click the “Joe Model” button in the centre of the lower panel. In the pop-up window, you can select/deselect variables that you want to include/exclude in the Joe Model run. In addition, you can specify the number of simulations or batch runs you would like to conduct (in the “Number of Simulations” box), and you can provide a name for the simulation (in the “Name of this Simulation” box). When you are ready to run the Joe Model for all spatial polygons in the study area, click “Run the Joe Model”. Note there is currently no option to run the Joe Model for individual spatial polygons.</p>
 <div id="fig-figure17" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="assets/images/image029.png" class="img-fluid figure-img"></p>
+<p><img src=".\assets/images/image029.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Figure&nbsp;6.4: Pop-up window for the Joe Model. 1) Variables to include/exclude from cumulative effects modelling. 2) Inputs for the number of simulations and the name of the simulation. 3) Button to run the Joe Model. 4) Button to bring up the pop-up window.</figcaption>
 </figure>
 </div>
@@ -296,7 +296,7 @@ ul.task-list li input[type="checkbox"] {
 <p>System capacity plots show the scaled probability output from the Joe Model from stochastic simulations.</p>
 <div id="fig-figure18" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="assets/images/image030.png" class="img-fluid figure-img"></p>
+<p><img src=".\assets/images/image030.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Figure&nbsp;6.5: System capacity plots for eleven spatial units (locations) showing the cumulative system capacity scores (mean, median and scaled probability distributions).</figcaption>
 </figure>
 </div>
@@ -306,7 +306,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Users may wish to modify stressor values to represent recovery action or habitat loss. To view and edit stressor magnitudes for an individual spatial polygon, select the spatial polygon of interest and click “Adjust Magnitude” on the right-hand side of the lower panel. Next, review the mean system capacity in the pop-up window for one or more selected locations. Below this, a table containing all the stressors, their magnitudes and distributions will be displayed. Double-click on the desired cell to edit any of the values in this table. Adjust the mean value for each stressor (Mean), the standard deviation (SD), the distribution type (options are normal or lognormal), and the lower limit and upper limit (for stochastic simulations). Note that stressor names and system capacity values cannot be edited. If only one HUC is selected, values will appear in the table; however, if multiple HUCs are selected, the table will appear blank. When multiple HUCs are selected, all modified values will be shared across the selected HUCs. The mean system capacity is shown for selected HUCs to preview the model output.</p>
 <div id="fig-figure19" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="assets/images/image031.png" class="img-fluid figure-img"></p>
+<p><img src=".\assets/images/image031.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Figure&nbsp;6.6: Example of single or multi-location stressor magnitude adjustment across spatial units.</figcaption>
 </figure>
 </div>
@@ -315,12 +315,12 @@ ul.task-list li input[type="checkbox"] {
 <h3 data-number="6.3.6" class="anchored" data-anchor-id="life-cycle-model"><span class="header-section-number">6.3.6</span> Life Cycle Model</h3>
 <p>To run the life cycle model associated with the CEMPRA, first select (click) the desired spatial polygons for the run. Once the desired spatial polygons are selected, click the “Life cycle model” button on the left side of the lower panel. In the pop-up window that appears, enter the number of years (in the “N-years” box) and the number of replicates or batch runs (in the “N-replicates” box). When ready to run the life cycle model for the selected spatial polygons, click “Run Life cycle model”.</p>
 <p>After the run is complete, three graph panels will appear in the pop-up window. The first panel displays time series projections of the number of individuals by life stage and a time series of lambda values for adults. The second-panel plots abundance at different life stages in the selected spatial polygon(s) compared to a baseline condition. The third-panel plots stressor magnitude against system capacity (0-1) for each of the stressors used in the model. You can view individual data points by hovering over the plot with your cursor. When hovering over the plot, you will also see a menu appear in the top right-hand corner of the plotting window. This menu allows you to pan and zoom around the plot and download a snapshot of the plot onto your computer.</p>
-<p><img src="assets/images/image032.png" id="fig-figure20" class="img-fluid" alt="Pop-up window for the life cycle model. 1) Input boxes for the number of years and number of replicates in the simulation. 2) The button to run the life cycle model. 3) Plotting window for time series projection plots."> ## Life Cycle Model</p>
+<p><img src=".\assets/images/image032.png" id="fig-figure20" class="img-fluid" alt="Pop-up window for the life cycle model. 1) Input boxes for the number of years and number of replicates in the simulation. 2) The button to run the life cycle model. 3) Plotting window for time series projection plots."> ## Life Cycle Model</p>
 <p>The life cycle model is included as an extension to the original CEMPRA. It leverages a flexible stage-structured life cycle modeling framework that can be modified for different target systems. The underlying life cycle model code was originally developed by van der Lee and Koops (2020) and then further modified by Dr.&nbsp;Kyle Wilson to incorporate environmental stressors that are linked to survivorship, capacity, and growth.</p>
 <p>If you intend to use the coupled life cycle model along with the Joe Model, click on the <strong>Life cycle model</strong> page in the menu on the left-hand side of the screen. This page will display all of the parameters and vital rates being used as inputs for the life cycle model. To edit any of these parameters, click anywhere inside the box for a given parameter and either manually enter a new number, or use the up and down arrows that appear on the right side of the box to incrementally adjust the value. Refer to Section 7 for background and additional details on the life cycle modeling component of the CEMPRA tool.</p>
 <div id="fig-figure21" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="assets/images/image033.png" class="img-fluid figure-img"></p>
+<p><img src=".\assets/images/image033.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Figure&nbsp;6.7: Life cycle model page of the R Shiny application. 1) Input section for population vital rates. 2) Parameters for density-independent and density-dependent components of the model. 3) Sandbox for conducting sample runs of the life cycle model.</figcaption>
 </figure>
 </div>
@@ -328,14 +328,14 @@ ul.task-list li input[type="checkbox"] {
 <p>Clicking on the “Eigen Analysis” button will bring up a full modal display showing the derived transition matrix, elasticities, sensitivities, net reproductive rates, and stable stage distributions.</p>
 <div id="fig-figure22" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="assets/images/image034.png" class="img-fluid figure-img"></p>
+<p><img src=".\assets/images/image034.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Figure&nbsp;6.8: Full eigen analysis showing the transition matrix, sensitivity matrix, elasticity matrix, stable stage distribution estimate of the intrinsic population growth rate (lambda), generation time, and damping ratio.</figcaption>
 </figure>
 </div>
 <p>The symbolic representation of the transition matrix can also be reviewed by clicking on the “Symbolic Representations” button. Additional explainer popups are also available throughout the page.</p>
 <div id="fig-figure23" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="assets/images/image035.png" class="img-fluid figure-img"></p>
+<p><img src=".\assets/images/image035.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Figure&nbsp;6.9: Symbolic (equation) representation of the transition matrix and density dependence matrix.</figcaption>
 </figure>
 </div>
@@ -343,7 +343,7 @@ ul.task-list li input[type="checkbox"] {
 <p>The sandbox module can also be used to run sample projections for hypothetical combinations of stressor values. Stressor variables linked to the life cycle model and uploaded by the user will appear below the “Demo Projection Time Series” button. Users can populate these values to demonstrate how an individual stressor (or group of stressors) will influence the population at a set of hypothetical values. Be sure to expand the panel for each stressor and values for the mean, SD, lower limit, and upper limit. Check or uncheck the checkbox to include or exclude the stressor in the sandbox simulations.</p>
 <div id="fig-figure24" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="assets/images/image036.png" class="img-fluid figure-img"></p>
+<p><img src=".\assets/images/image036.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Figure&nbsp;6.10: Population projection “sandbox” showing stage-specific abundance values for current and previous model runs. Users may change values such as fecundity or a stressor to visualize how the population will respond to hypothetical changes to parameters (outside of formalized scenario runs).</figcaption>
 </figure>
 </div>
@@ -356,7 +356,7 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Model Exports</strong>: The model results can only be exported after the model is run. Export buttons will be disabled until the Joe Model or life cycle model (population model) has been run.</p>
 <div id="fig-figure25" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="assets/images/image037.png" class="img-fluid figure-img"></p>
+<p><img src=".\assets/images/image037.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Figure&nbsp;6.11: Download the Data page of the R Shiny Application. 1) Model parameter files for download. 2) Model output files for download (CEMPRA and life cycle model).</figcaption>
 </figure>
 </div>
@@ -384,7 +384,7 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Building Novel Stressors</strong>: The interactive formula builder can also be used to build novel stressor variables that consist of combinations of individual stressors. Users enter values into the formula builder to create a synthetic stressor variable. Once satisfied, users can download the novel stressor in the standardized stressor magnitude and stressor-response workbook format. The novel data can then be reimported into the tool to appear on the main map panel for use in the Joe Model and Life Cycle Model.</p>
 <div id="fig-figure26" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="assets/images/image038.png" class="img-fluid figure-img"></p>
+<p><img src=".\assets/images/image038.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Figure&nbsp;6.12: Interactive formula builder module</figcaption>
 </figure>
 </div>
