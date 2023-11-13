@@ -1,0 +1,55 @@
+# Stressor-Response Library {#sec-stressor-response-library}
+
+## About {#08_stressor_response_library-sec-about}
+
+The stressor-response library is designed as a public reference archive to house generalizable stressor-response functions for use in the Cumulative Effects Model for Prioritizing Recovery Actions (CEMPRA) tool. The functions archived in the stressor-response library are widely applicable to numerous applications and use cases.
+
+Users of the CEMPRA tool can select a subset of stressor-response functions applicable to their study area and focal species of interest. Selected stressor-response functions can be used to construct a customized stressor-response input workbook for the CEMPRA tool. The stressor-response library is a valuable resource for reference as it can expedite assessments with shared knowledge of common impact pathways. Although a suite of default stressor-response functions is available, the stressor-response library will continually be updated with novel stressor-response functions uploaded, edited, and validated by the community of users.
+
+Example stressor-response functions for Coho Salmon and Steelhead responses to temperature and sediment can be found in Appendix A.
+
+### Stressor-Response Library Schema {#08_stressor_response_library-sec-library-schema}
+
+![Data structure within the SR library, where the table hierarchy starts at the SR Library Main folder (left) and ends at the references and documentation for individual stressor-response functions (right).](images/image056.png){#08_stressor_response_library-fig-stressor-response-schema}
+
+::: {#08_stressor_response_library-fig-stressor-response-schema}
+Data structure within the SR library.
+:::
+
+#### Main Folder
+
+The Main folder is the gateway to the stressor-response library. It contains the primary database and all of the species' folders (see below).
+
+#### Species Folders
+
+The main SR library is initially divided into folders for each of the currently defined species in the model. If a user develops a stressor-response function for a new species, a new folder/branch should be added to the library.
+
+#### Stressor Folders
+
+Stressor folders are located within each of the species' folders. The stressor folders contain the stressor-response function documentation for a given species and are named as follows:
+
+*SR curve ID_Stressor ID_Stressor Name*
+
+#### References
+
+Within each of the stressor folders, the references folder contains copies of all the materials cited in the stressor-response function documentation.
+
+## Use in the Model {#08_stressor_response_library-sec-use-in-model}
+
+The primary stressor-response library (database) contains functions as individual Excel worksheets. These Excel worksheets are used to form a custom Excel SR workbook. The SR workbook is then used as one of the main inputs in the CEMPRA (see Data Inputs).
+
+![Use of the SR library in the CEMPRA (Joe Model). The SR library contains individual worksheets which can be selected to create a custom SR workbook for use in the model.](images/image057.jpg){#08_stressor_response_library-fig-sr-library-use}
+
+::: {#08_stressor_response_library-fig-sr-library-use}
+Use of the SR library in the CEMPRA.
+:::
+
+## Stressor-Response Database {#08_stressor_response_library-sec-stressor-response-database}
+
+We are currently developing a formal web-based stressor-response database that users will be able to access remotely. A central online hub for all stressor-response functions will streamline collaboration and allow users around the world to share, create, and edit custom stressor-response functions. An interim stressor-response library is currently hosted on the following GitHub archive:
+
+[Stressor-Response Library on GitHub](https://github.com/mattjbayly/stressor-response-library)
+
+*This resource link will be changed as the archive develops (please check for the most recent version of this documentation).*
+
+Users can access the repository to get a general sense of the SR library schema and how it will connect to the CEMPRA in the future web-based database.

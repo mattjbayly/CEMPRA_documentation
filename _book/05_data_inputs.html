@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>CEMPRA Guidance Document - 5&nbsp; Data Inputs</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./06_r_shiny_app.html" rel="next">
+<link href="./04_initial_setup.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05_data_inputs.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data Inputs</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">CEMPRA Guidance Document</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">CEMPRA</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02_stressor_response.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Stressor-Response Functions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03_pathways_endpoints.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Modelling Pathways and Assessment Endpoints</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04_initial_setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Setup and Installation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05_data_inputs.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data Inputs</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06_r_shiny_app.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">R-Shiny Application</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07_life_cycle_model.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Life Cycle Model</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08_stressor_response_library.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Stressor-Response Library</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09_case_study_applications.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Example Datasets</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10_r_package_tutorials.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">R Package Tutorials</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11_conclusions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Concluding Remarks</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#stressor-response-workbook" id="toc-stressor-response-workbook" class="nav-link active" data-scroll-target="#stressor-response-workbook"><span class="header-section-number">5.1</span> Stressor-Response Workbook</a>
+  <ul class="collapse">
+  <li><a href="#purpose" id="toc-purpose" class="nav-link" data-scroll-target="#purpose"><span class="header-section-number">5.1.1</span> Purpose</a></li>
+  <li><a href="#layout" id="toc-layout" class="nav-link" data-scroll-target="#layout"><span class="header-section-number">5.1.2</span> Layout</a></li>
+  <li><a href="#how-to-build-your-own-stressor-response-function" id="toc-how-to-build-your-own-stressor-response-function" class="nav-link" data-scroll-target="#how-to-build-your-own-stressor-response-function"><span class="header-section-number">5.1.3</span> How to Build Your Own Stressor-Response Function</a></li>
+  </ul></li>
+  <li><a href="#stressor-magnitude-file" id="toc-stressor-magnitude-file" class="nav-link" data-scroll-target="#stressor-magnitude-file"><span class="header-section-number">5.2</span> Stressor Magnitude File</a>
+  <ul class="collapse">
+  <li><a href="#purpose-1" id="toc-purpose-1" class="nav-link" data-scroll-target="#purpose-1"><span class="header-section-number">5.2.1</span> Purpose</a></li>
+  <li><a href="#layout-1" id="toc-layout-1" class="nav-link" data-scroll-target="#layout-1"><span class="header-section-number">5.2.2</span> Layout</a></li>
+  <li><a href="#assembling-your-own-stressor-magnitude-data" id="toc-assembling-your-own-stressor-magnitude-data" class="nav-link" data-scroll-target="#assembling-your-own-stressor-magnitude-data"><span class="header-section-number">5.2.3</span> Assembling Your Own Stressor-Magnitude Data</a></li>
+  </ul></li>
+  <li><a href="#locations-spatial-polygons" id="toc-locations-spatial-polygons" class="nav-link" data-scroll-target="#locations-spatial-polygons"><span class="header-section-number">5.3</span> Locations (Spatial Polygons)</a></li>
+  <li><a href="#life-cycles-profile" id="toc-life-cycles-profile" class="nav-link" data-scroll-target="#life-cycles-profile"><span class="header-section-number">5.4</span> Life Cycles Profile</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data Inputs</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>A working example of all data inputs can be downloaded from a ‘demo’ directory with the CEMPRAShiny project repository: <a href="https://github.com/essatech/CEMPRAShiny/tree/main/data/demo">CEMPRAShiny demo</a>.</p>
+<p>Download the repository locally and navigate to the demo folder: .-main:</p>
+<ul>
+<li>stressor_response_demo.xlsx</li>
+<li>stressor_magnitude_demo.xlsx</li>
+<li>watersheds.gpkg</li>
+<li>life cycles.csv</li>
+</ul>
+<section id="stressor-response-workbook" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="stressor-response-workbook"><span class="header-section-number">5.1</span> Stressor-Response Workbook</h2>
+<section id="purpose" class="level3" data-number="5.1.1">
+<h3 data-number="5.1.1" class="anchored" data-anchor-id="purpose"><span class="header-section-number">5.1.1</span> Purpose</h3>
+<p>The stressor-response workbook contains all the stressor-response curves applicable to a target study system (e.g., Athabasca Rainbow Trout). These stressor-response curves are used within the CEMPRA (Joe Model) tool to predict cumulative effects additively given stressor magnitude values (discussed in the next section).</p>
+</section>
+<section id="layout" class="level3" data-number="5.1.2">
+<h3 data-number="5.1.2" class="anchored" data-anchor-id="layout"><span class="header-section-number">5.1.2</span> Layout</h3>
+<p>The stressor-response workbook is an Excel workbook containing all stressor-response functions to be used in the CEMPRA (Joe Model). The first worksheet contained within this Excel workbook must be titled “Main”. This worksheet is used as a coversheet to describe and organize each of the stressor-response curves. Subsequent worksheets describe each of the stressor-response functions relevant to a particular species, where each stressor-response function has its own worksheet. Note that the spelling of the stressor name must be identical between the “Stressors” column in the “Main” worksheet and the worksheet title (on the bottom tab) for each stressor.</p>
+<p><em>Work is currently underway to develop an online stressor-response web database (a digital repository of stressor-response functions across species, systems and geographic areas compiled across reference literature</em>). As this database grows, functionality will be expanded to automatically generate a stressor-response workbook of selected stressors using the R-package (CEMPRA). See details in Appendix A.</p>
+<section id="main-worksheet" class="level4" data-number="5.1.2.1">
+<h4 data-number="5.1.2.1" class="anchored" data-anchor-id="main-worksheet"><span class="header-section-number">5.1.2.1</span> Main Worksheet</h4>
+<div id="fig-main-worksheet" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/image019.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;5.1: Main worksheet in the Stressor-Response workbook.</figcaption>
+</figure>
+</div>
+<p><a href="#fig-main-worksheet">Figure&nbsp;<span>5.1</span></a> shows the main worksheet in the Stressor-Response workbook.</p>
+<p>The purpose of the “Main” worksheet is to organize and summarize stressor-response functions within the workbook. The columns within this worksheet are set up as follows. Inputs must be diligently followed in order for the code to work:</p>
+
+<!-- Table describing the column names and descriptions of the Main worksheet -->
+</section>
+<section id="individual-stressor-response-curve-worksheets" class="level4" data-number="5.1.2.2">
+<h4 data-number="5.1.2.2" class="anchored" data-anchor-id="individual-stressor-response-curve-worksheets"><span class="header-section-number">5.1.2.2</span> Individual Stressor-Response Curve Worksheets</h4>
+<p>The remaining worksheets in the Stressor-response workbook are all used to describe the relationships between raw stressor values (on the x-axis) and the biological response (on the y-axis) (i.e., the stressor-response data).</p>
+<div id="fig-individual-stressor" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/image020.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;5.2: Example of an individual stressor worksheet within the stressor response Excel workbook.</figcaption>
+</figure>
+</div>
+<ol class="example" type="1">
+<li>Example of an individual stressor worksheet within the stressor response Excel workbook.</li>
+</ol>
+<p>Individual stressor worksheets within the stressor-response file contain stressor-response curves for each of the stressor-response functions outlined in the “Main” worksheet (one worksheet for each row). The spelling of the worksheet name must exactly match the spelling of the stressor on the ‘Main’ worksheet. Additional rows can be added (as needed) to increase the resolution and specify the shape of a complex non-linear stressor response curve. Threshold stressor-response functions or stressor-response functions with discrete values may have relatively few rows.</p>
+<!-- Further details about the columns within each stressor-response worksheet -->
+</section>
+</section>
+<section id="how-to-build-your-own-stressor-response-function" class="level3" data-number="5.1.3">
+<h3 data-number="5.1.3" class="anchored" data-anchor-id="how-to-build-your-own-stressor-response-function"><span class="header-section-number">5.1.3</span> How to Build Your Own Stressor-Response Function</h3>
+<p>CEMPRA (Joe Model) users can either select pre-assembled stressor-response functions or define their own stressor-response functions for use in the model. A library is currently being developed to host pre-assembled stressor-response functions and their associated documentation (Appendix A). Users who develop their own stressor-response functions are encouraged to fill out the appropriate documentation for their function and upload it to this public stressor-response library for future use (Appendix A). Please see <span class="citation" data-cites="macpherson2020alberta">(<a href="references.html#ref-macpherson2020alberta" role="doc-biblioref">MacPherson et al., 2020</a>)</span> and <span class="citation" data-cites="rosenfeld2022stressor">(<a href="references.html#ref-rosenfeld2022stressor" role="doc-biblioref">Rosenfeld et al., 2022</a>)</span> for further discussion on fundamental considerations in the development of customized stressor-response functions.</p>
+<section id="methodology" class="level4" data-number="5.1.3.1">
+<h4 data-number="5.1.3.1" class="anchored" data-anchor-id="methodology"><span class="header-section-number">5.1.3.1</span> Methodology</h4>
+<p>Depending on data availability, stressor-response functions may be developed from available empirical data, from the elicitation of experts and stakeholders, or from existing literature.</p>
+<!-- Details on how to use empirical data to develop stressor-response functions -->
+</section>
+</section>
+</section>
+<section id="stressor-magnitude-file" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="stressor-magnitude-file"><span class="header-section-number">5.2</span> Stressor Magnitude File</h2>
+<section id="purpose-1" class="level3" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="purpose-1"><span class="header-section-number">5.2.1</span> Purpose</h3>
+<p>The stressor magnitude file is an Excel worksheet which defines and bounds each stressor within the individual locations (i.e., spatial units) being assessed. Similar to the stressor-response functions, stressor magnitude values are sampled across locations with stochasticity. The stressor magnitude workbook is structured accordingly, with data for each stressor and location entered into the dataset in a long table format (as opposed to the standard wide table format). Each row specifies a unique stressor for each unique location. Therefore, the number of rows in this dataset should be equal to the number of stressors multiplied by the number of locations. For each simulation in the CEMPRA tool, values are sampled at random with stochasticity for each stressor and location. For each year and batch replicate, stressor magnitude values will be drawn from each normal (or lognormal) distribution based on the Mean and SD (standard deviation) and then further constrained based on the specified lower and upper limits.</p>
+<!-- Additional details about the purpose of the stressor magnitude file -->
+<div id="fig-stressor-magnitude" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/image021.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;5.3: Example of a stressor magnitude workbook.</figcaption>
+</figure>
+</div>
+</section>
+<section id="layout-1" class="level3" data-number="5.2.2">
+<h3 data-number="5.2.2" class="anchored" data-anchor-id="layout-1"><span class="header-section-number">5.2.2</span> Layout</h3>
+<p>Each row in the stressor magnitude workbook specifies a relationship between a unique stressor and a unique location. Locations (discussed in detail in the next section) are specified by a unique ID (HUC_ID) and NAME. The HUC_ID column is a legacy from an older version of the Joe Model that referenced Hydrological Unit Codes as ID values, but HUC_ID can be any set of unique IDs specified by the user for their spatial units of interest. The NAME column can be blank but is included for convenience since many users find it challenging to cross-reference ID values between different datasets.</p>
+
+<!-- Table describing the columns and their descriptions in the stressor magnitude workbook -->
+</section>
+<section id="assembling-your-own-stressor-magnitude-data" class="level3" data-number="5.2.3">
+<h3 data-number="5.2.3" class="anchored" data-anchor-id="assembling-your-own-stressor-magnitude-data"><span class="header-section-number">5.2.3</span> Assembling Your Own Stressor-Magnitude Data</h3>
+<p>Data for stressor magnitude estimates can come from a variety of sources, including GIS data, modelled data, field data, expert opinion, regional trends, or estimates from the literature. When assembling your own stressor magnitude data, stressor magnitudes and ranges will need to be assigned to the individual locations (spatial units) being represented in the model. Stressors within each location must be assigned a magnitude, and distribution or the SD value must be set to 0 for simulations with no stochasticity. Within each spatial unit, users can specify the mean value, standard deviation, distribution (normal or lognormal), and upper and lower limits of each stressor, as discussed in the previous section.</p>
+<div id="fig-stressor-magnitudes-values" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/image022.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;5.4: Example of assigning stressor magnitudes values (stream temperature) to spatial units (locations).</figcaption>
+</figure>
+</div>
+<p>Stressor magnitude values should be aggregated to locations to represent location-averaged estimates. Locations can be split and aggregated as needed such that each location represents averaged generalized conditions.</p>
+</section>
+</section>
+<section id="locations-spatial-polygons" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="locations-spatial-polygons"><span class="header-section-number">5.3</span> Locations (Spatial Polygons)</h2>
+<p>Locations are represented in the CEMPRA tool as spatial polygons. Locations should be defined to reflect heterogeneity in stressor values across the study area.</p>
+<!-- Further details on spatial polygons and their role in the CEMPRA tool -->
+<div id="fig-spatial-polygons" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/image023.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;5.5: Example of a spatial polygons (locations) file and its associated attribute table with fields HUC_ID and NAME.</figcaption>
+</figure>
+</div>
+</section>
+<section id="life-cycles-profile" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="life-cycles-profile"><span class="header-section-number">5.4</span> Life Cycles Profile</h2>
+<p>The life cycle profile (csv file) is an optional input applicable to users who are interested in running the integrated life cycle model. The life cycles profile file specifies all input parameters required to run the life cycle model (e.g., number of stages, survival rates, fecundity, etc.). The format of the life cycles profile is a generic template, but once populated, it is used to parameterize the life cycle model for a specific study system. Usually, this consists of a target population (e.g., Athabasca Rainbow Trout, Nicola Basin Chinook Salmon, etc.).</p>
+<div id="fig-life-cycles-profile" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/image024.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;5.6: Example life cycles profile CSV file.</figcaption>
+</figure>
+</div>
+<p>A detailed discussion of the life cycles profile (csv file) is included in Section 8.2 with accompanying background information. It’s possible to run the Joe Model and omit the life cycle model entirely. Therefore, the life cycles profile csv should be considered as an optional input for advanced use cases of the CEMPRA tool.</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-macpherson2020alberta" class="csl-entry" role="listitem">
+MacPherson, L., Sullivan, M., Reilly, J., &amp; Paul, A. (2020). <em>Alberta’s fisheries sustainability assessment: A guide to assessing population status, and quantifying cumulative effects using the joe modelling technique</em>. Canadian Science Advisory Secretariat (CSAS).
+</div>
+<div id="ref-rosenfeld2022stressor" class="csl-entry" role="listitem">
+Rosenfeld, J., Gonzalez-Espinosa, P., Jarvis, L., Enders, E., Bayly, M., Paul, A., MacPherson, L., Moore, J., Sullivan, M., Ulaski, M., et al. (2022). Stressor-response functions as a generalizable model for context dependence. <em>Trends in Ecology &amp; Evolution</em>.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./04_initial_setup.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Setup and Installation</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./06_r_shiny_app.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">R-Shiny Application</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

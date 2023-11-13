@@ -1,0 +1,36 @@
+project:
+  type: book
+
+book:
+  title: "CEMPRA Guidance Document"
+  subtitle: "Cumulative Effects Model for Prioritizing Recovery Actions (CEMPRA)"
+  date: "2023-11-10"
+  chapters:
+    - index.qmd
+    - 01_intro.qmd
+    - 02_stressor_response.qmd
+    - 03_pathways_endpoints.qmd
+    - 04_initial_setup.qmd
+    - 05_data_inputs.qmd
+    - 06_r_shiny_app.qmd
+    - 07_life_cycle_model.qmd
+    - 08_stressor_response_library.qmd
+    - 09_case_study_applications.qmd
+    - 10_r_package_tutorials.qmd
+    - 11_conclusions.qmd
+    - references.qmd
+  appendices:
+    - appendix_interaction_matrix.qmd
+
+bibliography: references.bib
+csl: apa.csl
+
+format:
+  html:
+    toc: true
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+editor: visual
+

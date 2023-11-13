@@ -1,0 +1,9 @@
+# R Package Tutorials {#r-package-tutorials}
+
+The *CEMPRA* R Package (available on GitHub: <https://github.com/essatech/CEMPRA/>) can be used for custom model applications and batch processing. The R Package allows users to run the model offline and customize the code, inputs, and outputs. Users can also conduct batch runs of the life cycle model, which allows for faster, automated processing over a large number of spatial units and/or scenarios. For more information about the use and installation of the *CEMPRA* R Package, see the following tutorials:
+
+-   **Tutorial 1: Joe Model Overview:** <https://essatech.github.io/CEMPRA/articles/a01-joe-model.html>
+-   **Tutorial 2: Joe Model Batch Run:** <https://essatech.github.io/CEMPRA/articles/a02-joe-model-batch-run.html>
+-   **Tutorial 3: Population Model Overview:** <https://essatech.github.io/CEMPRA/articles/a03-population-model.html>
+-   **Tutorial 4: Population Model Batch Run:** <https://essatech.github.io/CEMPRA/articles/a04-population-model-batch-run.html>
+-   **Tutorial 5: BC CEF Data Import:** <https://essatech.github.io/CEMPRA/articles/a05-bc-cef.html>

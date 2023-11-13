@@ -1,0 +1,21 @@
+# Example Datasets {#example-datasets}
+
+## Athabasca Rainbow Trout {#09_case_study_applications-athabasca-rainbow-trout}
+
+[@macpherson2020alberta] leveraged the Joe Modelling framework to support recovery action planning and threat analysis of Athabasca Rainbow Trout. The Joe Model was a valuable resource for synthesizing stressors due to its ease of and utility as a design and communication tool. Stressors were developed in a near real-time workshop-like setting to game out alternative management scenarios. The flexibility of the stressor-response input data allows for the inclusion of synthetic proxies and hypothetical impact pathways, weaving together academic knowledge, anecdotal descriptions and expert opinion. The Joe Model was ultimately used as a prioritization tool to help design actions, programs, and priorities across a large geographic and complex region.
+
+*The default study area, stressor list and species profile in the Shiny application are from the [@macpherson2020alberta] Athabasca Rainbow Trout project.*
+
+## Nicola Basin Chinook Salmon, Coho Salmon, and Steelhead {#09_case_study_applications-nicola-basin-salmonids}
+
+The Nicola River provides important spawning, incubation, and rearing habitats for multiple salmonid species, including Chinook Salmon, Coho Salmon, and Steelhead. A case study application of the CEMPRA tool is being applied to Nicola Basin to support threat analysis and recovery action planning.
+
+
+## Sample Dataset {#09_sample_dataset}
+
+[Download Example CSV](/sample_data/life_cycles_coho_Gibeau_Palen_2021.csv)
+[Download Example xlsx](/sample_data/stressor_magnitude_unc_ARTR.xlsx)
+
+
+
+

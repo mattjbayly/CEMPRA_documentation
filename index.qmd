@@ -1,0 +1,70 @@
+# CEMPRA {.unnumbered}
+
+### Editors {.unnumbered}
+  - Matthew Bayly, M.J. Bayly Analytics Ltd.
+  - Alexandra Tekatch, ESSA Technologies Ltd.
+  - Dr. Jordan Rosenfeld, the University of British Columbia, BC WLRS
+  - Dr. Eva Enders, INRS
+  - Lauren Jarvis, Department of Fisheries and Oceans
+
+### Contributors {.unnumbered}
+
+::: {.column width="30%"}
+  - Matthew Bayly, MJBA
+  - Alexandra Tekatch, ESSA
+  - Dr. Jordan Rosenfeld, UBC/BC-WLRS
+  - Dr. Eva Enders, INRS
+  - Lauren Jarvis, DFO
+  - Julian Heavyside, ESSA
+:::
+
+::: {.column width="30%"}
+  - Andrew Paul, AEP
+  - Kyle Wilson, CCIRA
+  - Pedro Gonzalez, UBC
+  - Laura MacPherson, AEP
+  - Isuru Dharmasena
+  - Marc Porter, ESSA
+:::
+
+*<span style="color: grey;">Project funded (in part) throught the British Columbia Salmon Restoration and Innovation Fund (BCSRIF).</span>*
+
+
+### Suggested Citation
+Bayly, M., J., Tekatch, A., M., Rosenfeld, J., Jarvis, L., Enders, E., 2023. Cumulative Effects Model for Prioritizing Recovery Actions (CEMPRA): User Guide. Documentation prepared by ESSA Technologies Ltd. for the BC Water, Land and Resource S. 77 pp. https://essatech.github.io/CEMPRA/
+
+## Project Components
+  - GitHub Repository for R-Package
+(<https://github.com/essatech/CEMPRA>)
+  - GitHub Repository for R-Shiny Application (<https://github.com/essatech/CEMPRAShiny>)
+  - LIVE (online R-Shiny Application) (<https://essa.shinyapps.io/CEMPRAShiny/>)
+  - R-Package Tutorials (<https://essatech.github.io/CEMPRA/index.html>)
+  - Guidance Document:
+
+
+## Purpose
+
+This document is the primary guidance document for the Cumulative Effects Model for Prioritizing Recovery Actions (CEMPRA). It includes a walkthrough of the model, its components, inputs and outputs, benefits and limitations, and instructions for using it in two available formats: an R package and an R Shiny Web Application. For further details on the model and examples of its implementation, please refer to [@macpherson2020alberta], [@macpherson2023prioritizing].
+
+## Acknowledgements
+
+## 'Joe Model' Testimonial to Joe Nelson
+
+The CEMPRA model contains the *Joe Model* as a subcomponent. The Joe Model nickname was given in honour of the University of Alberta Ichthyologist Dr. Joseph Nelson ([@macpherson2020alberta]; [@murray2012tribute]). We acknowledge Dr. Nelson's profound impact on ichthyology and the original Alberta cumulative effects modelling framework acting as the foundation of the CEMPRA tool.
+
+## Executive Summary
+
+The Cumulative Effects Model for Prioritizing Recovery Actions (CEMPRA) is a cumulative effects modelling framework. The CEMPRA tool uses a series of standardized user-defined stressor-response functions to link environmental attributes to the system capacity and productivity of a target species/system. This framework design is as generalizable, simple, and versatile as possible so that users can apply the model to various geographic regions, contexts, systems, and species. As the name suggests, the CEMPRA tool helps prioritize recovery actions for data-limited species and species-at-risk, with the flexibility to accommodate both data-rich and data-poor study systems and to facilitate and efficient transition from simple to complex modelling within a single platform as more information becomes available for a target species. The CEMPRA is intended as a low-barrier tool and is accessible as an open-source R package (<https://github.com/essatech/CEMPRA>) and R Shiny interactive web application (<https://github.com/essatech/CEMPRAShiny>).
+
+Stressor-response functions form the foundation of the CEMPRA tool. A stressor variable is broadly characterized as an environmental driver resulting in an observable biological response in a target population ([@pirotta2022understanding]; [@rosenfeld2022stressor]; [@jarvis2023process]). Within the CEMPRA tool, stressors represent and capture various metrics of cumulative effects (direct or proximal) and their associated impact pathways (e.g., stream temperature, sedimentation, habitat loss).
+
+Stressor-response functions are developed for each metric in a standardized format and linked to population-level productivity (mean system capacity, usually expressed as density or total abundance of the adult population in the basic Joe model) or specific vital rates within a life cycle modelling framework. Users then populate a matching table of stressor-magnitude values linked to various locations (spatial units) of interest. Finally, the CEMPRA tool runs to generate stochastic simulations of the study system under different user-defined management or recovery scenarios. Comparisons between scenarios are commonly made against a default reference (status quo) scenario. Scenarios generally consist of various "alternative futures" to characterize potential impacts from development activities and/or alternative restoration/recovery efforts. Comparisons between scenarios can be quantitative (e.g., looking at a weighted mean system capacity or relative productivity) or qualitative by simply looking at a heatmap of stressors across the landscape.
+
+There are two modelling pathways and associated endpoints within the CEMPRA framework: 1) the first is the basic Joe Model that estimates system capacity (a generalized response metric, typically represented by percent of maximum adult population size since it is a single-stage model); and 2) a stage-structured life cycle model, where stressor-response relationships are directly linked to specific life stages and vital rates. The life cycle model allows users to adjust vital rate parameters to estimate cumulative effects at the population level and is intended for data-rich populations or species. The combination of the Joe model and life-cycle model embedded within the CEMPRA framework allows flexibility to handle data-poor and data-rich species within the same platform.
+
+Additional supporting resources are being developed to facilitate ease of use and collaboration between individuals studying cumulative effects. These resources include the development of an online stressor-response library (digital archive), example species profiles of population vital rates for running the life cycle model, case studies, and tutorial resources.
+
+
+
+
+

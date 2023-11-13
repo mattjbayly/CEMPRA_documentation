@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>CEMPRA Guidance Document - 7&nbsp; Life Cycle Model</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./08_stressor_response_library.html" rel="next">
+<link href="./06_r_shiny_app.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./07_life_cycle_model.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Life Cycle Model</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">CEMPRA Guidance Document</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">CEMPRA</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02_stressor_response.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Stressor-Response Functions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03_pathways_endpoints.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Modelling Pathways and Assessment Endpoints</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04_initial_setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Setup and Installation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05_data_inputs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data Inputs</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06_r_shiny_app.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">R-Shiny Application</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07_life_cycle_model.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Life Cycle Model</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08_stressor_response_library.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Stressor-Response Library</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09_case_study_applications.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Example Datasets</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10_r_package_tutorials.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">R Package Tutorials</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11_conclusions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Concluding Remarks</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><span class="header-section-number">7.1</span> Overview</a></li>
+  <li><a href="#data-input-life-cycle-profiles" id="toc-data-input-life-cycle-profiles" class="nav-link" data-scroll-target="#data-input-life-cycle-profiles"><span class="header-section-number">7.2</span> Data Input: Life Cycle Profiles</a>
+  <ul class="collapse">
+  <li><a href="#purpose" id="toc-purpose" class="nav-link" data-scroll-target="#purpose"><span class="header-section-number">7.2.1</span> Purpose</a></li>
+  <li><a href="#layout" id="toc-layout" class="nav-link" data-scroll-target="#layout"><span class="header-section-number">7.2.2</span> Layout</a></li>
+  </ul></li>
+  <li><a href="#matrix-life-cycle-model" id="toc-matrix-life-cycle-model" class="nav-link" data-scroll-target="#matrix-life-cycle-model"><span class="header-section-number">7.3</span> Matrix Life Cycle Model</a>
+  <ul class="collapse">
+  <li><a href="#vital-rates-for-survivorship-and-growth" id="toc-vital-rates-for-survivorship-and-growth" class="nav-link" data-scroll-target="#vital-rates-for-survivorship-and-growth"><span class="header-section-number">7.3.1</span> Vital Rates for Survivorship and Growth</a></li>
+  <li><a href="#vital-rates-for-fecundity" id="toc-vital-rates-for-fecundity" class="nav-link" data-scroll-target="#vital-rates-for-fecundity"><span class="header-section-number">7.3.2</span> Vital Rates for Fecundity</a></li>
+  </ul></li>
+  <li><a href="#density-dependent-constraints-on-growth" id="toc-density-dependent-constraints-on-growth" class="nav-link" data-scroll-target="#density-dependent-constraints-on-growth"><span class="header-section-number">7.4</span> Density-Dependent Constraints on Growth</a>
+  <ul class="collapse">
+  <li><a href="#location-and-stage-specific-carrying-capacities" id="toc-location-and-stage-specific-carrying-capacities" class="nav-link" data-scroll-target="#location-and-stage-specific-carrying-capacities"><span class="header-section-number">7.4.1</span> Location and Stage-Specific Carrying Capacities</a></li>
+  <li><a href="#compensation-ratios-for-density-dependent-growth" id="toc-compensation-ratios-for-density-dependent-growth" class="nav-link" data-scroll-target="#compensation-ratios-for-density-dependent-growth"><span class="header-section-number">7.4.2</span> Compensation Ratios for Density-Dependent Growth</a></li>
+  </ul></li>
+  <li><a href="#stochastic-simulations" id="toc-stochastic-simulations" class="nav-link" data-scroll-target="#stochastic-simulations"><span class="header-section-number">7.5</span> Stochastic Simulations</a>
+  <ul class="collapse">
+  <li><a href="#eps_sd-standard-deviation-in-eggs-per-spawner" id="toc-eps_sd-standard-deviation-in-eggs-per-spawner" class="nav-link" data-scroll-target="#eps_sd-standard-deviation-in-eggs-per-spawner"><span class="header-section-number">7.5.1</span> eps_sd: Standard Deviation in Eggs-per-Spawner</a></li>
+  <li><a href="#egg_rho-correlation-in-egg-fecundity-through-time" id="toc-egg_rho-correlation-in-egg-fecundity-through-time" class="nav-link" data-scroll-target="#egg_rho-correlation-in-egg-fecundity-through-time"><span class="header-section-number">7.5.2</span> egg_rho: Correlation in Egg Fecundity Through Time</a></li>
+  <li><a href="#m.cv-coefficient-of-variation-cv-in-interannual-stage-specific-mortality" id="toc-m.cv-coefficient-of-variation-cv-in-interannual-stage-specific-mortality" class="nav-link" data-scroll-target="#m.cv-coefficient-of-variation-cv-in-interannual-stage-specific-mortality"><span class="header-section-number">7.5.3</span> M.cv: Coefficient of Variation (CV) in Interannual Stage-Specific Mortality</a></li>
+  <li><a href="#m.rho-correlation-in-stage-class-mortality-through-time" id="toc-m.rho-correlation-in-stage-class-mortality-through-time" class="nav-link" data-scroll-target="#m.rho-correlation-in-stage-class-mortality-through-time"><span class="header-section-number">7.5.4</span> M.rho: Correlation in Stage-Class Mortality Through Time</a></li>
+  <li><a href="#p.cat-probability-of-catastrophe-per-generation" id="toc-p.cat-probability-of-catastrophe-per-generation" class="nav-link" data-scroll-target="#p.cat-probability-of-catastrophe-per-generation"><span class="header-section-number">7.5.5</span> p.cat: Probability of Catastrophe per Generation</a></li>
+  </ul></li>
+  <li><a href="#building-a-life-cycle-profile" id="toc-building-a-life-cycle-profile" class="nav-link" data-scroll-target="#building-a-life-cycle-profile"><span class="header-section-number">7.6</span> Building a Life Cycle Profile</a></li>
+  <li><a href="#benefits-and-limitations" id="toc-benefits-and-limitations" class="nav-link" data-scroll-target="#benefits-and-limitations"><span class="header-section-number">7.7</span> Benefits and Limitations</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Life Cycle Model</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="overview" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="overview"><span class="header-section-number">7.1</span> Overview</h2>
+<p>The integrated life cycle model is a core component of the CEMPRA tool. The life cycle modeling component is a valuable endpoint to evaluate and understand cumulative effects through the lens of demographic rates and population ecology. Some user groups may be satisfied with the simplified Joe Modelling (stressor roll-up) component of the CEMPRA tool and, therefore, not wish to interact with the life cycle model. However, other user groups may benefit substantially from working with the life cycle modeling component. Framing cumulative effects through an integrated life cycle model allows us to understand critical bottlenecks to the productivity and capacity of a target study system. In the CEMPRA life cycle modeling component, stressor-response relationships are linked to vital rates such as life-stage-specific survivorship, fecundity, and carrying capacity. Therefore, the life cycle modeling component can be used to make relative comparisons between locations (spatial units), scenarios, and stressors to understand limiting factors and design recovery action strategies.</p>
+<p>At its core, the life cycle modeling component of the CEMPRA tool is a stage-structured matrix model (see Caswell 2000). A simplified life cycle profile csv data input file (described below) is populated by the user and then imported to parameterize and construct components of the matrix model (e.g., number of stages, stage-specific survivorship, years in each stage, etc.).</p>
+<p>When the life cycle model is run, a hypothetical population is projected forward in time through simulations. The stage-structured matrix model governs the behavior of the simulated population. Density-dependent growth constraints are implemented using either compensation ratios (if the location and stage-specific capacities are unknown) or location and stage-specific Beverton-Holt functions (discussed further below). Location-specific stressor values will interact with the simulated population to curtail or enhance stage-specific survivorship, fecundity, or habitat capacities. Population projections are then compared across scenarios and/or locations to evaluate the relative change in equilibrium abundance estimates for a target life stage (i.e., carrying capacities) and/or the intrinsic productivity (i.e., growth rates) possible at low densities.</p>
+<p>The life cycle modeling component of the CEMPRA tool performs a large number of calculations behind the scenes. While convenient, the embedded complexity can create misleading results if input values and assumptions are not carefully considered. It is assumed that users of the life cycle model have an understanding of basic concepts in population ecology (e.g., population growth rates, carrying capacities etc.) and a familiarity with matrix life cycle models. The following resources provide useful refreshers for interested individuals:</p>
+<ul>
+<li>Basic refresher on matrix life cycle models: <a href="https://compadre-db.org/Education/article/what-is-a-matrix-model" class="uri">https://compadre-db.org/Education/article/what-is-a-matrix-model</a></li>
+<li>An in-depth overview of stage-structured matrix models: <a href="https://blog.uvm.edu/tdonovan-vtcfwru/files/2020/06/12-Donov-pages-322-CB.pdf" class="uri">https://blog.uvm.edu/tdonovan-vtcfwru/files/2020/06/12-Donov-pages-322-CB.pdf</a></li>
+<li>Density-dependent and density-independent constraints on population growth: <a href="https://www.nature.com/scitable/knowledge/library/population-limiting-factors-17059572/" class="uri">https://www.nature.com/scitable/knowledge/library/population-limiting-factors-17059572/</a></li>
+<li>Density-dependent growth functions (review section on the Beverton-Holt function): <a href="http://courses.ecology.uga.edu/ecol4000-fall2018/wp-content/uploads/sites/22/2018/08/Chapter-3-complex-dynamics.pdf" class="uri">http://courses.ecology.uga.edu/ecol4000-fall2018/wp-content/uploads/sites/22/2018/08/Chapter-3-complex-dynamics.pdf</a></li>
+</ul>
+<p>The model code for the life cycle modeling component of the CEMPRA tool follows a similar structure to the codebase used by Van der Lee and Koops (2020). The underlying code and assessment framework was modified substantially by Dr.&nbsp;Kyle Wilson and Matthew Bayly (M.J. Bayly Analytics Ltd.) throughout 2022 and 2023. Code snippets, functional forms, and rationale largely follow conventional workflow demographic modeling outlined in Schaub and Kéry (2021). Users are encouraged to review these resources for additional background and rationale.</p>
+</section>
+<section id="data-input-life-cycle-profiles" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="data-input-life-cycle-profiles"><span class="header-section-number">7.2</span> Data Input: Life Cycle Profiles</h2>
+<section id="purpose" class="level3" data-number="7.2.1">
+<h3 data-number="7.2.1" class="anchored" data-anchor-id="purpose"><span class="header-section-number">7.2.1</span> Purpose</h3>
+<p>The life cycle profile is the main input file for the life cycle model. It provides the names and values of key life cycle parameters and vital rates, including parameters for survival, growth, reproduction, and density-dependent effects. This file makes it easy for users to store and edit life cycle parameter values outside of the R Shiny web application. The following sections break down the components of the life cycle profile file with illustrative examples. The intent of the following sections is to provide a detailed explanation of how the life cycle model works with a description of each component of the input file so that users may create their own life cycle profile for a target species of interest.</p>
+</section>
+<section id="layout" class="level3" data-number="7.2.2">
+<h3 data-number="7.2.2" class="anchored" data-anchor-id="layout"><span class="header-section-number">7.2.2</span> Layout</h3>
+<p>The life cycle profile is a comma-separated values (CSV) file that contains the names and values of each of the parameters within the life cycle model. Life cycle profiles will be unique to each species or life history variant. The life cycle profile file contains three columns:</p>
+<ul>
+<li><strong>Parameters</strong>: The full name/description of the parameter. This column can be adjusted by the user to provide more relevant nicknames for each stage (e.g., fry survival, smolt survival etc.)</li>
+<li><strong>Name</strong>: The short form name of the parameter used in the model. The names of these parameters are referenced by the model code and should not be modified (apart from adding or removing stage classes).</li>
+<li><strong>Value</strong>: The numeric value of the parameter used in the model. The values are adjusted for each species profile.</li>
+</ul>
+<div id="fig-figure27" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/image039.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;7.1: Example of a life cycle profile CSV input file with four stage classes.</figcaption>
+</figure>
+</div>
+<p>The figure shows an example of a life cycle profile CSV input file with four stage classes.</p>
+</section>
+</section>
+<section id="matrix-life-cycle-model" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="matrix-life-cycle-model"><span class="header-section-number">7.3</span> Matrix Life Cycle Model</h2>
+<p>The stage-structured matrix modelling framework, embedded within the CEMPRA tool, can be represented graphically by a life cycle diagram (<span class="quarto-unresolved-ref">?fig-figure28</span>) or a transition matrix. The transition matrix can be represented symbolically with either equations (Table 1) or absolute values (Table 2).</p>
+<p><span class="quarto-unresolved-ref">?fig-figure28</span> shows the sample life cycle profile. <a href="#fig-figure27">Figure&nbsp;<span>7.1</span></a> is represented as a life cycle diagram. In the diagram and input file, we see that there are four main stages (stage_1 to stage_4). stage_1 individuals can become stage_4 individuals after three years in the simulation, but it is also possible for some individuals to spend more than one year in stages 2, 3, and 4 (denoted by the circular loop). We also see that stage_4 individuals are sexually mature and have the capacity to generate new stage_1 individuals. There are also special year 0 (Age-0) events that occur before new stage_1 (Age-1) individuals are secured in the simulation. These events include egg survival (SE) and Age-0 fry survival (S0).</p>
+<div id="07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-fig-figure28" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/image040.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">The life cycle diagram for the demo life cycle profile is shown in <a href="#fig-figure27">Figure&nbsp;<span>7.1</span></a>.</figcaption>
+</figure>
+</div>
+<p>The life cycle modelling component of the CEMPRA tool is set up as a pre-birth pulse census (see Caswell 2000). Since the design of stage-structured matrix models does not easily allow for the initial number of eggs and fry to be represented as independent matrix elements (cells), their transitions are included within the fecundity term. In a pre-birth pulse census, we assume that the demographic census takes place immediately before spawning (fecundity), meaning that yearlings of the previous spawning year have survived a full time-step (Age-0/stage-0 to Age-1/stage-1). Yearlings (Age-0: egg &amp; fry) must survive the entire census period to the start of the next census. Therefore, the Age-0 transitions (egg-to-fry survivorship: SE and fry-to-parr survivorship: S0) are accounted for within the fecundity element (cells) of the transition matrix (Table 1).</p>
+<section id="vital-rates-for-survivorship-and-growth" class="level3" data-number="7.3.1">
+<h3 data-number="7.3.1" class="anchored" data-anchor-id="vital-rates-for-survivorship-and-growth"><span class="header-section-number">7.3.1</span> Vital Rates for Survivorship and Growth</h3>
+<p>The following table lists the vital rates for survivorship and growth:</p>
+<table class="table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 79%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Nstage</td>
+<td>The number of stages in the transition matrix (excluding Stage-0/Age-0). Each stage must span one or more years in the life cycle. In the reference example, there are four stages: stage_1, stage_2, stage_3, and stage_4.</td>
+</tr>
+<tr class="even">
+<td>surv_1</td>
+<td>Mean annual survivorship of individuals in each stage. If Nstage value was higher than four, additional rows would be added to the life cycle profile CSV file for surv_5, surv_6, etc. If the Nstage value is less than four, then the additional surv_X rows should be deleted from the life cycle profile. These survivorship estimates should be estimates of intrinsic density-independent survival (in the absence of density-dependent constraints).</td>
+</tr>
+<tr class="odd">
+<td>year_1</td>
+<td>The number of years spent in each stage. Individuals in the simulation can spend more than one year in each stage. In the example input file, mature adults can spend up to five years in stage_4. If we were to set the year values to 1 for all stages, then we would have an age-based Leslie matrix model. If additional stages are added (or removed), be sure to modify rows in the life cycle profile CSV file accordingly (i.e., delete or add new rows).</td>
+</tr>
+<tr class="even">
+<td>SE</td>
+<td>Egg survivorship (density-independent).</td>
+</tr>
+<tr class="odd">
+<td>S0</td>
+<td>Age-0 fry survivorship (density-independent).</td>
+</tr>
+</tbody>
+</table>
+<p><em>Table: Vital rates for survivorship and growth in the life cycle model.</em></p>
+<p>Ensure that all survivorship estimates represent hypothetical density-independent survivorship in the absence of density-dependent constraints. Density-dependent survivorship is accounted for in the next section. If density-independent survivorship is unknown, but strong, density-dependent constraints are to be included in the species profile, then it might be possible to simply set the density-independent survivorship estimate to a value close to 1.0 (e.g., S0: 0.999).</p>
+<p>For fecundity, we have to consider the proportion of each age class that is sexually mature (mat), the proportion of the population that is female (SR: 0.5), the fecundity (eps: eggs per spawner) per spawning event, the spawning events per year (events), and the spawning interval (int). The calculation of individuals in stage class 1 (stage_1) also must account for the Age-0 survivorship of eggs and fry.</p>
+<p><em>Sample fecundity function for stage class 4:</em></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/image041.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Sample fecundity function</figcaption>
+</figure>
+</div>
+</section>
+<section id="vital-rates-for-fecundity" class="level3" data-number="7.3.2">
+<h3 data-number="7.3.2" class="anchored" data-anchor-id="vital-rates-for-fecundity"><span class="header-section-number">7.3.2</span> Vital Rates for Fecundity</h3>
+<p>The following table lists the vital rates for fecundity:</p>
+<table class="table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 79%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>mat_1</td>
+<td>The proportion of each stage class that is sexually mature (0 – 1). For example, in the demo species profile, 100% of the individuals become sexually mature at stage class 4, and the sexual maturity is 0% for all other stage classes. It is also possible for a stage class to have partial maturity (e.g., 0.85). If the Nstage value is different than four, then add or remove rows in the species profile so that the number of mat values matches the number of stage classes (Nstage value).</td>
+</tr>
+<tr class="even">
+<td>events</td>
+<td>Spawning events per female per year. This parameter will almost always be set to 1 to indicate one spawning event per year per mature female. For populations with complex life history variants (e.g., systems with Spring Chinook &amp; Fall Chinook), we recommend keeping this value at one and using two different species profiles to represent each life history variant.</td>
+</tr>
+<tr class="odd">
+<td>eps</td>
+<td>Eggs per spawning female. The mean fecundity per female per spawning event.</td>
+</tr>
+<tr class="even">
+<td>SR</td>
+<td>The sex ratio is represented as the proportion of the population that is female. This value will almost always be set to 0.5 to indicate an equal proportion of males and females in the population.</td>
+</tr>
+<tr class="odd">
+<td>int</td>
+<td>Spawning interval (in years). This value will also be set to 1 for most species, indicating that mature individuals spawn each year.</td>
+</tr>
+</tbody>
+</table>
+<p><em>Table: Vital rates for fecundity in the life cycle model.</em></p>
+<p>We can combine all parameters discussed in this section along with the example species profile (<a href="#fig-figure27">Figure&nbsp;<span>7.1</span></a>) to construct a symbolic (mathematical) representation of the transition matrix (<img src="#tbl:transition-matrix.png" class="img-fluid" alt="Table 1">). The stage-to-stage transitions account for the probability of staying within each stage or advancing to the next stage based on the <code>surv_X</code> and n-year spent within a stage <code>year_X</code>. The fecundity element of the matrix (top row) includes elements for fecundity and Age-0 survivorship.</p>
+<div id="07_life_cycle_model-tbl:transition-matrix">
+<p>Table 1. Symbolic Representation of the Transition Matrix</p>
+<table class="table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>stage_1</th>
+<th>stage_2</th>
+<th>stage_3</th>
+<th>stage_4</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>stage_1</td>
+<td>surv_1 * (1 - surv_1^( year_1 - 1))/(1 - surv_1^ year_1)</td>
+<td>(mat2 * events * eps * sE * s0 * sR)/int</td>
+<td>(mat3 * events * eps * sE * s0 * sR)/int</td>
+<td>(mat4 * events * eps * sE * s0 * sR)/int</td>
+</tr>
+<tr class="even">
+<td>stage_2</td>
+<td>surv_1 - surv_1 * (1 - surv_1^(year_1 - 1))/(1 - surv_1^ year_1)</td>
+<td>surv_2 * (1 - surv_2^( year_2 - 1))/(1 - surv_2^ year_2)</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>stage_3</td>
+<td>0</td>
+<td>surv_2 - surv_2 * (1 - surv_2^( year_2 - 1))/(1 - surv_2^ year_2)</td>
+<td>surv_3 * (1 - surv_3^( year_3 - 1))/(1 - surv_3^ year_3)</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>stage_4</td>
+<td>0</td>
+<td>0</td>
+<td>surv_3 - s3 * (1 - surv_3^( year_3 - 1))/(1 - surv_3^ year_3)</td>
+<td>surv_4 * (1 - surv_4^( year_4 - 1))/(1 - surv_4^ year_4)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The stage-to-stage transition probabilities are also expressed as functions from <code>surv_X</code> (annual survivorship with stage X) and <code>year_X</code> (number of simulation years within stage X). <code>surv_X</code> is the total annual probability of survival (i.e., regardless of staying within the current stage OR advancing to the next subsequent stage). The example below illustrates how the combined probability of staying within a stage or advancing to the next stage always equals <code>surv_X</code> regardless of n-years in each stage. <em>Note that the sum of the yellow cells equals 0.6 (for both fates of staying within stage or advancing to the next stage).</em></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/image042.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Stage-to-stage transition probabilities</figcaption>
+</figure>
+</div>
+<p>We can continue with the working example to represent the transition matrix numerically (<img src="#tbl:numerical-transition-matrix.png" class="img-fluid" alt="Table 2">). The fecundity element for <code>stage_4</code> is set at 45 since it accounts for the vital rates relating to maturity and Age-0 survivorship.</p>
+<p>Net Fecundity (stage-4) = (mat4 * events * eps * sE * s0 * sR)/int</p>
+<p>45 = (1 * 1 * 3,000 * 0.1 * 0.3 * 0.5)/1</p>
+<div id="07_life_cycle_model-tbl:numerical-transition-matrix">
+<p>Table 2. Numerical representation of the transition matrix</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th></th>
+<th>stage_1</th>
+<th>stage_2</th>
+<th>stage_3</th>
+<th>stage_4</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>stage_1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>45</td>
+</tr>
+<tr class="even">
+<td>stage_2</td>
+<td>0.3</td>
+<td>0.231</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>stage_3</td>
+<td>0</td>
+<td>0.069</td>
+<td>0.474</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>stage_4</td>
+<td>0</td>
+<td>0</td>
+<td>0.426</td>
+<td>0.756</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The derived lambda value of the projection matrix (intrinsic rate of growth) in this example species profile is 1.21 (above 1.0), meaning that the population will continue to grow exponentially in the absence of density-dependent constraints.</p>
+</section>
+</section>
+<section id="density-dependent-constraints-on-growth" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="density-dependent-constraints-on-growth"><span class="header-section-number">7.4</span> Density-Dependent Constraints on Growth</h2>
+<p>It is rare for natural populations to grow in perpetuity without any constraints on growth, survival, and reproduction. Therefore, life cycle models will typically include a mechanism (or multiple mechanisms) to constrain population growth or limit high densities.</p>
+<p>Stressor-response relationships can be incorporated into the life cycle model without accounting for density-dependent constraints, but the interpretation of the results will be limited to eigen analyses of intrinsic growth rates and sensitivities/elasticities assessments. Not only are these outputs difficult to communicate to diverse working groups, but they may also be misleading. If there are key demographic bottlenecks in the life cycle, then a density-independent model may inappropriately lead users to focus on stressors linked to fecundity or early life-stage survivorship before a key bottleneck (e.g., egg-to-fry survivorship) is experienced. However, if (in reality) a hypothetical population experiences strong density-dependent constraints on growth, then factors limiting habitat availability or productivity of a key life stage will become more influential. A common example of density-independent and density-dependent constraints on growth can be found in the transition between the early life stages of Steelhead (<em>Oncorhynchus mykiss</em>) as individuals transition from egg-to-fry (a density-independent life stage) and then from fry-to-smolts/parr (a density-dependent life stage) <span class="citation" data-cites="ward1993egg">(<a href="references.html#ref-ward1993egg" role="doc-biblioref">Ward &amp; Slaney, 1993</a>)</span>.</p>
+<p>The life cycle modeling component of the CEMPRA tool has two different mechanisms to incorporate density-dependent growth constraints. The first mechanism makes use of adult carrying capacity and compensation ratios (discussed below), while the second mechanism considers stage and location-specific carrying capacities. Incorporating density-dependent constraints with compensation ratios is convenient because users are only required to input a single value (an estimate of the adult carrying capacity); however, incorporating density-dependent constraints with stage and location-specific carrying capacities can provide more accurate results in systems with ample habitat data and knowledge of life stage-specific density constraints across habitat types. Both mechanisms of density-dependent constraints utilize the Beverton-Holt function to constrain the transition probability of key demographic bottlenecks.</p>
+<p>The Beverton-Holt function calculates the expected number of individuals in the next time step (N at time + 1, or density) as a function of the number of individuals in the current time step (N at time). In the case of stage-structured matrix models, this relationship is expressed as the number of individuals transitioning between two stages (e.g., from stage 2 to stage 3). In the Beverton-Holt function, input parameters governing this relationship include an estimate of stage-specific carrying capacity (K), a baseline estimate of density-independent survival (S) (surv_X from the species profile) for the transition probability, and the number of individuals in the current stage class (Nt) for the simulation year.</p>
+<div id="07_life_cycle_model-fig-beverton-holt" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/image043.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Beverton-Holt function for density-dependent growth</figcaption>
+</figure>
+</div>
+<p>The following figure provides an overview of the Beverton-Holt function, showing the number of individuals at time (t) on the x-axis and the number of individuals at time + 1 on the y-axis. For example, this could be the number of Age-0 fry on the x-axis and the number of Age-1+ parr recruits on the y-axis. The curved black line shows the effects of density-dependent growth (limited recruitment as the number of individuals in the first stage is increased). The steep red line is the intrinsic productivity (survivorship, surv_X), which is 0.8 under hypothetical density-independent growth conditions. The blue line is the hypothetical carrying capacity of 100.</p>
+<div id="07_life_cycle_model-fig-density-dependent" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/image044.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Beverton-Holt function for density-dependent growth</figcaption>
+</figure>
+</div>
+<div>
+<p>Beverton-Holt function for density-dependent growth shows the survivorship under density-independent growth (red line), the maximum carrying capacity (blue line), and the resulting relationship from the BH curve (black line).</p>
+</div>
+<section id="location-and-stage-specific-carrying-capacities" class="level3" data-number="7.4.1">
+<h3 data-number="7.4.1" class="anchored" data-anchor-id="location-and-stage-specific-carrying-capacities"><span class="header-section-number">7.4.1</span> Location and Stage-Specific Carrying Capacities</h3>
+<p>For more systems with ample habitat data and known relationships between habitat availability and maximum densities, it is possible to use location-specific carrying capacities for one or more rate-limiting life stages (e.g., <em>Location X can produce up to 1,200 parr</em>). If this is the case, a special table can be included that specifies the maximum number of individuals per stage class per life stage per location:</p>
+<div id="07_life_cycle_model-fig-location-specific" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/image045.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Location and stage-specific carrying capacity input data table</figcaption>
+</figure>
+</div>
+<div>
+<p>Location and stage-specific carrying capacity input data table.</p>
+</div>
+<p>This table (Location-specific capacities) is referred to as the <em>locations carrying capacity table</em> and exists as a special input file that can be used to control density-dependent growth in the life cycle model. Users must estimate the average carrying capacity for a given life stage at each location (e.g., k_stage_1_mean: 1,200) and the interannual variability (CV: coefficient of variation) in the carrying capacity (e.g., k_stage_1_cv: 0.1). If the location carrying capacity table is provided, any cells that are populated with values are assumed to have density-dependent constraints. Any cells that are left blank are assumed to be governed only by density-independent factors and do not have any density-dependent constraints.</p>
+<p>In the previous example (Location-specific capacities), the population model will run with constraints on <code>stage_1</code>, meaning that the survivorship from <code>stage_0</code> to <code>stage_1</code> will be governed by a Beverton-Holt relationship, and the abundance (or density) of <code>stage_1</code> individuals will be constrained for each location according to the values provided in the locations carrying capacity table.</p>
+<p>The CEMPRA tool does not support the development of these locations and stage-specific carrying capacity estimates, but it’s assumed that relevant reference literature will be used to develop appropriate input values (e.g., if stage 1 is Steelhead parr; regional densities for Steelhead parr are roughly 1,500 parr/km of stream; and fish-accessible reaches within Rock Creek sum up to roughly 800m in length; then k_stage_1_mean should equal roughly 1,200 parr). Developing these estimates alongside a species profile can be laborious, but the advantage is that projection from the CEMPRA tool will ultimately account for habitat quality and habitat availability.</p>
+<p>If the locations carrying capacity table is provided, the population projections will implement density-dependent growth constraints for species-specific life stages according to the stage-specific carrying capacities (with Beverton-Holt constraint on growth), and intrinsic density-independent survivorship estimates. The steel head spawners figure shows an example simulation for Steelhead from the CEMPRA tool with adult spawning on the y-axis and a stage-1 (parr) carrying capacity constraint set to 160,000 individuals. In the Steelhead example, the only density-dependent constraint is the parr carrying capacity of the system (set to 160,000). The number of adult spawners is, therefore, a derived metric from the life cycle model. Implementing density-dependent constraints with <em>location and stage-specific carrying capacities</em> is different from the approach with <em>compensation ratios</em>, where users are required to first input an estimate of the adult carrying capacity and work backwards from there.</p>
+<div id="07_life_cycle_model-fig-steelhead-spawners" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/image047.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Simulation of Steelhead Spawners with stage_1 capacity set to 160,000</figcaption>
+</figure>
+</div>
+<div>
+<p>Simulation of Steelhead Spawners (y-axis) with stage_1 (parr) capacity set to 160,000.</p>
+</div>
+<p><strong>Location and Stage-Specific Carrying Capacities Constraints in the Species Profile</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 79%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>bh_stage_1, bh_stage_2, bh_stage_3, bh_stage_4</td>
+<td>The location and stage-specific carrying capacities constraints can be toggled on and off for each life stage with <code>bh_stage_X</code> input in the species profile. Setting the Value to 0 (or omitting the row) means that there will be no density-dependent constraint on a given life stage. Setting the Value to 1 will implement a Beverton-Holt style density-dependent constraint for the given life stage. If implemented, the <em>location and stage-specific carrying capacity</em> input data table must be supplied, and values must be populated for each location.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="compensation-ratios-for-density-dependent-growth" class="level3" data-number="7.4.2">
+<h3 data-number="7.4.2" class="anchored" data-anchor-id="compensation-ratios-for-density-dependent-growth"><span class="header-section-number">7.4.2</span> Compensation Ratios for Density-Dependent Growth</h3>
+<p>It is possible to implement density-dependent constraints with both the compensation ratios and the location and stage-specific carrying capacities, but we recommend using only one mechanism for density-dependent growth to avoid confusion.</p>
+<p>Compensation ratios (CR values) can be used in the CEMPRA life cycle model to parameterize and control density-dependent growth. Compensation ratios (described below) are a reparameterization of the classical Beverton-Holt function for density-dependent growth.</p>
+<p>Compensation Ratios (CR) adjust the survivorship of each life stage based on the observed densities (abundance, N i,t) and stage-specific carrying capacities (Ki):</p>
+<section id="compensation-ratio-cr-for-life-stage-i" class="level4" data-number="7.4.2.1">
+<h4 data-number="7.4.2.1" class="anchored" data-anchor-id="compensation-ratio-cr-for-life-stage-i"><span class="header-section-number">7.4.2.1</span> Compensation Ratio CR for life stage i:</h4>
+<p>The compensation ratio for life stage i adjusts the survivorship of each life stage based on the observed densities (abundance, Ni,t) and stage-specific carrying capacities (Ki):</p>
+<div id="07_life_cycle_model-fig-compensation-ratio" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/image048.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Compensation Ratio CR for life stage i</figcaption>
+</figure>
+</div>
+<p>In the CR equation above, Si,0 is the baseline survivorship (surv_X) under density-independent growth conditions; wi is the compensation ratio (CR value) of life stage i; Ni,t is the current number of individuals in life stage i in a given time step (t); and Ki is the carrying capacity of life stage i. The compensation ratios, in essence, modify the survivorship of each life stage based on how far the stage-specific abundance (Ni,t) has departed from its assumed carrying capacity (Ki).</p>
+<p>A plot of compensation ratios is provided below to illustrate their effects on stage-specific survivorship transitions. In this example, abundance values of a hypothetical stage class (i) are plotted along the x-axis with a carrying capacity (Ki) set to 100 individuals (blue vertical line). The hypothetical stage class (i) has a baseline survivorship (productivity) value of 0.8 in the absence of density-dependent growth conditions (horizontal red line). The y-axis on the plot shows how the default survivorship value of 0.8 is modified based on the stage-specific compensation ratio for stage class (CRi). The survivorship value for the stage class is suppressed as the abundance values exceed the carrying capacity K. The effects are amplified as compensation ratios are increased. Compensation ratios of 1.0 leave the vital rate unmodified. Compensation ratios less than 1.0 increase survivorship values (allowing for a potential positive effect of density). When the abundance of the age class is less than the carrying capacity, baseline survivorship values can actually increase. However, within the model code, adjusted survivorship values are fixed so that they never exceed 1.0 for any stage transition.</p>
+<div id="07_life_cycle_model-fig-compensation-ratios-effect" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/image049.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Influence of compensation ratios on stage-specific survivorship</figcaption>
+</figure>
+</div>
+<div>
+<p>Influence of compensation ratios on stage-specific survivorship.</p>
+</div>
+</section>
+<section id="stage-specific-carrying-capacity-estimates" class="level4" data-number="7.4.2.2">
+<h4 data-number="7.4.2.2" class="anchored" data-anchor-id="stage-specific-carrying-capacity-estimates"><span class="header-section-number">7.4.2.2</span> Stage-Specific Carrying Capacity Estimates:</h4>
+<p>When using compensation ratios, it is only possible to modify the carrying capacity for the adult age class via the K parameter in the life cycle profile. The K values for other age classes are derived from the stable-stage distribution of the underlying transition matrix. This means that users who implement density-dependent growth via compensation ratios can only modify stage-specific abundance relative to the stable stage distribution. If you know (or can estimate) critical location-specific and stage-specific capacities (e.g., maximum stage_1 parr at location X), then refer to Section 8.4.1 to implement density-dependent growth constraints with location and stage-specific carrying capacities.</p>
+<p>Stage-specific capacities (K) with compensation ratios:</p>
+<ul>
+<li>K (Stage-0, eggs): Calculated as the product of the number of individuals in all mature age classes, multiplied by maturation probabilities for each class, the number of spawning events, eggs per female, sex ratio and spawning interval.</li>
+<li>K (Stage-0, fry): K values for young-of-the-year (fry/Age-0) individuals are calculated as the product of K (Stage-0, eggs) * the egg survival (SE).</li>
+<li>K (Stage-1): Calculated from the stable-stage distribution of the transition matrix (B) after setting the adult stage (Stage-4) to K (e.g., 100).</li>
+<li>K (Stage-2): Calculated from the stable-stage distribution of the transition matrix (B) after setting the adult stage (Stage-4) to K (e.g., 100).</li>
+<li>K (Stage-3): Calculated from the stable-stage distribution of the transition matrix (B) after setting the adult stage (Stage-4) to K (e.g., 100).</li>
+<li>K (Stage-4): Manually input by the user for the population of interest. This assumes that stage-4 is the only mature age class.</li>
+</ul>
+<p>Stable-stage distribution (portions) under the example species profile <a href="#fig-figure27">Figure&nbsp;<span>7.1</span></a>:</p>
+</section>
+<section id="stable-stage-distributions-as-a-fraction-0---1-stage-specific-carrying-capacities-k" class="level4" data-number="7.4.2.3">
+<h4 data-number="7.4.2.3" class="anchored" data-anchor-id="stable-stage-distributions-as-a-fraction-0---1-stage-specific-carrying-capacities-k"><span class="header-section-number">7.4.2.3</span> Stable Stage Distributions (as a fraction 0 - 1) &amp; Stage-specific Carrying Capacities (K):</h4>
+<div id="07_life_cycle_model-fig-stable-stage-distributions" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/image050.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Stable Stage Distributions and Stage-specific Carrying Capacities</figcaption>
+</figure>
+</div>
+</section>
+<section id="density-dependence-matrix-d" class="level4" data-number="7.4.2.4">
+<h4 data-number="7.4.2.4" class="anchored" data-anchor-id="density-dependence-matrix-d"><span class="header-section-number">7.4.2.4</span> Density-Dependence Matrix (D):</h4>
+<p>Based on the derived stage-specific carrying capacities (K values), baseline survivorship values (SE, S0, surv_1, …) and the corresponding compensation ratios (cr_E, cr_0, cr_1, …), a density-dependence matrix (D) for a hypothetical population vector of eggs: 10,000,000, fry: 1,000,000; stage 1: 100,000, stage 2: 10,000, stage 3: 1,000 &amp; stage 4: 100 will appear as follows:</p>
+<p>The density-dependence matrix (D) contains vital rate modifiers for the estimated survivorship values at each stage transition. The density-dependence matrix (D) is multiplied with the corresponding transition matrix (B, Table 2) of density-independent transition probabilities. The finalized projection matrix (A) is the product of the density-dependent matrix (D), and the transition matrix (B) [A is a product of B*D = A]. The density-dependent matrix changes with each time step based on the number of individuals. The projection matrix (A) is, therefore, recalculated for each time step.</p>
+<p>Compensation ratios are widely used as parameters in stock-recruitment functions, although they are admittedly less popular in classical matrix life cycle modeling. Steepness (the proportion of recruitment produced when stock size is reduced to 20% of initial biomass) is sometimes used in place of compensation ratios. Numerous other methods exist to introduce density dependence into stage-structured life cycle models. The compensation ratios are available as a default option for the CEMPRA tool to represent a versatile mechanism for applications to a large number of hypothetical species profiles. If location and stage-specific carrying capacities can be estimated, we recommend users set all compensation ratios to 1.0 for each stage class (therefore omitting compensation ratios) and refer to Section 8.4.1 for classical density-dependent growth with Beverton-Holt functions. For additional background, please review the following references to learn more about compensation ratios and life cycle modeling with density-dependent growth.</p>
+<p><strong>Compensation Ratios in the Species Profile</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 79%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>cr_E, cr_0, cr_1, cr_2, cr_3, cr_4</td>
+<td>The compensation ratios for egg (cr_E), Age-0 fry (cr_0) and subsequent stage classes (cr_1 to cr_4) can be set. If the Nstage value is different than four, then add or remove rows accordingly. Compensation ratios can be set to 1.0 to omit the use of compensation ratios to govern density-dependent growth.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="useful-references-to-understand-compensation-ratios" class="level4" data-number="7.4.2.5">
+<h4 data-number="7.4.2.5" class="anchored" data-anchor-id="useful-references-to-understand-compensation-ratios"><span class="header-section-number">7.4.2.5</span> Useful references to understand Compensation Ratios:</h4>
+<p>To further understand compensation ratios and their application in life cycle modeling, the following references are recommended:</p>
+<ul>
+<li>Goodyear, C. P. (1980). Compensation in fish populations. Biological monitoring of fish, 253-280.</li>
+<li>Myers, R. A. (2001). Stock and recruitment: generalizations about maximum reproductive rate, density dependence, and variability using meta-analytic approaches. ICES Journal of Marine Science, 58(5), 937-951.</li>
+<li>Rose, K. A., Cowan Jr, J. H., Winemiller, K. O., Myers, R. A., &amp; Hilborn, R. (2001). Compensatory density dependence in fish populations: importance, controversy, understanding and prognosis. Fish and Fisheries, 2(4), 293-327.</li>
+<li>Myers, R. A., Bowen, K. G., &amp; Barrowman, N. J. (1999). Maximum reproductive rate of fish at low population sizes. Canadian Journal of Fisheries and Aquatic Sciences, 56(12), 2404-2419.</li>
+<li>Walters, C. J., &amp; Martell, S. J. (2004). Fisheries ecology and management. Princeton University Press.</li>
+<li>Forrest, R. E., McAllister, M. K., Dorn, M. W., Martell, S. J., &amp; Stanley, R. D. (2010). Hierarchical Bayesian estimation of recruitment parameters and reference points for Pacific rockfishes (Sebastes spp.) under alternative assumptions about the stock–recruit function. Canadian Journal of Fisheries and Aquatic Sciences, 67(10), 1611-1634.</li>
+</ul>
+</section>
+</section>
+</section>
+<section id="stochastic-simulations" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="stochastic-simulations"><span class="header-section-number">7.5</span> Stochastic Simulations</h2>
+<p>Several additional parameters are available to influence the stochasticity (variability) of the population projections. Implementing these parameters is useful for understanding the viability of the population and (over many simulations) estimating the number of batch replicates that fall below a given critical threshold (e.g., X adults).</p>
+<section id="eps_sd-standard-deviation-in-eggs-per-spawner" class="level3" data-number="7.5.1">
+<h3 data-number="7.5.1" class="anchored" data-anchor-id="eps_sd-standard-deviation-in-eggs-per-spawner"><span class="header-section-number">7.5.1</span> eps_sd: Standard Deviation in Eggs-per-Spawner</h3>
+<table class="table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 76%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>eps_sd</code></td>
+<td>The Standard Deviation in Eggs-per-Spawner controls the variability in fecundity across simulation years and batch replicates. The example below shows a sample projection with <code>eps_sd</code> set to 250 and 750. In the example with <code>eps_sd</code> set to 750, there are several years with very high fecundity. Density-dependent constraints (if implemented) may attenuate the apparent effect of high <code>eps_sd</code> inputs.</td>
+</tr>
+</tbody>
+</table>
+<div id="07_life_cycle_model-fig-eps-sd" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/image051.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">eps_sd Standard Deviation in Eggs-per-Spawner</figcaption>
+</figure>
+</div>
+<div>
+<p>eps_sd Standard Deviation in Eggs-per-Spawner</p>
+</div>
+</section>
+<section id="egg_rho-correlation-in-egg-fecundity-through-time" class="level3" data-number="7.5.2">
+<h3 data-number="7.5.2" class="anchored" data-anchor-id="egg_rho-correlation-in-egg-fecundity-through-time"><span class="header-section-number">7.5.2</span> egg_rho: Correlation in Egg Fecundity Through Time</h3>
+<table class="table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 76%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>egg_rho</code></td>
+<td>In natural populations, there will be good years and bad years. It’s assumed that good years will be good for large adults and small adults. If multiple mature stage classes contribute to spawning (fecundity) (i.e., maturity values are greater than 0), it is assumed that fecundity will be correlated between good and bad years across stage classes (i.e., stage_5, stage_6 &amp; stage_7). <code>egg_rho</code> controls the degree of correlation in interannual fecundity between stage classes. See the following figure for an illustrative example. If <code>egg_rho</code> is low, and multiple stage classes contribute to spawning, then some stage classes may compensate for good/bad years. Conversely, if <code>egg_rho</code> is high, then the population may be highly volatile as all cohorts experience good/bad years simultaneously.</td>
+</tr>
+</tbody>
+</table>
+<div id="07_life_cycle_model-fig-egg-rho" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/image052.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">egg_rho: correlation in egg fecundity through time</figcaption>
+</figure>
+</div>
+<div>
+<p>egg_rho: correlation in egg fecundity through time</p>
+</div>
+</section>
+<section id="m.cv-coefficient-of-variation-cv-in-interannual-stage-specific-mortality" class="level3" data-number="7.5.3">
+<h3 data-number="7.5.3" class="anchored" data-anchor-id="m.cv-coefficient-of-variation-cv-in-interannual-stage-specific-mortality"><span class="header-section-number">7.5.3</span> M.cv: Coefficient of Variation (CV) in Interannual Stage-Specific Mortality</h3>
+<table class="table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 76%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>M.cv</code></td>
+<td>The Coefficient of Variation (CV) in stage-specific mortality (<code>M.cv</code>) is based on a beta distribution. This parameter allows for the modeling of variability in mortality rates across different life stages, contributing to a more dynamic and realistic simulation of population dynamics.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="m.rho-correlation-in-stage-class-mortality-through-time" class="level3" data-number="7.5.4">
+<h3 data-number="7.5.4" class="anchored" data-anchor-id="m.rho-correlation-in-stage-class-mortality-through-time"><span class="header-section-number">7.5.4</span> M.rho: Correlation in Stage-Class Mortality Through Time</h3>
+<table class="table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 76%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>M.rho</code></td>
+<td><code>M.rho</code>, the correlation in mortality through time, plays a critical role in modeling the variability of survivorship across life stages. In natural populations, the occurrence of good and bad years is often correlated across all stage classes, excluding eggs (<code>SE</code>). <code>M.rho</code> determines the degree of this correlation. A low <code>M.rho</code> value suggests that certain stage classes may compensate for good/bad years based on random sampling of survivorship, while a high <code>M.rho</code> implies that all cohorts may experience good/bad years simultaneously, leading to higher volatility in population dynamics.</td>
+</tr>
+</tbody>
+</table>
+<div id="07_life_cycle_model-fig-m-rho" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/image053.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">M.rho: correlation in survivorship through time</figcaption>
+</figure>
+</div>
+<div>
+<p>M.rho: correlation in survivorship through time</p>
+</div>
+</section>
+<section id="p.cat-probability-of-catastrophe-per-generation" class="level3" data-number="7.5.5">
+<h3 data-number="7.5.5" class="anchored" data-anchor-id="p.cat-probability-of-catastrophe-per-generation"><span class="header-section-number">7.5.5</span> p.cat: Probability of Catastrophe per Generation</h3>
+<table class="table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 76%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>p.cat</td>
+<td><code>p.cat</code> represents the Probability of Catastrophe per Generation. This parameter is scaled to the average generation time of the population, reflecting the annual probability of a catastrophic event occurring. It’s a critical factor in assessing the resilience and long-term sustainability of a population under varying environmental and anthropogenic pressures.</td>
+</tr>
+</tbody>
+</table>
+<div id="07_life_cycle_model-fig-p-cat" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/image054.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Probability of Catastrophe per Generation</figcaption>
+</figure>
+</div>
+<div>
+<p>p.cat: Probability of Catastrophe per Generation</p>
+</div>
+</section>
+</section>
+<section id="building-a-life-cycle-profile" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="building-a-life-cycle-profile"><span class="header-section-number">7.6</span> Building a Life Cycle Profile</h2>
+<p>A customized life cycle profile can be developed using the following template: <a href="https://github.com/essatech/CEMPRAShiny/blob/main/data/demo/life%20cycles.csv">Life Cycle Profile Template</a>.</p>
+<p>Appendix B includes sample species profiles for case study systems, such as Nicola Basin Chinook Salmon, Steelhead, and Coho Salmon. The COMPADRE (plant) and COMADRE (animal) online archives also offer vital rates for numerous species as of March 2023 (<a href="https://compadre-db.org/Data/Comadre">COMADRE Database</a>). These archives can be valuable resources for reviewing vital rate estimates for similar species and taxa.</p>
+<p>It’s recommended to first summarize the species’ life cycle using a simple diagram to represent key life stages. This diagram can be converted into a periodicity table (or life history schedule) to represent time spent in each life stage, as shown in the figure. A life history diagram coupled with a periodicity table can be helpful in mapping out transitions between key stages in the life cycle model. Recall that the life cycle model works with annual time steps. “Census” periods within the matrix model do not need to fall precisely at the one-year interval, but care should be taken to ensure that key transitions are not missed or double-counted. It is best to start from the spawning period and work forward, following a whole generation to its progeny</p>
+<div id="07_life_cycle_model-fig-coho-salmon-lifecycle" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/image055.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Sample life cycle diagram and periodicity table for Coho Salmon</figcaption>
+</figure>
+</div>
+<div>
+<p>Sample combo life cycle diagram and periodicity table for a coastal population of Coho Salmon in British Columbia</p>
+</div>
+<p>Users can load a draft species profile into the R-Shiny application and modify it as needed. It is important to review the eigenanalysis of the projection matrix to ensure that lambda estimates, generation time, and stable-stage distributions align with expectations based on the species’ life history.</p>
+<p><strong>Parameters to double-check:</strong></p>
+<ul>
+<li>Lambda (λ, instantaneous growth rates) estimates are reasonable (not substantially different from 1.0). If lambda estimates are lower than 1.0, review parameters.</li>
+<li>Generation time approximately matches the characterization of the species’ life history in the literature.</li>
+<li>Stable-stage distributions from the projection matrix are not substantially different from expectations.</li>
+</ul>
+</section>
+<section id="benefits-and-limitations" class="level2" data-number="7.7">
+<h2 data-number="7.7" class="anchored" data-anchor-id="benefits-and-limitations"><span class="header-section-number">7.7</span> Benefits and Limitations</h2>
+<p>The life cycle modeling component of the CEMPRA tool is a valuable resource for understanding and quantifying cumulative effects, linking critical stressors to key life stages, and supporting an understanding of the relevance of key drivers curtailing productivity and capacity. Related analyses have provided a useful framework to synthesize pathways for cumulative effects through the lens of population ecology (<span class="citation" data-cites="beechie2021modeling">(<a href="references.html#ref-beechie2021modeling" role="doc-biblioref">Beechie et al., 2021</a>)</span>; <span class="citation" data-cites="jorgensen2021identifying">(<a href="references.html#ref-jorgensen2021identifying" role="doc-biblioref">Jorgensen et al., 2021</a>)</span>; <span class="citation" data-cites="sorel2022informing">(<a href="references.html#ref-sorel2022informing" role="doc-biblioref">Sorel, 2022</a>)</span>; <span class="citation" data-cites="kendall2023life">(<a href="references.html#ref-kendall2023life" role="doc-biblioref">Kendall et al., 2023</a>)</span>). Simulations allow user groups to play out hypothetical scenarios with multiple stressors, locations, and species profiles, making it possible to perform many complex calculations within a simple user interface.</p>
+<p>However, there are key limitations to the CEMPRA tool and life cycle modeling in general. Depending on the parameterization of a species profile, there can be key stages and vital rates that are highly sensitive to perturbation. It can be challenging to discern whether these sensitivities reflect actual vulnerabilities in nature or are artifacts of the modeling framework. Therefore, some researchers emphasize the need to treat life cycle models as hypothesis generators until predictions and causal pathways can be empirically validated (<span class="citation" data-cites="roni2018review">(<a href="references.html#ref-roni2018review" role="doc-biblioref">Roni et al., 2018</a>)</span>).</p>
+<p>The CEMPRA tool does not account for complex variations in life history strategies, seasonal movement, individual exposure, and detailed habitat criteria. Therefore, it’s up to the users to carefully design stressor variables, stressor magnitude datasets, and stressor-response relationships such that linkages are already largely accounted for in the underlying input data. When summarizing results, it is advisable for user groups to focus on reviewing relative differences between scenarios compared to a default (status-quo) reference scenario. Interpreting results as relative differences is more relatable than trying to rationalize absolute values (e.g., <em>“scenario A increased system capacity by ~10% relative to scenario B”</em> vs <em>“scenario A increased capacity by 321 fish relative to scenario B”</em>).</p>
+<p>User groups and practitioners should use life cycle models to help develop high-level goals for restoration and recovery programs (<span class="citation" data-cites="roni2018review">(<a href="references.html#ref-roni2018review" role="doc-biblioref">Roni et al., 2018</a>)</span>). While useful for identifying key demographic bottlenecks and the sensitivity of those bottlenecks to the range of stressor values observed on the landscape (or projected through simulation), life cycle models are less useful for designing small-scale projects. Efforts should continue to validate and refine predictions with field data and empirical studies.</p>
+<hr>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-beechie2021modeling" class="csl-entry" role="listitem">
+Beechie, T. J., Nicol, C., Fogel, C., Jorgensen, J., Thompson, J., Seixas, G., Chamberlin, J., Hall, J., Timpane-Padgham, B., Kiffney, P., Kubo, S., &amp; Keaton, J. (2021). <em>Modeling effects of habitat change and restoration alternatives on salmon in the chehalis river basin using a salmonid life-cycle model</em> (NMFS-NWFSC-CR-2021-01). U.S. Department of Commerce, NOAA.
+</div>
+<div id="ref-jorgensen2021identifying" class="csl-entry" role="listitem">
+Jorgensen, J. C., Nicol, C., Fogel, C., &amp; Beechie, T. J. (2021). Identifying the potential of anadromous salmonid habitat restoration with life cycle models. <em>Plos One</em>, <em>16</em>(9), e0256792.
+</div>
+<div id="ref-kendall2023life" class="csl-entry" role="listitem">
+Kendall, N. W., Unrein, J., Volk, C., Beauchamp, D. A., Fresh, K. L., &amp; Quinn, T. P. (2023). Life cycle model reveals sensitive life stages and evaluates recovery options for a dwindling pacific salmon population. <em>North American Journal of Fisheries Management</em>, <em>43</em>(1), 203–230.
+</div>
+<div id="ref-roni2018review" class="csl-entry" role="listitem">
+Roni, P., Anders, P. J., Beechie, T. J., &amp; Kaplowe, D. J. (2018). Review of tools for identifying, planning, and implementing habitat restoration for pacific salmon and steelhead. <em>North American Journal of Fisheries Management</em>, <em>38</em>(2), 355–376.
+</div>
+<div id="ref-sorel2022informing" class="csl-entry" role="listitem">
+Sorel, M. (2022). <em>Informing salmon conservation with life cycle models that account for individual heterogeneity</em> [PhD thesis]. University of Washington.
+</div>
+<div id="ref-ward1993egg" class="csl-entry" role="listitem">
+Ward, B. R., &amp; Slaney, P. A. (1993). Egg-to-smolt survival and fry-to-smolt density dependence of keough river steelhead trout. <em>Canadian Special Publication of Fisheries and Aquatic Sciences</em>, 209–217.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./06_r_shiny_app.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">R-Shiny Application</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./08_stressor_response_library.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Stressor-Response Library</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
