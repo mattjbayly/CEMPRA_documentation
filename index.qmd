@@ -1,46 +1,46 @@
 # CEMPRA {.unnumbered}
 
 ### Editors {.unnumbered}
-  - Matthew Bayly, M.J. Bayly Analytics Ltd.
-  - Alexandra Tekatch, ESSA Technologies Ltd.
-  - Dr. Jordan Rosenfeld, the University of British Columbia, BC WLRS
-  - Dr. Eva Enders, INRS
-  - Lauren Jarvis, Department of Fisheries and Oceans
+
+-   Matthew Bayly, M.J. Bayly Analytics Ltd.
+-   Alexandra Tekatch, ESSA Technologies Ltd.
+-   Dr. Jordan Rosenfeld, the University of British Columbia, BC WLRS
+-   Dr. Eva Enders, INRS
+-   Lauren Jarvis, Department of Fisheries and Oceans
 
 ### Contributors {.unnumbered}
 
 ::: {.column width="30%"}
-  - Matthew Bayly, MJBA
-  - Alexandra Tekatch, ESSA
-  - Dr. Jordan Rosenfeld, UBC/BC-WLRS
-  - Dr. Eva Enders, INRS
-  - Lauren Jarvis, DFO
-  - Julian Heavyside, ESSA
+-   Matthew Bayly, MJBA
+-   Alexandra Tekatch, ESSA
+-   Dr. Jordan Rosenfeld, UBC/BC-WLRS
+-   Dr. Eva Enders, INRS
+-   Lauren Jarvis, DFO
+-   Julian Heavyside, ESSA
 :::
 
 ::: {.column width="30%"}
-  - Andrew Paul, AEP
-  - Kyle Wilson, CCIRA
-  - Pedro Gonzalez, UBC
-  - Laura MacPherson, AEP
-  - Isuru Dharmasena
-  - Marc Porter, ESSA
+-   Andrew Paul, AEP
+-   Kyle Wilson, CCIRA
+-   Pedro Gonzalez, UBC
+-   Laura MacPherson, AEP
+-   Isuru Dharmasena
+-   Marc Porter, ESSA
 :::
 
-*<span style="color: grey;">Project funded (in part) throught the British Columbia Salmon Restoration and Innovation Fund (BCSRIF).</span>*
-
+[*Project funded (in part) throught the British Columbia Salmon Restoration and Innovation Fund (BCSRIF).*]{style="color: grey;"}
 
 ### Suggested Citation
+
 Bayly, M., J., Tekatch, A., M., Rosenfeld, J., Jarvis, L., Enders, E., 2023. Cumulative Effects Model for Prioritizing Recovery Actions (CEMPRA): User Guide. Documentation prepared by ESSA Technologies Ltd. for the BC Water, Land and Resource S. 77 pp. https://essatech.github.io/CEMPRA/
 
 ## Project Components
-  - GitHub Repository for R-Package
-(<https://github.com/essatech/CEMPRA>)
-  - GitHub Repository for R-Shiny Application (<https://github.com/essatech/CEMPRAShiny>)
-  - LIVE (online R-Shiny Application) (<https://essa.shinyapps.io/CEMPRAShiny/>)
-  - R-Package Tutorials (<https://essatech.github.io/CEMPRA/index.html>)
-  - Guidance Document:
 
+-   GitHub Repository for R-Package (<https://github.com/essatech/CEMPRA>)
+-   GitHub Repository for R-Shiny Application (<https://github.com/essatech/CEMPRAShiny>)
+-   LIVE (online R-Shiny Application) (<https://essa.shinyapps.io/CEMPRAShiny/>)
+-   R-Package Tutorials (<https://essatech.github.io/CEMPRA/index.html>)
+-   Guidance Document: (<https://mattjbayly.github.io/CEMPRA_documentation/>)
 
 ## Purpose
 
@@ -51,6 +51,7 @@ This document is the primary guidance document for the Cumulative Effects Model 
 ## 'Joe Model' Testimonial to Joe Nelson
 
 The CEMPRA model contains the *Joe Model* as a subcomponent. The Joe Model nickname was given in honour of the University of Alberta Ichthyologist Dr. Joseph Nelson ([@macpherson2020alberta]; [@murray2012tribute]). We acknowledge Dr. Nelson's profound impact on ichthyology and the original Alberta cumulative effects modelling framework acting as the foundation of the CEMPRA tool.
+
 
 ## Executive Summary
 
@@ -64,7 +65,5 @@ There are two modelling pathways and associated endpoints within the CEMPRA fram
 
 Additional supporting resources are being developed to facilitate ease of use and collaboration between individuals studying cumulative effects. These resources include the development of an online stressor-response library (digital archive), example species profiles of population vital rates for running the life cycle model, case studies, and tutorial resources.
 
-
-
-
+{{< video https://youtu.be/Ln9EYi_NVPo >}}
 
