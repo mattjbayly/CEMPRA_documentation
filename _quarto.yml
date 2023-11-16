@@ -4,6 +4,7 @@ project:
 
 book:
   title: "CEMPRA Guidance Document"
+  favicon: favicon.ico
   subtitle: "Cumulative Effects Model for Prioritizing Recovery Actions (CEMPRA)"
   date: "2023-11-10"
   site-url: https://mattjbayly.github.io/CEMPRA_documentation/

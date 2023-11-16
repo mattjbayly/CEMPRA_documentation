@@ -1,5 +1,7 @@
 # Life Cycle Model
 
+{{< video https://www.youtube.com/watch?v=v4nmlRSHo0A >}}
+
 ## Overview
 
 The integrated life cycle model is a core component of the CEMPRA tool. The life cycle modeling component is a valuable endpoint to evaluate and understand cumulative effects through the lens of demographic rates and population ecology. Some user groups may be satisfied with the simplified Joe Modelling (stressor roll-up) component of the CEMPRA tool and, therefore, not wish to interact with the life cycle model. However, other user groups may benefit substantially from working with the life cycle modeling component. Framing cumulative effects through an integrated life cycle model allows us to understand critical bottlenecks to the productivity and capacity of a target study system. In the CEMPRA life cycle modeling component, stressor-response relationships are linked to vital rates such as life-stage-specific survivorship, fecundity, and carrying capacity. Therefore, the life cycle modeling component can be used to make relative comparisons between locations (spatial units), scenarios, and stressors to understand limiting factors and design recovery action strategies.
@@ -41,7 +43,7 @@ The stage-structured matrix modelling framework, embedded within the CEMPRA tool
 
 The life cycle diagram figure shows the sample life cycle profile. @fig-figure27 is represented as a life cycle diagram. In the diagram and input file, we see that there are four main stages (stage_1 to stage_4). stage_1 individuals can become stage_4 individuals after three years in the simulation, but it is also possible for some individuals to spend more than one year in stages 2, 3, and 4 (denoted by the circular loop). We also see that stage_4 individuals are sexually mature and have the capacity to generate new stage_1 individuals. There are also special year 0 (Age-0) events that occur before new stage_1 (Age-1) individuals are secured in the simulation. These events include egg survival (SE) and Age-0 fry survival (S0).
 
-![The life cycle diagram for the demo life cycle profile is shown in @fig-figure27.](images/image040.png){#07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-fig-figure28}
+![The life cycle diagram for the demo life cycle profile is shown in @fig-figure27.](images/image040.png){#07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-fig-figure28}
 
 The life cycle modelling component of the CEMPRA tool is set up as a pre-birth pulse census (see Caswell 2000). Since the design of stage-structured matrix models does not easily allow for the initial number of eggs and fry to be represented as independent matrix elements (cells), their transitions are included within the fecundity term. In a pre-birth pulse census, we assume that the demographic census takes place immediately before spawning (fecundity), meaning that yearlings of the previous spawning year have survived a full time-step (Age-0/stage-0 to Age-1/stage-1). Yearlings (Age-0: egg & fry) must survive the entire census period to the start of the next census. Therefore, the Age-0 transitions (egg-to-fry survivorship: SE and fry-to-parr survivorship: S0) are accounted for within the fecundity element (cells) of the transition matrix (Table 1).
 
@@ -50,7 +52,7 @@ The life cycle modelling component of the CEMPRA tool is set up as a pre-birth p
 The following table lists the vital rates for survivorship and growth:
 
 | Parameter | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-|-----------------|-------------------------------------------------------|
+|-----------|-------------------------------------------------------------|
 | Nstage    | The number of stages in the transition matrix (excluding Stage-0/Age-0). Each stage must span one or more years in the life cycle. In the reference example, there are four stages: stage_1, stage_2, stage_3, and stage_4.                                                                                                                                                                                                                                       |
 | surv_1    | Mean annual survivorship of individuals in each stage. If Nstage value was higher than four, additional rows would be added to the life cycle profile CSV file for surv_5, surv_6, etc. If the Nstage value is less than four, then the additional surv_X rows should be deleted from the life cycle profile. These survivorship estimates should be estimates of intrinsic density-independent survival (in the absence of density-dependent constraints).       |
 | year_1    | The number of years spent in each stage. Individuals in the simulation can spend more than one year in each stage. In the example input file, mature adults can spend up to five years in stage_4. If we were to set the year values to 1 for all stages, then we would have an age-based Leslie matrix model. If additional stages are added (or removed), be sure to modify rows in the life cycle profile CSV file accordingly (i.e., delete or add new rows). |
@@ -72,7 +74,7 @@ For fecundity, we have to consider the proportion of each age class that is sexu
 The following table lists the vital rates for fecundity:
 
 | Parameter | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-|-----------------|-------------------------------------------------------|
+|-----------|-------------------------------------------------------------|
 | mat_1     | The proportion of each stage class that is sexually mature (0 -- 1). For example, in the demo species profile, 100% of the individuals become sexually mature at stage class 4, and the sexual maturity is 0% for all other stage classes. It is also possible for a stage class to have partial maturity (e.g., 0.85). If the Nstage value is different than four, then add or remove rows in the species profile so that the number of mat values matches the number of stage classes (Nstage value). |
 | events    | Spawning events per female per year. This parameter will almost always be set to 1 to indicate one spawning event per year per mature female. For populations with complex life history variants (e.g., systems with Spring Chinook & Fall Chinook), we recommend keeping this value at one and using two different species profiles to represent each life history variant.                                                                                                                            |
 | eps       | Eggs per spawning female. The mean fecundity per female per spawning event.                                                                                                                                                                                                                                                                                                                                                                                                                             |
@@ -83,7 +85,7 @@ The following table lists the vital rates for fecundity:
 
 We can combine all parameters discussed in this section along with the example species profile (@fig-figure27) to construct a symbolic (mathematical) representation of the transition matrix (![Table 1](#tbl:transition-matrix)). The stage-to-stage transitions account for the probability of staying within each stage or advancing to the next stage based on the `surv_X` and n-year spent within a stage `year_X`. The fecundity element of the matrix (top row) includes elements for fecundity and Age-0 survivorship.
 
-::: {#07_life_cycle_model-07_life_cycle_model-tbl:transition-matrix}
+::: {#07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-tbl:transition-matrix}
 Table 1. Symbolic Representation of the Transition Matrix
 
 |         | stage_1                                                             | stage_2                                                              | stage_3                                                          | stage_4                                                     |
@@ -104,7 +106,7 @@ Net Fecundity (stage-4) = (mat4 \* events \* eps \* sE \* s0 \* sR)/int
 
 45 = (1 \* 1 \* 3,000 \* 0.1 \* 0.3 \* 0.5)/1
 
-::: {#07_life_cycle_model-07_life_cycle_model-tbl:numerical-transition-matrix}
+::: {#07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-tbl:numerical-transition-matrix}
 Table 2. Numerical representation of the transition matrix
 
 |         | stage_1 | stage_2 | stage_3 | stage_4 |
@@ -127,11 +129,11 @@ The life cycle modeling component of the CEMPRA tool has two different mechanism
 
 The Beverton-Holt function calculates the expected number of individuals in the next time step (N at time + 1, or density) as a function of the number of individuals in the current time step (N at time). In the case of stage-structured matrix models, this relationship is expressed as the number of individuals transitioning between two stages (e.g., from stage 2 to stage 3). In the Beverton-Holt function, input parameters governing this relationship include an estimate of stage-specific carrying capacity (K), a baseline estimate of density-independent survival (S) (surv_X from the species profile) for the transition probability, and the number of individuals in the current stage class (Nt) for the simulation year.
 
-![Beverton-Holt function for density-dependent growth](images/image043.png){#07_life_cycle_model-07_life_cycle_model-fig-beverton-holt}
+![Beverton-Holt function for density-dependent growth](images/image043.png){#07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-fig-beverton-holt}
 
 The following figure provides an overview of the Beverton-Holt function, showing the number of individuals at time (t) on the x-axis and the number of individuals at time + 1 on the y-axis. For example, this could be the number of Age-0 fry on the x-axis and the number of Age-1+ parr recruits on the y-axis. The curved black line shows the effects of density-dependent growth (limited recruitment as the number of individuals in the first stage is increased). The steep red line is the intrinsic productivity (survivorship, surv_X), which is 0.8 under hypothetical density-independent growth conditions. The blue line is the hypothetical carrying capacity of 100.
 
-![Beverton-Holt function for density-dependent growth](images/image044.jpg){#07_life_cycle_model-07_life_cycle_model-fig-density-dependent}
+![Beverton-Holt function for density-dependent growth](images/image044.jpg){#07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-fig-density-dependent}
 
 <div>
 
@@ -143,7 +145,7 @@ Beverton-Holt function for density-dependent growth shows the survivorship under
 
 For more systems with ample habitat data and known relationships between habitat availability and maximum densities, it is possible to use location-specific carrying capacities for one or more rate-limiting life stages (e.g., *Location X can produce up to 1,200 parr*). If this is the case, a special table can be included that specifies the maximum number of individuals per stage class per life stage per location:
 
-![Location and stage-specific carrying capacity input data table](images/image045.png){#07_life_cycle_model-07_life_cycle_model-fig-location-specific}
+![Location and stage-specific carrying capacity input data table](images/image045.png){#07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-fig-location-specific}
 
 <div>
 
@@ -159,7 +161,7 @@ The CEMPRA tool does not support the development of these locations and stage-sp
 
 If the locations carrying capacity table is provided, the population projections will implement density-dependent growth constraints for species-specific life stages according to the stage-specific carrying capacities (with Beverton-Holt constraint on growth), and intrinsic density-independent survivorship estimates. The steel head spawners figure shows an example simulation for Steelhead from the CEMPRA tool with adult spawning on the y-axis and a stage-1 (parr) carrying capacity constraint set to 160,000 individuals. In the Steelhead example, the only density-dependent constraint is the parr carrying capacity of the system (set to 160,000). The number of adult spawners is, therefore, a derived metric from the life cycle model. Implementing density-dependent constraints with *location and stage-specific carrying capacities* is different from the approach with *compensation ratios*, where users are required to first input an estimate of the adult carrying capacity and work backwards from there.
 
-![Simulation of Steelhead Spawners with stage_1 capacity set to 160,000](images/image047.png){#07_life_cycle_model-07_life_cycle_model-fig-steelhead-spawners}
+![Simulation of Steelhead Spawners with stage_1 capacity set to 160,000](images/image047.png){#07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-fig-steelhead-spawners}
 
 <div>
 
@@ -170,7 +172,7 @@ Simulation of Steelhead Spawners (y-axis) with stage_1 (parr) capacity set to 16
 **Location and Stage-Specific Carrying Capacities Constraints in the Species Profile**
 
 | Parameter                                      | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-|-----------------|-------------------------------------------------------|
+|-------------|-----------------------------------------------------------|
 |                                                |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | bh_stage_1, bh_stage_2, bh_stage_3, bh_stage_4 | The location and stage-specific carrying capacities constraints can be toggled on and off for each life stage with `bh_stage_X` input in the species profile. Setting the Value to 0 (or omitting the row) means that there will be no density-dependent constraint on a given life stage. Setting the Value to 1 will implement a Beverton-Holt style density-dependent constraint for the given life stage. If implemented, the *location and stage-specific carrying capacity* input data table must be supplied, and values must be populated for each location. |
 
@@ -186,13 +188,13 @@ Compensation Ratios (CR) adjust the survivorship of each life stage based on the
 
 The compensation ratio for life stage i adjusts the survivorship of each life stage based on the observed densities (abundance, Ni,t) and stage-specific carrying capacities (Ki):
 
-![Compensation Ratio CR for life stage i](images/image048.png){#07_life_cycle_model-07_life_cycle_model-fig-compensation-ratio}
+![Compensation Ratio CR for life stage i](images/image048.png){#07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-fig-compensation-ratio}
 
 In the CR equation above, Si,0 is the baseline survivorship (surv_X) under density-independent growth conditions; wi is the compensation ratio (CR value) of life stage i; Ni,t is the current number of individuals in life stage i in a given time step (t); and Ki is the carrying capacity of life stage i. The compensation ratios, in essence, modify the survivorship of each life stage based on how far the stage-specific abundance (Ni,t) has departed from its assumed carrying capacity (Ki).
 
 A plot of compensation ratios is provided below to illustrate their effects on stage-specific survivorship transitions. In this example, abundance values of a hypothetical stage class (i) are plotted along the x-axis with a carrying capacity (Ki) set to 100 individuals (blue vertical line). The hypothetical stage class (i) has a baseline survivorship (productivity) value of 0.8 in the absence of density-dependent growth conditions (horizontal red line). The y-axis on the plot shows how the default survivorship value of 0.8 is modified based on the stage-specific compensation ratio for stage class (CRi). The survivorship value for the stage class is suppressed as the abundance values exceed the carrying capacity K. The effects are amplified as compensation ratios are increased. Compensation ratios of 1.0 leave the vital rate unmodified. Compensation ratios less than 1.0 increase survivorship values (allowing for a potential positive effect of density). When the abundance of the age class is less than the carrying capacity, baseline survivorship values can actually increase. However, within the model code, adjusted survivorship values are fixed so that they never exceed 1.0 for any stage transition.
 
-![Influence of compensation ratios on stage-specific survivorship](images/image049.jpg){#07_life_cycle_model-07_life_cycle_model-fig-compensation-ratios-effect}
+![Influence of compensation ratios on stage-specific survivorship](images/image049.jpg){#07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-fig-compensation-ratios-effect}
 
 <div>
 
@@ -217,7 +219,7 @@ Stable-stage distribution (portions) under the example species profile @fig-figu
 
 #### Stable Stage Distributions (as a fraction 0 - 1) & Stage-specific Carrying Capacities (K):
 
-![Stable Stage Distributions and Stage-specific Carrying Capacities](images/image050.png){#07_life_cycle_model-07_life_cycle_model-fig-stable-stage-distributions}
+![Stable Stage Distributions and Stage-specific Carrying Capacities](images/image050.png){#07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-fig-stable-stage-distributions}
 
 #### Density-Dependence Matrix (D):
 
@@ -230,7 +232,7 @@ Compensation ratios are widely used as parameters in stock-recruitment functions
 **Compensation Ratios in the Species Profile**
 
 | Parameter                          | Description                                                                                                                                                                                                                                                                                                        |
-|-----------------|-------------------------------------------------------|
+|--------------|----------------------------------------------------------|
 |                                    |                                                                                                                                                                                                                                                                                                                    |
 | cr_E, cr_0, cr_1, cr_2, cr_3, cr_4 | The compensation ratios for egg (cr_E), Age-0 fry (cr_0) and subsequent stage classes (cr_1 to cr_4) can be set. If the Nstage value is different than four, then add or remove rows accordingly. Compensation ratios can be set to 1.0 to omit the use of compensation ratios to govern density-dependent growth. |
 
@@ -252,10 +254,10 @@ Several additional parameters are available to influence the stochasticity (vari
 ### eps_sd: Standard Deviation in Eggs-per-Spawner
 
 | Parameter | Description                                                                                                                                                                                                                                                                                                                                                                                                       |
-|------------------|------------------------------------------------------|
+|-----------|-------------------------------------------------------------|
 | `eps_sd`  | The Standard Deviation in Eggs-per-Spawner controls the variability in fecundity across simulation years and batch replicates. The example below shows a sample projection with `eps_sd` set to 250 and 750. In the example with `eps_sd` set to 750, there are several years with very high fecundity. Density-dependent constraints (if implemented) may attenuate the apparent effect of high `eps_sd` inputs. |
 
-![eps_sd Standard Deviation in Eggs-per-Spawner](images/image051.png){#07_life_cycle_model-07_life_cycle_model-fig-eps-sd}
+![eps_sd Standard Deviation in Eggs-per-Spawner](images/image051.png){#07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-fig-eps-sd}
 
 <div>
 
@@ -266,10 +268,10 @@ eps_sd Standard Deviation in Eggs-per-Spawner
 ### egg_rho: Correlation in Egg Fecundity Through Time
 
 | Parameter | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-|------------------|------------------------------------------------------|
+|-----------|-------------------------------------------------------------|
 | `egg_rho` | In natural populations, there will be good years and bad years. It's assumed that good years will be good for large adults and small adults. If multiple mature stage classes contribute to spawning (fecundity) (i.e., maturity values are greater than 0), it is assumed that fecundity will be correlated between good and bad years across stage classes (i.e., stage_5, stage_6 & stage_7). `egg_rho` controls the degree of correlation in interannual fecundity between stage classes. See the following figure for an illustrative example. If `egg_rho` is low, and multiple stage classes contribute to spawning, then some stage classes may compensate for good/bad years. Conversely, if `egg_rho` is high, then the population may be highly volatile as all cohorts experience good/bad years simultaneously. |
 
-![egg_rho: correlation in egg fecundity through time](images/image052.png){#07_life_cycle_model-07_life_cycle_model-fig-egg-rho}
+![egg_rho: correlation in egg fecundity through time](images/image052.png){#07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-fig-egg-rho}
 
 <div>
 
@@ -280,16 +282,16 @@ egg_rho: correlation in egg fecundity through time
 ### M.cv: Coefficient of Variation (CV) in Interannual Stage-Specific Mortality
 
 | Parameter | Description                                                                                                                                                                                                                                                                                    |
-|------------------|------------------------------------------------------|
+|-----------|-------------------------------------------------------------|
 | `M.cv`    | The Coefficient of Variation (CV) in stage-specific mortality (`M.cv`) is based on a beta distribution. This parameter allows for the modeling of variability in mortality rates across different life stages, contributing to a more dynamic and realistic simulation of population dynamics. |
 
 ### M.rho: Correlation in Stage-Class Mortality Through Time
 
 | Parameter | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-|------------------|------------------------------------------------------|
+|-----------|-------------------------------------------------------------|
 | `M.rho`   | `M.rho`, the correlation in mortality through time, plays a critical role in modeling the variability of survivorship across life stages. In natural populations, the occurrence of good and bad years is often correlated across all stage classes, excluding eggs (`SE`). `M.rho` determines the degree of this correlation. A low `M.rho` value suggests that certain stage classes may compensate for good/bad years based on random sampling of survivorship, while a high `M.rho` implies that all cohorts may experience good/bad years simultaneously, leading to higher volatility in population dynamics. |
 
-![M.rho: correlation in survivorship through time](images/image053.png){#07_life_cycle_model-07_life_cycle_model-fig-m-rho}
+![M.rho: correlation in survivorship through time](images/image053.png){#07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-fig-m-rho}
 
 <div>
 
@@ -300,10 +302,10 @@ M.rho: correlation in survivorship through time
 ### p.cat: Probability of Catastrophe per Generation
 
 | Parameter | Description                                                                                                                                                                                                                                                                                                                                                                |
-|------------------|------------------------------------------------------|
+|-----------|-------------------------------------------------------------|
 | p.cat     | `p.cat` represents the Probability of Catastrophe per Generation. This parameter is scaled to the average generation time of the population, reflecting the annual probability of a catastrophic event occurring. It's a critical factor in assessing the resilience and long-term sustainability of a population under varying environmental and anthropogenic pressures. |
 
-![Probability of Catastrophe per Generation](images/image054.png){#07_life_cycle_model-07_life_cycle_model-fig-p-cat}
+![Probability of Catastrophe per Generation](images/image054.png){#07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-fig-p-cat}
 
 <div>
 
@@ -319,7 +321,7 @@ Appendix B includes sample species profiles for case study systems, such as Nico
 
 It's recommended to first summarize the species' life cycle using a simple diagram to represent key life stages. This diagram can be converted into a periodicity table (or life history schedule) to represent time spent in each life stage, as shown in the figure. A life history diagram coupled with a periodicity table can be helpful in mapping out transitions between key stages in the life cycle model. Recall that the life cycle model works with annual time steps. "Census" periods within the matrix model do not need to fall precisely at the one-year interval, but care should be taken to ensure that key transitions are not missed or double-counted. It is best to start from the spawning period and work forward, following a whole generation to its progeny
 
-![Sample life cycle diagram and periodicity table for Coho Salmon](images/image055.png){#07_life_cycle_model-07_life_cycle_model-fig-coho-salmon-lifecycle}
+![Sample life cycle diagram and periodicity table for Coho Salmon](images/image055.png){#07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-fig-coho-salmon-lifecycle}
 
 <div>
 

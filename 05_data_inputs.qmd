@@ -1,8 +1,6 @@
 # Data Inputs
 
-A working example of all data inputs can be downloaded from a ‘demo’ directory with the CEMPRAShiny project repository: [CEMPRAShiny demo](https://github.com/essatech/CEMPRAShiny/tree/main/data/demo).
-
-Download the repository locally and navigate to the demo folder: .\CEMPRAShiny-main\data\demo:
+{{< video https://www.youtube.com/watch?v=JFMl_2znFfA >}}
 
 - stressor_response_demo.xlsx
 - stressor_magnitude_demo.xlsx
