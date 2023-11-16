@@ -24,6 +24,10 @@ book:
     - references.qmd
   appendices:
     - appendix_interaction_matrix.qmd
+  google-analytics:
+    tracking-id: "G-3SJZ32N1H9"
+    anonymize-ip: true
+  cookie-consent: true
   comments: 
     utterances:
       repo: mattjbayly/CEMPRA_documentation
