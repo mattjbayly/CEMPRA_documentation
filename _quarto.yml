@@ -28,6 +28,8 @@ book:
     tracking-id: "G-3SJZ32N1H9"
     anonymize-ip: true
   cookie-consent: true
+  body-footer: | 
+    Leave questions and comments below (via your GitHub account)
   comments: 
     utterances:
       repo: mattjbayly/CEMPRA_documentation
