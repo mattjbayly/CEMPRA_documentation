@@ -6,50 +6,49 @@ The stressor-response library is designed as a public reference archive to house
 
 Users of the CEMPRA tool can select a subset of stressor-response functions applicable to their study area and focal species of interest. Selected stressor-response functions can be used to construct a customized stressor-response input workbook for the CEMPRA tool. The stressor-response library is a valuable resource for reference as it can expedite assessments with shared knowledge of common impact pathways. Although a suite of default stressor-response functions is available, the stressor-response library will continually be updated with novel stressor-response functions uploaded, edited, and validated by the community of users.
 
-Example stressor-response functions for Coho Salmon and Steelhead responses to temperature and sediment can be found in Appendix A.
+Access the Library: [Draft Stressor-Response Library](https://mjbayly.com/stressor-response)
 
-### Stressor-Response Library Schema {#08_stressor_response_library-sec-library-schema}
+-   See Sierra Sullivan and Jordan Rosenfeld for Content.
+-   See Matthew Bayly for login credentials to edit and upload data (info\@mjbayly.com).
 
-![Data structure within the SR library, where the table hierarchy starts at the SR Library Main folder (left) and ends at the references and documentation for individual stressor-response functions (right).](images/image056.png){#08_stressor_response_library-fig-stressor-response-schema}
+## Stressor-Response Database
 
-::: {#08_stressor_response_library-fig-stressor-response-schema}
-Data structure within the SR library.
-:::
+***Custom filters by species, stressor, endpoint etc.***
 
-#### Main Folder
+Filter library of stressor-response relationships with dynamic filters. Review stressor-response relationships and apply filters to refine search.
 
-The Main folder is the gateway to the stressor-response library. It contains the primary database and all of the species' folders (see below).
+[![Stressor-Response Database List View](images/srlib001.png){fig-alt="gggg"}](https://mjbayly.com/stressor-response)
 
-#### Species Folders
+Click on a stressor-response relationship from the list view to switch to detail view. The detail view of each stressor-response relationship includes descriptive details, citations, data, and all other attributes. Interactive plots are included at the bottom of the page.
 
-The main SR library is initially divided into folders for each of the currently defined species in the model. If a user develops a stressor-response function for a new species, a new folder/branch should be added to the library.
+[![Stressor-response database detail view](images/srlib002.png){fig-alt="ggg"}](https://mjbayly.com/stressor-response/chinook-temperature-and-prespawn)
 
-#### Stressor Folders
+## Create Multi-Stressor-Response Overview Plots
 
-Stressor folders are located within each of the species' folders. The stressor folders contain the stressor-response function documentation for a given species and are named as follows:
+Overlay stressor-response relationships to better understand similarities and discrepancies between different reference resources. In the example below we compare several different relationships between stream temperature and vital rates of Chinook Salmon. Be sure ensure that the stressor metric is the same (or comparable) between each resource. For example, mean August stream temperature vs MWAT etc.
 
-*SR curve ID_Stressor ID_Stressor Name*
+[![Multiple stressor-response overview comparison plots](images/srlib003.png){fig-alt="ggg"}](https://mjbayly.com/stressor-plot/53,78,54)
 
-#### References
+## Download Stressor-Response Relationships
 
-Within each of the stressor folders, the references folder contains copies of all the materials cited in the stressor-response function documentation.
+Select one or more stressor-response relationships of interest and click download. Several download formats are available including a format for the CEMPRA tool, PHABSIM, JSON, etc.
 
-## Use in the Model {#08_stressor_response_library-sec-use-in-model}
+[![Download/Export stressor-response relationships of interest.](images/srlib004.png){fig-alt="ggg"}](https://mjbayly.com/stressor-response)
 
-The primary stressor-response library (database) contains functions as individual Excel worksheets. These Excel worksheets are used to form a custom Excel SR workbook. The SR workbook is then used as one of the main inputs in the CEMPRA (see Data Inputs).
+## Add, Edit, and Update the Database
 
-![Use of the SR library in the CEMPRA (Joe Model). The SR library contains individual worksheets which can be selected to create a custom SR workbook for use in the model.](images/image057.jpg){#08_stressor_response_library-fig-sr-library-use}
+Verified users can login, add, edit and update relationships. Once logged in, options appear in the detail view to edit data for relationships. New stressors can be added in the detail view.
 
-::: {#08_stressor_response_library-fig-sr-library-use}
-Use of the SR library in the CEMPRA.
-:::
+[![ggg](images/srlib005.png){fig-alt="ggg"}](https://mjbayly.com/stressor-response)
 
-## Stressor-Response Database {#08_stressor_response_library-sec-stressor-response-database}
+[![Login as an authenticated user to add, edit and update relationships.](images/srlib006.png){fig-alt="ggg"}](https://mjbayly.com/stressor-response)
 
-We are currently developing a formal web-based stressor-response database that users will be able to access remotely. A central online hub for all stressor-response functions will streamline collaboration and allow users around the world to share, create, and edit custom stressor-response functions. An interim stressor-response library is currently hosted on the following GitHub archive:
+## Stressor-Response Curve Tracing Tool
 
-[Stressor-Response Library on GitHub](https://github.com/mattjbayly/stressor-response-library)
+Sometimes we need to extract data in figures from older reports. This can be a tedious task, even when using software like ImageJ. A specialized online tool has been developed to upload an image (from file or clipboard), trace the mean response, sd, lower, and upper limits and extract the data in a csv file pre-formatted for the SR database and CEMPRA tool.
 
-*This resource link will be changed as the archive develops (please check for the most recent version of this documentation).*
+[Access the SR curve tracing tool](https://mjbayly.com/sr-curve-trace)
 
-Users can access the repository to get a general sense of the SR library schema and how it will connect to the CEMPRA in the future web-based database.
+(Ass the link to the video tutorial for a quick demo that describes how to use the tool).
+
+[![Stressor-response curve tracing tool. Exract data from older figures.](images/srlib007.png){fig-alt="ggg"}](https://mjbayly.com/sr-curve-trace)

@@ -223,6 +223,12 @@ cookieconsent.run({
  <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Multi-Stressor Interaction Matrix</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix_socio_economic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Socio-economic Evaluation of Restoration Actions</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -235,12 +241,12 @@ cookieconsent.run({
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#08_stressor_response_library-sec-about" id="toc-08_stressor_response_library-sec-about" class="nav-link active" data-scroll-target="#08_stressor_response_library-sec-about"><span class="header-section-number">8.1</span> About</a>
-  <ul class="collapse">
-  <li><a href="#08_stressor_response_library-sec-library-schema" id="toc-08_stressor_response_library-sec-library-schema" class="nav-link" data-scroll-target="#08_stressor_response_library-sec-library-schema"><span class="header-section-number">8.1.1</span> Stressor-Response Library Schema</a></li>
-  </ul></li>
-  <li><a href="#08_stressor_response_library-sec-use-in-model" id="toc-08_stressor_response_library-sec-use-in-model" class="nav-link" data-scroll-target="#08_stressor_response_library-sec-use-in-model"><span class="header-section-number">8.2</span> Use in the Model</a></li>
-  <li><a href="#08_stressor_response_library-sec-stressor-response-database" id="toc-08_stressor_response_library-sec-stressor-response-database" class="nav-link" data-scroll-target="#08_stressor_response_library-sec-stressor-response-database"><span class="header-section-number">8.3</span> Stressor-Response Database</a></li>
+  <li><a href="#08_stressor_response_library-sec-about" id="toc-08_stressor_response_library-sec-about" class="nav-link active" data-scroll-target="#08_stressor_response_library-sec-about"><span class="header-section-number">8.1</span> About</a></li>
+  <li><a href="#stressor-response-database" id="toc-stressor-response-database" class="nav-link" data-scroll-target="#stressor-response-database"><span class="header-section-number">8.2</span> Stressor-Response Database</a></li>
+  <li><a href="#create-multi-stressor-response-overview-plots" id="toc-create-multi-stressor-response-overview-plots" class="nav-link" data-scroll-target="#create-multi-stressor-response-overview-plots"><span class="header-section-number">8.3</span> Create Multi-Stressor-Response Overview Plots</a></li>
+  <li><a href="#download-stressor-response-relationships" id="toc-download-stressor-response-relationships" class="nav-link" data-scroll-target="#download-stressor-response-relationships"><span class="header-section-number">8.4</span> Download Stressor-Response Relationships</a></li>
+  <li><a href="#add-edit-and-update-the-database" id="toc-add-edit-and-update-the-database" class="nav-link" data-scroll-target="#add-edit-and-update-the-database"><span class="header-section-number">8.5</span> Add, Edit, and Update the Database</a></li>
+  <li><a href="#stressor-response-curve-tracing-tool" id="toc-stressor-response-curve-tracing-tool" class="nav-link" data-scroll-target="#stressor-response-curve-tracing-tool"><span class="header-section-number">8.6</span> Stressor-Response Curve Tracing Tool</a></li>
   </ul>
 </nav>
     </div>
@@ -268,56 +274,77 @@ cookieconsent.run({
 <h2 data-number="8.1" class="anchored" data-anchor-id="08_stressor_response_library-sec-about"><span class="header-section-number">8.1</span> About</h2>
 <p>The stressor-response library is designed as a public reference archive to house generalizable stressor-response functions for use in the Cumulative Effects Model for Prioritizing Recovery Actions (CEMPRA) tool. The functions archived in the stressor-response library are widely applicable to numerous applications and use cases.</p>
 <p>Users of the CEMPRA tool can select a subset of stressor-response functions applicable to their study area and focal species of interest. Selected stressor-response functions can be used to construct a customized stressor-response input workbook for the CEMPRA tool. The stressor-response library is a valuable resource for reference as it can expedite assessments with shared knowledge of common impact pathways. Although a suite of default stressor-response functions is available, the stressor-response library will continually be updated with novel stressor-response functions uploaded, edited, and validated by the community of users.</p>
-<p>Example stressor-response functions for Coho Salmon and Steelhead responses to temperature and sediment can be found in Appendix A.</p>
-<section id="08_stressor_response_library-sec-library-schema" class="level3" data-number="8.1.1">
-<h3 data-number="8.1.1" class="anchored" data-anchor-id="08_stressor_response_library-sec-library-schema"><span class="header-section-number">8.1.1</span> Stressor-Response Library Schema</h3>
-<div id="08_stressor_response_library-fig-stressor-response-schema" class="quarto-figure quarto-figure-center anchored">
+<p>Access the Library: <a href="https://mjbayly.com/stressor-response">Draft Stressor-Response Library</a></p>
+<ul>
+<li>See Sierra Sullivan and Jordan Rosenfeld for Content.</li>
+<li>See Matthew Bayly for login credentials to edit and upload data (info@mjbayly.com).</li>
+</ul>
+</section>
+<section id="stressor-response-database" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="stressor-response-database"><span class="header-section-number">8.2</span> Stressor-Response Database</h2>
+<p><strong><em>Custom filters by species, stressor, endpoint etc.</em></strong></p>
+<p>Filter library of stressor-response relationships with dynamic filters. Review stressor-response relationships and apply filters to refine search.</p>
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/image056.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Data structure within the SR library, where the table hierarchy starts at the SR Library Main folder (left) and ends at the references and documentation for individual stressor-response functions (right).</figcaption>
+<p><a href="https://mjbayly.com/stressor-response"><img src="images/srlib001.png" class="img-fluid figure-img" alt="gggg"></a></p>
+<figcaption class="figure-caption">Stressor-Response Database List View</figcaption>
 </figure>
 </div>
-<div id="08_stressor_response_library-fig-stressor-response-schema">
-<p>Data structure within the SR library.</p>
-</div>
-<section id="main-folder" class="level4" data-number="8.1.1.1">
-<h4 data-number="8.1.1.1" class="anchored" data-anchor-id="main-folder"><span class="header-section-number">8.1.1.1</span> Main Folder</h4>
-<p>The Main folder is the gateway to the stressor-response library. It contains the primary database and all of the species’ folders (see below).</p>
-</section>
-<section id="species-folders" class="level4" data-number="8.1.1.2">
-<h4 data-number="8.1.1.2" class="anchored" data-anchor-id="species-folders"><span class="header-section-number">8.1.1.2</span> Species Folders</h4>
-<p>The main SR library is initially divided into folders for each of the currently defined species in the model. If a user develops a stressor-response function for a new species, a new folder/branch should be added to the library.</p>
-</section>
-<section id="stressor-folders" class="level4" data-number="8.1.1.3">
-<h4 data-number="8.1.1.3" class="anchored" data-anchor-id="stressor-folders"><span class="header-section-number">8.1.1.3</span> Stressor Folders</h4>
-<p>Stressor folders are located within each of the species’ folders. The stressor folders contain the stressor-response function documentation for a given species and are named as follows:</p>
-<p><em>SR curve ID_Stressor ID_Stressor Name</em></p>
-</section>
-<section id="references" class="level4" data-number="8.1.1.4">
-<h4 data-number="8.1.1.4" class="anchored" data-anchor-id="references"><span class="header-section-number">8.1.1.4</span> References</h4>
-<p>Within each of the stressor folders, the references folder contains copies of all the materials cited in the stressor-response function documentation.</p>
-</section>
-</section>
-</section>
-<section id="08_stressor_response_library-sec-use-in-model" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="08_stressor_response_library-sec-use-in-model"><span class="header-section-number">8.2</span> Use in the Model</h2>
-<p>The primary stressor-response library (database) contains functions as individual Excel worksheets. These Excel worksheets are used to form a custom Excel SR workbook. The SR workbook is then used as one of the main inputs in the CEMPRA (see Data Inputs).</p>
-<div id="08_stressor_response_library-fig-sr-library-use" class="quarto-figure quarto-figure-center anchored">
+<p>Click on a stressor-response relationship from the list view to switch to detail view. The detail view of each stressor-response relationship includes descriptive details, citations, data, and all other attributes. Interactive plots are included at the bottom of the page.</p>
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/image057.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Use of the SR library in the CEMPRA (Joe Model). The SR library contains individual worksheets which can be selected to create a custom SR workbook for use in the model.</figcaption>
+<p><a href="https://mjbayly.com/stressor-response/chinook-temperature-and-prespawn"><img src="images/srlib002.png" class="img-fluid figure-img" alt="ggg"></a></p>
+<figcaption class="figure-caption">Stressor-response database detail view</figcaption>
 </figure>
 </div>
-<div id="08_stressor_response_library-fig-sr-library-use">
-<p>Use of the SR library in the CEMPRA.</p>
+</section>
+<section id="create-multi-stressor-response-overview-plots" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="create-multi-stressor-response-overview-plots"><span class="header-section-number">8.3</span> Create Multi-Stressor-Response Overview Plots</h2>
+<p>Overlay stressor-response relationships to better understand similarities and discrepancies between different reference resources. In the example below we compare several different relationships between stream temperature and vital rates of Chinook Salmon. Be sure ensure that the stressor metric is the same (or comparable) between each resource. For example, mean August stream temperature vs MWAT etc.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://mjbayly.com/stressor-plot/53,78,54"><img src="images/srlib003.png" class="img-fluid figure-img" alt="ggg"></a></p>
+<figcaption class="figure-caption">Multiple stressor-response overview comparison plots</figcaption>
+</figure>
 </div>
 </section>
-<section id="08_stressor_response_library-sec-stressor-response-database" class="level2" data-number="8.3">
-<h2 data-number="8.3" class="anchored" data-anchor-id="08_stressor_response_library-sec-stressor-response-database"><span class="header-section-number">8.3</span> Stressor-Response Database</h2>
-<p>We are currently developing a formal web-based stressor-response database that users will be able to access remotely. A central online hub for all stressor-response functions will streamline collaboration and allow users around the world to share, create, and edit custom stressor-response functions. An interim stressor-response library is currently hosted on the following GitHub archive:</p>
-<p><a href="https://github.com/mattjbayly/stressor-response-library">Stressor-Response Library on GitHub</a></p>
-<p><em>This resource link will be changed as the archive develops (please check for the most recent version of this documentation).</em></p>
-<p>Users can access the repository to get a general sense of the SR library schema and how it will connect to the CEMPRA in the future web-based database.</p>
+<section id="download-stressor-response-relationships" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="download-stressor-response-relationships"><span class="header-section-number">8.4</span> Download Stressor-Response Relationships</h2>
+<p>Select one or more stressor-response relationships of interest and click download. Several download formats are available including a format for the CEMPRA tool, PHABSIM, JSON, etc.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://mjbayly.com/stressor-response"><img src="images/srlib004.png" class="img-fluid figure-img" alt="ggg"></a></p>
+<figcaption class="figure-caption">Download/Export stressor-response relationships of interest.</figcaption>
+</figure>
+</div>
+</section>
+<section id="add-edit-and-update-the-database" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="add-edit-and-update-the-database"><span class="header-section-number">8.5</span> Add, Edit, and Update the Database</h2>
+<p>Verified users can login, add, edit and update relationships. Once logged in, options appear in the detail view to edit data for relationships. New stressors can be added in the detail view.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://mjbayly.com/stressor-response"><img src="images/srlib005.png" class="img-fluid figure-img" alt="ggg"></a></p>
+<figcaption class="figure-caption">ggg</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://mjbayly.com/stressor-response"><img src="images/srlib006.png" class="img-fluid figure-img" alt="ggg"></a></p>
+<figcaption class="figure-caption">Login as an authenticated user to add, edit and update relationships.</figcaption>
+</figure>
+</div>
+</section>
+<section id="stressor-response-curve-tracing-tool" class="level2" data-number="8.6">
+<h2 data-number="8.6" class="anchored" data-anchor-id="stressor-response-curve-tracing-tool"><span class="header-section-number">8.6</span> Stressor-Response Curve Tracing Tool</h2>
+<p>Sometimes we need to extract data in figures from older reports. This can be a tedious task, even when using software like ImageJ. A specialized online tool has been developed to upload an image (from file or clipboard), trace the mean response, sd, lower, and upper limits and extract the data in a csv file pre-formatted for the SR database and CEMPRA tool.</p>
+<p><a href="https://mjbayly.com/sr-curve-trace">Access the SR curve tracing tool</a></p>
+<p>(Ass the link to the video tutorial for a quick demo that describes how to use the tool).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://mjbayly.com/sr-curve-trace"><img src="images/srlib007.png" class="img-fluid figure-img" alt="ggg"></a></p>
+<figcaption class="figure-caption">Stressor-response curve tracing tool. Exract data from older figures.</figcaption>
+</figure>
+</div>
 
 
 </section>

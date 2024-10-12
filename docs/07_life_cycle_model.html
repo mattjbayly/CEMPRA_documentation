@@ -242,6 +242,12 @@ cookieconsent.run({
  <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Multi-Stressor Interaction Matrix</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix_socio_economic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Socio-economic Evaluation of Restoration Actions</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -262,8 +268,9 @@ cookieconsent.run({
   </ul></li>
   <li><a href="#matrix-life-cycle-model" id="toc-matrix-life-cycle-model" class="nav-link" data-scroll-target="#matrix-life-cycle-model"><span class="header-section-number">7.3</span> Matrix Life Cycle Model</a>
   <ul class="collapse">
-  <li><a href="#vital-rates-for-survivorship-and-growth" id="toc-vital-rates-for-survivorship-and-growth" class="nav-link" data-scroll-target="#vital-rates-for-survivorship-and-growth"><span class="header-section-number">7.3.1</span> Vital Rates for Survivorship and Growth</a></li>
-  <li><a href="#vital-rates-for-fecundity" id="toc-vital-rates-for-fecundity" class="nav-link" data-scroll-target="#vital-rates-for-fecundity"><span class="header-section-number">7.3.2</span> Vital Rates for Fecundity</a></li>
+  <li><a href="#anadromous-life-histories" id="toc-anadromous-life-histories" class="nav-link" data-scroll-target="#anadromous-life-histories"><span class="header-section-number">7.3.1</span> Anadromous Life Histories</a></li>
+  <li><a href="#vital-rates-for-survivorship-and-growth" id="toc-vital-rates-for-survivorship-and-growth" class="nav-link" data-scroll-target="#vital-rates-for-survivorship-and-growth"><span class="header-section-number">7.3.2</span> Vital Rates for Survivorship and Growth</a></li>
+  <li><a href="#vital-rates-for-fecundity" id="toc-vital-rates-for-fecundity" class="nav-link" data-scroll-target="#vital-rates-for-fecundity"><span class="header-section-number">7.3.3</span> Vital Rates for Fecundity</a></li>
   </ul></li>
   <li><a href="#density-dependent-constraints-on-growth" id="toc-density-dependent-constraints-on-growth" class="nav-link" data-scroll-target="#density-dependent-constraints-on-growth"><span class="header-section-number">7.4</span> Density-Dependent Constraints on Growth</a>
   <ul class="collapse">
@@ -307,7 +314,7 @@ cookieconsent.run({
 <section id="overview" class="level2" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="overview"><span class="header-section-number">7.1</span> Overview</h2>
 <p>The integrated life cycle model is a core component of the CEMPRA tool. The life cycle modeling component is a valuable endpoint to evaluate and understand cumulative effects through the lens of demographic rates and population ecology. Some user groups may be satisfied with the simplified Joe Modelling (stressor roll-up) component of the CEMPRA tool and, therefore, not wish to interact with the life cycle model. However, other user groups may benefit substantially from working with the life cycle modeling component. Framing cumulative effects through an integrated life cycle model allows us to understand critical bottlenecks to the productivity and capacity of a target study system. In the CEMPRA life cycle modeling component, stressor-response relationships are linked to vital rates such as life-stage-specific survivorship, fecundity, and carrying capacity. Therefore, the life cycle modeling component can be used to make relative comparisons between locations (spatial units), scenarios, and stressors to understand limiting factors and design recovery action strategies.</p>
-<p>At its core, the life cycle modeling component of the CEMPRA tool is a stage-structured matrix model (see Caswell 2000). A simplified life cycle profile csv data input file (described below) is populated by the user and then imported to parameterize and construct components of the matrix model (e.g., number of stages, stage-specific survivorship, years in each stage, etc.).</p>
+<p>At its core, the life cycle modeling component of the CEMPRA tool is a stage-structured matrix model (see <span class="citation" data-cites="caswell1997">(<a href="references.html#ref-caswell1997" role="doc-biblioref">Caswell, 1997</a>)</span>). A simplified life cycle profile csv data input file (described below) is populated by the user and then imported to parameterize and construct components of the matrix model (e.g., number of stages, stage-specific survivorship, years in each stage, etc.).</p>
 <p>When the life cycle model is run, a hypothetical population is projected forward in time through simulations. The stage-structured matrix model governs the behavior of the simulated population. Density-dependent growth constraints are implemented using either compensation ratios (if the location and stage-specific capacities are unknown) or location and stage-specific Beverton-Holt functions (discussed further below). Location-specific stressor values will interact with the simulated population to curtail or enhance stage-specific survivorship, fecundity, or habitat capacities. Population projections are then compared across scenarios and/or locations to evaluate the relative change in equilibrium abundance estimates for a target life stage (i.e., carrying capacities) and/or the intrinsic productivity (i.e., growth rates) possible at low densities.</p>
 <p>The life cycle modeling component of the CEMPRA tool performs a large number of calculations behind the scenes. While convenient, the embedded complexity can create misleading results if input values and assumptions are not carefully considered. It is assumed that users of the life cycle model have an understanding of basic concepts in population ecology (e.g., population growth rates, carrying capacities etc.) and a familiarity with matrix life cycle models. The following resources provide useful refreshers for interested individuals:</p>
 <ul>
@@ -316,49 +323,228 @@ cookieconsent.run({
 <li>Density-dependent and density-independent constraints on population growth: <a href="https://www.nature.com/scitable/knowledge/library/population-limiting-factors-17059572/" class="uri">https://www.nature.com/scitable/knowledge/library/population-limiting-factors-17059572/</a></li>
 <li>Density-dependent growth functions (review section on the Beverton-Holt function): <a href="http://courses.ecology.uga.edu/ecol4000-fall2018/wp-content/uploads/sites/22/2018/08/Chapter-3-complex-dynamics.pdf" class="uri">http://courses.ecology.uga.edu/ecol4000-fall2018/wp-content/uploads/sites/22/2018/08/Chapter-3-complex-dynamics.pdf</a></li>
 </ul>
-<p>The model code for the life cycle modeling component of the CEMPRA tool follows a similar structure to the codebase used by Van der Lee and Koops (2020). The underlying code and assessment framework was modified substantially by Dr.&nbsp;Kyle Wilson and Matthew Bayly (M.J. Bayly Analytics Ltd.) throughout 2022 and 2023. Code snippets, functional forms, and rationale largely follow conventional workflow demographic modeling outlined in Schaub and Kéry (2021). Users are encouraged to review these resources for additional background and rationale.</p>
+<p>The model code for the life cycle modeling component of the CEMPRA tool follows a similar structure to the code base used by <span class="citation" data-cites="vanderlee2020">(<a href="references.html#ref-vanderlee2020" role="doc-biblioref">Van der Lee &amp; Koops, 2020</a>)</span>. The underlying code and assessment framework was modified substantially by Dr.&nbsp;Kyle Wilson and Matthew Bayly (M.J. Bayly Analytics Ltd.) throughout 2022 and 2024. Code snippets, functional forms, and rationale largely follow conventional workflow demographic modeling outlined in <span class="citation" data-cites="schaub2021">(<a href="references.html#ref-schaub2021" role="doc-biblioref">Schaub &amp; Kéry, 2021</a>)</span>. For anadromous life cycles with terminal spawners classes, matrix structures follow the generalized design proposed by <span class="citation" data-cites="davison2016">(<a href="references.html#ref-davison2016" role="doc-biblioref">Davison &amp; Satterthwaite, 2016</a>)</span>. Users are encouraged to review these resources for additional background and rationale.</p>
 </section>
 <section id="data-input-life-cycle-profiles" class="level2" data-number="7.2">
 <h2 data-number="7.2" class="anchored" data-anchor-id="data-input-life-cycle-profiles"><span class="header-section-number">7.2</span> Data Input: Life Cycle Profiles</h2>
 <section id="purpose" class="level3" data-number="7.2.1">
 <h3 data-number="7.2.1" class="anchored" data-anchor-id="purpose"><span class="header-section-number">7.2.1</span> Purpose</h3>
-<p>The life cycle profile is the main input file for the life cycle model. It provides the names and values of key life cycle parameters and vital rates, including parameters for survival, growth, reproduction, and density-dependent effects. This file makes it easy for users to store and edit life cycle parameter values outside of the R Shiny web application. The following sections break down the components of the life cycle profile file with illustrative examples. The intent of the following sections is to provide a detailed explanation of how the life cycle model works with a description of each component of the input file so that users may create their own life cycle profile for a target species of interest.</p>
+<p>The life cycle profile is the main input file for the life cycle model. It provides the names and values of key life cycle parameters and vital rates, including parameters for survival, growth, reproduction, and density-dependent effects. This file makes it easy for users to store and edit life cycle parameter values either within or outside of the R Shiny web application. The following sections break down the components of the life cycle profile file with illustrative examples. The intent of the following sections is to provide a detailed explanation of how the life cycle model works with a description of each component of the input file so that users may create their own life cycle profile for a target species of interest.</p>
 </section>
 <section id="layout" class="level3" data-number="7.2.2">
 <h3 data-number="7.2.2" class="anchored" data-anchor-id="layout"><span class="header-section-number">7.2.2</span> Layout</h3>
 <p>The life cycle profile is a comma-separated values (CSV) file that contains the names and values of each of the parameters within the life cycle model. Life cycle profiles will be unique to each species or life history variant. The life cycle profile file contains three columns:</p>
 <ul>
-<li><strong>Parameters</strong>: The full name/description of the parameter. This column can be adjusted by the user to provide more relevant nicknames for each stage (e.g., fry survival, smolt survival etc.)</li>
-<li><strong>Name</strong>: The short form name of the parameter used in the model. The names of these parameters are referenced by the model code and should not be modified (apart from adding or removing stage classes).</li>
+<li><strong>Parameters</strong>: The full name/description of the parameter. This column can be adjusted by the user to provide more relevant nicknames for each stage (e.g., fry survival, smolt survival etc.). <em>Please update and change these values for your study system.</em></li>
+<li><strong>Name</strong>: The short form name of the parameter used in the model. The names of these parameters are referenced by the model code and should not be modified (apart from adding or removing stage classes). <em>Feel free to add or remove rows, depending on the number of stages, but do not change the text in this column.</em></li>
 <li><strong>Value</strong>: The numeric value of the parameter used in the model. The values are adjusted for each species profile.</li>
 </ul>
-<div id="fig-figure27" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="images/image039.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;7.1: Example of a life cycle profile CSV input file with four stage classes.</figcaption>
-</figure>
-</div>
-<p>The figure shows an example of a life cycle profile CSV input file with four stage classes.</p>
+<p>The following table shows an example life cycle parameters file for Athabasca Rainbow Trout (non-anadromous).</p>
+<table class="table">
+<caption>Example life cycle parameters file for Athabasca Rainbow Trout (non-anadromous)</caption>
+<colgroup>
+<col style="width: 39%">
+<col style="width: 32%">
+<col style="width: 28%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Parameters</strong></th>
+<th><strong>Name</strong></th>
+<th><strong>Value</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Number of life stages</td>
+<td>Nstage</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>Anadromous</td>
+<td>anadromous</td>
+<td>FALSE</td>
+</tr>
+<tr class="odd">
+<td>Adult capacity</td>
+<td>k</td>
+<td>100</td>
+</tr>
+<tr class="even">
+<td>Spawn events per female</td>
+<td>events</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>Eggs per female spawn</td>
+<td>eps</td>
+<td>3000</td>
+</tr>
+<tr class="even">
+<td>spawning interval</td>
+<td>int</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>egg survival</td>
+<td>SE</td>
+<td>0.1</td>
+</tr>
+<tr class="even">
+<td>yoy survival</td>
+<td>S0</td>
+<td>0.3</td>
+</tr>
+<tr class="odd">
+<td>sex ratio</td>
+<td>SR</td>
+<td>0.5</td>
+</tr>
+<tr class="even">
+<td>Hatchling Survival</td>
+<td>surv_1</td>
+<td>0.3</td>
+</tr>
+<tr class="odd">
+<td>Juvenile Survival</td>
+<td>surv_2</td>
+<td>0.3</td>
+</tr>
+<tr class="even">
+<td>Sub-adult Survival</td>
+<td>surv_3</td>
+<td>0.9</td>
+</tr>
+<tr class="odd">
+<td>Adult Survival</td>
+<td>surv_4</td>
+<td>0.9</td>
+</tr>
+<tr class="even">
+<td>Years as hatchling</td>
+<td>year_1</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>years as juvenile</td>
+<td>year_2</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>years as subadult</td>
+<td>year_3</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>years as adult</td>
+<td>year_4</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<td>egg survival compensation ratio</td>
+<td>cr_E</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>yoy survival compensation ratio</td>
+<td>cr_0</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>hatchling survival compensation ratio</td>
+<td>cr_1</td>
+<td>2.5</td>
+</tr>
+<tr class="odd">
+<td>juvenile survival compensation ratio</td>
+<td>cr_2</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>subadult survival compensation ratio</td>
+<td>cr_3</td>
+<td>1.1</td>
+</tr>
+<tr class="odd">
+<td>adult survival compensation ratio</td>
+<td>cr_4</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>maturity as hatchling</td>
+<td>mat_1</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>maturity as juvenile</td>
+<td>mat_2</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>maturity as subadult</td>
+<td>mat_3</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>maturity as adult</td>
+<td>mat_4</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>variance in eggs per female</td>
+<td>eps_sd</td>
+<td>1.00E+03</td>
+</tr>
+<tr class="odd">
+<td>correlation in egg fecundity through time</td>
+<td>egg_rho</td>
+<td>0.1</td>
+</tr>
+<tr class="even">
+<td>coefficient of variation in stage-specific mortality</td>
+<td>M.cv</td>
+<td>1.00E-01</td>
+</tr>
+<tr class="odd">
+<td>correlation in mortality through time</td>
+<td>M.rho</td>
+<td>0.1</td>
+</tr>
+</tbody>
+</table>
 </section>
 </section>
 <section id="matrix-life-cycle-model" class="level2" data-number="7.3">
 <h2 data-number="7.3" class="anchored" data-anchor-id="matrix-life-cycle-model"><span class="header-section-number">7.3</span> Matrix Life Cycle Model</h2>
-<p>The stage-structured matrix modelling framework, embedded within the CEMPRA tool, can be represented graphically by a life cycle diagram (figure) or a transition matrix. The transition matrix can be represented symbolically with either equations (Table 1) or absolute values (Table 2).</p>
-<p>The life cycle diagram figure shows the sample life cycle profile. <a href="#fig-figure27">Figure&nbsp;<span>7.1</span></a> is represented as a life cycle diagram. In the diagram and input file, we see that there are four main stages (stage_1 to stage_4). stage_1 individuals can become stage_4 individuals after three years in the simulation, but it is also possible for some individuals to spend more than one year in stages 2, 3, and 4 (denoted by the circular loop). We also see that stage_4 individuals are sexually mature and have the capacity to generate new stage_1 individuals. There are also special year 0 (Age-0) events that occur before new stage_1 (Age-1) individuals are secured in the simulation. These events include egg survival (SE) and Age-0 fry survival (S0).</p>
+<p>The stage-structured matrix modelling framework, embedded within the CEMPRA tool, can be represented graphically by a life cycle diagram (figure) or a transition matrix. The transition matrix can be represented symbolically with either equations (Table 1) or absolute values (Table 2). The structure of the life cycle diagram and transition matrix will be different depending on whether the <strong>anadromous</strong> input is set to TRUE (for anadromous life histories e.g., salmon) or FALSE (for non-anadromous life histories e.g., most trout).</p>
+<p>The life cycle diagram figure (below) shows stage class transitions for Athabasca Rainbow Trout. In the diagram and input file, we see that there are four main stages (stage_1 to stage_4). stage_1 individuals can become stage_4 individuals after three years in the simulation, but it is also possible for some individuals to spend more than one year in stages 2, 3, and 4 (denoted by the circular loop). We also see that stage_4 individuals are sexually mature and have the capacity to generate new stage_1 individuals. There are also special year 0 (Age-0) events that occur before new stage_1 (Age-1) individuals are secured in the simulation. These events include egg survival (SE) and Age-0 fry survival (S0).</p>
 <div id="07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-fig-figure28" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/image040.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">The life cycle diagram for the demo life cycle profile is shown in <a href="#fig-figure27">Figure&nbsp;<span>7.1</span></a>.</figcaption>
+<figcaption class="figure-caption">Samle life cycle diagram for Athabasca Rainbow Trout.</figcaption>
 </figure>
 </div>
 <p>The life cycle modelling component of the CEMPRA tool is set up as a pre-birth pulse census (see Caswell 2000). Since the design of stage-structured matrix models does not easily allow for the initial number of eggs and fry to be represented as independent matrix elements (cells), their transitions are included within the fecundity term. In a pre-birth pulse census, we assume that the demographic census takes place immediately before spawning (fecundity), meaning that yearlings of the previous spawning year have survived a full time-step (Age-0/stage-0 to Age-1/stage-1). Yearlings (Age-0: egg &amp; fry) must survive the entire census period to the start of the next census. Therefore, the Age-0 transitions (egg-to-fry survivorship: SE and fry-to-parr survivorship: S0) are accounted for within the fecundity element (cells) of the transition matrix (Table 1).</p>
-<section id="vital-rates-for-survivorship-and-growth" class="level3" data-number="7.3.1">
-<h3 data-number="7.3.1" class="anchored" data-anchor-id="vital-rates-for-survivorship-and-growth"><span class="header-section-number">7.3.1</span> Vital Rates for Survivorship and Growth</h3>
+<section id="anadromous-life-histories" class="level3" data-number="7.3.1">
+<h3 data-number="7.3.1" class="anchored" data-anchor-id="anadromous-life-histories"><span class="header-section-number">7.3.1</span> Anadromous Life Histories</h3>
+<p>For semelparous species (such as salmon) we need to impose a slightly different structure to accurately represent a terminal spawner class (B) with death upon reproduction. This can become challenging because we need to also account for the fact that some species such as Coho Salmon, Chinook Salmon, Steelhead etc. will choose to return to spawn at different ages. For example, some Chinook Salmon will return to spawn at age-3, age-4, or age-5 (and sometimes even later). Therefore, the matrix structure needs to represent a dual track for breeders (B) that return to spawn and pre-breeders (P) that remain at sea (or elsewhere) for continued growth. Elegant solutions have been proposed by <span class="citation" data-cites="davison2016">(<a href="references.html#ref-davison2016" role="doc-biblioref">Davison &amp; Satterthwaite, 2016</a>)</span> (and others) to achieve this.</p>
+<p>The diagram below illustrates the anadromous life history diagram for Chinook Salmon. In this diagram, there are two pathways available to individual age-2 fish transitioning to age-3 fish. Individuals may return for spawning as breeders (B) (orange boxes) or remain in the marine environment as pre-breeders (Pb) (light blue boxes) for additional years. Pre-breeder (Pb) age classes can have interannual survivorship estimates &gt;0 (to advance fish to older cage classes) but all spawner classes (B-breeders) will die after spawning. The probability of becoming a spawner (at age 3-5) will depend on the portion that become mature at each age class (mat_x). For example, the transition from age-2 (Pb - prebreeders) to age-3 spawners (B - breeders) will be expressed as the baseline marine survivorship from age-2 to age-3 &nbsp;(surv_2) multiplied by the portion of fish that spawn at age-3 (mat_3). Additional migratory mortality for age-3 fish returning to spawn can expressed as (smig_3). Alternatively, age-2 fish can remain at sea for another year to enter the age-3 pre-breeder marine class (stage_Pb_3). This marine transition (stage_Pb_2 to stage_Pb_3) will be expressed as the baseline age-2 to age-3 marine survivorship (surv_2) * the portion of fish that do not spawn at age-3 (1 – mat_3). The cycle repeats itself until the final transition from age-4 to age-5. We assume that age-5 is the maximum possible age any fish can achieve. mat_5 is set 1.0 (100% of remaining individuals return to spawn). No fish will enter into the class (stage_Pb_5 – not shown). We can also set surv_5 to 0, but doing so is not necessary if mat_5 is set to 1.0.</p>
+<p>Recruitment of one-year-old fish (stage_Pb_1) is a function of the number of spawners of a given age class (e.g., stage_B_x) multiplied by the average pre-spawn mortality of that age class (u_x), the average fecundity (eggs per female spawner, eps) for that age class (eps_x), the sex ratio (portion female, SR), the average egg survivorship (SE), and finally the average fry survivorship (S0). We can assume the spawning events (events) and interval (int) are both set to 1.0. Therefore, the number of stage_Pb_1 recruits from age-3 spawners would be expressed as (μ_3 * events * eps_3 * SE * s0 * SR)/int.</p>
+<p>This diagram can be restructured for Coho, Steelhead, Coastal Cutthroat etc. by adjusting vital rates and then adding or removing age class maturity schedules (see examples at the end of this chapter). We strongly recommend that all implimentations of the CEMPRA anadromous life cycle model for salmon develop an age-based matrix model (Leslie Matrix Models) as a opposed to a stage-based matrix model. We have found that these are less prone to misinterpretations and easier to diagnose.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/anadromous_1.png" class="img-fluid figure-img" alt="Generalized life history stage class transition diagram for anadromous species (example for Chinook Salmon)"></p>
+<figcaption class="figure-caption">Generalized life history stage class transition diagram for anadromous species (example for Chinook Salmon)</figcaption>
+</figure>
+</div>
+</section>
+<section id="vital-rates-for-survivorship-and-growth" class="level3" data-number="7.3.2">
+<h3 data-number="7.3.2" class="anchored" data-anchor-id="vital-rates-for-survivorship-and-growth"><span class="header-section-number">7.3.2</span> Vital Rates for Survivorship and Growth</h3>
 <p>The following table lists the vital rates for survivorship and growth:</p>
 <table class="table">
 <colgroup>
-<col style="width: 15%">
-<col style="width: 84%">
+<col style="width: 26%">
+<col style="width: 73%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -400,13 +586,13 @@ cookieconsent.run({
 </figure>
 </div>
 </section>
-<section id="vital-rates-for-fecundity" class="level3" data-number="7.3.2">
-<h3 data-number="7.3.2" class="anchored" data-anchor-id="vital-rates-for-fecundity"><span class="header-section-number">7.3.2</span> Vital Rates for Fecundity</h3>
+<section id="vital-rates-for-fecundity" class="level3" data-number="7.3.3">
+<h3 data-number="7.3.3" class="anchored" data-anchor-id="vital-rates-for-fecundity"><span class="header-section-number">7.3.3</span> Vital Rates for Fecundity</h3>
 <p>The following table lists the vital rates for fecundity:</p>
 <table class="table">
 <colgroup>
-<col style="width: 15%">
-<col style="width: 84%">
+<col style="width: 26%">
+<col style="width: 73%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -438,7 +624,7 @@ cookieconsent.run({
 </tbody>
 </table>
 <p><em>Table: Vital rates for fecundity in the life cycle model.</em></p>
-<p>We can combine all parameters discussed in this section along with the example species profile (<a href="#fig-figure27">Figure&nbsp;<span>7.1</span></a>) to construct a symbolic (mathematical) representation of the transition matrix (<img src="#tbl:transition-matrix.png" class="img-fluid" alt="Table 1">). The stage-to-stage transitions account for the probability of staying within each stage or advancing to the next stage based on the <code>surv_X</code> and n-year spent within a stage <code>year_X</code>. The fecundity element of the matrix (top row) includes elements for fecundity and Age-0 survivorship.</p>
+<p>We can combine all parameters discussed in this section along with the example species profile (<span class="quarto-unresolved-ref">?fig-figure27</span>) to construct a symbolic (mathematical) representation of the transition matrix (<img src="#tbl:transition-matrix.png" class="img-fluid" alt="Table 1">). The stage-to-stage transitions account for the probability of staying within each stage or advancing to the next stage based on the <code>surv_X</code> and n-year spent within a stage <code>year_X</code>. The fecundity element of the matrix (top row) includes elements for fecundity and Age-0 survivorship.</p>
 <div id="07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-tbl:transition-matrix">
 <p>Table 1. Symbolic Representation of the Transition Matrix</p>
 <table class="table">
@@ -597,8 +783,8 @@ cookieconsent.run({
 <p><strong>Location and Stage-Specific Carrying Capacities Constraints in the Species Profile</strong></p>
 <table class="table">
 <colgroup>
-<col style="width: 18%">
-<col style="width: 81%">
+<col style="width: 27%">
+<col style="width: 72%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -656,7 +842,7 @@ cookieconsent.run({
 <li>K (Stage-3): Calculated from the stable-stage distribution of the transition matrix (B) after setting the adult stage (Stage-4) to K (e.g., 100).</li>
 <li>K (Stage-4): Manually input by the user for the population of interest. This assumes that stage-4 is the only mature age class.</li>
 </ul>
-<p>Stable-stage distribution (portions) under the example species profile <a href="#fig-figure27">Figure&nbsp;<span>7.1</span></a>:</p>
+<p>Stable-stage distribution (portions) under the example species profile <span class="quarto-unresolved-ref">?fig-figure27</span>:</p>
 </section>
 <section id="stable-stage-distributions-as-a-fraction-0---1-stage-specific-carrying-capacities-k" class="level4" data-number="7.4.2.3">
 <h4 data-number="7.4.2.3" class="anchored" data-anchor-id="stable-stage-distributions-as-a-fraction-0---1-stage-specific-carrying-capacities-k"><span class="header-section-number">7.4.2.3</span> Stable Stage Distributions (as a fraction 0 - 1) &amp; Stage-specific Carrying Capacities (K):</h4>
@@ -675,8 +861,8 @@ cookieconsent.run({
 <p><strong>Compensation Ratios in the Species Profile</strong></p>
 <table class="table">
 <colgroup>
-<col style="width: 19%">
-<col style="width: 80%">
+<col style="width: 27%">
+<col style="width: 72%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -717,8 +903,8 @@ cookieconsent.run({
 <h3 data-number="7.5.1" class="anchored" data-anchor-id="eps_sd-standard-deviation-in-eggs-per-spawner"><span class="header-section-number">7.5.1</span> eps_sd: Standard Deviation in Eggs-per-Spawner</h3>
 <table class="table">
 <colgroup>
-<col style="width: 15%">
-<col style="width: 84%">
+<col style="width: 26%">
+<col style="width: 73%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -747,8 +933,8 @@ cookieconsent.run({
 <h3 data-number="7.5.2" class="anchored" data-anchor-id="egg_rho-correlation-in-egg-fecundity-through-time"><span class="header-section-number">7.5.2</span> egg_rho: Correlation in Egg Fecundity Through Time</h3>
 <table class="table">
 <colgroup>
-<col style="width: 15%">
-<col style="width: 84%">
+<col style="width: 26%">
+<col style="width: 73%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -777,8 +963,8 @@ cookieconsent.run({
 <h3 data-number="7.5.3" class="anchored" data-anchor-id="m.cv-coefficient-of-variation-cv-in-interannual-stage-specific-mortality"><span class="header-section-number">7.5.3</span> M.cv: Coefficient of Variation (CV) in Interannual Stage-Specific Mortality</h3>
 <table class="table">
 <colgroup>
-<col style="width: 15%">
-<col style="width: 84%">
+<col style="width: 26%">
+<col style="width: 73%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -798,8 +984,8 @@ cookieconsent.run({
 <h3 data-number="7.5.4" class="anchored" data-anchor-id="m.rho-correlation-in-stage-class-mortality-through-time"><span class="header-section-number">7.5.4</span> M.rho: Correlation in Stage-Class Mortality Through Time</h3>
 <table class="table">
 <colgroup>
-<col style="width: 15%">
-<col style="width: 84%">
+<col style="width: 26%">
+<col style="width: 73%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -828,8 +1014,8 @@ cookieconsent.run({
 <h3 data-number="7.5.5" class="anchored" data-anchor-id="p.cat-probability-of-catastrophe-per-generation"><span class="header-section-number">7.5.5</span> p.cat: Probability of Catastrophe per Generation</h3>
 <table class="table">
 <colgroup>
-<col style="width: 15%">
-<col style="width: 84%">
+<col style="width: 26%">
+<col style="width: 73%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -890,6 +1076,12 @@ cookieconsent.run({
 <div id="ref-beechie2021modeling" class="csl-entry" role="listitem">
 Beechie, T. J., Nicol, C., Fogel, C., Jorgensen, J., Thompson, J., Seixas, G., Chamberlin, J., Hall, J., Timpane-Padgham, B., Kiffney, P., Kubo, S., &amp; Keaton, J. (2021). <em>Modeling effects of habitat change and restoration alternatives on salmon in the chehalis river basin using a salmonid life-cycle model</em> (NMFS-NWFSC-CR-2021-01). U.S. Department of Commerce, NOAA.
 </div>
+<div id="ref-caswell1997" class="csl-entry" role="listitem">
+Caswell, H. (1997). Matrix methods for population analysis. In S. Tuljapurkar &amp; H. Caswell (Eds.), <em>Structured-population models in marine, terrestrial, and freshwater systems</em> (pp. 19–58). Springer US. <a href="https://doi.org/10.1007/978-1-4615-6005-0_2">https://doi.org/10.1007/978-1-4615-6005-0_2</a>
+</div>
+<div id="ref-davison2016" class="csl-entry" role="listitem">
+Davison, R. J., &amp; Satterthwaite, W. H. (2016). Use of age and stage structured matrix models to predict life history schedules for semelparous populations. <em>Natural Resource Modeling</em>, <em>29</em>(4), 538–558. <a href="https://doi.org/10.1111/nrm.12109">https://doi.org/10.1111/nrm.12109</a>
+</div>
 <div id="ref-jorgensen2021identifying" class="csl-entry" role="listitem">
 Jorgensen, J. C., Nicol, C., Fogel, C., &amp; Beechie, T. J. (2021). Identifying the potential of anadromous salmonid habitat restoration with life cycle models. <em>Plos One</em>, <em>16</em>(9), e0256792.
 </div>
@@ -899,8 +1091,14 @@ Kendall, N. W., Unrein, J., Volk, C., Beauchamp, D. A., Fresh, K. L., &amp; Quin
 <div id="ref-roni2018review" class="csl-entry" role="listitem">
 Roni, P., Anders, P. J., Beechie, T. J., &amp; Kaplowe, D. J. (2018). Review of tools for identifying, planning, and implementing habitat restoration for pacific salmon and steelhead. <em>North American Journal of Fisheries Management</em>, <em>38</em>(2), 355–376.
 </div>
+<div id="ref-schaub2021" class="csl-entry" role="listitem">
+Schaub, M., &amp; Kéry, M. (2021). <em>Integrated population models: Theory and ecological applications with r and JAGS</em>. Academic Press.
+</div>
 <div id="ref-sorel2022informing" class="csl-entry" role="listitem">
 Sorel, M. (2022). <em>Informing salmon conservation with life cycle models that account for individual heterogeneity</em> [PhD thesis]. University of Washington.
+</div>
+<div id="ref-vanderlee2020" class="csl-entry" role="listitem">
+Van der Lee, A. S., &amp; Koops, M. A. (2020). <em>Recovery potential modelling of westslope cutthroat trout (oncorhynchus clarkii lewisi) in designatable unit 1: Saskatchewan-nelson river populations</em> (Research Document 2020/020). Canadian Science Advisory Secretariat. <a href="https://www.dfo-mpo.gc.ca/csas-sccs/publications/resdocs-docrech/2020/2020_020-eng.html">https://www.dfo-mpo.gc.ca/csas-sccs/publications/resdocs-docrech/2020/2020_020-eng.html</a>
 </div>
 <div id="ref-ward1993egg" class="csl-entry" role="listitem">
 Ward, B. R., &amp; Slaney, P. A. (1993). Egg-to-smolt survival and fry-to-smolt density dependence of keough river steelhead trout. <em>Canadian Special Publication of Fisheries and Aquatic Sciences</em>, 209–217.

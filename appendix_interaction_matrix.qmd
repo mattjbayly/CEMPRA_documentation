@@ -12,25 +12,25 @@ A hypothetical example (Figure 1) is included to show the interaction between st
 
 ## Data Preparation
 
-The 2-factor interaction matrices are optionally included as additional tabs in the stressor response workbook. The formatting must follow Figure 2. The worksheet name must begin with “**MInt_**” followed by a unique name (ideally without spaces). In this example we used “MInt_AB”.
+The 2-factor interaction matrices are optionally included as additional tabs in the stressor response workbook. The formatting must follow Figure 2. The worksheet name must begin with “**MInt\_**” followed by a unique name (ideally without spaces). In this example we used “MInt_AB”.
 
 ![Example Matrix interaction surface for stressor variables A and B.](images/image002.png){#fig-figure2}
 
 The header section of the workbook must include several inputs:
 
-- **Matrix Name (cell B1):** A custom name given to the 2-way interaction (for personal reference purposes). This name should match the worksheet name (e.g., MInt_AB). Try to avoid using spaces or special characters outside of MInt_.
-  
-- **Columns (cell B2):** The name of the stressor variable representing the column header values in the system capacity table. In the previous example column header values in the subsequent tables will map onto this stressor. Ensure that the spelling of the stressor matches the spelling throughout the rest of the workbook.
-  
-- **Rows (B3):** The name of the stressor variable representing the row names in the system capacity table. In the previous example row names in the subsequent tables will map onto this stressor. Ensure that the spelling of the stressor matches the spelling throughout the rest of the workbook.
-  
-- **Main Effects:** Specify whether the system capacity estimates in the 2-factor interaction matrix account for (include) the main effects. Options for cell B4 can be either “Included” or “Excluded”.
+-   **Matrix Name (cell B1):** A custom name given to the 2-way interaction (for personal reference purposes). This name should match the worksheet name (e.g., MInt_AB). Try to avoid using spaces or special characters outside of MInt\_.
 
-  - **Included:** When cell B4 is set to “Included” the system capacity estimates are intended to represent the entire relationship between the two stressors at their respective levels (main effects and interactive effects combined). If the main effects option is set to “Included” the cumulative system capacity calculation will be adjusted to automatically omit both of the univariate stressor-response relationships (if they have been specified in the stressor-response workbook) and only evaluate their combined effect from the 2-factor interaction matrix. This modification is necessary to avoid double counting the effects of each stressor.
+-   **Columns (cell B2):** The name of the stressor variable representing the column header values in the system capacity table. In the previous example column header values in the subsequent tables will map onto this stressor. Ensure that the spelling of the stressor matches the spelling throughout the rest of the workbook.
 
-    *For example, if the Stressor-Response workbook contained stressor-response worksheets for “Nutrients”, “Canopy_Cover” and an interactive matrix (e.g., “Matrix_1”) for “Nutrients and Canopy_Cover”, then the Joe Model would only evaluate system capacity values from the matrix and discard the univariate effects with the assumption that they are already accounted for in the matrix capacity data (Y = “VarA” + “VarB” + “Nutrients and Canopy_Cover”).*
+-   **Rows (B3):** The name of the stressor variable representing the row names in the system capacity table. In the previous example row names in the subsequent tables will map onto this stressor. Ensure that the spelling of the stressor matches the spelling throughout the rest of the workbook.
 
-  - **Excluded (experimental – apply with caution):** Setting cell B4 (Main Effects) to “Excluded” indicates that the interaction surface only describes the interactive effects and that the main effects (defined in the other stressor-response worksheets) must remain in the cumulative system capacity calculation. If the “Excluded” option is selected, the 2-factor interaction matrix ultimately acts as an additional stressor variable to modify the system capacity score. Setting the main effects to “Excluded” is convenient when users wish to quickly evaluate scenarios with and without customized interactive effects.
+-   **Main Effects:** Specify whether the system capacity estimates in the 2-factor interaction matrix account for (include) the main effects. Options for cell B4 can be either “Included” or “Excluded”.
+
+    -   **Included:** When cell B4 is set to “Included” the system capacity estimates are intended to represent the entire relationship between the two stressors at their respective levels (main effects and interactive effects combined). If the main effects option is set to “Included” the cumulative system capacity calculation will be adjusted to automatically omit both of the univariate stressor-response relationships (if they have been specified in the stressor-response workbook) and only evaluate their combined effect from the 2-factor interaction matrix. This modification is necessary to avoid double counting the effects of each stressor.
+
+        *For example, if the Stressor-Response workbook contained stressor-response worksheets for “Nutrients”, “Canopy_Cover” and an interactive matrix (e.g., “Matrix_1”) for “Nutrients and Canopy_Cover”, then the Joe Model would only evaluate system capacity values from the matrix and discard the univariate effects with the assumption that they are already accounted for in the matrix capacity data (Y = “VarA” + “VarB” + “Nutrients and Canopy_Cover”).*
+
+    -   **Excluded (experimental – apply with caution):** Setting cell B4 (Main Effects) to “Excluded” indicates that the interaction surface only describes the interactive effects and that the main effects (defined in the other stressor-response worksheets) must remain in the cumulative system capacity calculation. If the “Excluded” option is selected, the 2-factor interaction matrix ultimately acts as an additional stressor variable to modify the system capacity score. Setting the main effects to “Excluded” is convenient when users wish to quickly evaluate scenarios with and without customized interactive effects.
 
 **Important Note:** The implementation of interactive effects and main effects in the CEMPRA tool is different from a conventional logistic regression equation. There is no intercept, context-dependent coefficients, or link function. The interactive effect is simply added into the formula like any other stressor. For example, if the Stressor-Response workbook contained stressor-response worksheets for “Nutrients”, “Canopy_Cover” and an interactive matrix (e.g., “Matrix_1”) for “Nutrients and Canopy_Cover”, then the Joe Model would incorporate all three terms into the equation as stressor-response terms (Y = “VarA” + “VarB” + “Nutrients” + “Canopy Cover” + “Nutrients and Canopy_Cover”).
 
@@ -46,13 +46,12 @@ If values in the stressor magnitude workbook do not align exactly with stressor 
 
 **Common Errors and Issues:**
 
-- **Order stressors with values increasing:** Matrix column and row header values must be sorted non-decreasingly and contain no NA values or blank values. For example, 800, 600, 400 should be reordered as 400, 600, 800 in either the row or column headers for each stressor.
+-   **Order stressors with values increasing:** Matrix column and row header values must be sorted non-decreasingly and contain no NA values or blank values. For example, 800, 600, 400 should be reordered as 400, 600, 800 in either the row or column headers for each stressor.
 
-- **Keep template clean:** Format of template has been altered or additional content is placed in rows or columns to the left or below matrix tables.
+-   **Keep template clean:** Format of template has been altered or additional content is placed in rows or columns to the left or below matrix tables.
 
-- **Errors in header and meta data**
+-   **Errors in header and meta data**
 
 ## Population Model
 
 The 2-factor interaction matrix can also be used to define interactions linked to vital rates in the population model. The parameterization and setup for this is identical to how other variables are described in the stressor-response workbook. Ensure that linkages are properly defined in the “Main” coversheet for each of the input stressors being used as rows and columns.
-
