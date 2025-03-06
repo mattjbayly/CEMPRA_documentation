@@ -12,7 +12,6 @@ The CEMPRA framework is available as an R package and an R Shiny application. Al
 
 *R Shiny application*: <https://github.com/essatech/CEMPRAShiny>
 
-
 ## R-Package
 
 ![CEMPRA package repository available on GitHub (https://github.com/essatech/CEMPRA/).](images/image010.png){#fig-figure6}
@@ -28,7 +27,6 @@ A quick start guide is provided below, but see Appendix D for tutorials and func
 The CEMPRA modelling tool includes the *CEMPRA* R package, which is accompanied by an interactive R Shiny web application (https://essa.shinyapps.io/CEMPRAShiny; also available as the stand-alone Shiny app). This application acts as a flexible, user-friendly interface to interact with key components of the CEMPRA tool. It accepts user inputs for stressor-response functions, stressor magnitude, spatial units/polygons, and vital rates (for the life cycle model portion). Results are easily mapped, summarized, and plotted within the **Map Overview** page of the web application. Scenario results generated from the tool (and the associated life cycle model) can be exported directly from the application as an Excel spreadsheet (.xlsx). See Section 5 for details on data inputs and Section 6 for a complete walkthrough of the application.
 
 ## Initial Setup and Installation
-
 
 Inexperienced R users can run the Joe Model directly through the web application (<https://essa.shinyapps.io/CEMPRAShiny/>). However, downloading and running the model directly in RStudio is recommended for improved performance. Running the application locally (outside of shinyapps.io) also guarantees data privacy. To run the application locally, users must first have R and RStudio downloaded and installed on their computers. The *CEMPRA* R package (<https://github.com/essatech/CEMPRA/>) and the local version of the R Shiny web application (<https://github.com/essatech/CEMPRAShiny>) can be downloaded from GitHub.
 

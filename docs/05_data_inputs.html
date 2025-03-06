@@ -242,6 +242,12 @@ cookieconsent.run({
  <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Multi-Stressor Interaction Matrix</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix_socio_economic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Socio-economic Evaluation of Restoration Actions</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -320,6 +326,61 @@ cookieconsent.run({
 <p>The purpose of the “Main” worksheet is to organize and summarize stressor-response functions within the workbook. The columns within this worksheet are set up as follows. Inputs must be diligently followed in order for the code to work:</p>
 
 <!-- Table describing the column names and descriptions of the Main worksheet -->
+<!-- Details on how to use empirical data to develop stressor-response functions -->
+<table class="table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 77%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Column Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Stressors</strong></td>
+<td>Name of the stressor. This must match the stressor-response worksheet title. It must also match the “Stressor” column in the stressor magnitude workbook. Avoid the use of spaces in stressor names.</td>
+</tr>
+<tr class="even">
+<td><strong>Stressor_cat</strong></td>
+<td>Category of the stressor. Only relevant if multiple stressors are linked with a defined interaction. If there is no interaction, simply copy the stressor name here.</td>
+</tr>
+<tr class="odd">
+<td><strong>Interaction</strong></td>
+<td>Interaction between stressors. Set to NA or leave blank if there are no interactions. Possible interactions available include “Minimum”. If multiple variables are linked together with “Minimum”, the variable with the lowest mean system capacity in the Joe Model will be used, and the other variables will be omitted from the CEMPRA (Joe Model) calculation. This also helps determine which terms should be linked together by defining groups in the “Linked” column. Use letters A, B, C etc., to define distinct groups. If no special interaction is defined between variables, then set these cells to NA.</td>
+</tr>
+<tr class="even">
+<td><strong>Linked</strong></td>
+<td>For Variable Linkages: Use NA if no interaction is defined for the target variable; otherwise, choose letters A, B or C to specify variable groups. For example, if there were four stressor-response curves for December, January, February, and March flows, and they were encoded as three separate variables, users could apply the “Minimum” function to link the lowest system capacity across all four terms but only have one winter flow function in the CEMPRA (Joe Model). In this case, the letter A would be used to group all these terms together.</td>
+</tr>
+<tr class="odd">
+<td><strong>Stress_Scale</strong></td>
+<td>Stressor Scale can be either “linear” or “log” to specify a linear or logarithmic function, respectively, for interpolation.</td>
+</tr>
+<tr class="even">
+<td><strong>Function</strong></td>
+<td>Either “continuous” or “step”. “Continuous” will apply linear interpolation between values, and “step” will adjust mean system capacity values in discrete steps.</td>
+</tr>
+<tr class="odd">
+<td><strong>Life_stages</strong></td>
+<td>Which life stage should each stressor be linked to?<br><br>Set all values to “adult” if unspecified. The default assumption in the Joe Model is that stressor-response curves are linked to “adult” system capacity.<br><br>If you are making use of the integrated life cycle model, then possible life stages include “SE” for eggs and “S0” for hatchling/fry. Both SE and S0 are Age-0 individuals. For subsequent stages, use “stage_1”, “stage_2”, “stage_3” etc. for stage-specific linkages (see Section 6.4 and Section 8 for clarification).<br><br>If the same stressor is linked to multiple life stages, special terms such as “sub_adult” or “adult” can be used to define linkages to all immature (Age-1+) stage classes and all mature (Age-1+) stage classes, respectively. The term “all” will mean that the stressor response curve is linked to all life stages.<br><br><strong><em>If the same environmental variable is linked to different life stages with different stressor-response curves, then it is recommended that the user duplicate stressor values and treat them as distinct environmental variables to avoid confusion (e.g., “Temperature_adult”, “Temperature_parr”).</em></strong></td>
+</tr>
+<tr class="even">
+<td><strong>Parameters</strong></td>
+<td>Only relevant for the integrated life cycle model: leave blank for scenarios that only make use of the Joe Model.<br><br>If the stressor-response function is being linked to a vital rate in the life cycle model, describe how the stressor-response curve is linked to the life stage (which vital rate is affected). This column can be left blank if a user is only interested in running the Joe Model.<br><br>Possible mechanisms include “capacity”, “survival,” or “fecundity”. Once set, the response component of the stressor-response curve will act as a multiplier to the specified vital rate. For example, if a stressor is linked to “survival” of stage X and the stressor-response curve estimates a scaled response of 0.8 based on the stressor magnitude, then the default baseline survivorship will be multiplied by 0.8 in the simulation (e.g., original survivorship of life stage X: 0.34; adjusted survivorship of life stage X: 0.8<em>0.34 = 0.27).<br><br>• survival: Stressors linked to “survival” modify the default survivorship of a given life stage transition.<br>• capacity: Stressors linked to “capacity” will modify the stage-specific capacity values by a multiplier (0 – 1) based on the stressor-response relationship, regardless of the mechanism used to represent density-dependent constraints on growth (compensation ratios vs location and stage-specific K values, See Section 8). Capacity adjustments will be implemented as the final step in the calculation. Stressor-response functions linked to capacity will only have an effect if the life stage is parameterized with density-dependent constraints (e.g., compensation ratios ≠ 1.0 or Beverton-Holt K values enabled). If a stressor-response function is linked to a life stage, but there are no density-dependent constraints on that life stage in the life cycle profile, then the stressor will not have an effect on the simulation.<br>• fecundity: Stressor-response functions linked to fecundity will adjust the (eps) eggs per spawner (female) using the response value as a multiplier on the default input fecundity. For example, if the default fecundity is 3,000 and a stressor linked to fecundity has an effect of 0.6 (response), then the resulting fecundity (epf) in the life cycle model will be 3,000 </em> 0.6 = 1,800. Note that the stressor-response relationships must be linked to a sexually mature life stage for the fecundity multiplier to be meaningful. For example, if a fecundity multiplier is linked to an early life stage (e.g., stage_1), but the target species does not become mature until stage_3, then the stressor will have no observable effect on the population.<br><br>Response (effect) estimates from the stressor-response curves will always be adjusted to 0 if biological response values are below zero, and adjusted to 100 (1.0) if response values exceed 100% in the stressor-response workbook. This ensures that survivorship remains between 0 and 1.</td>
+</tr>
+<tr class="odd">
+<td><strong>Units</strong></td>
+<td>Optional: include units as meta data (a friendly reminder). This column is not used in any calculations but is included as metadata and displayed on summary plots in the tool (where available).</td>
+</tr>
+<tr class="even">
+<td><strong>Model</strong></td>
+<td>Set all values to “Joe Model” if not using the life cycle model.<br><br>This column is used to define which assessment endpoint the stressor-response curve should be applied to. Possible options include “All”, “Joe Model,” or “Life cycle model”. “All” specifies that the stressor-response curve is generic enough to be used in both the Joe Model and the life cycle model. “Joe Model” specifies that the stressor-response relationship should only be used in the simplified Joe Model roll-up summary. “Life cycle model” specifies that the stressor-response relationship is only applicable to the life cycle model.</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="individual-stressor-response-curve-worksheets" class="level4" data-number="5.1.2.2">
 <h4 data-number="5.1.2.2" class="anchored" data-anchor-id="individual-stressor-response-curve-worksheets"><span class="header-section-number">5.1.2.2</span> Individual Stressor-Response Curve Worksheets</h4>
@@ -334,6 +395,41 @@ cookieconsent.run({
 <li>Example of an individual stressor worksheet within the stressor response Excel workbook.</li>
 </ol>
 <p>Individual stressor worksheets within the stressor-response file contain stressor-response curves for each of the stressor-response functions outlined in the “Main” worksheet (one worksheet for each row). The spelling of the worksheet name must exactly match the spelling of the stressor on the ‘Main’ worksheet. Additional rows can be added (as needed) to increase the resolution and specify the shape of a complex non-linear stressor response curve. Threshold stressor-response functions or stressor-response functions with discrete values may have relatively few rows.</p>
+<p>The columns within each stressor-response worksheet are formatted as follows:</p>
+<table class="table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 77%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Column Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>[Stressor]</strong></td>
+<td>The raw value of the stressor (on the x-axis). For example, the temperature would likely be valued in degrees Celsius, but the units and additional metadata are declared on the ‘Main’ worksheet.</td>
+</tr>
+<tr class="even">
+<td><strong>Mean System Capacity (%)</strong></td>
+<td>The Mean System Capacity (on the y-axis) is associated with the raw stressor value on the x-axis. This column is the response component of the stressor-response curve. Values should be entered as a percentage and range from 0 to 100. Note that, for the life cycle model, this value may be the life-stage-specific dose-response curve for capacity or survival. Mean system capacity is user as a generic term across the Joe Model and Life Cycle Model.</td>
+</tr>
+<tr class="odd">
+<td><strong>SD</strong></td>
+<td>Standard Deviation (SD) is used to resample the mean system capacity (response) values based on a given stressor level. In the CEMPRA (Joe Model) simulations, environmental parameters are resampled for each batch replicate, year and location based on SD values in the stressor magnitude workbook. This column is used to represent uncertainty in the stressor-response relationship. Resampling will be based on the mean system capacity and SD values with a normal distribution (linear) or log scale (log) according to the value specified in the main worksheet under the Stress_Scale column.<br><br>Regardless of the parameters for resampling, the lower limit and upper limit values will constrain values to fixed limits.<br><br>If the SD value is set to zero, then no resampling will take place within the stressor-response curve.</td>
+</tr>
+<tr class="even">
+<td><strong>low.limit</strong></td>
+<td>The lower limit for stressor-response resampling (see SD column distribution). Set to 0 as a default.</td>
+</tr>
+<tr class="odd">
+<td><strong>up.limit</strong></td>
+<td>The upper limit for stressor-response resampling (see SD column distribution). Set to 100 as a default.</td>
+</tr>
+</tbody>
+</table>
 <!-- Further details about the columns within each stressor-response worksheet -->
 </section>
 </section>
@@ -343,7 +439,7 @@ cookieconsent.run({
 <section id="methodology" class="level4" data-number="5.1.3.1">
 <h4 data-number="5.1.3.1" class="anchored" data-anchor-id="methodology"><span class="header-section-number">5.1.3.1</span> Methodology</h4>
 <p>Depending on data availability, stressor-response functions may be developed from available empirical data, from the elicitation of experts and stakeholders, or from existing literature.</p>
-<!-- Details on how to use empirical data to develop stressor-response functions -->
+<p>When using empirical data, the response component of the stressor-response relationship must be standardized to a common response metric. For convenience, the CEMPRA tool uses Mean System Capacity as a generic nickname to represent a standardized response scaled from 0% to 100%. In the CEMPRA tool (both the Joe Model and Life Cycle Model assessment endpoints), stressor-response relationships are reported as a scaled response value from 0% to 100%. These values are reported in the stressor-response workbook. The default assumption is that when a stressor is at its lowest level (or least harmful state if the scale is reversed), the mean system capacity will be set to 100% for that stressor. If this adjustment is not made, scenarios will be ranked differently simply by including specific stressors for comparison regardless of ecological state.</p>
 </section>
 </section>
 </section>
@@ -352,6 +448,7 @@ cookieconsent.run({
 <section id="purpose-1" class="level3" data-number="5.2.1">
 <h3 data-number="5.2.1" class="anchored" data-anchor-id="purpose-1"><span class="header-section-number">5.2.1</span> Purpose</h3>
 <p>The stressor magnitude file is an Excel worksheet which defines and bounds each stressor within the individual locations (i.e., spatial units) being assessed. Similar to the stressor-response functions, stressor magnitude values are sampled across locations with stochasticity. The stressor magnitude workbook is structured accordingly, with data for each stressor and location entered into the dataset in a long table format (as opposed to the standard wide table format). Each row specifies a unique stressor for each unique location. Therefore, the number of rows in this dataset should be equal to the number of stressors multiplied by the number of locations. For each simulation in the CEMPRA tool, values are sampled at random with stochasticity for each stressor and location. For each year and batch replicate, stressor magnitude values will be drawn from each normal (or lognormal) distribution based on the Mean and SD (standard deviation) and then further constrained based on the specified lower and upper limits.</p>
+<p>If there is no suspected uncertainty or interannual variability in stressor magnitude values for a given stressor and/or location, then the SD value can be set to 0, and the lower limit, upper limit and distribution type can be ignored.</p>
 <!-- Additional details about the purpose of the stressor magnitude file -->
 <div id="fig-stressor-magnitude" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -365,6 +462,60 @@ cookieconsent.run({
 <p>Each row in the stressor magnitude workbook specifies a relationship between a unique stressor and a unique location. Locations (discussed in detail in the next section) are specified by a unique ID (HUC_ID) and NAME. The HUC_ID column is a legacy from an older version of the Joe Model that referenced Hydrological Unit Codes as ID values, but HUC_ID can be any set of unique IDs specified by the user for their spatial units of interest. The NAME column can be blank but is included for convenience since many users find it challenging to cross-reference ID values between different datasets.</p>
 
 <!-- Table describing the columns and their descriptions in the stressor magnitude workbook -->
+<table class="table">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 80%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Column Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>HUC_ID</strong></td>
+<td>An ID field is used to represent a unique location (spatial unit). The HUC_ID column is a legacy from an older version of the Joe Model that referenced Hydrological Unit Codes as ID values, but HUC_ID can be any set of unique IDs specified by the user for their spatial units of interest. The NAME column can be blank but is included for convenience since many users find it challenging to cross-reference ID values between different datasets.<br><br>The HUC_ID field must match the feature column HUC_ID in the spatial polygons file.</td>
+</tr>
+<tr class="even">
+<td><strong>NAME</strong></td>
+<td>The NAME of the polygon in the spatial polygons file. This field must match the NAME column in the spatial polygons file, but it can be blank if a spatial unit does not have a defining name.</td>
+</tr>
+<tr class="odd">
+<td><strong>Stressor</strong></td>
+<td>Stressor Name. This must match the information and sheet names in the stressor-response workbook.</td>
+</tr>
+<tr class="even">
+<td><strong>Stressor_cat</strong></td>
+<td>Name of the Stressor category. This column must match the spelling used in the stressor-response workbook.</td>
+</tr>
+<tr class="odd">
+<td><strong>Mean</strong></td>
+<td>The mean value of the stressor for the spatial unit (location) HUC_ID (polygon).</td>
+</tr>
+<tr class="even">
+<td><strong>SD</strong></td>
+<td>Standard deviation (SD) of stressor values for the target HUC_ID. During the simulation, stressor values for each HUC_ID are resampled from a distribution with mean and SD values. Setting the SD to zero means that there will be no variability in the stressor value during the simulation.</td>
+</tr>
+<tr class="odd">
+<td><strong>Distribution</strong></td>
+<td>Type of distribution to use for resampling. Either “normal” or “lognormal”. We recommend using a “normal” distribution where possible. Testing coverage is incomplete for “lognormal”.</td>
+</tr>
+<tr class="even">
+<td><strong>Low_Limit</strong></td>
+<td>The lower limit for resampling.</td>
+</tr>
+<tr class="odd">
+<td><strong>Up_Limit</strong></td>
+<td>The upper limit for resampling.</td>
+</tr>
+<tr class="even">
+<td><strong>Comments</strong></td>
+<td>Internal comments by the user for personal reference. It can be blank.</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="assembling-your-own-stressor-magnitude-data" class="level3" data-number="5.2.3">
 <h3 data-number="5.2.3" class="anchored" data-anchor-id="assembling-your-own-stressor-magnitude-data"><span class="header-section-number">5.2.3</span> Assembling Your Own Stressor-Magnitude Data</h3>
@@ -381,7 +532,16 @@ cookieconsent.run({
 <section id="locations-spatial-polygons" class="level2" data-number="5.3">
 <h2 data-number="5.3" class="anchored" data-anchor-id="locations-spatial-polygons"><span class="header-section-number">5.3</span> Locations (Spatial Polygons)</h2>
 <p>Locations are represented in the CEMPRA tool as spatial polygons. Locations should be defined to reflect heterogeneity in stressor values across the study area.</p>
-<!-- Further details on spatial polygons and their role in the CEMPRA tool -->
+<p>Spatial polygons are imported into the CEMPRA tool as a GIS data file. Possible formats include either geopackage (.gpkg) or shapefile (.shp) format. The spatial units GIS data file does not contain any stressor magnitude data for modelling but consists of just the geometry and fields for the location ID (HUC_ID) and NAME. The polygon geometry included in this file is used for display purposes only and is joined to the stressor magnitude file when imported into the CEMPRA. Therefore, the size and shape of each spatial unit do not influence any components of the assessment.</p>
+<p>Regardless of the file format, the GIS (locations) spatial polygon data file must meet the following criteria:</p>
+<ul>
+<li>“HUC_ID” field: The locations data layer must have an attributed field labelled ‘HUC_ID’ with a unique identifier for each spatial unit (location).</li>
+<li>“NAME” field: The locations data layer must have an attributed field labelled ‘NAME’. This field is included for convenience. Values in this field can be blank, but users are encouraged to populate this field.</li>
+<li>The HUC_ID and NAME fields must match values (and spelling) in the stressor magnitude Excel input so data can be cross-referenced and joined in the tool.</li>
+<li>The spatial polygons file must be imported in the standard latitude/longitude projection (CRS: “EPSG:4326 – WGS84”). External GIS software such as QGIS can be used to transform projections as needed.</li>
+<li>There should be no geometry errors (invalid geometries) in the polygon geometry data. Run check geometry and fix errors in programs such as QGIS.</li>
+<li>Simplify geometries: we recommended running functions like ‘Simplify geometries’ in programs such as QGIS to reduce the file size before importing data into the CEMPRA tool. Ideally, the locations spatial polygon data file should be under 10MB for the best performance in the Shiny application. Processing larger datasets is possible by using the R package version of the CEMPRA tool.</li>
+</ul>
 <div id="fig-spatial-polygons" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/image023.jpg" class="img-fluid figure-img"></p>
@@ -392,6 +552,12 @@ cookieconsent.run({
 <section id="life-cycles-profile" class="level2" data-number="5.4">
 <h2 data-number="5.4" class="anchored" data-anchor-id="life-cycles-profile"><span class="header-section-number">5.4</span> Life Cycles Profile</h2>
 <p>The life cycle profile (csv file) is an optional input applicable to users who are interested in running the integrated life cycle model. The life cycles profile file specifies all input parameters required to run the life cycle model (e.g., number of stages, survival rates, fecundity, etc.). The format of the life cycles profile is a generic template, but once populated, it is used to parameterize the life cycle model for a specific study system. Usually, this consists of a target population (e.g., Athabasca Rainbow Trout, Nicola Basin Chinook Salmon, etc.).</p>
+<ul>
+<li>“Parameters” field: Nickname for parameter. Can contain any text defined by the user.</li>
+<li>“Name” field: Target name field used by code in the population model. Inputs here are restricted.</li>
+<li>“Value” field: Input value for parameter Name.</li>
+</ul>
+<p>See chapter on the life cycle model for further details.</p>
 <div id="fig-life-cycles-profile" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/image024.png" class="img-fluid figure-img"></p>

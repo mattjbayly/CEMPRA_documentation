@@ -15,29 +15,33 @@ Access the Library: [Draft Stressor-Response Library](https://mjbayly.com/stress
 
 ***Custom filters by species, stressor, endpoint etc.***
 
-Filter library of stressor-response relationships with dynamic filters. Review stressor-response relationships and apply filters to refine search.
+Filter library of stressor-response relationships with dynamic filters. Review stressor-response relationships and apply filters to refine search. It's most useful to enter a term of interest in the "Search all text" input field such as "fines", "sediment", or "temperature", and the click the blue "Apply" button to filter results. Scroll down the list below to review stressor-response relationships with their associated attributes (source, study area, species, life stage, reference etc.).
 
 [![Stressor-Response Database List View](images/srlib001.png){fig-alt="gggg"}](https://mjbayly.com/stressor-response)
 
-Click on a stressor-response relationship from the list view to switch to detail view. The detail view of each stressor-response relationship includes descriptive details, citations, data, and all other attributes. Interactive plots are included at the bottom of the page.
+One you find a stressor-response relationship of interest, click on the stressor-response relationship from the list view to switch to detail view. The detail view of each stressor-response relationship includes descriptive details, citations, data, and all other attributes. Interactive plots are included at the bottom of the page. Some relationships are feature rich and contain descriptive background, source citations, file attachments, and other material. Other relationships are more simplified. Click the back button to return to the list view.
 
 [![Stressor-response database detail view](images/srlib002.png){fig-alt="ggg"}](https://mjbayly.com/stressor-response/chinook-temperature-and-prespawn)
 
 ## Create Multi-Stressor-Response Overview Plots
 
-Overlay stressor-response relationships to better understand similarities and discrepancies between different reference resources. In the example below we compare several different relationships between stream temperature and vital rates of Chinook Salmon. Be sure ensure that the stressor metric is the same (or comparable) between each resource. For example, mean August stream temperature vs MWAT etc.
+The library allows for the creation of simple multi-stressor overlay plots. These can be especially useful to compare and contrast similar stressor-response relationships across study systems or species. For example, we may wish to compare the relationship between substrate embeddedness and fry capacity across several trout and salmonids.
+
+In the example below we will use the multi-stressor overlay plots to compare several different relationships between stream temperature and vital rates of Chinook Salmon. Be sure ensure that the stressor metric is the same (or comparable) between each resource. For example, mean August stream temperature vs MWAT etc. Select several SR relationships of interest with the checkbox select inputs and then click the "Overlay Plot" button to create plots:
 
 [![Multiple stressor-response overview comparison plots](images/srlib003.png){fig-alt="ggg"}](https://mjbayly.com/stressor-plot/53,78,54)
 
 ## Download Stressor-Response Relationships
 
-Select one or more stressor-response relationships of interest and click download. Several download formats are available including a format for the CEMPRA tool, PHABSIM, JSON, etc.
+For most users the goal will be simply exporting the stressor-response relationships out of the library for use in external software and modelling excercises.
+
+Select one or more stressor-response relationships of interest and click download. Several download formats are available including a format for the CEMPRA tool (Excel), JSON, etc. The JSON file format exports the entire database archive for selected stressors.
 
 [![Download/Export stressor-response relationships of interest.](images/srlib004.png){fig-alt="ggg"}](https://mjbayly.com/stressor-response)
 
 ## Add, Edit, and Update the Database
 
-Verified users can login, add, edit and update relationships. Once logged in, options appear in the detail view to edit data for relationships. New stressors can be added in the detail view.
+Authenticated users can login, add, edit and update relationships. Once logged in, options appear in the detail view to edit data for relationships. New stressors can be added in the detail view.
 
 [![ggg](images/srlib005.png){fig-alt="ggg"}](https://mjbayly.com/stressor-response)
 
