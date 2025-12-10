@@ -8,6 +8,9 @@
 # Ignore directory created by Quarto
 _output/
 
+# Ignore rendered output (only track on gh-pages branch)
+/docs/
+
 # Ignore .DS_Store on macOS
 .DS_Store
 
@@ -34,6 +37,13 @@ _output/
 *.lot
 *.fls
 *.fdb_latexmk
+*.tex
+
+# Ignore Quarto intermediate/output files in root
+/*_files/
+/*.html
+!google*.html
+nul
 
 # Ignore Jupyter notebook checkpoints
 .ipynb_checkpoints/
