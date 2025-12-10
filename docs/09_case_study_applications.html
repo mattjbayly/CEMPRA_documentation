@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>CEMPRA Guidance Document - 9&nbsp; Example Datasets</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./10_r_package_tutorials.html" rel="next">
+<link href="./08_stressor_response_library.html" rel="prev">
+<link href="./favicon.ico" rel="icon">
+<script src="site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-3SJZ32N1H9"></script>
+
+<script type="text/plain" cookie-consent="tracking">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-3SJZ32N1H9', { 'anonymize_ip': true});
+</script>
+
+<script type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({
+  "notice_banner_type":"simple",
+  "consent_type":"implied",
+  "palette":"light",
+  "language":"en",
+  "page_load_consent_levels":["strictly-necessary","functionality","tracking","targeting"],
+  "notice_banner_reject_button_hide":false,
+  "preferences_center_close_button_hide":false,
+  "website_name":""
+  });
+});
+</script> 
+  
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./09_case_study_applications.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Example Datasets</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">CEMPRA Guidance Document</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/mattjbayly/CEMPRA_documentation/" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">CEMPRA</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02_stressor_response.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Stressor-Response Functions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03_pathways_endpoints.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Modelling Pathways and Assessment Endpoints</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04_initial_setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Setup and Installation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05_data_inputs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data Inputs</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06_r_shiny_app.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Joe Model &amp; Shiny App</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07_life_cycle_model.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Life Cycle Model</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08_stressor_response_library.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Stressor-Response Library</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09_case_study_applications.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Example Datasets</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10_r_package_tutorials.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">R Package Tutorials</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11_conclusions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Concluding Remarks</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix_interaction_matrix.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Multi-Stressor Interaction Matrix</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix_socio_economic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Socio-economic Evaluation of Restoration Actions</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#09_case_study_applications-09_case_study_applications-athabasca-rainbow-trout" id="toc-09_case_study_applications-09_case_study_applications-athabasca-rainbow-trout" class="nav-link active" data-scroll-target="#09_case_study_applications-09_case_study_applications-athabasca-rainbow-trout"><span class="header-section-number">9.1</span> Athabasca Rainbow Trout</a></li>
+  <li><a href="#simple-working-example-hypothetical" id="toc-simple-working-example-hypothetical" class="nav-link" data-scroll-target="#simple-working-example-hypothetical"><span class="header-section-number">9.2</span> Simple Working Example (hypothetical)</a></li>
+  <li><a href="#wsep-watershed-status-evaluation-protocol-fisheries-sensitive-watersheds-fsws" id="toc-wsep-watershed-status-evaluation-protocol-fisheries-sensitive-watersheds-fsws" class="nav-link" data-scroll-target="#wsep-watershed-status-evaluation-protocol-fisheries-sensitive-watersheds-fsws"><span class="header-section-number">9.3</span> WSEP (Watershed Status Evaluation Protocol) Fisheries Sensitive Watersheds (FSWs)</a></li>
+  <li><a href="#meso-habitat-units-hypothetical" id="toc-meso-habitat-units-hypothetical" class="nav-link" data-scroll-target="#meso-habitat-units-hypothetical"><span class="header-section-number">9.4</span> Meso-Habitat Units (hypothetical)</a></li>
+  <li><a href="#matrix-interaction-example-1-template" id="toc-matrix-interaction-example-1-template" class="nav-link" data-scroll-target="#matrix-interaction-example-1-template"><span class="header-section-number">9.5</span> Matrix Interaction (Example 1: Template)</a></li>
+  <li><a href="#matrix-interaction-example-2-application" id="toc-matrix-interaction-example-2-application" class="nav-link" data-scroll-target="#matrix-interaction-example-2-application"><span class="header-section-number">9.6</span> Matrix Interaction (Example 2: Application)</a></li>
+  <li><a href="#09_case_study_applications-09_case_study_applications-nicola-basin-salmonids" id="toc-09_case_study_applications-09_case_study_applications-nicola-basin-salmonids" class="nav-link" data-scroll-target="#09_case_study_applications-09_case_study_applications-nicola-basin-salmonids"><span class="header-section-number">9.7</span> Nicola Basin Chinook Salmon, Coho Salmon, and Steelhead</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="example-datasets" class="quarto-section-identifier"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Example Datasets</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="09_case_study_applications-09_case_study_applications-athabasca-rainbow-trout" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="09_case_study_applications-09_case_study_applications-athabasca-rainbow-trout"><span class="header-section-number">9.1</span> Athabasca Rainbow Trout</h2>
+<p><span class="citation" data-cites="macpherson2020alberta">(<a href="references.html#ref-macpherson2020alberta" role="doc-biblioref">MacPherson et al., 2020</a>)</span> leveraged the Joe Modelling framework to support recovery action planning and threat analysis of Athabasca Rainbow Trout. The Joe Model was a valuable resource for synthesizing stressors due to its ease of and utility as a design and communication tool. Stressors were developed in a near real-time workshop-like setting to game out alternative management scenarios. The flexibility of the stressor-response input data allows for the inclusion of synthetic proxies and hypothetical impact pathways, weaving together academic knowledge, anecdotal descriptions and expert opinion. The Joe Model was ultimately used as a prioritization tool to help design actions, programs, and priorities across a large geographic and complex region.</p>
+<p>Default sample dataset when tool loads:</p>
+<ul>
+<li><a href="./sample_data/athabasca_rbt/stressor_response_demo.xlsx">Stressor Response Workbook</a></li>
+<li><a href="./sample_data/athabasca_rbt/stressor_magnitude_demo.xlsx">Stressor Magnitude Workbook</a></li>
+<li><a href="./sample_data/athabasca_rbt/watersheds.gpkg">Watershed Locations .gpkg</a></li>
+<li><a href="./sample_data/athabasca_rbt/life_cycles.csv">Life Cycle Profile (optional)</a></li>
+</ul>
+<p><em>The default study area, stressor list and species profile in the Shiny application are from the <span class="citation" data-cites="macpherson2020alberta">(<a href="references.html#ref-macpherson2020alberta" role="doc-biblioref">MacPherson et al., 2020</a>)</span> Athabasca Rainbow Trout project.</em></p>
+</section>
+<section id="simple-working-example-hypothetical" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="simple-working-example-hypothetical"><span class="header-section-number">9.2</span> Simple Working Example (hypothetical)</h2>
+<p>This straightforward example serves as an easy-to-use template for your own input files, offering minimal complexity and adaptability for customization.</p>
+<ul>
+<li><a href="./sample_data/meso_habitat/stressor_response_simple.xlsx">Stressor Response Workbook</a></li>
+<li><a href="./sample_data/meso_habitat/stressor_magnitude_simple.xlsx">Stressor Magnitude Workbook</a></li>
+<li><a href="./sample_data/meso_habitat/locations_simple.gpkg">Watershed Locations .gpkg</a></li>
+</ul>
+</section>
+<section id="wsep-watershed-status-evaluation-protocol-fisheries-sensitive-watersheds-fsws" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="wsep-watershed-status-evaluation-protocol-fisheries-sensitive-watersheds-fsws"><span class="header-section-number">9.3</span> WSEP (Watershed Status Evaluation Protocol) Fisheries Sensitive Watersheds (FSWs)</h2>
+<p>This example is provided for illustrative purposes only. The CEMPRA toolbox is used to review risk and hazard scores for several fisheries sensitive watersheds (FSW) in BC. Note that the data used in this example is for illustrative purposes only and is outdated for risk/hazard assessments. For more details see the original report <a href="https://www.for.gov.bc.ca/ftp/hfp/external/!publish/FREP/reports/FREP_Report_39.pdf">FREP Report #39</a></p>
+<ul>
+<li><a href="./sample_data/frep39/FREP_Stressor_Response.xlsx">Stressor Response Workbook</a></li>
+<li><a href="./sample_data/frep39/FREP_Stressor_Magnitude.xlsx">Stressor Magnitude Workbook</a></li>
+<li><a href="./sample_data/frep39/FREP_watersheds.gpkg">Watershed Locations .gpkg</a></li>
+</ul>
+</section>
+<section id="meso-habitat-units-hypothetical" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="meso-habitat-units-hypothetical"><span class="header-section-number">9.4</span> Meso-Habitat Units (hypothetical)</h2>
+<p>This example is solely for illustration and should not be used as a reference for any purposes. It demonstrates the use of meso-habitat units from the Sensitive Habitat Inventory and Mapping (SHIM) initiative conducted by Ecoscape Environmental Consultants Ltd in the Coldwater River. Here, Aquatic Habitat Index (AHI) serves as a stand-in for Mean System Capacity. This case is included to show the application of the CEMPRA toolbox across various spatial scales. The data presented here is entirely synthetic and only meant for demonstration. For comprehensive details and accurate data, please refer to the original report and resources. <a href="https://www.fraserbasin.bc.ca/Nicola_SHIM_AHI.html">Nicola SHIM AHI</a>.</p>
+<ul>
+<li><a href="./sample_data/nicola_shims/stressor_response_shims.xlsx">Stressor Response Workbook</a></li>
+<li><a href="./sample_data/nicola_shims/stressor_magnitude_shims.xlsx">Stressor Magnitude Workbook</a></li>
+<li><a href="./sample_data/nicola_shims/locations_shims.gpkg">Watershed Locations .gpkg</a></li>
+</ul>
+</section>
+<section id="matrix-interaction-example-1-template" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="matrix-interaction-example-1-template"><span class="header-section-number">9.5</span> Matrix Interaction (Example 1: Template)</h2>
+<p>This example is designed to demonstrate the two-factor matrix interaction surface. Given that the matrix interaction surface necessitates a specialized stressor response Excel workbook, this example can be utilized as a practical template for customization. See the <a href="./appendix_interaction_matrix.html">Matrix Interaction Documentation</a> for more details.</p>
+<ul>
+<li><a href="./sample_data/matrix_simple/stressor_response_matrix.xlsx">Stressor Response Workbook</a></li>
+<li><a href="./sample_data/matrix_simple/stressor_magnitude_matrix.xlsx">Stressor Magnitude Workbook</a></li>
+<li><a href="./sample_data/matrix_simple/poly.zip">Watershed Locations .shp (ZIP folder)</a></li>
+</ul>
+</section>
+<section id="matrix-interaction-example-2-application" class="level2" data-number="9.6">
+<h2 data-number="9.6" class="anchored" data-anchor-id="matrix-interaction-example-2-application"><span class="header-section-number">9.6</span> Matrix Interaction (Example 2: Application)</h2>
+<p>The purpose of this second example is to demonstrate the matrix interaction surface through a practical case study. To simplify, we apply the British Columbia Freshwater Atlas (BCFWA) Assessment Watersheds. Here, we estimate hydrological runoff potential by multiplying two factors: a) the Biogeoclimatic Ecosystem Classification (BEC) Unit Score, and b) the percentage of Alpine non-Forested Area. It’s important to note that hydrological runoff potential is not a standard stressor in the Joe Model; it is used here solely for illustration. See the original report here: <a href="https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/cumulative-effects/protocols/cef-aquatic-ecosystems-protocol-dec2020.pdf">BC-CEF Interim Interim Assessment Protocol for Aquatic Ecosystems in British Columbia</a> for more details).</p>
+<ul>
+<li><a href="./sample_data/coldwater_matrix/coldwater_bc_sr_matrix.xlsx">Stressor Response Workbook</a></li>
+<li><a href="./sample_data/coldwater_matrix/coldwater_bc_stressor_magnitude.xlsx">Stressor Magnitude Workbook</a></li>
+<li><a href="./sample_data/coldwater_matrix/coldwater_bc_locations.zip">Watershed Locations .shp (ZIP folder)</a></li>
+</ul>
+</section>
+<section id="09_case_study_applications-09_case_study_applications-nicola-basin-salmonids" class="level2" data-number="9.7">
+<h2 data-number="9.7" class="anchored" data-anchor-id="09_case_study_applications-09_case_study_applications-nicola-basin-salmonids"><span class="header-section-number">9.7</span> Nicola Basin Chinook Salmon, Coho Salmon, and Steelhead</h2>
+<p>The Nicola River provides important spawning, incubation, and rearing habitats for multiple salmonid species, including Chinook Salmon, Coho Salmon, and Steelhead. A case study application of the CEMPRA tool is being applied to Nicola Basin to support threat analysis and recovery action planning.</p>
+<ul>
+<li><a href="./sample_data/life_cycle/habitat_dd_k.xlsx">Example location and stage specific habitat capacities</a></li>
+<li><a href="./sample_data/life_cycle/life_cycles_coho_nicola.csv">Example life cycle profile</a></li>
+</ul>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-macpherson2020alberta" class="csl-entry" role="listitem">
+MacPherson, L., Sullivan, M., Reilly, J., &amp; Paul, A. (2020). <em>Alberta’s fisheries sustainability assessment: A guide to assessing population status, and quantifying cumulative effects using the joe modelling technique</em>. Canadian Science Advisory Secretariat (CSAS).
+</div>
+</div>
+</section>
+
+<p>Leave questions and comments below (via your GitHub account)</p></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<script src="https://utteranc.es/client.js" repo="mattjbayly/CEMPRA_documentation" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./08_stressor_response_library.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Stressor-Response Library</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./10_r_package_tutorials.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">R Package Tutorials</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center"><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>
