@@ -26,6 +26,7 @@ book:
   appendices:
     - appendix_interaction_matrix.qmd
     - appendix_socio_economic.qmd
+    - appendix_formula_builder.qmd
   google-analytics:
     tracking-id: "G-3SJZ32N1H9"
     anonymize-ip: true

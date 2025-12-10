@@ -5,7 +5,9 @@
       "Bash(git rm:*)",
       "Bash(git checkout:*)",
       "Bash(git add:*)",
-      "Bash(git commit -m \"$(cat <<''EOF''\nEstablish proper main/gh-pages workflow\n\n- Remove docs/ from main branch (build artifacts)\n- Add /docs/ to .gitignore on main branch\n- Update date to use last-modified instead of hardcoded date\n- Flatten Chapter 7 structure for sequential numbering\n- Clean up build artifacts (index.tex, index_files/)\n- Add sr_demo001.png image\n\nMain branch now contains source files only.\nRendered output should be tracked on gh-pages branch.\nEOF\n)\")"
+      "Bash(git commit -m \"$(cat <<''EOF''\nEstablish proper main/gh-pages workflow\n\n- Remove docs/ from main branch (build artifacts)\n- Add /docs/ to .gitignore on main branch\n- Update date to use last-modified instead of hardcoded date\n- Flatten Chapter 7 structure for sequential numbering\n- Clean up build artifacts (index.tex, index_files/)\n- Add sr_demo001.png image\n\nMain branch now contains source files only.\nRendered output should be tracked on gh-pages branch.\nEOF\n)\")",
+      "Bash(cat:*)",
+      "Bash(ls:*)"
     ]
   }
 }
