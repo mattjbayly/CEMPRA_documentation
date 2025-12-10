@@ -1,4 +1,4 @@
-# R-Shiny Application
+# Joe Model & Shiny App
 
 The R Shiny web application is a user-friendly interface for the CEMPRA powered by the *CEMPRA* R package. Users can access a working version R Shiny application hosted [here](https://essa.shinyapps.io/CEMPRAShiny). The following section is intended to walk new users through the components of the R Shiny web application.
 
@@ -13,7 +13,6 @@ When you first access the R Shiny web application for the CEMPRA, you will be au
 If you would like to import a custom set of stressor-response functions, spatial polygons, or vital rates (for the life cycle model), select the **Upload Data** page in the menu on the left side of the screen. This page allows you to upload four key input files from your computer: the stressor-response workbook (.xlsx), the stressor-magnitude workbook (.xlsx), a spatial polygons file (.gpkg or .shp), and a life cycle profile (.csv). To upload a file from your computer, click "Browse..." on the toolbar below the associated file heading. Next, select the desired file from the file window and click "Open". The file will begin to upload. A status bar will appear below the file name, indicating the upload status. Once the file has been successfully uploaded, the status bar will display "Upload complete".
 
 ![Data upload page of the R Shiny web application. 1) Instructions for uploading files. 2) Location to upload stressor-response workbook (.xlsx). 3) Location to upload stressor magnitude workbook (.xlsx). 4) Location to upload spatial polygons file (.gpkg or .shp). 5) Location to upload life cycle profile (.csv).](images/image026.png){#fig-figure15}
-
 
 ## Map Overview
 
@@ -53,8 +52,7 @@ To run the life cycle model associated with the CEMPRA, first select (click) the
 
 After the run is complete, three graph panels will appear in the pop-up window. The first panel displays time series projections of the number of individuals by life stage and a time series of lambda values for adults. The second-panel plots abundance at different life stages in the selected spatial polygon(s) compared to a baseline condition. The third-panel plots stressor magnitude against system capacity (0-1) for each of the stressors used in the model. You can view individual data points by hovering over the plot with your cursor. When hovering over the plot, you will also see a menu appear in the top right-hand corner of the plotting window. This menu allows you to pan and zoom around the plot and download a snapshot of the plot onto your computer.
 
-![Pop-up window for the life cycle model. 1) Input boxes for the number of years and number of replicates in the simulation. 2) The button to run the life cycle model. 3) Plotting window for time series projection plots.](images/image032.png){#fig-figure20}
-## Life Cycle Model
+![Pop-up window for the life cycle model. 1) Input boxes for the number of years and number of replicates in the simulation. 2) The button to run the life cycle model. 3) Plotting window for time series projection plots.](images/image032.png){#fig-figure20} \## Life Cycle Model
 
 The life cycle model is included as an extension to the original CEMPRA. It leverages a flexible stage-structured life cycle modeling framework that can be modified for different target systems. The underlying life cycle model code was originally developed by van der Lee and Koops (2020) and then further modified by Dr. Kyle Wilson to incorporate environmental stressors that are linked to survivorship, capacity, and growth.
 
@@ -90,34 +88,25 @@ On the **Download Data** page, you can either download the model input parameter
 
 ## Interactive Formula Builder
 
-*** (March 22, 2023): This component is still in development and not yet available on the GitHub repository application ***
+\*\*\* (March 22, 2023): This component is still in development and not yet available on the GitHub repository application \*\*\*
 
 The interactive formula builder is used to generate custom plots of stressor variables with customized functions and potential interactions between variables. The interactive formula builder provides users with the ability to display outputs from customized regression equations.
 
-A dialogue box is available, allowing users to drag and drop multiple stressors into a formula builder to display relationships and interactions (e.g., 0.45 + stressor_A^0.3 + stressor_B*stressor_C). Various mathematical operators can be included in the formula builder:
+A dialogue box is available, allowing users to drag and drop multiple stressors into a formula builder to display relationships and interactions (e.g., 0.45 + stressor_A\^0.3 + stressor_B\*stressor_C). Various mathematical operators can be included in the formula builder:
 
-- Addition: +; Stressor_A + Stressor_B
-- Subtraction: -; Stressor_A - Stressor_B
-- Constants: 0.783 + Stressor_A
-- Multiplication: *; Stressor_A * Stressor_B
-- Division: /; Stressor_A / Stressor_B
-- Brackets: (); (0.783 + Stressor_A) / Stressor_B
-- Exponents: ^; Stressor_A^(0.34 * Stressor_B)
-- Logarithms:
-  - Natural: log(Stressor_A)
-  - Base-10: log10(Stressor_A)
+-   Addition: +; Stressor_A + Stressor_B
+-   Subtraction: -; Stressor_A - Stressor_B
+-   Constants: 0.783 + Stressor_A
+-   Multiplication: *; Stressor_A* Stressor_B
+-   Division: /; Stressor_A / Stressor_B
+-   Brackets: (); (0.783 + Stressor_A) / Stressor_B
+-   Exponents: \^; Stressor_A\^(0.34 \* Stressor_B)
+-   Logarithms:
+    -   Natural: log(Stressor_A)
+    -   Base-10: log10(Stressor_A)
 
 The interactive formula builder can be useful to display outputs from various habitat suitability models, predictive regression equations, alternative cumulative effects roll-up functions or building novel stressors.
 
 **Building Novel Stressors**: The interactive formula builder can also be used to build novel stressor variables that consist of combinations of individual stressors. Users enter values into the formula builder to create a synthetic stressor variable. Once satisfied, users can download the novel stressor in the standardized stressor magnitude and stressor-response workbook format. The novel data can then be reimported into the tool to appear on the main map panel for use in the Joe Model and Life Cycle Model.
 
 ![Interactive formula builder module](images/image038.png){#fig-figure26}
-
-
-
-
-
-
-
-
-

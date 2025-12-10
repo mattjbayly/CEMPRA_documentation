@@ -35,71 +35,39 @@ The life cycle profile is a comma-separated values (CSV) file that contains the 
 
 The following table shows an example life cycle parameters file for Athabasca Rainbow Trout (non-anadromous).
 
-+------------------------------------------------------+------------+------------+
-| **Parameters**                                       | **Name**   | **Value**  |
-+======================================================+============+============+
-| Number of life stages                                | Nstage     | 4          |
-+------------------------------------------------------+------------+------------+
-| Anadromous                                           | anadromous | FALSE      |
-+------------------------------------------------------+------------+------------+
-| Adult capacity                                       | k          | 100        |
-+------------------------------------------------------+------------+------------+
-| Spawn events per female                              | events     | 1          |
-+------------------------------------------------------+------------+------------+
-| Eggs per female spawn                                | eps        | 3000       |
-+------------------------------------------------------+------------+------------+
-| spawning interval                                    | int        | 1          |
-+------------------------------------------------------+------------+------------+
-| egg survival                                         | SE         | 0.1        |
-+------------------------------------------------------+------------+------------+
-| yoy survival                                         | S0         | 0.3        |
-+------------------------------------------------------+------------+------------+
-| sex ratio                                            | SR         | 0.5        |
-+------------------------------------------------------+------------+------------+
-| Hatchling Survival                                   | surv_1     | 0.3        |
-+------------------------------------------------------+------------+------------+
-| Juvenile Survival                                    | surv_2     | 0.3        |
-+------------------------------------------------------+------------+------------+
-| Sub-adult Survival                                   | surv_3     | 0.9        |
-+------------------------------------------------------+------------+------------+
-| Adult Survival                                       | surv_4     | 0.9        |
-+------------------------------------------------------+------------+------------+
-| Years as hatchling                                   | year_1     | 1          |
-+------------------------------------------------------+------------+------------+
-| years as juvenile                                    | year_2     | 2          |
-+------------------------------------------------------+------------+------------+
-| years as subadult                                    | year_3     | 2          |
-+------------------------------------------------------+------------+------------+
-| years as adult                                       | year_4     | 5          |
-+------------------------------------------------------+------------+------------+
-| egg survival compensation ratio                      | cr_E       | 1          |
-+------------------------------------------------------+------------+------------+
-| yoy survival compensation ratio                      | cr_0       | 3          |
-+------------------------------------------------------+------------+------------+
-| hatchling survival compensation ratio                | cr_1       | 2.5        |
-+------------------------------------------------------+------------+------------+
-| juvenile survival compensation ratio                 | cr_2       | 2          |
-+------------------------------------------------------+------------+------------+
-| subadult survival compensation ratio                 | cr_3       | 1.1        |
-+------------------------------------------------------+------------+------------+
-| adult survival compensation ratio                    | cr_4       | 1          |
-+------------------------------------------------------+------------+------------+
-| maturity as hatchling                                | mat_1      | 0          |
-+------------------------------------------------------+------------+------------+
-| maturity as juvenile                                 | mat_2      | 0          |
-+------------------------------------------------------+------------+------------+
-| maturity as subadult                                 | mat_3      | 0          |
-+------------------------------------------------------+------------+------------+
-| maturity as adult                                    | mat_4      | 1          |
-+------------------------------------------------------+------------+------------+
-| variance in eggs per female                          | eps_sd     | 1.00E+03   |
-+------------------------------------------------------+------------+------------+
-| correlation in egg fecundity through time            | egg_rho    | 0.1        |
-+------------------------------------------------------+------------+------------+
-| coefficient of variation in stage-specific mortality | M.cv       | 1.00E-01   |
-+------------------------------------------------------+------------+------------+
-| correlation in mortality through time                | M.rho      | 0.1        |
-+------------------------------------------------------+------------+------------+
+| **Parameters**                                       | **Name**   | **Value** |
+|------------------------------------------------------|------------|-----------|
+| Number of life stages                                | Nstage     | 4         |
+| Anadromous                                           | anadromous | FALSE     |
+| Adult capacity                                       | k          | 100       |
+| Spawn events per female                              | events     | 1         |
+| Eggs per female spawn                                | eps        | 3000      |
+| spawning interval                                    | int        | 1         |
+| egg survival                                         | SE         | 0.1       |
+| yoy survival                                         | S0         | 0.3       |
+| sex ratio                                            | SR         | 0.5       |
+| Hatchling Survival                                   | surv_1     | 0.3       |
+| Juvenile Survival                                    | surv_2     | 0.3       |
+| Sub-adult Survival                                   | surv_3     | 0.9       |
+| Adult Survival                                       | surv_4     | 0.9       |
+| Years as hatchling                                   | year_1     | 1         |
+| years as juvenile                                    | year_2     | 2         |
+| years as subadult                                    | year_3     | 2         |
+| years as adult                                       | year_4     | 5         |
+| egg survival compensation ratio                      | cr_E       | 1         |
+| yoy survival compensation ratio                      | cr_0       | 3         |
+| hatchling survival compensation ratio                | cr_1       | 2.5       |
+| juvenile survival compensation ratio                 | cr_2       | 2         |
+| subadult survival compensation ratio                 | cr_3       | 1.1       |
+| adult survival compensation ratio                    | cr_4       | 1         |
+| maturity as hatchling                                | mat_1      | 0         |
+| maturity as juvenile                                 | mat_2      | 0         |
+| maturity as subadult                                 | mat_3      | 0         |
+| maturity as adult                                    | mat_4      | 1         |
+| variance in eggs per female                          | eps_sd     | 1.00E+03  |
+| correlation in egg fecundity through time            | egg_rho    | 0.1       |
+| coefficient of variation in stage-specific mortality | M.cv       | 1.00E-01  |
+| correlation in mortality through time                | M.rho      | 0.1       |
 
 : Example life cycle parameters file for Athabasca Rainbow Trout (non-anadromous)
 
@@ -137,12 +105,9 @@ The CEMPRA tool's "pre-birth pulse" census assumes that the demographic census o
 
 During the first year, two survival rates apply:
 
-SE: Egg survivorship.
-S0: Sub-yearling (fry) survivorship.
-Their product (SE × S0) represents the overall early-life survival (surv_0, although it isn’t explicitly modeled).
+SE: Egg survivorship. S0: Sub-yearling (fry) survivorship. Their product (SE × S0) represents the overall early-life survival (surv_0, although it isn’t explicitly modeled).
 
 Once individuals reach Age 1 (Stage 1), the parameter surv_1 governs the density-independent transition to Stage 2. For most anadromous species, which migrate to sea shortly after spawning, surv_1 should be calculated as the product of smolt survivorship and the survival rate during the first several months at sea (up to the individual’s second birthday). For species/life histories that reside in the freshwater environment for longer (e.g., Coho & stream-type Chinook), surv_1 can be adjusted to represent yearling/parr survivorship.
-
 
 The following table lists the vital rates for survivorship and growth:
 
@@ -251,17 +216,12 @@ We can combine all parameters discussed in this section along with the example s
 ::: {#07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-tbl:transition-matrix}
 Table 1. Symbolic Representation of the Transition Matrix for non-anadromous species
 
-+-------------+---------------------------------------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------------+-------------------------------------------------------------+
-|             | stage_1                                                             | stage_2                                                              | stage_3                                                          | stage_4                                                     |
-+=============+=====================================================================+======================================================================+==================================================================+=============================================================+
-| stage_1     | surv_1 \* (1 - surv_1\^( year_1 - 1))/(1 - surv_1\^ year_1)         | (mat2 \* events \* eps \* sE \* s0 \* sR)/int                        | (mat3 \* events \* eps \* sE \* s0 \* sR)/int                    | (mat4 \* events \* eps \* sE \* s0 \* sR)/int               |
-+-------------+---------------------------------------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------------+-------------------------------------------------------------+
-| stage_2     | surv_1 - surv_1 \* (1 - surv_1\^(year_1 - 1))/(1 - surv_1\^ year_1) | surv_2 \* (1 - surv_2\^( year_2 - 1))/(1 - surv_2\^ year_2)          | 0                                                                | 0                                                           |
-+-------------+---------------------------------------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------------+-------------------------------------------------------------+
-| stage_3     | 0                                                                   | surv_2 - surv_2 \* (1 - surv_2\^( year_2 - 1))/(1 - surv_2\^ year_2) | surv_3 \* (1 - surv_3\^( year_3 - 1))/(1 - surv_3\^ year_3)      | 0                                                           |
-+-------------+---------------------------------------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------------+-------------------------------------------------------------+
-| stage_4     | 0                                                                   | 0                                                                    | surv_3 - s3 \* (1 - surv_3\^( year_3 - 1))/(1 - surv_3\^ year_3) | surv_4 \* (1 - surv_4\^( year_4 - 1))/(1 - surv_4\^ year_4) |
-+-------------+---------------------------------------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------------+-------------------------------------------------------------+
+|   | stage_1 | stage_2 | stage_3 | stage_4 |
+|----|----|----|----|----|
+| stage_1 | surv_1 \* (1 - surv_1\^( year_1 - 1))/(1 - surv_1\^ year_1) | (mat2 \* events \* eps \* sE \* s0 \* sR)/int | (mat3 \* events \* eps \* sE \* s0 \* sR)/int | (mat4 \* events \* eps \* sE \* s0 \* sR)/int |
+| stage_2 | surv_1 - surv_1 \* (1 - surv_1\^(year_1 - 1))/(1 - surv_1\^ year_1) | surv_2 \* (1 - surv_2\^( year_2 - 1))/(1 - surv_2\^ year_2) | 0 | 0 |
+| stage_3 | 0 | surv_2 - surv_2 \* (1 - surv_2\^( year_2 - 1))/(1 - surv_2\^ year_2) | surv_3 \* (1 - surv_3\^( year_3 - 1))/(1 - surv_3\^ year_3) | 0 |
+| stage_4 | 0 | 0 | surv_3 - s3 \* (1 - surv_3\^( year_3 - 1))/(1 - surv_3\^ year_3) | surv_4 \* (1 - surv_4\^( year_4 - 1))/(1 - surv_4\^ year_4) |
 :::
 
 **Do individuals spend more than one year in each stage?**
@@ -341,13 +301,10 @@ Simulation of Steelhead Spawners (y-axis) with stage_1 (parr) capacity set to 16
 
 **Location and Stage-Specific Carrying Capacities Constraints in the Species Profile**
 
-+------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Parameter                                      | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-+================================================+======================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================+
-|                                                |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-+------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Parameter | Description |
+|----|----|
+|  |  |
 | bh_stage_1, bh_stage_2, bh_stage_3, bh_stage_4 | The location and stage-specific carrying capacities constraints can be toggled on and off for each life stage with `bh_stage_X` input in the species profile. Setting the Value to 0 (or omitting the row) means that there will be no density-dependent constraint on a given life stage. Setting the Value to 1 will implement a Beverton-Holt style density-dependent constraint for the given life stage. If implemented, the *location and stage-specific carrying capacity* input data table must be supplied, and values must be populated for each location. |
-+------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ### Compensation Ratios for Density-Dependent Growth
 
@@ -404,13 +361,10 @@ Compensation ratios are widely used as parameters in stock-recruitment functions
 
 **Compensation Ratios in the Species Profile**
 
-+------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Parameter                          | Description                                                                                                                                                                                                                                                                                                        |
-+====================================+====================================================================================================================================================================================================================================================================================================================+
-|                                    |                                                                                                                                                                                                                                                                                                                    |
-+------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Parameter | Description |
+|----|----|
+|  |  |
 | cr_E, cr_0, cr_1, cr_2, cr_3, cr_4 | The compensation ratios for egg (cr_E), Age-0 fry (cr_0) and subsequent stage classes (cr_1 to cr_4) can be set. If the Nstage value is different than four, then add or remove rows accordingly. Compensation ratios can be set to 1.0 to omit the use of compensation ratios to govern density-dependent growth. |
-+------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 #### Useful references to understand Compensation Ratios:
 
@@ -429,11 +383,9 @@ Several additional parameters are available to influence the stochasticity (vari
 
 ### eps_sd: Standard Deviation in Eggs-per-Spawner
 
-+----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Parameter                        | Description                                                                                                                                                                                                                                                                                                                                                                                                       |
-+==================================+===================================================================================================================================================================================================================================================================================================================================================================================================================+
-| `eps_sd`                         | The Standard Deviation in Eggs-per-Spawner controls the variability in fecundity across simulation years and batch replicates. The example below shows a sample projection with `eps_sd` set to 250 and 750. In the example with `eps_sd` set to 750, there are several years with very high fecundity. Density-dependent constraints (if implemented) may attenuate the apparent effect of high `eps_sd` inputs. |
-+----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Parameter | Description |
+|----|----|
+| `eps_sd` | The Standard Deviation in Eggs-per-Spawner controls the variability in fecundity across simulation years and batch replicates. The example below shows a sample projection with `eps_sd` set to 250 and 750. In the example with `eps_sd` set to 750, there are several years with very high fecundity. Density-dependent constraints (if implemented) may attenuate the apparent effect of high `eps_sd` inputs. |
 
 ![eps_sd Standard Deviation in Eggs-per-Spawner](images/image051.png){#07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-fig-eps-sd}
 
@@ -445,11 +397,9 @@ eps_sd Standard Deviation in Eggs-per-Spawner
 
 ### egg_rho: Correlation in Egg Fecundity Through Time
 
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Parameter                        | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-+==================================+==============================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================+
-| `egg_rho`                        | In natural populations, there will be good years and bad years. It's assumed that good years will be good for large adults and small adults. If multiple mature stage classes contribute to spawning (fecundity) (i.e., maturity values are greater than 0), it is assumed that fecundity will be correlated between good and bad years across stage classes (i.e., stage_5, stage_6 & stage_7). `egg_rho` controls the degree of correlation in interannual fecundity between stage classes. See the following figure for an illustrative example. If `egg_rho` is low, and multiple stage classes contribute to spawning, then some stage classes may compensate for good/bad years. Conversely, if `egg_rho` is high, then the population may be highly volatile as all cohorts experience good/bad years simultaneously. |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Parameter | Description |
+|----|----|
+| `egg_rho` | In natural populations, there will be good years and bad years. It's assumed that good years will be good for large adults and small adults. If multiple mature stage classes contribute to spawning (fecundity) (i.e., maturity values are greater than 0), it is assumed that fecundity will be correlated between good and bad years across stage classes (i.e., stage_5, stage_6 & stage_7). `egg_rho` controls the degree of correlation in interannual fecundity between stage classes. See the following figure for an illustrative example. If `egg_rho` is low, and multiple stage classes contribute to spawning, then some stage classes may compensate for good/bad years. Conversely, if `egg_rho` is high, then the population may be highly volatile as all cohorts experience good/bad years simultaneously. |
 
 ![egg_rho: correlation in egg fecundity through time](images/image052.png){#07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-fig-egg-rho}
 
@@ -461,19 +411,15 @@ egg_rho: correlation in egg fecundity through time
 
 ### M.cv: Coefficient of Variation (CV) in Interannual Stage-Specific Mortality
 
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Parameter                        | Description                                                                                                                                                                                                                                                                                    |
-+==================================+================================================================================================================================================================================================================================================================================================+
-| `M.cv`                           | The Coefficient of Variation (CV) in stage-specific mortality (`M.cv`) is based on a beta distribution. This parameter allows for the modeling of variability in mortality rates across different life stages, contributing to a more dynamic and realistic simulation of population dynamics. |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Parameter | Description |
+|----|----|
+| `M.cv` | The Coefficient of Variation (CV) in stage-specific mortality (`M.cv`) is based on a beta distribution. This parameter allows for the modeling of variability in mortality rates across different life stages, contributing to a more dynamic and realistic simulation of population dynamics. |
 
 ### M.rho: Correlation in Stage-Class Mortality Through Time
 
-+----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Parameter                        | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-+==================================+=====================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================+
-| `M.rho`                          | `M.rho`, the correlation in mortality through time, plays a critical role in modeling the variability of survivorship across life stages. In natural populations, the occurrence of good and bad years is often correlated across all stage classes, excluding eggs (`SE`). `M.rho` determines the degree of this correlation. A low `M.rho` value suggests that certain stage classes may compensate for good/bad years based on random sampling of survivorship, while a high `M.rho` implies that all cohorts may experience good/bad years simultaneously, leading to higher volatility in population dynamics. |
-+----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Parameter | Description |
+|----|----|
+| `M.rho` | `M.rho`, the correlation in mortality through time, plays a critical role in modeling the variability of survivorship across life stages. In natural populations, the occurrence of good and bad years is often correlated across all stage classes, excluding eggs (`SE`). `M.rho` determines the degree of this correlation. A low `M.rho` value suggests that certain stage classes may compensate for good/bad years based on random sampling of survivorship, while a high `M.rho` implies that all cohorts may experience good/bad years simultaneously, leading to higher volatility in population dynamics. |
 
 ![M.rho: correlation in survivorship through time](images/image053.png){#07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-fig-m-rho}
 
@@ -485,11 +431,9 @@ M.rho: correlation in survivorship through time
 
 ### p.cat: Probability of Catastrophe per Generation
 
-+----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Parameter                        | Description                                                                                                                                                                                                                                                                                                                                                                |
-+==================================+============================================================================================================================================================================================================================================================================================================================================================================+
-| p.cat                            | `p.cat` represents the Probability of Catastrophe per Generation. This parameter is scaled to the average generation time of the population, reflecting the annual probability of a catastrophic event occurring. It's a critical factor in assessing the resilience and long-term sustainability of a population under varying environmental and anthropogenic pressures. |
-+----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Parameter | Description |
+|----|----|
+| p.cat | `p.cat` represents the Probability of Catastrophe per Generation. This parameter is scaled to the average generation time of the population, reflecting the annual probability of a catastrophic event occurring. It's a critical factor in assessing the resilience and long-term sustainability of a population under varying environmental and anthropogenic pressures. |
 
 ![Probability of Catastrophe per Generation](images/image054.png){#07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-fig-p-cat}
 

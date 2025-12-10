@@ -3,6 +3,8 @@ title: "Socio-economic Evaluation of Restoration Actions"
 format: html
 ---
 
+[Download the SE Module](assets/Restoration_Action.pdf)
+
 
 {{< video https://www.youtube.com/watch?v=kkebo1rybp4 >}}
 
