@@ -1,4 +1,4 @@
-# Life Cycle Model
+# Life Cycle Model (Population Model)
 
 {{< video https://www.youtube.com/watch?v=v4nmlRSHo0A >}}
 

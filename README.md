@@ -130,7 +130,7 @@ If you get this error when trying to add docs/ on gh-pages:
 - The .gitignore on gh-pages should NOT exclude `/docs/`
 - The .gitignore on main SHOULD exclude `/docs/`
 
-### Merge conflicts when merging main → gh-pages
+### Merge conflicts when merging main to gh-pages
 
 If you get conflicts during merge:
 1. Resolve conflicts in source files (.qmd)
