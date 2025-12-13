@@ -10,7 +10,10 @@
       "Bash(ls:*)",
       "Bash(git ls-tree:*)",
       "WebFetch(domain:mattjbayly.github.io)",
-      "Bash(quarto render:*)"
+      "Bash(quarto render:*)",
+      "Bash(git fetch:*)",
+      "WebFetch(domain:api.github.com)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nUpdate rendered documentation with Formula Builder appendix in navigation\n\n- Re-render all HTML files to include Appendix C in navigation\n- Update date to 2025-12-12\n- Clean up unused images and CSS files\n- Update all page navigation sidebars\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n)\")"
     ]
   }
 }
