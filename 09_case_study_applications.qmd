@@ -11,7 +11,6 @@ Default sample dataset when tool loads:
 -   [Watershed Locations .gpkg](/sample_data/athabasca_rbt/watersheds.gpkg)
 -   [Life Cycle Profile (optional)](/sample_data/athabasca_rbt/life_cycles.csv)
 
-
 *The default study area, stressor list and species profile in the Shiny application are from the [@macpherson2020alberta] Athabasca Rainbow Trout project.*
 
 ## Simple Working Example (hypothetical)
@@ -22,7 +21,6 @@ This straightforward example serves as an easy-to-use template for your own inpu
 -   [Stressor Magnitude Workbook](/sample_data/meso_habitat/stressor_magnitude_simple.xlsx)
 -   [Watershed Locations .gpkg](/sample_data/meso_habitat/locations_simple.gpkg)
 
-
 ## WSEP (Watershed Status Evaluation Protocol) Fisheries Sensitive Watersheds (FSWs)
 
 This example is provided for illustrative purposes only. The CEMPRA toolbox is used to review risk and hazard scores for several fisheries sensitive watersheds (FSW) in BC. Note that the data used in this example is for illustrative purposes only and is outdated for risk/hazard assessments. For more details see the original report [FREP Report #39](https://www.for.gov.bc.ca/ftp/hfp/external/!publish/FREP/reports/FREP_Report_39.pdf)
@@ -31,16 +29,13 @@ This example is provided for illustrative purposes only. The CEMPRA toolbox is u
 -   [Stressor Magnitude Workbook](/sample_data/frep39/FREP_Stressor_Magnitude.xlsx)
 -   [Watershed Locations .gpkg](/sample_data/frep39/FREP_watersheds.gpkg)
 
-
 ## Meso-Habitat Units (hypothetical)
 
 This example is solely for illustration and should not be used as a reference for any purposes. It demonstrates the use of meso-habitat units from the Sensitive Habitat Inventory and Mapping (SHIM) initiative conducted by Ecoscape Environmental Consultants Ltd in the Coldwater River. Here, Aquatic Habitat Index (AHI) serves as a stand-in for Mean System Capacity. This case is included to show the application of the CEMPRA toolbox across various spatial scales. The data presented here is entirely synthetic and only meant for demonstration. For comprehensive details and accurate data, please refer to the original report and resources. [Nicola SHIM AHI](https://www.fraserbasin.bc.ca/Nicola_SHIM_AHI.html).
 
-
 -   [Stressor Response Workbook](/sample_data/nicola_shims/stressor_response_shims.xlsx)
 -   [Stressor Magnitude Workbook](/sample_data/nicola_shims/stressor_magnitude_shims.xlsx)
 -   [Watershed Locations .gpkg](/sample_data/nicola_shims/locations_shims.gpkg)
-
 
 ## Matrix Interaction (Example 1: Template)
 
@@ -50,7 +45,6 @@ This example is designed to demonstrate the two-factor matrix interaction surfac
 -   [Stressor Magnitude Workbook](/sample_data/matrix_simple/stressor_magnitude_matrix.xlsx)
 -   [Watershed Locations .shp (ZIP folder)](/sample_data/matrix_simple/poly.zip)
 
-
 ## Matrix Interaction (Example 2: Application)
 
 The purpose of this second example is to demonstrate the matrix interaction surface through a practical case study. To simplify, we apply the British Columbia Freshwater Atlas (BCFWA) Assessment Watersheds. Here, we estimate hydrological runoff potential by multiplying two factors: a) the Biogeoclimatic Ecosystem Classification (BEC) Unit Score, and b) the percentage of Alpine non-Forested Area. It's important to note that hydrological runoff potential is not a standard stressor in the Joe Model; it is used here solely for illustration. See the original report here: [BC-CEF Interim Interim Assessment Protocol for Aquatic Ecosystems in British Columbia](https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/cumulative-effects/protocols/cef-aquatic-ecosystems-protocol-dec2020.pdf) for more details).
@@ -59,12 +53,4 @@ The purpose of this second example is to demonstrate the matrix interaction surf
 -   [Stressor Magnitude Workbook](/sample_data/coldwater_matrix/coldwater_bc_stressor_magnitude.xlsx)
 -   [Watershed Locations .shp (ZIP folder)](/sample_data/coldwater_matrix/coldwater_bc_locations.zip)
 
-
-## Nicola Basin Chinook Salmon, Coho Salmon, and Steelhead {#09_case_study_applications-09_case_study_applications-nicola-basin-salmonids}
-
-The Nicola River provides important spawning, incubation, and rearing habitats for multiple salmonid species, including Chinook Salmon, Coho Salmon, and Steelhead. A case study application of the CEMPRA tool is being applied to Nicola Basin to support threat analysis and recovery action planning.
-
--   [Example location and stage specific habitat capacities](/sample_data/life_cycle/habitat_dd_k.xlsx)
--   [Example life cycle profile](/sample_data/life_cycle/life_cycles_coho_nicola.csv)
-
-
+##  {#09_case_study_applications-09_case_study_applications-nicola-basin-salmonids}

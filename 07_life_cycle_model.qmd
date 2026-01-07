@@ -35,39 +35,71 @@ The life cycle profile is a comma-separated values (CSV) file that contains the 
 
 The following table shows an example life cycle parameters file for Athabasca Rainbow Trout (non-anadromous).
 
-| **Parameters**                                       | **Name**   | **Value** |
-|------------------------------------------------------|------------|-----------|
-| Number of life stages                                | Nstage     | 4         |
-| Anadromous                                           | anadromous | FALSE     |
-| Adult capacity                                       | k          | 100       |
-| Spawn events per female                              | events     | 1         |
-| Eggs per female spawn                                | eps        | 3000      |
-| spawning interval                                    | int        | 1         |
-| egg survival                                         | SE         | 0.1       |
-| yoy survival                                         | S0         | 0.3       |
-| sex ratio                                            | SR         | 0.5       |
-| Hatchling Survival                                   | surv_1     | 0.3       |
-| Juvenile Survival                                    | surv_2     | 0.3       |
-| Sub-adult Survival                                   | surv_3     | 0.9       |
-| Adult Survival                                       | surv_4     | 0.9       |
-| Years as hatchling                                   | year_1     | 1         |
-| years as juvenile                                    | year_2     | 2         |
-| years as subadult                                    | year_3     | 2         |
-| years as adult                                       | year_4     | 5         |
-| egg survival compensation ratio                      | cr_E       | 1         |
-| yoy survival compensation ratio                      | cr_0       | 3         |
-| hatchling survival compensation ratio                | cr_1       | 2.5       |
-| juvenile survival compensation ratio                 | cr_2       | 2         |
-| subadult survival compensation ratio                 | cr_3       | 1.1       |
-| adult survival compensation ratio                    | cr_4       | 1         |
-| maturity as hatchling                                | mat_1      | 0         |
-| maturity as juvenile                                 | mat_2      | 0         |
-| maturity as subadult                                 | mat_3      | 0         |
-| maturity as adult                                    | mat_4      | 1         |
-| variance in eggs per female                          | eps_sd     | 1.00E+03  |
-| correlation in egg fecundity through time            | egg_rho    | 0.1       |
-| coefficient of variation in stage-specific mortality | M.cv       | 1.00E-01  |
-| correlation in mortality through time                | M.rho      | 0.1       |
++------------------------------------------------------+------------+------------+
+| **Parameters**                                       | **Name**   | **Value**  |
++======================================================+============+============+
+| Number of life stages                                | Nstage     | 4          |
++------------------------------------------------------+------------+------------+
+| Anadromous                                           | anadromous | FALSE      |
++------------------------------------------------------+------------+------------+
+| Adult capacity                                       | k          | 100        |
++------------------------------------------------------+------------+------------+
+| Spawn events per female                              | events     | 1          |
++------------------------------------------------------+------------+------------+
+| Eggs per female spawn                                | eps        | 3000       |
++------------------------------------------------------+------------+------------+
+| spawning interval                                    | int        | 1          |
++------------------------------------------------------+------------+------------+
+| egg survival                                         | SE         | 0.1        |
++------------------------------------------------------+------------+------------+
+| yoy survival                                         | S0         | 0.3        |
++------------------------------------------------------+------------+------------+
+| sex ratio                                            | SR         | 0.5        |
++------------------------------------------------------+------------+------------+
+| Hatchling Survival                                   | surv_1     | 0.3        |
++------------------------------------------------------+------------+------------+
+| Juvenile Survival                                    | surv_2     | 0.3        |
++------------------------------------------------------+------------+------------+
+| Sub-adult Survival                                   | surv_3     | 0.9        |
++------------------------------------------------------+------------+------------+
+| Adult Survival                                       | surv_4     | 0.9        |
++------------------------------------------------------+------------+------------+
+| Years as hatchling                                   | year_1     | 1          |
++------------------------------------------------------+------------+------------+
+| years as juvenile                                    | year_2     | 2          |
++------------------------------------------------------+------------+------------+
+| years as subadult                                    | year_3     | 2          |
++------------------------------------------------------+------------+------------+
+| years as adult                                       | year_4     | 5          |
++------------------------------------------------------+------------+------------+
+| egg survival compensation ratio                      | cr_E       | 1          |
++------------------------------------------------------+------------+------------+
+| yoy survival compensation ratio                      | cr_0       | 3          |
++------------------------------------------------------+------------+------------+
+| hatchling survival compensation ratio                | cr_1       | 2.5        |
++------------------------------------------------------+------------+------------+
+| juvenile survival compensation ratio                 | cr_2       | 2          |
++------------------------------------------------------+------------+------------+
+| subadult survival compensation ratio                 | cr_3       | 1.1        |
++------------------------------------------------------+------------+------------+
+| adult survival compensation ratio                    | cr_4       | 1          |
++------------------------------------------------------+------------+------------+
+| maturity as hatchling                                | mat_1      | 0          |
++------------------------------------------------------+------------+------------+
+| maturity as juvenile                                 | mat_2      | 0          |
++------------------------------------------------------+------------+------------+
+| maturity as subadult                                 | mat_3      | 0          |
++------------------------------------------------------+------------+------------+
+| maturity as adult                                    | mat_4      | 1          |
++------------------------------------------------------+------------+------------+
+| variance in eggs per female                          | eps_sd     | 1.00E+03   |
++------------------------------------------------------+------------+------------+
+| correlation in egg fecundity through time            | egg_rho    | 0.1        |
++------------------------------------------------------+------------+------------+
+| coefficient of variation in stage-specific mortality | M.cv       | 1.00E-01   |
++------------------------------------------------------+------------+------------+
+| correlation in mortality through time                | M.rho      | 0.1        |
++------------------------------------------------------+------------+------------+
 
 : Example life cycle parameters file for Athabasca Rainbow Trout (non-anadromous)
 
@@ -216,12 +248,17 @@ We can combine all parameters discussed in this section along with the example s
 ::: {#07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-tbl:transition-matrix}
 Table 1. Symbolic Representation of the Transition Matrix for non-anadromous species
 
-|   | stage_1 | stage_2 | stage_3 | stage_4 |
-|----|----|----|----|----|
-| stage_1 | surv_1 \* (1 - surv_1\^( year_1 - 1))/(1 - surv_1\^ year_1) | (mat2 \* events \* eps \* sE \* s0 \* sR)/int | (mat3 \* events \* eps \* sE \* s0 \* sR)/int | (mat4 \* events \* eps \* sE \* s0 \* sR)/int |
-| stage_2 | surv_1 - surv_1 \* (1 - surv_1\^(year_1 - 1))/(1 - surv_1\^ year_1) | surv_2 \* (1 - surv_2\^( year_2 - 1))/(1 - surv_2\^ year_2) | 0 | 0 |
-| stage_3 | 0 | surv_2 - surv_2 \* (1 - surv_2\^( year_2 - 1))/(1 - surv_2\^ year_2) | surv_3 \* (1 - surv_3\^( year_3 - 1))/(1 - surv_3\^ year_3) | 0 |
-| stage_4 | 0 | 0 | surv_3 - s3 \* (1 - surv_3\^( year_3 - 1))/(1 - surv_3\^ year_3) | surv_4 \* (1 - surv_4\^( year_4 - 1))/(1 - surv_4\^ year_4) |
++-------------+---------------------------------------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------------+-------------------------------------------------------------+
+|             | stage_1                                                             | stage_2                                                              | stage_3                                                          | stage_4                                                     |
++=============+=====================================================================+======================================================================+==================================================================+=============================================================+
+| stage_1     | surv_1 \* (1 - surv_1\^( year_1 - 1))/(1 - surv_1\^ year_1)         | (mat2 \* events \* eps \* sE \* s0 \* sR)/int                        | (mat3 \* events \* eps \* sE \* s0 \* sR)/int                    | (mat4 \* events \* eps \* sE \* s0 \* sR)/int               |
++-------------+---------------------------------------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------------+-------------------------------------------------------------+
+| stage_2     | surv_1 - surv_1 \* (1 - surv_1\^(year_1 - 1))/(1 - surv_1\^ year_1) | surv_2 \* (1 - surv_2\^( year_2 - 1))/(1 - surv_2\^ year_2)          | 0                                                                | 0                                                           |
++-------------+---------------------------------------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------------+-------------------------------------------------------------+
+| stage_3     | 0                                                                   | surv_2 - surv_2 \* (1 - surv_2\^( year_2 - 1))/(1 - surv_2\^ year_2) | surv_3 \* (1 - surv_3\^( year_3 - 1))/(1 - surv_3\^ year_3)      | 0                                                           |
++-------------+---------------------------------------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------------+-------------------------------------------------------------+
+| stage_4     | 0                                                                   | 0                                                                    | surv_3 - s3 \* (1 - surv_3\^( year_3 - 1))/(1 - surv_3\^ year_3) | surv_4 \* (1 - surv_4\^( year_4 - 1))/(1 - surv_4\^ year_4) |
++-------------+---------------------------------------------------------------------+----------------------------------------------------------------------+------------------------------------------------------------------+-------------------------------------------------------------+
 :::
 
 **Do individuals spend more than one year in each stage?**
@@ -251,17 +288,19 @@ The derived lambda value of the projection matrix (intrinsic rate of growth) in 
 
 ## Density-Dependent Constraints on Growth
 
-It is rare for natural populations to grow in perpetuity without any constraints on growth, survival, and reproduction. Therefore, life cycle models will typically include a mechanism (or multiple mechanisms) to constrain population growth or limit high densities.
+It is rare for natural populations to grow in perpetuity without any constraints on growth, survival, and reproduction. Therefore, life cycle models will typically include a mechanism (or multiple mechanisms) to constrain population growth or limit high densities. We refer to these as density-dependent bottlenecks on population growth.
 
-Stressor-response relationships can be incorporated into the life cycle model without accounting for density-dependent constraints, but the interpretation of the results will be limited to eigen analyses of intrinsic growth rates and sensitivities/elasticities assessments. Not only are these outputs difficult to communicate to diverse working groups, but they may also be misleading. If there are key demographic bottlenecks in the life cycle, then a density-independent model may inappropriately lead users to focus on stressors linked to fecundity or early life-stage survivorship before a key bottleneck (e.g., egg-to-fry survivorship) is experienced. However, if (in reality) a hypothetical population experiences strong density-dependent constraints on growth, then factors limiting habitat availability or productivity of a key life stage will become more influential. A common example of density-independent and density-dependent constraints on growth can be found in the transition between the early life stages of Steelhead (*Oncorhynchus mykiss*) as individuals transition from egg-to-fry (a density-independent life stage) and then from fry-to-smolts/parr (a density-dependent life stage) [@ward1993egg].
+Stressor-response relationships can be incorporated into the life cycle model without accounting for density-dependent constraints, but the interpretation of the results will be limited to eigen analyses of intrinsic growth rates and sensitivities/elasticities assessments (e.g., comparing lambda values & productivity). While usefule, these outputs are sometimes difficult to communicate to diverse working groups, and they may also be misleading, especially if habitat is limited. If there are key demographic bottlenecks in the life cycle, then a density-independent model may inappropriately lead users to focus on stressors linked to fecundity or early life-stage survivorship before a key bottleneck (e.g., egg-to-fry survivorship) is experienced. However, if (in reality) a population experiences strong density-dependent constraints on growth, then factors limiting habitat availability or productivity of a key life stage will become more influential. A common example of density-independent and density-dependent constraints on growth can be found in the transition between the early life stages of Steelhead (*Oncorhynchus mykiss*) as individuals transition from egg-to-fry (a density-independent life stage) and then from fry-to-smolts/parr (a density-dependent life stage) [@ward1993egg].
 
-The life cycle modeling component of the CEMPRA tool has two different mechanisms to incorporate density-dependent growth constraints. The first mechanism makes use of adult carrying capacity and compensation ratios (discussed below), while the second mechanism considers stage and location-specific carrying capacities. Incorporating density-dependent constraints with compensation ratios is convenient because users can evaluate projections in the population model without specifying location-specific habitat availability estimates. However, in most cases incorporating density-dependent constraints with stage and location-specific carrying capacities can provide more tailored results in systems with ample habitat data and knowledge of life stage-specific density constraints across habitat types.
+The life cycle modeling component of the CEMPRA tool has two (optional) mechanisms to incorporate density-dependent growth constraints. One mechanism makes use of adult carrying capacity and compensation ratios (discussed below), while the second mechanism considers stage and location-specific carrying capacities. Incorporating density-dependent constraints with compensation ratios is convenient because users can evaluate projections in the population model without specifying location-specific habitat availability estimates. However, in most cases incorporating density-dependent constraints with stage and location-specific carrying capacities can provide a more intuitive workflow.
 
-Both mechanisms of density-dependent constraints utilize the Beverton-Holt function to constrain the transition probability of key demographic bottlenecks. The Beverton-Holt function calculates the expected number of individuals in the next time step (N at time + 1, or density) as a function of the number of individuals in the current time step (N at time). In the case of stage-structured matrix models, this relationship is expressed as the number of individuals transitioning between two stages (e.g., from stage 2 to stage 3). In the Beverton-Holt function, input parameters governing this relationship include an estimate of stage-specific carrying capacity (K), a baseline estimate of density-independent survival (S) (surv_X from the species profile) for the transition probability, and the number of individuals in the current stage class (Nt) for the simulation year.
+*We strongly recommend starting with life stage-specific density dependent bottlenecks (e.g., a location is expected to support up to X fry, Y parr, and Z spawners based on habitat availability). Avoid the use of compensation ratios unless you are already familiar with their application in population ecology (most users will tend to find working with compensation ratios a little bit more advanced and sometimes non-intuitive).*
+
+Both mechanisms of density-dependent constraints utilize the Beverton-Holt function or strict "hockey stick" fixed threshold to constrain the transition probability of key demographic bottlenecks. The Beverton-Holt function calculates the expected number of individuals in the next time step (N at time + 1, or density) as a function of the number of individuals in the current time step (N at time). In the case of stage-structured matrix models, this relationship is expressed as the number of individuals transitioning between two stages (e.g., from stage 2 to stage 3). In the Beverton-Holt function, input parameters governing this relationship include an estimate of stage-specific carrying capacity (K), a baseline estimate of density-independent survival (S) (surv_X from the species profile) for the transition probability, and the number of individuals in the current stage class (Nt) for the simulation year.
 
 ![Beverton-Holt function for density-dependent growth](images/image043.png){#07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-fig-beverton-holt}
 
-The following figure provides an overview of the Beverton-Holt function, showing the number of individuals at time (t) on the x-axis and the number of individuals at time + 1 on the y-axis. For example, this could be the number of Age-0 fry on the x-axis and the number of Age-1+ parr recruits on the y-axis. The curved black line shows the effects of density-dependent growth (limited recruitment as the number of individuals in the first stage is increased). The steep red line is the intrinsic productivity (survivorship, surv_X), which is 0.8 under hypothetical density-independent growth conditions. The blue line is the hypothetical carrying capacity of 100.
+The following figure provides an overview of the Beverton-Holt function, showing the number of individuals at time (t) on the x-axis and the number of individuals at time + 1 on the y-axis. For example, this could be the number of Age-0 fry on the x-axis and the number of Age-1+ parr recruits on the y-axis. The curved black line shows the effects of density-dependent growth (limited recruitment as the number of individuals in the first stage is increased). The steep red line is the intrinsic productivity (survivorship, surv_X), which is 0.8 under hypothetical density-independent growth conditions. The blue line is the hypothetical carrying capacity of 100. The "hockey stick" style density dependent method simply applies the horizontal blue dotted line as a fixed threshold that cannot be exceeded.
 
 ![Beverton-Holt function for density-dependent growth](images/image044.jpg){#07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-fig-density-dependent}
 
@@ -273,7 +312,7 @@ Beverton-Holt function for density-dependent growth shows the survivorship under
 
 ### Location and Stage-Specific Carrying Capacities
 
-For more systems with ample habitat data and known relationships between habitat availability and maximum densities, it is possible to use location-specific carrying capacities for one or more rate-limiting life stages (e.g., *Location X can produce up to 1,200 parr*). If this is the case, a special table can be included that specifies the maximum number of individuals per stage class per life stage per location:
+For more systems with some habitat data and known relationships between habitat availability and maximum densities, it is possible to use location-specific carrying capacities for one or more rate-limiting life stages (e.g., *Location X can produce up to 1,200 parr*). If this is the case, a special table can be included that specifies the maximum number of individuals per stage class per life stage per location:
 
 ![Location and stage-specific carrying capacity input data table](images/image045.png){#07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-fig-location-specific}
 
@@ -283,13 +322,15 @@ Location and stage-specific carrying capacity input data table.
 
 </div>
 
-This table (Location-specific capacities) is referred to as the *locations carrying capacity table* and exists as a special input file that can be used to control density-dependent growth in the life cycle model. Users must estimate the average carrying capacity for a given life stage at each location (e.g., k_stage_1_mean: 1,200) and the interannual variability (CV: coefficient of variation) in the carrying capacity (e.g., k_stage_1_cv: 0.1). If the location carrying capacity table is provided, any cells that are populated with values are assumed to have density-dependent constraints. Any cells that are left blank are assumed to be governed only by density-independent factors and do not have any density-dependent constraints.
+This table (Location-specific capacities) is referred to as the *locations carrying capacity table* and exists as a special input file that can be used to control density-dependent growth in the life cycle model. Users must estimate the average carrying capacity for a given life stage at each location (e.g., k_stage_1_mean: 1,200) and (optionally) the interannual variability (CV: coefficient of variation) in the carrying capacity (e.g., k_stage_1_cv: 0.1). If the location carrying capacity table is provided, any cells that are populated with values are assumed to have density-dependent constraints. Any cells that are left blank are assumed to be governed only by density-independent factors and do not have any density-dependent constraints.
 
 In the previous example (Location-specific capacities), the population model will run with constraints on `stage_1`, meaning that the survivorship from `stage_0` to `stage_1` will be governed by a Beverton-Holt relationship, and the abundance (or density) of `stage_1` individuals will be constrained for each location according to the values provided in the locations carrying capacity table.
 
-The CEMPRA tool does not support the development of these locations and stage-specific carrying capacity estimates, but it's assumed that relevant reference literature will be used to develop appropriate input values (e.g., if stage 1 is Steelhead parr; regional densities for Steelhead parr are roughly 1,500 parr/km of stream; and fish-accessible reaches within Rock Creek sum up to roughly 800m in length; then k_stage_1_mean should equal roughly 1,200 parr). Developing these estimates alongside a species profile can be laborious, but the advantage is that projection from the CEMPRA tool will ultimately account for habitat quality and habitat availability.
+The CEMPRA tool does not support the development of these locations and stage-specific carrying capacity estimates, but it's assumed that relevant reference literature will be used to develop appropriate input values (e.g., if stage 1 is Steelhead parr; regional densities for Steelhead parr are roughly 1,500 parr/km of stream; and fish-accessible reaches within Rock Creek sum up to roughly 800m in length; then k_stage_1_mean should equal roughly 1,200 parr). Developing these estimates alongside a species profile is generally case-specific, but the advantage is that projection from the CEMPRA tool will ultimately account for habitat quality and habitat availability.
 
-If the locations carrying capacity table is provided, the population projections will implement density-dependent growth constraints for species-specific life stages according to the stage-specific carrying capacities (with Beverton-Holt constraint on growth), and intrinsic density-independent survivorship estimates. The steel head spawners figure shows an example simulation for Steelhead from the CEMPRA tool with adult spawning on the y-axis and a stage-1 (parr) carrying capacity constraint set to 160,000 individuals. In the Steelhead example, the only density-dependent constraint is the parr carrying capacity of the system (set to 160,000). The number of adult spawners is, therefore, a derived metric from the life cycle model. Implementing density-dependent constraints with *location and stage-specific carrying capacities* is different from the approach with *compensation ratios*, where users are required to first input an estimate of the adult carrying capacity and work backwards from there.
+For support on estimating upper capacities limits for trout and salmonids in streams from basic habitat data see [@cramer2009linking] [@beechie2021modeling]. Other reports can be referenced to estimate capacities in estuaries (e.g., [@Chen2024ChinookCV]) and lakes (e.g., for Sockeye see: [@CoxRogersEtAl2010SkeenaSockeye], many other examples exist). To get started we suggest reviewing this great overview video by Nick Ackerman <https://www.youtube.com/watch?v=oSYapG2o4bc>. Most capacity-estimation methods focus on lotic habitats, breaking systems into reaches (e.g., Reach 1, 2, 3) or habitat units such as pools, riffles, and runs. This framework works well for species like Coho, Chinook, Bulltrout, and Steelhead, etc. which rely heavily on stream habitats throughout much of their freshwater life cycle. However, Sockeye differ fundamentally because their spawning and juvenile rearing depend primarily on large lake ecosystems, & only pass through stream reaches. Therefore for Sockeye and other lentic species, it is therefore more appropriate to define model 'locations' at the scale of lakes or major basins, and to estimate capacity based on lake productivity and rearing potential rather than reach-scale stream habitat metrics. Stream reaches still matter, particularly for out-migration bottlenecks, migration survival, and tributary spawning where it occurs, but they should be treated as stressors or modifiers, not as the primary units of capacity. We recommend spending time here as group defining the best approach before proceeding with the rest of the modeling.
+
+If the locations carrying capacity table is provided, the population projections will implement density-dependent growth constraints for species-specific life stages according to the stage-specific carrying capacities (with Beverton-Holt constraint on growth or a fixed Hockey-stick style upper capacity threshold), and intrinsic density-independent survivorship estimates. The Steelhead spawners figure shows an example simulation for Steelhead from the CEMPRA tool with adult spawning on the y-axis and a stage-1 (parr) carrying capacity constraint set to 160,000 individuals. In the Steelhead example, the only density-dependent constraint is the parr carrying capacity of the system (set to 160,000). The number of adult spawners is, therefore, a derived metric from the life cycle model. Implementing density-dependent constraints with *location and stage-specific carrying capacities* is different from the approach with *compensation ratios*, where users are required to first input an estimate of the adult carrying capacity and work backwards from there.
 
 ![Simulation of Steelhead Spawners with stage_1 capacity set to 160,000](images/image047.png){#07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-fig-steelhead-spawners}
 
@@ -299,18 +340,133 @@ Simulation of Steelhead Spawners (y-axis) with stage_1 (parr) capacity set to 16
 
 </div>
 
-**Location and Stage-Specific Carrying Capacities Constraints in the Species Profile**
+#### Step 1: Indentify Which Life Stages Have Denisty-Dependent Bottlenecks
 
-| Parameter | Description |
-|----|----|
-|  |  |
-| bh_stage_1, bh_stage_2, bh_stage_3, bh_stage_4 | The location and stage-specific carrying capacities constraints can be toggled on and off for each life stage with `bh_stage_X` input in the species profile. Setting the Value to 0 (or omitting the row) means that there will be no density-dependent constraint on a given life stage. Setting the Value to 1 will implement a Beverton-Holt style density-dependent constraint for the given life stage. If implemented, the *location and stage-specific carrying capacity* input data table must be supplied, and values must be populated for each location. |
+First we identify which life stages have density-dependent bottlenecks and we define these in the life cycle profile csv file. These are generally added to the bottom of the life cycle parameters csv file. This will tell the model where to apply density-dependent bottlenecks and which functions to use.
+
+**For Non-anadromous Populations like Rainbow, Bull Trout, Cuttroat, Steelhead etc.**
+
+For non-anadromous (iteroparous) populations of resident trout, spawning more than once in their life cycle, the following density-dependent tags are available. Add these to the bottom of the life cycle profile csv in the **Name** column and set **Value** to TRUE.
+
++-----------------------------+---------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Name                        | Mechanism     | Description                                                                                                                                                                                                                                                                                         |
++=============================+===============+=====================================================================================================================================================================================================================================================================================================+
+| `bh_stage_0`                | Beverton–Holt | Egg-to-fry transition limiting the maximum number of fry.                                                                                                                                                                                                                                           |
++-----------------------------+---------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `hs_stage_0` / `dd_hs_0`    | Hockey-Stick  | Egg-to-fry hard cap limiting the maximum number of fry.                                                                                                                                                                                                                                             |
++-----------------------------+---------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `bh_stage_1, bh_stage_2, …` | Beverton–Holt | Stage transitions limiting the maximum number of individuals at that stage with a Beverton–Holt function. For example, bh_stage_1 will limit the maximum number of age-1 individuals (i.e., the fry to parr transition).                                                                            |
++-----------------------------+---------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `hs_stage_1, hs_stage_2, …` | Hockey-Stick  | *Same as above but with a hockey-stick style hard cap.* For example, hs_stage_1 will be applied at the fry to age-1 transition limiting the number of stage 1 individuals (e.g., fry to parr). hs_stage_2 will limit the stage 1 to stage 2 transition and limit the number of stage 2 individuals. |
++-----------------------------+---------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `bh_spawners`               | Beverton–Holt | Total spawner capacity. Will limit the number of adults across all spawning stage classes (references maturity probability to determine spawner vs non-spawner).                                                                                                                                    |
++-----------------------------+---------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `hs_spawners`               | Hockey-Stick  | Total spawner cap. *Same as above, but with fixed upper limit as a hard stop threshold.*                                                                                                                                                                                                            |
++-----------------------------+---------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+**For Anadromous Populations like Chinook, Coho, Sockeye, Chum, Pink etc.**
+
+For anadromous (semelparous) populations of salmon, spawning only once in their life cycle and then dying, the following density-dependent tags are available. Add these to the bottom of the life cycle profile csv in the **Name** column and set **Value** to TRUE. The tags are similar to the above tags for non-anadromous life history profiles but we must include define pb (for pre-breeder) vs b (for breeder), becomes more important for later life stages.
+
++-----------------------------------+---------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Name                              | Mechanism     | Description                                                                                                                                                                                                                                                                                                                                    |
++===================================+===============+================================================================================================================================================================================================================================================================================================================================================+
+| `bh_stage_0`                      | Beverton–Holt | Egg-to-fry transition limiting the maximum number of fry (this tag is the same for non-anadromous and does not need 'pb' or 'b' to be specified).                                                                                                                                                                                              |
++-----------------------------------+---------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `hs_stage_0`                      | Hockey-Stick  | Egg-to-fry hard cap limiting the maximum number of fry (this tag is the same for non-anadromous and does not need 'pb' or 'b' to be specified).                                                                                                                                                                                                |
++-----------------------------------+---------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `bh_stage_pb_1, bh_stage_pb_2, …` | Beverton–Holt | Stage transitions limiting the maximum number of individuals at that (pb - pre-breeder) stage with a Beverton–Holt function. For example, bh_stage_pb_1 will limit the maximum number of age-1 individuals (i.e., commonly used for the fry to parr transition to limit the number of parr).                                                   |
+|                                   |               |                                                                                                                                                                                                                                                                                                                                                |
+| `bh_stage_b_1, bh_stage_b_2, …`   |               | The 'pb' tag indicates that the constraint will be applied to the pre-breeder stage class, while the 'b' tag indicates that the DD constraint will be applied to a specific spawner stage class. The latter is somewhat awkward for populations with multiple spawner stage classes, so 'bh_spawners' was included for convenience (see below) |
++-----------------------------------+---------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `hs_stage_pb_1, hs_stage_pb_2, …` | Hockey-Stick  | *Same as above but with a hockey-stick style hard cap.* For example, hs_stage_pb_1 will be applied at the fry to age-1 transition limiting the number of stage 1 individuals (e.g., fry to parr). hs_stage_pb_2 will limit the stage 1 to stage 2 transition and limit the number of stage 2 individuals.                                      |
+|                                   |               |                                                                                                                                                                                                                                                                                                                                                |
+| `hs_stage_b_1, hs_stage_b_2, …`   |               |                                                                                                                                                                                                                                                                                                                                                |
++-----------------------------------+---------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `bh_spawners`                     | Beverton–Holt | Total spawner capacity. Will limit the number of adults across all spawning stage classes (references maturity probability to determine spawner vs non-spawner).                                                                                                                                                                               |
+|                                   |               |                                                                                                                                                                                                                                                                                                                                                |
+|                                   |               | Use this to apply a density-dependent constrain on adult spawners (pooled across spawner age classes).                                                                                                                                                                                                                                         |
++-----------------------------------+---------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `hs_spawners`                     | Hockey-Stick  | Total spawner cap. *Same as above, but with fixed upper limit as a hard stop threshold.*                                                                                                                                                                                                                                                       |
++-----------------------------------+---------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+**Select Target Density-Dependent Bottlenecks and Update the Life Cycle Profile File.**
+
+We then need to select target density-dependent bottlenecks of interest (from the name tags above) and update the life cycle profile file to tell the model which life stages have density-dependent constraints and which functions to use (e.g., bh vs hs).
+
+The file life cycle profile files should look something like this. Use the exact naming convention in the Name column, set the Value column to TRUE and provide a custom entry in the Parameters column as a user-friendly reminder of which life stage the density-dependent constraint is being applied to.
+
+![Updated life cycle profile file for a non-anadromous population with several density-dependent functions added to the model](images/lcp_non_anadromous.png){fig-alt="Updated life cycle profile file for a non-anadromous population with several density-dependent functions added" fig-align="center"}
+
+![Updated life cyle profile csv file for an anadromous species with three density-dependent functions added to the model.](images/lcp_anadromous.png){fig-align="center"}
+
+#### Step 2: Create the Location-Specific Habitat Capacities File
+
+In the previous step we told the model which life stages have density-dependent constraints and which density-dependent functions to use, but will still need to specify the location-specific K (capacity) values for each life stage. For example, if we know we have density-dependent constraints on egg-to-fry, fry-to-parr, and spawners, we need to specify the upper carrying capacities for each of fry, parr, and spawners for each location. We enter this information in the habitat capacities file.
+
+The habitat capacities file can be generated as an Excel or csv file and defines the upper carrying capacity for each location (as rows) and each life stage at the target location (column values). The habitat capacities file always begins with columns HUC_ID (location id) and NAME (location or reach name), and then includes a series of wildcard columns that define the maximum number of individuals that the location is able to support for that life stage. See the examples below:
+
+**Example Habitat Capacities File for a Non-Anadromous Population**
+
++------------+----------+--------------------+--------------------+--------------------+
+| **HUC_ID** | **NAME** | **k_stage_0_mean** | **k_stage_1_mean** | **k_stage_3_mean** |
++------------+----------+--------------------+--------------------+--------------------+
+| 1          | Reach 1  | 627,594            | 238,987            | 38,073             |
++------------+----------+--------------------+--------------------+--------------------+
+| 2          | Reach 2  | 1,247,555          | 537,196            | 15,384             |
++------------+----------+--------------------+--------------------+--------------------+
+| 3          | Reach 3  | 913,589            | 359,136            | 20,943             |
++------------+----------+--------------------+--------------------+--------------------+
+
+In the previous table we have the HUC_ID & NAME columns for the location - to link information to the stressor data, and then we have a series of additional columns:
+
+-   k_stage_0_mean: defines the carrying capacity K for stage_0 (fry) at the location. In this case it is set to 627,594 for reach 1. If we defined the density-dependent function in the life cycles file 'hs_stage_0' to TRUE, then the simulated population would be restricted to fry abundance to \<627,594 at location 1, regardless of the productivity.
+
+-   k_stage_1_mean: We also include values for stage_1 capacity (K) limits. In this example this constraints corresponds to the parr carrying capacity. If we set 'hb_stage_1' to TRUE in the life cycle file then the values in this column would create a bottleneck at the fry to parr transition and restrict the number of stage 1 individuals.
+
+-   k_stage_3_mean: Similar to above this column will control the number of stage_3 individuals. Likely a stage representing adults.
+
+We can also add additional columns for k_stage_4_mean etc. provided that they are defined in the life cycles file. Next we show an example for an anadromous population.
+
+**Example Habitat Capacities File for an Anadromous Population**
+
++---------------------------------+---------------------------------------------------------+-------------------------------------------------------------+-------------------------------------------------------------------+--------------------------------------------------------------------+
+| **HUC_ID**                      | **NAME**                                                | **k_stage_0_mean**                                          | **k_stage_Pb_1_mean**                                             | **k_spawners_mean**                                                |
++---------------------------------+---------------------------------------------------------+-------------------------------------------------------------+-------------------------------------------------------------------+--------------------------------------------------------------------+
+| 1                               | Reach 1                                                 | 627,594                                                     |                                                                   | 38,073                                                             |
++---------------------------------+---------------------------------------------------------+-------------------------------------------------------------+-------------------------------------------------------------------+--------------------------------------------------------------------+
+| 2                               | Reach 2                                                 | 1,247,555                                                   |                                                                   | 15,384                                                             |
++---------------------------------+---------------------------------------------------------+-------------------------------------------------------------+-------------------------------------------------------------------+--------------------------------------------------------------------+
+| 3                               | Reach 3                                                 | 913,589                                                     |                                                                   | 20,943                                                             |
++---------------------------------+---------------------------------------------------------+-------------------------------------------------------------+-------------------------------------------------------------------+--------------------------------------------------------------------+
+
+In the previous table we have the HUC_ID & NAME columns for the location - to link information to the stressor data, and then we have a series of additional columns. These are similar to but slightly different than the non-anadromous populations because we need to specify Pb (pre-breeder) vs B (breeder):
+
+-   k_stage_0_mean: defines the carrying capacity K for stage_0 (fry) at the location. In this case it is set to 627,594 for reach 1. If we defined the density-dependent function in the life cycles file 'hs_stage_0' to TRUE, then the simulated population would be restricted to fry abundance to \<627,594 at location 1, regardless of the productivity. *We do not need to define pb/b for the fry stage class.*
+
+-   k_stage_Pb_1_mean: We also include values for stage_1 capacity (K) limits. In this example this constraints corresponds to the parr carrying capacity. The 'Pb' applies to the pre-breeder stage class in the anadromous model. If we set 'hs_stage_pb_1' to TRUE in the life cycle file then the values in this column would create a bottleneck at the fry to parr transition and restrict the number of stage 1 individuals.
+
+-   k_spawners_mean: Here we specify the carrying capacity for adult spawners across all age classes (alt column names like k_stage_b_mean will also work). This column will control the maximum number of spawners pooled across all spawner age classes. You can also specify capacities for spawner age classes individually (e.g., k_stage_B_4_mean, k_stage_B_5_mean, etc.) but that can get tricky since it assumes the portions are well-known and consistent.
+
+*Note that the values in the column are empty - if no data is available then the model will be run with capacity set in Inf for that life stage.*
+
+#### Step 3: Final Checks
+
+-   Define stage/age classes with known or expected density dependent constraints
+
+-   Update the life cycle profile file to include target density dependent bottlenecks with their associated functions (e.g., `hs_stage_0, bh_spawners etc.`). Set the Value column to TRUE so they will be applied in the model
+
+-   Create or update the habitat capacities file. Define the K capacity values for each location and life stage.
+
+-   **Reccomended**: Run the model in the Shiny app to ensure it is functioning as intended.
 
 ### Compensation Ratios for Density-Dependent Growth
 
 It is possible to implement density-dependent constraints with both the compensation ratios and the location and stage-specific carrying capacities, but we recommend using only one mechanism for density-dependent growth to avoid confusion.
 
 Compensation ratios (CR values) can be used in the CEMPRA life cycle model to parameterize and control density-dependent growth. Compensation ratios (described below) are a reparameterization of the classical Beverton-Holt function for density-dependent growth.
+
+*We recommend that users who are unfamiliar with compensation ratios & advanced methods in population ecology avoid compensation ratios and stick to stage-specific carrying capacities.*
 
 Compensation Ratios (CR) adjust the survivorship of each life stage based on the observed densities (abundance, N i,t) and stage-specific carrying capacities (Ki):
 
@@ -332,7 +488,7 @@ Influence of compensation ratios on stage-specific survivorship.
 
 </div>
 
-#### Stage-Specific Carrying Capacity Estimates:
+#### Compensation Ratios & Stage-Specific Carrying Capacity Estimates:
 
 When using compensation ratios, it is only possible to modify the carrying capacity for the adult age class via the K parameter in the life cycle profile. The K values for other age classes are derived from the stable-stage distribution of the underlying transition matrix. This means that users who implement density-dependent growth via compensation ratios can only modify stage-specific abundance relative to the stable stage distribution. If you know (or can estimate) critical location-specific and stage-specific capacities (e.g., maximum stage_1 parr at location X), then refer to Section 8.4.1 to implement density-dependent growth constraints with location and stage-specific carrying capacities.
 
@@ -351,7 +507,7 @@ Stable-stage distribution (portions) under the example species profile @fig-figu
 
 ![Stable Stage Distributions and Stage-specific Carrying Capacities](images/image050.png){#07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-fig-stable-stage-distributions}
 
-#### Density-Dependence Matrix (D):
+#### Compensation Ratios and the Density-Dependence Matrix (D):
 
 Based on the derived stage-specific carrying capacities (K values), baseline survivorship values (SE, S0, surv_1, ...) and the corresponding compensation ratios (cr_E, cr_0, cr_1, ...), a density-dependence matrix (D) for a hypothetical population vector of eggs: 10,000,000, fry: 1,000,000; stage 1: 100,000, stage 2: 10,000, stage 3: 1,000 & stage 4: 100 will appear as follows:
 
@@ -361,10 +517,13 @@ Compensation ratios are widely used as parameters in stock-recruitment functions
 
 **Compensation Ratios in the Species Profile**
 
-| Parameter | Description |
-|----|----|
-|  |  |
++------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Parameter                          | Description                                                                                                                                                                                                                                                                                                        |
++====================================+====================================================================================================================================================================================================================================================================================================================+
+|                                    |                                                                                                                                                                                                                                                                                                                    |
++------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | cr_E, cr_0, cr_1, cr_2, cr_3, cr_4 | The compensation ratios for egg (cr_E), Age-0 fry (cr_0) and subsequent stage classes (cr_1 to cr_4) can be set. If the Nstage value is different than four, then add or remove rows accordingly. Compensation ratios can be set to 1.0 to omit the use of compensation ratios to govern density-dependent growth. |
++------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 #### Useful references to understand Compensation Ratios:
 
@@ -383,9 +542,11 @@ Several additional parameters are available to influence the stochasticity (vari
 
 ### eps_sd: Standard Deviation in Eggs-per-Spawner
 
-| Parameter | Description |
-|----|----|
-| `eps_sd` | The Standard Deviation in Eggs-per-Spawner controls the variability in fecundity across simulation years and batch replicates. The example below shows a sample projection with `eps_sd` set to 250 and 750. In the example with `eps_sd` set to 750, there are several years with very high fecundity. Density-dependent constraints (if implemented) may attenuate the apparent effect of high `eps_sd` inputs. |
++-----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Parameter | Description                                                                                                                                                                                                                                                                                                                                                                                                       |
++===========+===================================================================================================================================================================================================================================================================================================================================================================================================================+
+| `eps_sd`  | The Standard Deviation in Eggs-per-Spawner controls the variability in fecundity across simulation years and batch replicates. The example below shows a sample projection with `eps_sd` set to 250 and 750. In the example with `eps_sd` set to 750, there are several years with very high fecundity. Density-dependent constraints (if implemented) may attenuate the apparent effect of high `eps_sd` inputs. |
++-----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ![eps_sd Standard Deviation in Eggs-per-Spawner](images/image051.png){#07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-fig-eps-sd}
 
@@ -397,9 +558,11 @@ eps_sd Standard Deviation in Eggs-per-Spawner
 
 ### egg_rho: Correlation in Egg Fecundity Through Time
 
-| Parameter | Description |
-|----|----|
++-----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Parameter | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
++===========+==============================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================+
 | `egg_rho` | In natural populations, there will be good years and bad years. It's assumed that good years will be good for large adults and small adults. If multiple mature stage classes contribute to spawning (fecundity) (i.e., maturity values are greater than 0), it is assumed that fecundity will be correlated between good and bad years across stage classes (i.e., stage_5, stage_6 & stage_7). `egg_rho` controls the degree of correlation in interannual fecundity between stage classes. See the following figure for an illustrative example. If `egg_rho` is low, and multiple stage classes contribute to spawning, then some stage classes may compensate for good/bad years. Conversely, if `egg_rho` is high, then the population may be highly volatile as all cohorts experience good/bad years simultaneously. |
++-----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ![egg_rho: correlation in egg fecundity through time](images/image052.png){#07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-fig-egg-rho}
 
@@ -411,15 +574,19 @@ egg_rho: correlation in egg fecundity through time
 
 ### M.cv: Coefficient of Variation (CV) in Interannual Stage-Specific Mortality
 
-| Parameter | Description |
-|----|----|
-| `M.cv` | The Coefficient of Variation (CV) in stage-specific mortality (`M.cv`) is based on a beta distribution. This parameter allows for the modeling of variability in mortality rates across different life stages, contributing to a more dynamic and realistic simulation of population dynamics. |
++-----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Parameter | Description                                                                                                                                                                                                                                                                                    |
++===========+================================================================================================================================================================================================================================================================================================+
+| `M.cv`    | The Coefficient of Variation (CV) in stage-specific mortality (`M.cv`) is based on a beta distribution. This parameter allows for the modeling of variability in mortality rates across different life stages, contributing to a more dynamic and realistic simulation of population dynamics. |
++-----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ### M.rho: Correlation in Stage-Class Mortality Through Time
 
-| Parameter | Description |
-|----|----|
-| `M.rho` | `M.rho`, the correlation in mortality through time, plays a critical role in modeling the variability of survivorship across life stages. In natural populations, the occurrence of good and bad years is often correlated across all stage classes, excluding eggs (`SE`). `M.rho` determines the degree of this correlation. A low `M.rho` value suggests that certain stage classes may compensate for good/bad years based on random sampling of survivorship, while a high `M.rho` implies that all cohorts may experience good/bad years simultaneously, leading to higher volatility in population dynamics. |
++-----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Parameter | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
++===========+=====================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================+
+| `M.rho`   | `M.rho`, the correlation in mortality through time, plays a critical role in modeling the variability of survivorship across life stages. In natural populations, the occurrence of good and bad years is often correlated across all stage classes, excluding eggs (`SE`). `M.rho` determines the degree of this correlation. A low `M.rho` value suggests that certain stage classes may compensate for good/bad years based on random sampling of survivorship, while a high `M.rho` implies that all cohorts may experience good/bad years simultaneously, leading to higher volatility in population dynamics. |
++-----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ![M.rho: correlation in survivorship through time](images/image053.png){#07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-fig-m-rho}
 
@@ -431,9 +598,11 @@ M.rho: correlation in survivorship through time
 
 ### p.cat: Probability of Catastrophe per Generation
 
-| Parameter | Description |
-|----|----|
-| p.cat | `p.cat` represents the Probability of Catastrophe per Generation. This parameter is scaled to the average generation time of the population, reflecting the annual probability of a catastrophic event occurring. It's a critical factor in assessing the resilience and long-term sustainability of a population under varying environmental and anthropogenic pressures. |
++-----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Parameter | Description                                                                                                                                                                                                                                                                                                                                                                |
++===========+============================================================================================================================================================================================================================================================================================================================================================================+
+| p.cat     | `p.cat` represents the Probability of Catastrophe per Generation. This parameter is scaled to the average generation time of the population, reflecting the annual probability of a catastrophic event occurring. It's a critical factor in assessing the resilience and long-term sustainability of a population under varying environmental and anthropogenic pressures. |
++-----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ![Probability of Catastrophe per Generation](images/image054.png){#07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-fig-p-cat}
 
