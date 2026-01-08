@@ -408,15 +408,15 @@ The habitat capacities file can be generated as an Excel or csv file and defines
 
 **Example Habitat Capacities File for a Non-Anadromous Population**
 
-+------------+----------+--------------------+--------------------+--------------------+
-| **HUC_ID** | **NAME** | **k_stage_0_mean** | **k_stage_1_mean** | **k_stage_3_mean** |
-+------------+----------+--------------------+--------------------+--------------------+
-| 1          | Reach 1  | 627,594            | 238,987            | 38,073             |
-+------------+----------+--------------------+--------------------+--------------------+
-| 2          | Reach 2  | 1,247,555          | 537,196            | 15,384             |
-+------------+----------+--------------------+--------------------+--------------------+
-| 3          | Reach 3  | 913,589            | 359,136            | 20,943             |
-+------------+----------+--------------------+--------------------+--------------------+
++------------+------------+--------------------+--------------------+--------------------+
+| **HUC_ID** | **NAME**   | **k_stage_0_mean** | **k_stage_1_mean** | **k_stage_3_mean** |
++------------+------------+--------------------+--------------------+--------------------+
+| 1          | Reach 1    | 627,594            | 238,987            | 38,073             |
++------------+------------+--------------------+--------------------+--------------------+
+| 2          | Reach 2    | 1,247,555          | 537,196            | 15,384             |
++------------+------------+--------------------+--------------------+--------------------+
+| 3          | Reach 3    | 913,589            | 359,136            | 20,943             |
++------------+------------+--------------------+--------------------+--------------------+
 
 In the previous table we have the HUC_ID & NAME columns for the location - to link information to the stressor data, and then we have a series of additional columns:
 
@@ -430,15 +430,15 @@ We can also add additional columns for k_stage_4_mean etc. provided that they ar
 
 **Example Habitat Capacities File for an Anadromous Population**
 
-+---------------------------------+---------------------------------------------------------+-------------------------------------------------------------+-------------------------------------------------------------------+--------------------------------------------------------------------+
-| **HUC_ID**                      | **NAME**                                                | **k_stage_0_mean**                                          | **k_stage_Pb_1_mean**                                             | **k_spawners_mean**                                                |
-+---------------------------------+---------------------------------------------------------+-------------------------------------------------------------+-------------------------------------------------------------------+--------------------------------------------------------------------+
-| 1                               | Reach 1                                                 | 627,594                                                     |                                                                   | 38,073                                                             |
-+---------------------------------+---------------------------------------------------------+-------------------------------------------------------------+-------------------------------------------------------------------+--------------------------------------------------------------------+
-| 2                               | Reach 2                                                 | 1,247,555                                                   |                                                                   | 15,384                                                             |
-+---------------------------------+---------------------------------------------------------+-------------------------------------------------------------+-------------------------------------------------------------------+--------------------------------------------------------------------+
-| 3                               | Reach 3                                                 | 913,589                                                     |                                                                   | 20,943                                                             |
-+---------------------------------+---------------------------------------------------------+-------------------------------------------------------------+-------------------------------------------------------------------+--------------------------------------------------------------------+
++------------+------------+--------------------+-----------------------+---------------------+
+| **HUC_ID** | **NAME**   | **k_stage_0_mean** | **k_stage_Pb_1_mean** | **k_spawners_mean** |
++------------+------------+--------------------+-----------------------+---------------------+
+| 1          | Reach 1    | 627,594            |                       | 38,073              |
++------------+------------+--------------------+-----------------------+---------------------+
+| 2          | Reach 2    | 1,247,555          |                       | 15,384              |
++------------+------------+--------------------+-----------------------+---------------------+
+| 3          | Reach 3    | 913,589            |                       | 20,943              |
++------------+------------+--------------------+-----------------------+---------------------+
 
 In the previous table we have the HUC_ID & NAME columns for the location - to link information to the stressor data, and then we have a series of additional columns. These are similar to but slightly different than the non-anadromous populations because we need to specify Pb (pre-breeder) vs B (breeder):
 
@@ -612,7 +612,129 @@ p.cat: Probability of Catastrophe per Generation
 
 </div>
 
-## Building a Life Cycle Profile
+## **Linking Stressor-Response Relationships to Vital Rates in the Population Model**
+
+Up to this point, we have only created a general population model, but we have not yet linked any of our stressors or stressor-response relationships to the life cycle model. In this section we will go over how to define linkages between each of the stressor response relationships and specific vital rates in the population model.
+
+A key feature of the population model is the ability to link environmental stressors directly to **life-stage-specific vital rates**. This is configured in the **Stressor-Response Excel Workbook** through the `Life_stages` and `Parameters` columns on the Main worksheet.
+
+### Stressor-Response Workbook Structure
+
+Recall from earlier chapters and the [Joe Model Tutorials](https://essatech.github.io/CEMPRA/articles/a01-joe-model.html) that the stressor-response workbook contains a **Main** worksheet that indexes all stressors. For the population model, two additional columns become critical (the Life_stages and the Parameters columns).
+
+By carefully defining these columns we can effecively link stressor-response relationships to specific vital rates. However, each stressor-response relationship can be linked to only one vital rate. If multiple linkages are desired then duplicate the stressor & stressor-response relationship accordingly in the Stressor Magnitude and Stressor-Response workbook (e.g., SummerStreamTemp_Parr, SummerStreamTemp_Prespawn).
+
+### The Stressor-Response Workbook 'Parameters' Column
+
+The in the Stressor-Response workbook `Parameters` column specifies **how** the stressor-response relationship affects the vital rate of interest. There are three possible values:
+
++-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Value           | Effect                       | Description                                                                                                                                              |
++=================+==============================+==========================================================================================================================================================+
+| `capacity`      | Reduces carrying capacity    | The stressor reduces the maximum number of individuals that habitat can support at the target life stage (K). This affects density-dependent regulation. |
++-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `survival`      | Reduces survival probability | The stressor directly reduces the survival rate (S) for the target life stage. This is a density-independent effect.                                     |
++-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `fecundity`     | Reduces reproductive output  | The stressor reduces eggs per spawner (eps). Less commonly used.                                                                                         |
++-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| *blank* or `NA` | Joe Model only               | The stressor contributes to system capacity but is not linked to the population model.                                                                   |
++-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+**Example interpretation:**
+
+-   A stressor with `Parameters = "capacity"` and `Life_stages = "stage_0"` reduces the fry carrying capacity. If the system capacity score is 0.70, the fry capacity (K0) is reduced to 70% of baseline.
+-   A stressor with `Parameters = "survival"` and `Life_stages = "stage_1"` reduces stage-1 survival. If the system capacity score is 0.85, the stage-1 survival rate is multiplied by 0.85.
+
+### The Stressor-Response Workbook 'Life_stages' Column
+
+The `Life_stages` column specifies **which life stage(s)** (or specific vital rate) the stressor affects. The population model recognizes stage-specific tags and several convenient aliases.
+
+### Stage-Specific Tags (Recommended)
+
+For clarity and precision, we recommend using explicit stage numbers:
+
+**Survival 'Life_stages' Tags for Non-Anadromous Populations:**
+
+| Life_stages Column        | Target Vital Rate               |
+|---------------------------|---------------------------------|
+| `stage_E`, `SE`           | Egg survival                    |
+| `stage_0`, `S0`           | Age-0 fry/sub-yearling survival |
+| `stage_1`, `S1`, `surv_1` | Stage 1 survival                |
+| `stage_2`, `S2`, `surv_2` | Stage 2 survival                |
+| ... up to `stage_12`      | Higher stages as needed         |
+
+**Capacity 'Life_stages' Tags for Non-Anadromous Populations:**
+
+| Tag(s)                | Target                  |
+|-----------------------|-------------------------|
+| `SE`, `stage_E`, `KE` | Egg capacity (Ke)       |
+| `stage_0`, `S0`, `K0` | Fry capacity (K0)       |
+| `stage_1`, `S1`, `K1` | Stage 1 capacity        |
+| `stage_2`, `S2`, `K2` | Stage 2 capacity        |
+| ... up to `stage_12`  | Higher stages as needed |
+
+#### Anadromous-Specific **'Life_stages'** Tags
+
+For anadromous species, additional Life_stages column tags target pre-breeder (Pb) and spawner (Breeder - B) classes:
+
+**Pre-breeder Survival (Pb):**
+
+| **'Life_stages'** Tag(s) | Target                          |
+|--------------------------|---------------------------------|
+| `stage_E`, `SE`          | Egg survival                    |
+| `stage_0`, `S0`          | Age-0 fry/sub-yearling survival |
+| `stage_Pb_1`             | Pre-breeder stage 1 survival    |
+| `stage_Pb_2`             | Pre-breeder stage 2 survival    |
+| ... up to `stage_Pb_12`  | Higher stages as needed         |
+
+**Pre-breeder Capacity (Pb):**
+
+| Tag(s)                  | Target                       |
+|-------------------------|------------------------------|
+| `stage_Pb_1`            | Pre-breeder stage 1 capacity |
+| `stage_Pb_2`            | Pre-breeder stage 2 capacity |
+| ... up to `stage_Pb_12` | Higher stages as needed      |
+
+**Spawner Capacity (B):**
+
++--------------------------------------------+-------------------------------------------+
+| Tag(s)                                     | Target                                    |
++============================================+===========================================+
+| `spawners`                                 | All spawner capacity (pooled across ages) |
++--------------------------------------------+-------------------------------------------+
+| `spawn_1`, `spawners_1`, `B1`, `stage_B_1` | Age-specific spawner capacity             |
++--------------------------------------------+-------------------------------------------+
+| ... up to `spawn_12`                       | Higher ages as needed                     |
++--------------------------------------------+-------------------------------------------+
+
+**Pre-spawn and Migration Survival (Anadromous only):**
+
++---------------------------------------+---------------------------------+
+| Tag(s)                                | Target                          |
++=======================================+=================================+
+| `spawners`                            | All pre-spawn survival (u)      |
++---------------------------------------+---------------------------------+
+| `prespawn_1`, `u1` ... `u12`          | Age-specific pre-spawn survival |
++---------------------------------------+---------------------------------+
+| `smig`, `spawn_mig`                   | All spawner migration survival  |
++---------------------------------------+---------------------------------+
+| `smig_1`, `spawn_mig_1` ... `smig_12` | Age-specific migration survival |
++---------------------------------------+---------------------------------+
+
+#### Fecundity Tags
+
+| Tag                   | Target                                   |
+|-----------------------|------------------------------------------|
+| `eps`                 | Eggs per spawner (all ages)              |
+| `eps_3`, `eps_4`, ... | Age-specific fecundity (anadromous only) |
+
+#### Notes on **'Life_stages' linkage Tags** Tags
+
+-   Tags are **case-insensitive** (converted to lowercase internally)
+-   **Underscores and spaces are removed** during processing (e.g., `stage_1` and `stage1` are equivalent)
+-   You can specify **multiple life stages** separated by commas (e.g., `stage_1, stage_2`), but we recommend having a 1:1 relationship between a stressor-response relationship and a vital rate linkage. We recommend duplicating stressors in the stressor-magnitude and stressor-response relationship workbook for 1:many relationships between stressors and vital rates.
+
+## Tips on Building a New Life Cycle Profile From Scratch
 
 A customized life cycle profile can be developed using the following template: [Life Cycle Profile Template](https://github.com/essatech/CEMPRAShiny/blob/main/data/demo/life%20cycles.csv).
 
@@ -645,5 +767,7 @@ However, there are key limitations to the CEMPRA tool and life cycle modeling in
 The CEMPRA tool does not account for complex variations in life history strategies, seasonal movement, individual exposure, and detailed habitat criteria. Therefore, it's up to the users to carefully design stressor variables, stressor magnitude datasets, and stressor-response relationships such that linkages are already largely accounted for in the underlying input data. When summarizing results, it is advisable for user groups to focus on reviewing relative differences between scenarios compared to a default (status-quo) reference scenario. Interpreting results as relative differences is more relatable than trying to rationalize absolute values (e.g., *"scenario A increased system capacity by \~10% relative to scenario B"* vs *"scenario A increased capacity by 321 fish relative to scenario B"*).
 
 User groups and practitioners should use life cycle models to help develop high-level goals for restoration and recovery programs ([@roni2018review]). While useful for identifying key demographic bottlenecks and the sensitivity of those bottlenecks to the range of stressor values observed on the landscape (or projected through simulation), life cycle models are less useful for designing small-scale projects. Efforts should continue to validate and refine predictions with field data and empirical studies.
+
+**Review applicable R-package tutorials to explore this further - [Tutorials](https://essatech.github.io/CEMPRA/index.html).**
 
 ------------------------------------------------------------------------

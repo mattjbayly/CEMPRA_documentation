@@ -13,7 +13,7 @@ Default sample dataset when tool loads:
 
 *The default study area, stressor list and species profile in the Shiny application are from the [@macpherson2020alberta] Athabasca Rainbow Trout project.*
 
-## Simple Working Example (hypothetical)
+## Minimal Simple Working Example (hypothetical)
 
 This straightforward example serves as an easy-to-use template for your own input files, offering minimal complexity and adaptability for customization.
 
