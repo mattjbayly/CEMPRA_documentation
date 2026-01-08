@@ -307,8 +307,15 @@ cookieconsent.run({
   <li><a href="#m.rho-correlation-in-stage-class-mortality-through-time" id="toc-m.rho-correlation-in-stage-class-mortality-through-time" class="nav-link" data-scroll-target="#m.rho-correlation-in-stage-class-mortality-through-time"><span class="header-section-number">7.6.4</span> M.rho: Correlation in Stage-Class Mortality Through Time</a></li>
   <li><a href="#p.cat-probability-of-catastrophe-per-generation" id="toc-p.cat-probability-of-catastrophe-per-generation" class="nav-link" data-scroll-target="#p.cat-probability-of-catastrophe-per-generation"><span class="header-section-number">7.6.5</span> p.cat: Probability of Catastrophe per Generation</a></li>
   </ul></li>
-  <li><a href="#building-a-life-cycle-profile" id="toc-building-a-life-cycle-profile" class="nav-link" data-scroll-target="#building-a-life-cycle-profile"><span class="header-section-number">7.7</span> Building a Life Cycle Profile</a></li>
-  <li><a href="#benefits-and-limitations" id="toc-benefits-and-limitations" class="nav-link" data-scroll-target="#benefits-and-limitations"><span class="header-section-number">7.8</span> Benefits and Limitations</a></li>
+  <li><a href="#linking-stressor-response-relationships-to-vital-rates-in-the-population-model" id="toc-linking-stressor-response-relationships-to-vital-rates-in-the-population-model" class="nav-link" data-scroll-target="#linking-stressor-response-relationships-to-vital-rates-in-the-population-model"><span class="header-section-number">7.7</span> <strong>Linking Stressor-Response Relationships to Vital Rates in the Population Model</strong></a>
+  <ul class="collapse">
+  <li><a href="#stressor-response-workbook-structure" id="toc-stressor-response-workbook-structure" class="nav-link" data-scroll-target="#stressor-response-workbook-structure"><span class="header-section-number">7.7.1</span> Stressor-Response Workbook Structure</a></li>
+  <li><a href="#the-stressor-response-workbook-parameters-column" id="toc-the-stressor-response-workbook-parameters-column" class="nav-link" data-scroll-target="#the-stressor-response-workbook-parameters-column"><span class="header-section-number">7.7.2</span> The Stressor-Response Workbook ‘Parameters’ Column</a></li>
+  <li><a href="#the-stressor-response-workbook-life_stages-column" id="toc-the-stressor-response-workbook-life_stages-column" class="nav-link" data-scroll-target="#the-stressor-response-workbook-life_stages-column"><span class="header-section-number">7.7.3</span> The Stressor-Response Workbook ‘Life_stages’ Column</a></li>
+  <li><a href="#stage-specific-tags-recommended" id="toc-stage-specific-tags-recommended" class="nav-link" data-scroll-target="#stage-specific-tags-recommended"><span class="header-section-number">7.7.4</span> Stage-Specific Tags (Recommended)</a></li>
+  </ul></li>
+  <li><a href="#tips-on-building-a-new-life-cycle-profile-from-scratch" id="toc-tips-on-building-a-new-life-cycle-profile-from-scratch" class="nav-link" data-scroll-target="#tips-on-building-a-new-life-cycle-profile-from-scratch"><span class="header-section-number">7.8</span> Tips on Building a New Life Cycle Profile From Scratch</a></li>
+  <li><a href="#benefits-and-limitations" id="toc-benefits-and-limitations" class="nav-link" data-scroll-target="#benefits-and-limitations"><span class="header-section-number">7.9</span> Benefits and Limitations</a></li>
   </ul>
 </nav>
     </div>
@@ -1000,10 +1007,10 @@ cookieconsent.run({
 <table class="caption-top table">
 <colgroup>
 <col style="width: 14%">
-<col style="width: 12%">
-<col style="width: 23%">
-<col style="width: 23%">
-<col style="width: 23%">
+<col style="width: 14%">
+<col style="width: 22%">
+<col style="width: 22%">
+<col style="width: 22%">
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -1046,11 +1053,11 @@ cookieconsent.run({
 <p><strong>Example Habitat Capacities File for an Anadromous Population</strong></p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 11%">
-<col style="width: 19%">
+<col style="width: 13%">
+<col style="width: 13%">
 <col style="width: 21%">
-<col style="width: 23%">
-<col style="width: 23%">
+<col style="width: 25%">
+<col style="width: 22%">
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -1339,8 +1346,278 @@ cookieconsent.run({
 </div>
 </section>
 </section>
-<section id="building-a-life-cycle-profile" class="level2" data-number="7.7">
-<h2 data-number="7.7" class="anchored" data-anchor-id="building-a-life-cycle-profile"><span class="header-section-number">7.7</span> Building a Life Cycle Profile</h2>
+<section id="linking-stressor-response-relationships-to-vital-rates-in-the-population-model" class="level2" data-number="7.7">
+<h2 data-number="7.7" class="anchored" data-anchor-id="linking-stressor-response-relationships-to-vital-rates-in-the-population-model"><span class="header-section-number">7.7</span> <strong>Linking Stressor-Response Relationships to Vital Rates in the Population Model</strong></h2>
+<p>Up to this point, we have only created a general population model, but we have not yet linked any of our stressors or stressor-response relationships to the life cycle model. In this section we will go over how to define linkages between each of the stressor response relationships and specific vital rates in the population model.</p>
+<p>A key feature of the population model is the ability to link environmental stressors directly to <strong>life-stage-specific vital rates</strong>. This is configured in the <strong>Stressor-Response Excel Workbook</strong> through the <code>Life_stages</code> and <code>Parameters</code> columns on the Main worksheet.</p>
+<section id="stressor-response-workbook-structure" class="level3" data-number="7.7.1">
+<h3 data-number="7.7.1" class="anchored" data-anchor-id="stressor-response-workbook-structure"><span class="header-section-number">7.7.1</span> Stressor-Response Workbook Structure</h3>
+<p>Recall from earlier chapters and the <a href="https://essatech.github.io/CEMPRA/articles/a01-joe-model.html">Joe Model Tutorials</a> that the stressor-response workbook contains a <strong>Main</strong> worksheet that indexes all stressors. For the population model, two additional columns become critical (the Life_stages and the Parameters columns).</p>
+<p>By carefully defining these columns we can effecively link stressor-response relationships to specific vital rates. However, each stressor-response relationship can be linked to only one vital rate. If multiple linkages are desired then duplicate the stressor &amp; stressor-response relationship accordingly in the Stressor Magnitude and Stressor-Response workbook (e.g., SummerStreamTemp_Parr, SummerStreamTemp_Prespawn).</p>
+</section>
+<section id="the-stressor-response-workbook-parameters-column" class="level3" data-number="7.7.2">
+<h3 data-number="7.7.2" class="anchored" data-anchor-id="the-stressor-response-workbook-parameters-column"><span class="header-section-number">7.7.2</span> The Stressor-Response Workbook ‘Parameters’ Column</h3>
+<p>The in the Stressor-Response workbook <code>Parameters</code> column specifies <strong>how</strong> the stressor-response relationship affects the vital rate of interest. There are three possible values:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 8%">
+<col style="width: 15%">
+<col style="width: 75%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Value</th>
+<th>Effect</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>capacity</code></td>
+<td>Reduces carrying capacity</td>
+<td>The stressor reduces the maximum number of individuals that habitat can support at the target life stage (K). This affects density-dependent regulation.</td>
+</tr>
+<tr class="even">
+<td><code>survival</code></td>
+<td>Reduces survival probability</td>
+<td>The stressor directly reduces the survival rate (S) for the target life stage. This is a density-independent effect.</td>
+</tr>
+<tr class="odd">
+<td><code>fecundity</code></td>
+<td>Reduces reproductive output</td>
+<td>The stressor reduces eggs per spawner (eps). Less commonly used.</td>
+</tr>
+<tr class="even">
+<td><em>blank</em> or <code>NA</code></td>
+<td>Joe Model only</td>
+<td>The stressor contributes to system capacity but is not linked to the population model.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example interpretation:</strong></p>
+<ul>
+<li>A stressor with <code>Parameters = "capacity"</code> and <code>Life_stages = "stage_0"</code> reduces the fry carrying capacity. If the system capacity score is 0.70, the fry capacity (K0) is reduced to 70% of baseline.</li>
+<li>A stressor with <code>Parameters = "survival"</code> and <code>Life_stages = "stage_1"</code> reduces stage-1 survival. If the system capacity score is 0.85, the stage-1 survival rate is multiplied by 0.85.</li>
+</ul>
+</section>
+<section id="the-stressor-response-workbook-life_stages-column" class="level3" data-number="7.7.3">
+<h3 data-number="7.7.3" class="anchored" data-anchor-id="the-stressor-response-workbook-life_stages-column"><span class="header-section-number">7.7.3</span> The Stressor-Response Workbook ‘Life_stages’ Column</h3>
+<p>The <code>Life_stages</code> column specifies <strong>which life stage(s)</strong> (or specific vital rate) the stressor affects. The population model recognizes stage-specific tags and several convenient aliases.</p>
+</section>
+<section id="stage-specific-tags-recommended" class="level3" data-number="7.7.4">
+<h3 data-number="7.7.4" class="anchored" data-anchor-id="stage-specific-tags-recommended"><span class="header-section-number">7.7.4</span> Stage-Specific Tags (Recommended)</h3>
+<p>For clarity and precision, we recommend using explicit stage numbers:</p>
+<p><strong>Survival ‘Life_stages’ Tags for Non-Anadromous Populations:</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Life_stages Column</th>
+<th>Target Vital Rate</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>stage_E</code>, <code>SE</code></td>
+<td>Egg survival</td>
+</tr>
+<tr class="even">
+<td><code>stage_0</code>, <code>S0</code></td>
+<td>Age-0 fry/sub-yearling survival</td>
+</tr>
+<tr class="odd">
+<td><code>stage_1</code>, <code>S1</code>, <code>surv_1</code></td>
+<td>Stage 1 survival</td>
+</tr>
+<tr class="even">
+<td><code>stage_2</code>, <code>S2</code>, <code>surv_2</code></td>
+<td>Stage 2 survival</td>
+</tr>
+<tr class="odd">
+<td>… up to <code>stage_12</code></td>
+<td>Higher stages as needed</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Capacity ‘Life_stages’ Tags for Non-Anadromous Populations:</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Tag(s)</th>
+<th>Target</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>SE</code>, <code>stage_E</code>, <code>KE</code></td>
+<td>Egg capacity (Ke)</td>
+</tr>
+<tr class="even">
+<td><code>stage_0</code>, <code>S0</code>, <code>K0</code></td>
+<td>Fry capacity (K0)</td>
+</tr>
+<tr class="odd">
+<td><code>stage_1</code>, <code>S1</code>, <code>K1</code></td>
+<td>Stage 1 capacity</td>
+</tr>
+<tr class="even">
+<td><code>stage_2</code>, <code>S2</code>, <code>K2</code></td>
+<td>Stage 2 capacity</td>
+</tr>
+<tr class="odd">
+<td>… up to <code>stage_12</code></td>
+<td>Higher stages as needed</td>
+</tr>
+</tbody>
+</table>
+<section id="anadromous-specific-life_stages-tags" class="level4" data-number="7.7.4.1">
+<h4 data-number="7.7.4.1" class="anchored" data-anchor-id="anadromous-specific-life_stages-tags"><span class="header-section-number">7.7.4.1</span> Anadromous-Specific <strong>‘Life_stages’</strong> Tags</h4>
+<p>For anadromous species, additional Life_stages column tags target pre-breeder (Pb) and spawner (Breeder - B) classes:</p>
+<p><strong>Pre-breeder Survival (Pb):</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><strong>‘Life_stages’</strong> Tag(s)</th>
+<th>Target</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>stage_E</code>, <code>SE</code></td>
+<td>Egg survival</td>
+</tr>
+<tr class="even">
+<td><code>stage_0</code>, <code>S0</code></td>
+<td>Age-0 fry/sub-yearling survival</td>
+</tr>
+<tr class="odd">
+<td><code>stage_Pb_1</code></td>
+<td>Pre-breeder stage 1 survival</td>
+</tr>
+<tr class="even">
+<td><code>stage_Pb_2</code></td>
+<td>Pre-breeder stage 2 survival</td>
+</tr>
+<tr class="odd">
+<td>… up to <code>stage_Pb_12</code></td>
+<td>Higher stages as needed</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Pre-breeder Capacity (Pb):</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Tag(s)</th>
+<th>Target</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>stage_Pb_1</code></td>
+<td>Pre-breeder stage 1 capacity</td>
+</tr>
+<tr class="even">
+<td><code>stage_Pb_2</code></td>
+<td>Pre-breeder stage 2 capacity</td>
+</tr>
+<tr class="odd">
+<td>… up to <code>stage_Pb_12</code></td>
+<td>Higher stages as needed</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Spawner Capacity (B):</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tag(s)</th>
+<th>Target</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>spawners</code></td>
+<td>All spawner capacity (pooled across ages)</td>
+</tr>
+<tr class="even">
+<td><code>spawn_1</code>, <code>spawners_1</code>, <code>B1</code>, <code>stage_B_1</code></td>
+<td>Age-specific spawner capacity</td>
+</tr>
+<tr class="odd">
+<td>… up to <code>spawn_12</code></td>
+<td>Higher ages as needed</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Pre-spawn and Migration Survival (Anadromous only):</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 54%">
+<col style="width: 45%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tag(s)</th>
+<th>Target</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>spawners</code></td>
+<td>All pre-spawn survival (u)</td>
+</tr>
+<tr class="even">
+<td><code>prespawn_1</code>, <code>u1</code> … <code>u12</code></td>
+<td>Age-specific pre-spawn survival</td>
+</tr>
+<tr class="odd">
+<td><code>smig</code>, <code>spawn_mig</code></td>
+<td>All spawner migration survival</td>
+</tr>
+<tr class="even">
+<td><code>smig_1</code>, <code>spawn_mig_1</code> … <code>smig_12</code></td>
+<td>Age-specific migration survival</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="fecundity-tags" class="level4" data-number="7.7.4.2">
+<h4 data-number="7.7.4.2" class="anchored" data-anchor-id="fecundity-tags"><span class="header-section-number">7.7.4.2</span> Fecundity Tags</h4>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Tag</th>
+<th>Target</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>eps</code></td>
+<td>Eggs per spawner (all ages)</td>
+</tr>
+<tr class="even">
+<td><code>eps_3</code>, <code>eps_4</code>, …</td>
+<td>Age-specific fecundity (anadromous only)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="notes-on-life_stages-linkage-tags-tags" class="level4" data-number="7.7.4.3">
+<h4 data-number="7.7.4.3" class="anchored" data-anchor-id="notes-on-life_stages-linkage-tags-tags"><span class="header-section-number">7.7.4.3</span> Notes on <strong>‘Life_stages’ linkage Tags</strong> Tags</h4>
+<ul>
+<li>Tags are <strong>case-insensitive</strong> (converted to lowercase internally)</li>
+<li><strong>Underscores and spaces are removed</strong> during processing (e.g., <code>stage_1</code> and <code>stage1</code> are equivalent)</li>
+<li>You can specify <strong>multiple life stages</strong> separated by commas (e.g., <code>stage_1, stage_2</code>), but we recommend having a 1:1 relationship between a stressor-response relationship and a vital rate linkage. We recommend duplicating stressors in the stressor-magnitude and stressor-response relationship workbook for 1:many relationships between stressors and vital rates.</li>
+</ul>
+</section>
+</section>
+</section>
+<section id="tips-on-building-a-new-life-cycle-profile-from-scratch" class="level2" data-number="7.8">
+<h2 data-number="7.8" class="anchored" data-anchor-id="tips-on-building-a-new-life-cycle-profile-from-scratch"><span class="header-section-number">7.8</span> Tips on Building a New Life Cycle Profile From Scratch</h2>
 <p>A customized life cycle profile can be developed using the following template: <a href="https://github.com/essatech/CEMPRAShiny/blob/main/data/demo/life%20cycles.csv">Life Cycle Profile Template</a>.</p>
 <p>Appendix B includes sample species profiles for case study systems, such as Nicola Basin Chinook Salmon, Steelhead, and Coho Salmon. The COMPADRE (plant) and COMADRE (animal) online archives also offer vital rates for numerous species as of March 2023 (<a href="https://compadre-db.org/Data/Comadre">COMADRE Database</a>). These archives can be valuable resources for reviewing vital rate estimates for similar species and taxa.</p>
 <p>It’s recommended to first summarize the species’ life cycle using a simple diagram to represent key life stages. This diagram can be converted into a periodicity table (or life history schedule) to represent time spent in each life stage, as shown in the figure. A life history diagram coupled with a periodicity table can be helpful in mapping out transitions between key stages in the life cycle model. Recall that the life cycle model works with annual time steps. “Census” periods within the matrix model do not need to fall precisely at the one-year interval, but care should be taken to ensure that key transitions are not missed or double-counted. It is best to start from the spawning period and work forward, following a whole generation to its progeny</p>
@@ -1361,12 +1638,13 @@ cookieconsent.run({
 <li>Stable-stage distributions from the projection matrix are not substantially different from expectations.</li>
 </ul>
 </section>
-<section id="benefits-and-limitations" class="level2" data-number="7.8">
-<h2 data-number="7.8" class="anchored" data-anchor-id="benefits-and-limitations"><span class="header-section-number">7.8</span> Benefits and Limitations</h2>
+<section id="benefits-and-limitations" class="level2" data-number="7.9">
+<h2 data-number="7.9" class="anchored" data-anchor-id="benefits-and-limitations"><span class="header-section-number">7.9</span> Benefits and Limitations</h2>
 <p>The life cycle modeling component of the CEMPRA tool is a valuable resource for understanding and quantifying cumulative effects, linking critical stressors to key life stages, and supporting an understanding of the relevance of key drivers curtailing productivity and capacity. Related analyses have provided a useful framework to synthesize pathways for cumulative effects through the lens of population ecology (<span class="citation" data-cites="beechie2021modeling">(<a href="references.html#ref-beechie2021modeling" role="doc-biblioref">Beechie et al., 2021</a>)</span>; <span class="citation" data-cites="jorgensen2021identifying">(<a href="references.html#ref-jorgensen2021identifying" role="doc-biblioref">Jorgensen et al., 2021</a>)</span>; <span class="citation" data-cites="sorel2022informing">(<a href="references.html#ref-sorel2022informing" role="doc-biblioref">Sorel, 2022</a>)</span>; <span class="citation" data-cites="kendall2023life">(<a href="references.html#ref-kendall2023life" role="doc-biblioref">Kendall et al., 2023</a>)</span>). Simulations allow user groups to play out hypothetical scenarios with multiple stressors, locations, and species profiles, making it possible to perform many complex calculations within a simple user interface.</p>
 <p>However, there are key limitations to the CEMPRA tool and life cycle modeling in general. Depending on the parameterization of a species profile, there can be key stages and vital rates that are highly sensitive to perturbation. It can be challenging to discern whether these sensitivities reflect actual vulnerabilities in nature or are artifacts of the modeling framework. Therefore, some researchers emphasize the need to treat life cycle models as hypothesis generators until predictions and causal pathways can be empirically validated (<span class="citation" data-cites="roni2018review">(<a href="references.html#ref-roni2018review" role="doc-biblioref">Roni et al., 2018</a>)</span>).</p>
 <p>The CEMPRA tool does not account for complex variations in life history strategies, seasonal movement, individual exposure, and detailed habitat criteria. Therefore, it’s up to the users to carefully design stressor variables, stressor magnitude datasets, and stressor-response relationships such that linkages are already largely accounted for in the underlying input data. When summarizing results, it is advisable for user groups to focus on reviewing relative differences between scenarios compared to a default (status-quo) reference scenario. Interpreting results as relative differences is more relatable than trying to rationalize absolute values (e.g., <em>“scenario A increased system capacity by ~10% relative to scenario B”</em> vs <em>“scenario A increased capacity by 321 fish relative to scenario B”</em>).</p>
 <p>User groups and practitioners should use life cycle models to help develop high-level goals for restoration and recovery programs (<span class="citation" data-cites="roni2018review">(<a href="references.html#ref-roni2018review" role="doc-biblioref">Roni et al., 2018</a>)</span>). While useful for identifying key demographic bottlenecks and the sensitivity of those bottlenecks to the range of stressor values observed on the landscape (or projected through simulation), life cycle models are less useful for designing small-scale projects. Efforts should continue to validate and refine predictions with field data and empirical studies.</p>
+<p><strong>Review applicable R-package tutorials to explore this further - <a href="https://essatech.github.io/CEMPRA/index.html">Tutorials</a>.</strong></p>
 <hr>
 
 
