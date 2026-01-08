@@ -612,7 +612,7 @@ p.cat: Probability of Catastrophe per Generation
 
 </div>
 
-## **Linking Stressor-Response Relationships to Vital Rates in the Population Model**
+## Linking Stressor-Response Relationships to Vital Rates in the Population Model
 
 Up to this point, we have only created a general population model, but we have not yet linked any of our stressors or stressor-response relationships to the life cycle model. In this section we will go over how to define linkages between each of the stressor response relationships and specific vital rates in the population model.
 
