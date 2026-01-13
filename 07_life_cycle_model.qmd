@@ -433,11 +433,11 @@ We can also add additional columns for k_stage_4_mean etc. provided that they ar
 +------------+------------+--------------------+-----------------------+---------------------+
 | **HUC_ID** | **NAME**   | **k_stage_0_mean** | **k_stage_Pb_1_mean** | **k_spawners_mean** |
 +------------+------------+--------------------+-----------------------+---------------------+
-| 1          | Reach 1    | 627,594            |                       | 38,073              |
+| 1          | Reach 1    | 627,594            | 273,052               | 38,073              |
 +------------+------------+--------------------+-----------------------+---------------------+
-| 2          | Reach 2    | 1,247,555          |                       | 15,384              |
+| 2          | Reach 2    | 1,247,555          | 134,284               | 15,384              |
 +------------+------------+--------------------+-----------------------+---------------------+
-| 3          | Reach 3    | 913,589            |                       | 20,943              |
+| 3          | Reach 3    | 913,589            | 89,385                | 20,943              |
 +------------+------------+--------------------+-----------------------+---------------------+
 
 In the previous table we have the HUC_ID & NAME columns for the location - to link information to the stressor data, and then we have a series of additional columns. These are similar to but slightly different than the non-anadromous populations because we need to specify Pb (pre-breeder) vs B (breeder):
@@ -448,7 +448,7 @@ In the previous table we have the HUC_ID & NAME columns for the location - to li
 
 -   k_spawners_mean: Here we specify the carrying capacity for adult spawners across all age classes (alt column names like k_stage_b_mean will also work). This column will control the maximum number of spawners pooled across all spawner age classes. You can also specify capacities for spawner age classes individually (e.g., k_stage_B_4_mean, k_stage_B_5_mean, etc.) but that can get tricky since it assumes the portions are well-known and consistent.
 
-*Note that the values in the column are empty - if no data is available then the model will be run with capacity set in Inf for that life stage.*
+*Note that no columns can contain blank or NA values; only include columns with density-dependent components*
 
 #### Step 3: Final Checks
 
