@@ -10,7 +10,8 @@ Default sample dataset when tool loads:
 -   [Stressor Magnitude Workbook](/sample_data/athabasca_rbt/stressor_magnitude_demo.xlsx)
 -   [Watershed Locations .gpkg](/sample_data/athabasca_rbt/watersheds.gpkg)
 -   [Life Cycle Profile (optional)](/sample_data/athabasca_rbt/life_cycles.csv)
-
+-   [Habitat Capacities (optional)](/sample_data/athabasca_rbt/habitat_capacities.csv)
+_cy
 *The default study area, stressor list and species profile in the Shiny application are from the [@macpherson2020alberta] Athabasca Rainbow Trout project.*
 
 ## Minimal Simple Working Example (hypothetical)
