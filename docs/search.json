@@ -484,7 +484,7 @@
     "href": "09_case_study_applications.html",
     "title": "9  Example Datasets",
     "section": "",
-    "text": "9.1 Athabasca Rainbow Trout\n(MacPherson et al., 2020) leveraged the Joe Modelling framework to support recovery action planning and threat analysis of Athabasca Rainbow Trout. The Joe Model was a valuable resource for synthesizing stressors due to its ease of and utility as a design and communication tool. Stressors were developed in a near real-time workshop-like setting to game out alternative management scenarios. The flexibility of the stressor-response input data allows for the inclusion of synthetic proxies and hypothetical impact pathways, weaving together academic knowledge, anecdotal descriptions and expert opinion. The Joe Model was ultimately used as a prioritization tool to help design actions, programs, and priorities across a large geographic and complex region.\nDefault sample dataset when tool loads:\nThe default study area, stressor list and species profile in the Shiny application are from the (MacPherson et al., 2020) Athabasca Rainbow Trout project.\nLeave questions and comments below (via your GitHub account)",
+    "text": "9.1 Athabasca Rainbow Trout\n(MacPherson et al., 2020) leveraged the Joe Modelling framework to support recovery action planning and threat analysis of Athabasca Rainbow Trout. The Joe Model was a valuable resource for synthesizing stressors due to its ease of and utility as a design and communication tool. Stressors were developed in a near real-time workshop-like setting to game out alternative management scenarios. The flexibility of the stressor-response input data allows for the inclusion of synthetic proxies and hypothetical impact pathways, weaving together academic knowledge, anecdotal descriptions and expert opinion. The Joe Model was ultimately used as a prioritization tool to help design actions, programs, and priorities across a large geographic and complex region.\nDefault sample dataset when tool loads:\nLeave questions and comments below (via your GitHub account)",
     "crumbs": [
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Example Datasets</span>"
     ]
@@ -494,7 +494,7 @@
     "href": "09_case_study_applications.html#09_case_study_applications-09_case_study_applications-athabasca-rainbow-trout",
     "title": "9  Example Datasets",
     "section": "",
-    "text": "Stressor Response Workbook\nStressor Magnitude Workbook\nWatershed Locations .gpkg\nLife Cycle Profile (optional)",
+    "text": "Stressor Response Workbook\nStressor Magnitude Workbook\nWatershed Locations .gpkg\nLife Cycle Profile (optional)\nHabitat Capacities (optional) _cy The default study area, stressor list and species profile in the Shiny application are from the (MacPherson et al., 2020) Athabasca Rainbow Trout project.",
     "crumbs": [
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Example Datasets</span>"
     ]
