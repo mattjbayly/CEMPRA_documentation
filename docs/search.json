@@ -480,113 +480,193 @@
     ]
   },
   {
+    "objectID": "09_ndss_case_study.html",
+    "href": "09_ndss_case_study.html",
+    "title": "9  NDSS Case Study",
+    "section": "",
+    "text": "9.1 Overview\nThis chapter presents a case study applying the CEMPRA framework to two species at risk in British Columbia’s Lower Fraser Valley: Nooksack Dace (Rhinichthys cataractae ssp.) and Salish Sucker (Catostomus sp. cf. catostomus). Both species are listed as Endangered under Canada’s Species at Risk Act (SARA) and occupy distinct ecological niches within the same watershed systems. Nooksack Dace is a riffle specialist, preferring shallow, fast-flowing reaches with cobble substrate, while Salish Sucker is a deep-pool specialist found in slower, deeper habitats with abundant cover.\nThe environmental stressors evaluated in this case study are derived from upstream spatial stream network (SSN) models that link land use, hydrology, and nutrient loading to in-stream water quality conditions. These models predict dissolved oxygen concentrations under various flow and nutrient scenarios, while climate change projections provide future stream temperature estimates. Physical habitat metrics (percent cobble for Nooksack Dace, deep pool length for Salish Sucker) are drawn from reach-level field surveys.\nThe purpose of this case study is to demonstrate how CEMPRA can be used to evaluate and compare recovery scenarios for multiple species simultaneously. Nine scenarios (S00–S05b) explore the individual and combined effects of climate warming, flow reduction, nutrient loading, and riparian restoration on habitat quality across the study area. Each scenario modifies the stressor magnitude inputs while holding the stressor-response relationships constant, allowing managers to isolate the relative impact of each threat and assess the potential benefits of restoration actions.\nLive instances of the CEMPRA application are available for each species:\nLeave questions and comments below (via your GitHub account)",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>NDSS Case Study</span>"
+    ]
+  },
+  {
+    "objectID": "09_ndss_case_study.html#overview",
+    "href": "09_ndss_case_study.html#overview",
+    "title": "9  NDSS Case Study",
+    "section": "",
+    "text": "Nooksack Dace – CEMPRA Application\nSalish Sucker – CEMPRA Application",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>NDSS Case Study</span>"
+    ]
+  },
+  {
+    "objectID": "09_ndss_case_study.html#species-specific-stressors",
+    "href": "09_ndss_case_study.html#species-specific-stressors",
+    "title": "9  NDSS Case Study",
+    "section": "9.2 Species-Specific Stressors",
+    "text": "9.2 Species-Specific Stressors\nEach species is evaluated against a distinct set of environmental stressors:\n\n\n\nStressor\nNooksack Dace\nSalish Sucker\n\n\n\n\nTemperature (MWAT)\nX\nX\n\n\nAugust Mean Dissolved Oxygen\nX\nX\n\n\nAugust Minimum Dissolved Oxygen (6-hr)\nX\nX\n\n\nPercent Cobble\nX\n\n\n\nDeep Pool Length\n\nX",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>NDSS Case Study</span>"
+    ]
+  },
+  {
+    "objectID": "09_ndss_case_study.html#habitat-capacity",
+    "href": "09_ndss_case_study.html#habitat-capacity",
+    "title": "9  NDSS Case Study",
+    "section": "9.3 Habitat Capacity",
+    "text": "9.3 Habitat Capacity\nHabitat capacity (maximum potential abundance) is calculated differently for each species:\n\nNooksack Dace: Reach Length x Wetted Width x Species Index x 1.9 fish/m2 x (Percent Riffle / 100)\nSalish Sucker: Reach Length x Wetted Width x Species Index x 0.05 fish/m2",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>NDSS Case Study</span>"
+    ]
+  },
+  {
+    "objectID": "09_ndss_case_study.html#base-case-model-inputs-s00",
+    "href": "09_ndss_case_study.html#base-case-model-inputs-s00",
+    "title": "9  NDSS Case Study",
+    "section": "9.4 Base Case Model Inputs (S00)",
+    "text": "9.4 Base Case Model Inputs (S00)\nThe following files provide the base case inputs for each species. The stressor magnitude workbooks contain present-day stressor values and serve as the reference point (Scenario S00) from which all other scenarios are derived.\n\n9.4.1 Nooksack Dace\n\nStressor Response Workbook\nStressor Magnitude Workbook\nLocations .gpkg\n\n\n\n9.4.2 Salish Sucker\n\nStressor Response Workbook\nStressor Magnitude Workbook\nLocations .gpkg",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>NDSS Case Study</span>"
+    ]
+  },
+  {
+    "objectID": "09_ndss_case_study.html#recovery-scenarios",
+    "href": "09_ndss_case_study.html#recovery-scenarios",
+    "title": "9  NDSS Case Study",
+    "section": "9.5 Recovery Scenarios",
+    "text": "9.5 Recovery Scenarios\nThese nine scenarios are run independently for both Nooksack Dace and Salish Sucker. Each scenario modifies specific stressor magnitude values while keeping all other inputs unchanged from the base case.\n\n9.5.1 Base Case\nCurrent conditions. All stressor values reflect observed or modeled present-day measurements:\n\nTemperature: Adjusted MWAT (2001-2020)\nDissolved oxygen: Predicted August mean and 6-hour minimum DO (current conditions)\nPhysical habitat: Current percent cobble, riffle, and deep pool metrics\n\nThis scenario serves as the reference point for all comparisons.\n\n\n9.5.2 Future Stream Temperature\nProjects the effect of climate change on stream temperatures to the mid-century without any mitigation.\n\nTemperature: Replaced with Future MWAT Climate Change Scenario (2061-2080) values\nAll other stressors: Unchanged from base case\n\nRepresents the unmitigated temperature impact of climate change over the next ~40-60 years.\n\nS01 Stressor Magnitude – Nooksack Dace\nS01 Stressor Magnitude – Salish Sucker\n\n\n\n9.5.3 Future Temperature with Riparian Planting\nProjects future stream temperatures assuming riparian planting is implemented as a mitigation measure.\n\nTemperature: Replaced with Future MWAT with Riparian Planting values\nAll other stressors: Unchanged from base case\n\nQuantifies the temperature benefit of riparian restoration under future climate conditions. Comparison with S01 isolates the effect of riparian planting.\n\nS02 Stressor Magnitude – Nooksack Dace\nS02 Stressor Magnitude – Salish Sucker\n\n\n\n9.5.4 Decreased Flows (20% Reduction)\nModels how a moderate reduction in stream flows affects dissolved oxygen concentrations.\n\nAugust Mean DO: Replaced with predicted DO under 20% flow decrease\nAugust Min DO (6-hr): Replaced with predicted DO under 20% flow decrease\nAll other stressors: Unchanged from base case\n\nRepresents a moderate flow reduction scenario (e.g., increased water extraction, moderate drought).\n\nS03a Stressor Magnitude – Nooksack Dace\nS03a Stressor Magnitude – Salish Sucker\n\n\n\n9.5.5 Decreased Flows (60% Reduction)\nModels how a severe reduction in stream flows affects dissolved oxygen concentrations.\n\nAugust Mean DO: Replaced with predicted DO under 60% flow decrease\nAugust Min DO (6-hr): Replaced with predicted DO under 60% flow decrease\nAll other stressors: Unchanged from base case\n\nRepresents a severe flow reduction scenario (e.g., major water extraction, extreme drought). Comparison with S03a shows the sensitivity of DO response to the magnitude of flow reduction.\n\nS03b Stressor Magnitude – Nooksack Dace\nS03b Stressor Magnitude – Salish Sucker\n\n\n\n9.5.6 Increased Nutrients (10% Increase)\nModels how a modest increase in nutrient loading affects dissolved oxygen through eutrophication.\n\nAugust Mean DO: Replaced with predicted DO under 10% nutrient increase\nAugust Min DO (6-hr): Replaced with predicted DO under 10% nutrient increase\nAll other stressors: Unchanged from base case\n\nRepresents a modest nutrient loading increase (e.g., gradual agricultural intensification).\n\nS04a Stressor Magnitude – Nooksack Dace\nS04a Stressor Magnitude – Salish Sucker\n\n\n\n9.5.7 Increased Nutrients (50% Increase)\nModels how a substantial increase in nutrient loading affects dissolved oxygen through eutrophication.\n\nAugust Mean DO: Replaced with predicted DO under 50% nutrient increase\nAugust Min DO (6-hr): Replaced with predicted DO under 50% nutrient increase\nAll other stressors: Unchanged from base case\n\nRepresents a substantial nutrient loading increase. Comparison with S04a shows the sensitivity of DO response to nutrient loading magnitude.\n\nS04b Stressor Magnitude – Nooksack Dace\nS04b Stressor Magnitude – Salish Sucker\n\n\n\n9.5.8 Future Cumulative Effects, No Restoration\nCombines multiple stressors to represent a worst-case future scenario without any restoration actions.\n\nTemperature: Replaced with Future MWAT Climate Change Scenario (2061-2080)\nAugust Mean DO: Replaced with predicted DO under combined 60% flow decrease and 50% nutrient increase\nAugust Min DO (6-hr): Replaced with predicted DO under combined 60% flow decrease and 50% nutrient increase\nPhysical habitat stressors: Unchanged from base case\n\nRepresents the compounded effect of climate warming, reduced flows, and increased nutrient loading acting simultaneously without intervention.\n\nS05a Stressor Magnitude – Nooksack Dace\nS05a Stressor Magnitude – Salish Sucker\n\n\n\n9.5.9 Future Cumulative Effects, With Restoration\nCombines multiple stressors under a future scenario where restoration actions (riparian planting) are implemented.\n\nTemperature: Replaced with Future MWAT with Riparian Planting values\nAugust Mean DO: Replaced with predicted DO under 60% flow decrease (restoration assumed to eliminate nutrient increase)\nAugust Min DO (6-hr): Replaced with predicted DO under 60% flow decrease (restoration assumed to eliminate nutrient increase)\nPhysical habitat stressors: Unchanged from base case\n\nRepresents a future with climate warming and reduced flows, but where riparian planting mitigates temperature increases and nutrient management eliminates the nutrient loading increase. Comparison with S05a quantifies the benefit of combined restoration actions.\n\nS05b Stressor Magnitude – Nooksack Dace\nS05b Stressor Magnitude – Salish Sucker",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>NDSS Case Study</span>"
+    ]
+  },
+  {
+    "objectID": "09_ndss_case_study.html#scenario-comparison-summary",
+    "href": "09_ndss_case_study.html#scenario-comparison-summary",
+    "title": "9  NDSS Case Study",
+    "section": "9.6 Scenario Comparison Summary",
+    "text": "9.6 Scenario Comparison Summary\n\n\n\n\n\n\n\n\n\nID\nScenario\nStressors Modified\nPurpose\n\n\n\n\nS00\nBase Case\nNone\nReference point\n\n\nS01\nFuture Stream Temp\nTemperature\nUnmitigated climate warming\n\n\nS02\nFuture Temp + Planting\nTemperature\nRiparian planting mitigation\n\n\nS03a\nDecreased Flows 20%\nAug Mean DO, Aug Min DO\nModerate flow reduction\n\n\nS03b\nDecreased Flows 60%\nAug Mean DO, Aug Min DO\nSevere flow reduction\n\n\nS04a\nIncreased Nutrients 10%\nAug Mean DO, Aug Min DO\nModest nutrient loading\n\n\nS04b\nIncreased Nutrients 50%\nAug Mean DO, Aug Min DO\nSubstantial nutrient loading\n\n\nS05a\nFuture CE No Restoration\nTemperature, Aug Mean DO, Aug Min DO\nCombined worst-case future\n\n\nS05b\nFuture CE With Restoration\nTemperature, Aug Mean DO, Aug Min DO\nCombined future with restoration",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>NDSS Case Study</span>"
+    ]
+  },
+  {
+    "objectID": "09_ndss_case_study.html#data-sources",
+    "href": "09_ndss_case_study.html#data-sources",
+    "title": "9  NDSS Case Study",
+    "section": "9.7 Data Sources",
+    "text": "9.7 Data Sources\n\nTemperature projections: Climate Change Scenarios worksheet, Future MWAT CC Scenario (2061-2080)\nRiparian planting temperatures: Climate Change Scenarios worksheet, Future MWAT with Riparian Planting\nDO predictions under flow/nutrient changes: DO Predictions worksheet in the Critical Reach Master Dataset\nPhysical habitat metrics: Reach Attributes worksheet (cobble, riffle, deep pool percentages)\nStressor-response relationships: Species-specific workbooks defining dose-response curves",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>NDSS Case Study</span>"
+    ]
+  },
+  {
     "objectID": "09_case_study_applications.html",
     "href": "09_case_study_applications.html",
-    "title": "9  Example Datasets",
+    "title": "10  Example Datasets",
     "section": "",
-    "text": "9.1 Athabasca Rainbow Trout\n(MacPherson et al., 2020) leveraged the Joe Modelling framework to support recovery action planning and threat analysis of Athabasca Rainbow Trout. The Joe Model was a valuable resource for synthesizing stressors due to its ease of and utility as a design and communication tool. Stressors were developed in a near real-time workshop-like setting to game out alternative management scenarios. The flexibility of the stressor-response input data allows for the inclusion of synthetic proxies and hypothetical impact pathways, weaving together academic knowledge, anecdotal descriptions and expert opinion. The Joe Model was ultimately used as a prioritization tool to help design actions, programs, and priorities across a large geographic and complex region.\nDefault sample dataset when tool loads:\nLeave questions and comments below (via your GitHub account)",
+    "text": "10.1 Athabasca Rainbow Trout\n(MacPherson et al., 2020) leveraged the Joe Modelling framework to support recovery action planning and threat analysis of Athabasca Rainbow Trout. The Joe Model was a valuable resource for synthesizing stressors due to its ease of and utility as a design and communication tool. Stressors were developed in a near real-time workshop-like setting to game out alternative management scenarios. The flexibility of the stressor-response input data allows for the inclusion of synthetic proxies and hypothetical impact pathways, weaving together academic knowledge, anecdotal descriptions and expert opinion. The Joe Model was ultimately used as a prioritization tool to help design actions, programs, and priorities across a large geographic and complex region.\nDefault sample dataset when tool loads:\nLeave questions and comments below (via your GitHub account)",
     "crumbs": [
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Example Datasets</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Example Datasets</span>"
     ]
   },
   {
     "objectID": "09_case_study_applications.html#09_case_study_applications-09_case_study_applications-athabasca-rainbow-trout",
     "href": "09_case_study_applications.html#09_case_study_applications-09_case_study_applications-athabasca-rainbow-trout",
-    "title": "9  Example Datasets",
+    "title": "10  Example Datasets",
     "section": "",
     "text": "Stressor Response Workbook\nStressor Magnitude Workbook\nWatershed Locations .gpkg\nLife Cycle Profile (optional)\nHabitat Capacities (optional) _cy The default study area, stressor list and species profile in the Shiny application are from the (MacPherson et al., 2020) Athabasca Rainbow Trout project.",
     "crumbs": [
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Example Datasets</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Example Datasets</span>"
     ]
   },
   {
     "objectID": "09_case_study_applications.html#minimal-simple-working-example-hypothetical",
     "href": "09_case_study_applications.html#minimal-simple-working-example-hypothetical",
-    "title": "9  Example Datasets",
-    "section": "9.2 Minimal Simple Working Example (hypothetical)",
-    "text": "9.2 Minimal Simple Working Example (hypothetical)\nThis straightforward example serves as an easy-to-use template for your own input files, offering minimal complexity and adaptability for customization.\n\nStressor Response Workbook\nStressor Magnitude Workbook\nWatershed Locations .gpkg",
+    "title": "10  Example Datasets",
+    "section": "10.2 Minimal Simple Working Example (hypothetical)",
+    "text": "10.2 Minimal Simple Working Example (hypothetical)\nThis straightforward example serves as an easy-to-use template for your own input files, offering minimal complexity and adaptability for customization.\n\nStressor Response Workbook\nStressor Magnitude Workbook\nWatershed Locations .gpkg",
     "crumbs": [
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Example Datasets</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Example Datasets</span>"
     ]
   },
   {
     "objectID": "09_case_study_applications.html#wsep-watershed-status-evaluation-protocol-fisheries-sensitive-watersheds-fsws",
     "href": "09_case_study_applications.html#wsep-watershed-status-evaluation-protocol-fisheries-sensitive-watersheds-fsws",
-    "title": "9  Example Datasets",
-    "section": "9.3 WSEP (Watershed Status Evaluation Protocol) Fisheries Sensitive Watersheds (FSWs)",
-    "text": "9.3 WSEP (Watershed Status Evaluation Protocol) Fisheries Sensitive Watersheds (FSWs)\nThis example is provided for illustrative purposes only. The CEMPRA toolbox is used to review risk and hazard scores for several fisheries sensitive watersheds (FSW) in BC. Note that the data used in this example is for illustrative purposes only and is outdated for risk/hazard assessments. For more details see the original report FREP Report #39\n\nStressor Response Workbook\nStressor Magnitude Workbook\nWatershed Locations .gpkg",
+    "title": "10  Example Datasets",
+    "section": "10.3 WSEP (Watershed Status Evaluation Protocol) Fisheries Sensitive Watersheds (FSWs)",
+    "text": "10.3 WSEP (Watershed Status Evaluation Protocol) Fisheries Sensitive Watersheds (FSWs)\nThis example is provided for illustrative purposes only. The CEMPRA toolbox is used to review risk and hazard scores for several fisheries sensitive watersheds (FSW) in BC. Note that the data used in this example is for illustrative purposes only and is outdated for risk/hazard assessments. For more details see the original report FREP Report #39\n\nStressor Response Workbook\nStressor Magnitude Workbook\nWatershed Locations .gpkg",
     "crumbs": [
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Example Datasets</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Example Datasets</span>"
     ]
   },
   {
     "objectID": "09_case_study_applications.html#meso-habitat-units-hypothetical",
     "href": "09_case_study_applications.html#meso-habitat-units-hypothetical",
-    "title": "9  Example Datasets",
-    "section": "9.4 Meso-Habitat Units (hypothetical)",
-    "text": "9.4 Meso-Habitat Units (hypothetical)\nThis example is solely for illustration and should not be used as a reference for any purposes. It demonstrates the use of meso-habitat units from the Sensitive Habitat Inventory and Mapping (SHIM) initiative conducted by Ecoscape Environmental Consultants Ltd in the Coldwater River. Here, Aquatic Habitat Index (AHI) serves as a stand-in for Mean System Capacity. This case is included to show the application of the CEMPRA toolbox across various spatial scales. The data presented here is entirely synthetic and only meant for demonstration. For comprehensive details and accurate data, please refer to the original report and resources. Nicola SHIM AHI.\n\nStressor Response Workbook\nStressor Magnitude Workbook\nWatershed Locations .gpkg",
+    "title": "10  Example Datasets",
+    "section": "10.4 Meso-Habitat Units (hypothetical)",
+    "text": "10.4 Meso-Habitat Units (hypothetical)\nThis example is solely for illustration and should not be used as a reference for any purposes. It demonstrates the use of meso-habitat units from the Sensitive Habitat Inventory and Mapping (SHIM) initiative conducted by Ecoscape Environmental Consultants Ltd in the Coldwater River. Here, Aquatic Habitat Index (AHI) serves as a stand-in for Mean System Capacity. This case is included to show the application of the CEMPRA toolbox across various spatial scales. The data presented here is entirely synthetic and only meant for demonstration. For comprehensive details and accurate data, please refer to the original report and resources. Nicola SHIM AHI.\n\nStressor Response Workbook\nStressor Magnitude Workbook\nWatershed Locations .gpkg",
     "crumbs": [
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Example Datasets</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Example Datasets</span>"
     ]
   },
   {
     "objectID": "09_case_study_applications.html#matrix-interaction-example-1-template",
     "href": "09_case_study_applications.html#matrix-interaction-example-1-template",
-    "title": "9  Example Datasets",
-    "section": "9.5 Matrix Interaction (Example 1: Template)",
-    "text": "9.5 Matrix Interaction (Example 1: Template)\nThis example is designed to demonstrate the two-factor matrix interaction surface. Given that the matrix interaction surface necessitates a specialized stressor response Excel workbook, this example can be utilized as a practical template for customization. See the Matrix Interaction Documentation for more details.\n\nStressor Response Workbook\nStressor Magnitude Workbook\nWatershed Locations .shp (ZIP folder)",
+    "title": "10  Example Datasets",
+    "section": "10.5 Matrix Interaction (Example 1: Template)",
+    "text": "10.5 Matrix Interaction (Example 1: Template)\nThis example is designed to demonstrate the two-factor matrix interaction surface. Given that the matrix interaction surface necessitates a specialized stressor response Excel workbook, this example can be utilized as a practical template for customization. See the Matrix Interaction Documentation for more details.\n\nStressor Response Workbook\nStressor Magnitude Workbook\nWatershed Locations .shp (ZIP folder)",
     "crumbs": [
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Example Datasets</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Example Datasets</span>"
     ]
   },
   {
     "objectID": "09_case_study_applications.html#matrix-interaction-example-2-application",
     "href": "09_case_study_applications.html#matrix-interaction-example-2-application",
-    "title": "9  Example Datasets",
-    "section": "9.6 Matrix Interaction (Example 2: Application)",
-    "text": "9.6 Matrix Interaction (Example 2: Application)\nThe purpose of this second example is to demonstrate the matrix interaction surface through a practical case study. To simplify, we apply the British Columbia Freshwater Atlas (BCFWA) Assessment Watersheds. Here, we estimate hydrological runoff potential by multiplying two factors: a) the Biogeoclimatic Ecosystem Classification (BEC) Unit Score, and b) the percentage of Alpine non-Forested Area. It’s important to note that hydrological runoff potential is not a standard stressor in the Joe Model; it is used here solely for illustration. See the original report here: BC-CEF Interim Interim Assessment Protocol for Aquatic Ecosystems in British Columbia for more details).\n\nStressor Response Workbook\nStressor Magnitude Workbook\nWatershed Locations .shp (ZIP folder)",
+    "title": "10  Example Datasets",
+    "section": "10.6 Matrix Interaction (Example 2: Application)",
+    "text": "10.6 Matrix Interaction (Example 2: Application)\nThe purpose of this second example is to demonstrate the matrix interaction surface through a practical case study. To simplify, we apply the British Columbia Freshwater Atlas (BCFWA) Assessment Watersheds. Here, we estimate hydrological runoff potential by multiplying two factors: a) the Biogeoclimatic Ecosystem Classification (BEC) Unit Score, and b) the percentage of Alpine non-Forested Area. It’s important to note that hydrological runoff potential is not a standard stressor in the Joe Model; it is used here solely for illustration. See the original report here: BC-CEF Interim Interim Assessment Protocol for Aquatic Ecosystems in British Columbia for more details).\n\nStressor Response Workbook\nStressor Magnitude Workbook\nWatershed Locations .shp (ZIP folder)",
     "crumbs": [
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Example Datasets</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Example Datasets</span>"
     ]
   },
   {
     "objectID": "09_case_study_applications.html#09_case_study_applications-09_case_study_applications-nicola-basin-salmonids",
     "href": "09_case_study_applications.html#09_case_study_applications-09_case_study_applications-nicola-basin-salmonids",
-    "title": "9  Example Datasets",
-    "section": "9.7 ",
-    "text": "9.7 \n\n\n\n\nMacPherson, L., Sullivan, M., Reilly, J., & Paul, A. (2020). Alberta’s fisheries sustainability assessment: A guide to assessing population status, and quantifying cumulative effects using the joe modelling technique. Canadian Science Advisory Secretariat (CSAS).",
+    "title": "10  Example Datasets",
+    "section": "10.7 ",
+    "text": "10.7 \n\n\n\n\nMacPherson, L., Sullivan, M., Reilly, J., & Paul, A. (2020). Alberta’s fisheries sustainability assessment: A guide to assessing population status, and quantifying cumulative effects using the joe modelling technique. Canadian Science Advisory Secretariat (CSAS).",
     "crumbs": [
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Example Datasets</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Example Datasets</span>"
     ]
   },
   {
     "objectID": "10_r_package_tutorials.html",
     "href": "10_r_package_tutorials.html",
-    "title": "10  R Package Tutorials",
+    "title": "11  R Package Tutorials",
     "section": "",
     "text": "The CEMPRA R Package (available on GitHub: https://github.com/essatech/CEMPRA/) can be used for custom model applications and batch processing. The R Package allows users to run the model offline and customize the code, inputs, and outputs. Users can also conduct batch runs of the life cycle model, which allows for faster, automated processing over a large number of spatial units and/or scenarios. For more information about the use and installation of the CEMPRA R Package, see the following tutorials:\n\nTutorial 1: Joe Model Overview: https://essatech.github.io/CEMPRA/articles/a01-joe-model.html\nTutorial 2: Joe Model Batch Run: https://essatech.github.io/CEMPRA/articles/a02-joe-model-batch-run.html\nTutorial 3: Population Model Overview: https://essatech.github.io/CEMPRA/articles/a03-population-model.html\nTutorial 4: Population Model Scenarios: https://essatech.github.io/CEMPRA/articles/a04-population-model-batch-run.html\nTutorial 5: BC CEF Data Import: https://essatech.github.io/CEMPRA/articles/a05-bc-cef.html\n\n\n\n\nLeave questions and comments below (via your GitHub account)",
     "crumbs": [
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>R Package Tutorials</span>"
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>R Package Tutorials</span>"
     ]
   },
   {
     "objectID": "11_conclusions.html",
     "href": "11_conclusions.html",
-    "title": "11  Concluding Remarks",
+    "title": "12  Concluding Remarks",
     "section": "",
-    "text": "11.1 Benefits and Limitations\nThe CEMPRA tool has the flexibility to perform cumulative effects assessments for both data-rich and data-poor species, allowing for the analysis of a range of study systems, including species-at-risk. Various assessment endpoints are available for different use cases. With only four generic input datasets, onboarding new users is intended to be relatively simple.\nThe Joe Modelling component of the CEMPRA tool is a generic assessment framework widely applicable to data-rich and data-limited species. The Joe Model acts as a simplified stressor roll-up framework for watershed assessments. Stressors can be added and manipulated in near real-time in a workshop-like setting. Proven use cases on numerous study systems show how it can be a critical asset to facilitate a shared understanding of watershed stewardship and high-level strategy development for watershed planning.\nThe life cycle modelling component of the CEMPRA tool offers the ability to link stressors to key vital rates in a demographic modelling framework. User groups and practitioners can solicit the life cycle models to help develop high-level goals for restoration and recovery programs ((Roni et al., 2018)). Life cycle models are useful to identify key demographic bottlenecks and the sensitivity of those bottlenecks to the range of stressor values observed on the landscape (or projected through scenario simulation).\nThe CEMPRA framework should be considered a simple approach to cumulative effects assessments. It provides the greatest utility for large-scale planning activities at the intersection between different user groups and stakeholders. The intent of the CEMPRA tool is to provide a working framework for both data-rich and data-limited species with alternative assessment endpoints. Stressor-response relationships are the underlying theme of the CEMPRA tool. Our hope is that the CEMPRA will support the development of a collaborative user community, reducing duplicated efforts in the development of stressor variables, species profiles and assessment frameworks.\nLeave questions and comments below (via your GitHub account)",
+    "text": "12.1 Benefits and Limitations\nThe CEMPRA tool has the flexibility to perform cumulative effects assessments for both data-rich and data-poor species, allowing for the analysis of a range of study systems, including species-at-risk. Various assessment endpoints are available for different use cases. With only four generic input datasets, onboarding new users is intended to be relatively simple.\nThe Joe Modelling component of the CEMPRA tool is a generic assessment framework widely applicable to data-rich and data-limited species. The Joe Model acts as a simplified stressor roll-up framework for watershed assessments. Stressors can be added and manipulated in near real-time in a workshop-like setting. Proven use cases on numerous study systems show how it can be a critical asset to facilitate a shared understanding of watershed stewardship and high-level strategy development for watershed planning.\nThe life cycle modelling component of the CEMPRA tool offers the ability to link stressors to key vital rates in a demographic modelling framework. User groups and practitioners can solicit the life cycle models to help develop high-level goals for restoration and recovery programs ((Roni et al., 2018)). Life cycle models are useful to identify key demographic bottlenecks and the sensitivity of those bottlenecks to the range of stressor values observed on the landscape (or projected through scenario simulation).\nThe CEMPRA framework should be considered a simple approach to cumulative effects assessments. It provides the greatest utility for large-scale planning activities at the intersection between different user groups and stakeholders. The intent of the CEMPRA tool is to provide a working framework for both data-rich and data-limited species with alternative assessment endpoints. Stressor-response relationships are the underlying theme of the CEMPRA tool. Our hope is that the CEMPRA will support the development of a collaborative user community, reducing duplicated efforts in the development of stressor variables, species profiles and assessment frameworks.\nLeave questions and comments below (via your GitHub account)",
     "crumbs": [
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Concluding Remarks</span>"
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Concluding Remarks</span>"
     ]
   },
   {
     "objectID": "11_conclusions.html#11_conclusions-benefits-and-limitations",
     "href": "11_conclusions.html#11_conclusions-benefits-and-limitations",
-    "title": "11  Concluding Remarks",
+    "title": "12  Concluding Remarks",
     "section": "",
     "text": "Roni, P., Anders, P. J., Beechie, T. J., & Kaplowe, D. J. (2018). Review of tools for identifying, planning, and implementing habitat restoration for pacific salmon and steelhead. North American Journal of Fisheries Management, 38(2), 355–376.",
     "crumbs": [
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Concluding Remarks</span>"
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Concluding Remarks</span>"
     ]
   },
   {

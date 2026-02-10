@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>9&nbsp; Example Datasets – CEMPRA Guidance Document</title>
+<title>10&nbsp; Example Datasets – CEMPRA Guidance Document</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -51,7 +51,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./10_r_package_tutorials.html" rel="next">
-<link href="./08_stressor_response_library.html" rel="prev">
+<link href="./09_ndss_case_study.html" rel="prev">
 <link href="./favicon.ico" rel="icon">
 <script src="site_libs/cookie-consent/cookie-consent.js"></script>
 <link href="site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
@@ -133,7 +133,7 @@ cookieconsent.run({
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./09_case_study_applications.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Example Datasets</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./09_case_study_applications.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Example Datasets</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -217,20 +217,26 @@ cookieconsent.run({
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./09_ndss_case_study.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">NDSS Case Study</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./09_case_study_applications.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Example Datasets</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Example Datasets</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./10_r_package_tutorials.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">R Package Tutorials</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">R Package Tutorials</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./11_conclusions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Concluding Remarks</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Concluding Remarks</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -278,13 +284,13 @@ cookieconsent.run({
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#09_case_study_applications-09_case_study_applications-athabasca-rainbow-trout" id="toc-09_case_study_applications-09_case_study_applications-athabasca-rainbow-trout" class="nav-link active" data-scroll-target="#09_case_study_applications-09_case_study_applications-athabasca-rainbow-trout"><span class="header-section-number">9.1</span> Athabasca Rainbow Trout</a></li>
-  <li><a href="#minimal-simple-working-example-hypothetical" id="toc-minimal-simple-working-example-hypothetical" class="nav-link" data-scroll-target="#minimal-simple-working-example-hypothetical"><span class="header-section-number">9.2</span> Minimal Simple Working Example (hypothetical)</a></li>
-  <li><a href="#wsep-watershed-status-evaluation-protocol-fisheries-sensitive-watersheds-fsws" id="toc-wsep-watershed-status-evaluation-protocol-fisheries-sensitive-watersheds-fsws" class="nav-link" data-scroll-target="#wsep-watershed-status-evaluation-protocol-fisheries-sensitive-watersheds-fsws"><span class="header-section-number">9.3</span> WSEP (Watershed Status Evaluation Protocol) Fisheries Sensitive Watersheds (FSWs)</a></li>
-  <li><a href="#meso-habitat-units-hypothetical" id="toc-meso-habitat-units-hypothetical" class="nav-link" data-scroll-target="#meso-habitat-units-hypothetical"><span class="header-section-number">9.4</span> Meso-Habitat Units (hypothetical)</a></li>
-  <li><a href="#matrix-interaction-example-1-template" id="toc-matrix-interaction-example-1-template" class="nav-link" data-scroll-target="#matrix-interaction-example-1-template"><span class="header-section-number">9.5</span> Matrix Interaction (Example 1: Template)</a></li>
-  <li><a href="#matrix-interaction-example-2-application" id="toc-matrix-interaction-example-2-application" class="nav-link" data-scroll-target="#matrix-interaction-example-2-application"><span class="header-section-number">9.6</span> Matrix Interaction (Example 2: Application)</a></li>
-  <li><a href="#09_case_study_applications-09_case_study_applications-nicola-basin-salmonids" id="toc-09_case_study_applications-09_case_study_applications-nicola-basin-salmonids" class="nav-link" data-scroll-target="#09_case_study_applications-09_case_study_applications-nicola-basin-salmonids"><span class="header-section-number">9.7</span> </a></li>
+  <li><a href="#09_case_study_applications-09_case_study_applications-athabasca-rainbow-trout" id="toc-09_case_study_applications-09_case_study_applications-athabasca-rainbow-trout" class="nav-link active" data-scroll-target="#09_case_study_applications-09_case_study_applications-athabasca-rainbow-trout"><span class="header-section-number">10.1</span> Athabasca Rainbow Trout</a></li>
+  <li><a href="#minimal-simple-working-example-hypothetical" id="toc-minimal-simple-working-example-hypothetical" class="nav-link" data-scroll-target="#minimal-simple-working-example-hypothetical"><span class="header-section-number">10.2</span> Minimal Simple Working Example (hypothetical)</a></li>
+  <li><a href="#wsep-watershed-status-evaluation-protocol-fisheries-sensitive-watersheds-fsws" id="toc-wsep-watershed-status-evaluation-protocol-fisheries-sensitive-watersheds-fsws" class="nav-link" data-scroll-target="#wsep-watershed-status-evaluation-protocol-fisheries-sensitive-watersheds-fsws"><span class="header-section-number">10.3</span> WSEP (Watershed Status Evaluation Protocol) Fisheries Sensitive Watersheds (FSWs)</a></li>
+  <li><a href="#meso-habitat-units-hypothetical" id="toc-meso-habitat-units-hypothetical" class="nav-link" data-scroll-target="#meso-habitat-units-hypothetical"><span class="header-section-number">10.4</span> Meso-Habitat Units (hypothetical)</a></li>
+  <li><a href="#matrix-interaction-example-1-template" id="toc-matrix-interaction-example-1-template" class="nav-link" data-scroll-target="#matrix-interaction-example-1-template"><span class="header-section-number">10.5</span> Matrix Interaction (Example 1: Template)</a></li>
+  <li><a href="#matrix-interaction-example-2-application" id="toc-matrix-interaction-example-2-application" class="nav-link" data-scroll-target="#matrix-interaction-example-2-application"><span class="header-section-number">10.6</span> Matrix Interaction (Example 2: Application)</a></li>
+  <li><a href="#09_case_study_applications-09_case_study_applications-nicola-basin-salmonids" id="toc-09_case_study_applications-09_case_study_applications-nicola-basin-salmonids" class="nav-link" data-scroll-target="#09_case_study_applications-09_case_study_applications-nicola-basin-salmonids"><span class="header-section-number">10.7</span> </a></li>
   </ul>
 </nav>
     </div>
@@ -293,7 +299,7 @@ cookieconsent.run({
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="example-datasets" class="quarto-section-identifier"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Example Datasets</span></span></h1>
+<h1 class="title"><span id="example-datasets" class="quarto-section-identifier"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Example Datasets</span></span></h1>
 </div>
 
 
@@ -310,8 +316,8 @@ cookieconsent.run({
 </header>
 
 
-<section id="09_case_study_applications-09_case_study_applications-athabasca-rainbow-trout" class="level2" data-number="9.1">
-<h2 data-number="9.1" class="anchored" data-anchor-id="09_case_study_applications-09_case_study_applications-athabasca-rainbow-trout"><span class="header-section-number">9.1</span> Athabasca Rainbow Trout</h2>
+<section id="09_case_study_applications-09_case_study_applications-athabasca-rainbow-trout" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="09_case_study_applications-09_case_study_applications-athabasca-rainbow-trout"><span class="header-section-number">10.1</span> Athabasca Rainbow Trout</h2>
 <p><span class="citation" data-cites="macpherson2020alberta">(<a href="references.html#ref-macpherson2020alberta" role="doc-biblioref">MacPherson et al., 2020</a>)</span> leveraged the Joe Modelling framework to support recovery action planning and threat analysis of Athabasca Rainbow Trout. The Joe Model was a valuable resource for synthesizing stressors due to its ease of and utility as a design and communication tool. Stressors were developed in a near real-time workshop-like setting to game out alternative management scenarios. The flexibility of the stressor-response input data allows for the inclusion of synthetic proxies and hypothetical impact pathways, weaving together academic knowledge, anecdotal descriptions and expert opinion. The Joe Model was ultimately used as a prioritization tool to help design actions, programs, and priorities across a large geographic and complex region.</p>
 <p>Default sample dataset when tool loads:</p>
 <ul>
@@ -322,8 +328,8 @@ cookieconsent.run({
 <li><a href=".\sample_data/athabasca_rbt/habitat_capacities.csv">Habitat Capacities (optional)</a> _cy <em>The default study area, stressor list and species profile in the Shiny application are from the <span class="citation" data-cites="macpherson2020alberta">(<a href="references.html#ref-macpherson2020alberta" role="doc-biblioref">MacPherson et al., 2020</a>)</span> Athabasca Rainbow Trout project.</em></li>
 </ul>
 </section>
-<section id="minimal-simple-working-example-hypothetical" class="level2" data-number="9.2">
-<h2 data-number="9.2" class="anchored" data-anchor-id="minimal-simple-working-example-hypothetical"><span class="header-section-number">9.2</span> Minimal Simple Working Example (hypothetical)</h2>
+<section id="minimal-simple-working-example-hypothetical" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="minimal-simple-working-example-hypothetical"><span class="header-section-number">10.2</span> Minimal Simple Working Example (hypothetical)</h2>
 <p>This straightforward example serves as an easy-to-use template for your own input files, offering minimal complexity and adaptability for customization.</p>
 <ul>
 <li><a href=".\sample_data/meso_habitat/stressor_response_simple.xlsx">Stressor Response Workbook</a></li>
@@ -331,8 +337,8 @@ cookieconsent.run({
 <li><a href=".\sample_data/meso_habitat/locations_simple.gpkg">Watershed Locations .gpkg</a></li>
 </ul>
 </section>
-<section id="wsep-watershed-status-evaluation-protocol-fisheries-sensitive-watersheds-fsws" class="level2" data-number="9.3">
-<h2 data-number="9.3" class="anchored" data-anchor-id="wsep-watershed-status-evaluation-protocol-fisheries-sensitive-watersheds-fsws"><span class="header-section-number">9.3</span> WSEP (Watershed Status Evaluation Protocol) Fisheries Sensitive Watersheds (FSWs)</h2>
+<section id="wsep-watershed-status-evaluation-protocol-fisheries-sensitive-watersheds-fsws" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="wsep-watershed-status-evaluation-protocol-fisheries-sensitive-watersheds-fsws"><span class="header-section-number">10.3</span> WSEP (Watershed Status Evaluation Protocol) Fisheries Sensitive Watersheds (FSWs)</h2>
 <p>This example is provided for illustrative purposes only. The CEMPRA toolbox is used to review risk and hazard scores for several fisheries sensitive watersheds (FSW) in BC. Note that the data used in this example is for illustrative purposes only and is outdated for risk/hazard assessments. For more details see the original report <a href="https://www.for.gov.bc.ca/ftp/hfp/external/!publish/FREP/reports/FREP_Report_39.pdf">FREP Report #39</a></p>
 <ul>
 <li><a href=".\sample_data/frep39/FREP_Stressor_Response.xlsx">Stressor Response Workbook</a></li>
@@ -340,8 +346,8 @@ cookieconsent.run({
 <li><a href=".\sample_data/frep39/FREP_watersheds.gpkg">Watershed Locations .gpkg</a></li>
 </ul>
 </section>
-<section id="meso-habitat-units-hypothetical" class="level2" data-number="9.4">
-<h2 data-number="9.4" class="anchored" data-anchor-id="meso-habitat-units-hypothetical"><span class="header-section-number">9.4</span> Meso-Habitat Units (hypothetical)</h2>
+<section id="meso-habitat-units-hypothetical" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="meso-habitat-units-hypothetical"><span class="header-section-number">10.4</span> Meso-Habitat Units (hypothetical)</h2>
 <p>This example is solely for illustration and should not be used as a reference for any purposes. It demonstrates the use of meso-habitat units from the Sensitive Habitat Inventory and Mapping (SHIM) initiative conducted by Ecoscape Environmental Consultants Ltd in the Coldwater River. Here, Aquatic Habitat Index (AHI) serves as a stand-in for Mean System Capacity. This case is included to show the application of the CEMPRA toolbox across various spatial scales. The data presented here is entirely synthetic and only meant for demonstration. For comprehensive details and accurate data, please refer to the original report and resources. <a href="https://www.fraserbasin.bc.ca/Nicola_SHIM_AHI.html">Nicola SHIM AHI</a>.</p>
 <ul>
 <li><a href=".\sample_data/nicola_shims/stressor_response_shims.xlsx">Stressor Response Workbook</a></li>
@@ -349,8 +355,8 @@ cookieconsent.run({
 <li><a href=".\sample_data/nicola_shims/locations_shims.gpkg">Watershed Locations .gpkg</a></li>
 </ul>
 </section>
-<section id="matrix-interaction-example-1-template" class="level2" data-number="9.5">
-<h2 data-number="9.5" class="anchored" data-anchor-id="matrix-interaction-example-1-template"><span class="header-section-number">9.5</span> Matrix Interaction (Example 1: Template)</h2>
+<section id="matrix-interaction-example-1-template" class="level2" data-number="10.5">
+<h2 data-number="10.5" class="anchored" data-anchor-id="matrix-interaction-example-1-template"><span class="header-section-number">10.5</span> Matrix Interaction (Example 1: Template)</h2>
 <p>This example is designed to demonstrate the two-factor matrix interaction surface. Given that the matrix interaction surface necessitates a specialized stressor response Excel workbook, this example can be utilized as a practical template for customization. See the <a href=".\appendix_interaction_matrix.html">Matrix Interaction Documentation</a> for more details.</p>
 <ul>
 <li><a href=".\sample_data/matrix_simple/stressor_response_matrix.xlsx">Stressor Response Workbook</a></li>
@@ -358,8 +364,8 @@ cookieconsent.run({
 <li><a href=".\sample_data/matrix_simple/poly.zip">Watershed Locations .shp (ZIP folder)</a></li>
 </ul>
 </section>
-<section id="matrix-interaction-example-2-application" class="level2" data-number="9.6">
-<h2 data-number="9.6" class="anchored" data-anchor-id="matrix-interaction-example-2-application"><span class="header-section-number">9.6</span> Matrix Interaction (Example 2: Application)</h2>
+<section id="matrix-interaction-example-2-application" class="level2" data-number="10.6">
+<h2 data-number="10.6" class="anchored" data-anchor-id="matrix-interaction-example-2-application"><span class="header-section-number">10.6</span> Matrix Interaction (Example 2: Application)</h2>
 <p>The purpose of this second example is to demonstrate the matrix interaction surface through a practical case study. To simplify, we apply the British Columbia Freshwater Atlas (BCFWA) Assessment Watersheds. Here, we estimate hydrological runoff potential by multiplying two factors: a) the Biogeoclimatic Ecosystem Classification (BEC) Unit Score, and b) the percentage of Alpine non-Forested Area. It’s important to note that hydrological runoff potential is not a standard stressor in the Joe Model; it is used here solely for illustration. See the original report here: <a href="https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/cumulative-effects/protocols/cef-aquatic-ecosystems-protocol-dec2020.pdf">BC-CEF Interim Interim Assessment Protocol for Aquatic Ecosystems in British Columbia</a> for more details).</p>
 <ul>
 <li><a href=".\sample_data/coldwater_matrix/coldwater_bc_sr_matrix.xlsx">Stressor Response Workbook</a></li>
@@ -367,8 +373,8 @@ cookieconsent.run({
 <li><a href=".\sample_data/coldwater_matrix/coldwater_bc_locations.zip">Watershed Locations .shp (ZIP folder)</a></li>
 </ul>
 </section>
-<section id="09_case_study_applications-09_case_study_applications-nicola-basin-salmonids" class="level2" data-number="9.7">
-<h2 data-number="9.7" class="anchored" data-anchor-id="09_case_study_applications-09_case_study_applications-nicola-basin-salmonids"><span class="header-section-number">9.7</span> </h2>
+<section id="09_case_study_applications-09_case_study_applications-nicola-basin-salmonids" class="level2" data-number="10.7">
+<h2 data-number="10.7" class="anchored" data-anchor-id="09_case_study_applications-09_case_study_applications-nicola-basin-salmonids"><span class="header-section-number">10.7</span> </h2>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
@@ -783,13 +789,13 @@ MacPherson, L., Sullivan, M., Reilly, J., &amp; Paul, A. (2020). <em>Alberta’s
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./08_stressor_response_library.html" class="pagination-link" aria-label="Stressor-Response Library">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Stressor-Response Library</span></span>
+      <a href="./09_ndss_case_study.html" class="pagination-link" aria-label="NDSS Case Study">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">NDSS Case Study</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./10_r_package_tutorials.html" class="pagination-link" aria-label="R Package Tutorials">
-        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">R Package Tutorials</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">R Package Tutorials</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
