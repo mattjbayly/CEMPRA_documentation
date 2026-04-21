@@ -1,5 +1,5 @@
 ---
-title: "The Formula Builder"
+title: "Appendix D - The Formula Builder"
 format: html
 ---
 

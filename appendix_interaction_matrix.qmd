@@ -1,4 +1,4 @@
-# Multi-Stressor Interaction Matrix
+# Appendix B - Multi-Stressor Interaction Matrix {.unnumbered}
 
 ## Customizable Two-Factor Interaction Matrix
 
