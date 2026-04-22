@@ -206,31 +206,37 @@ cookieconsent.run({
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./07_life_cycle_model.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Life Cycle Model (Population Model)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Life Cycle Model (Population Model) Overview</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08_stressor_response_library.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Stressor-Response Library</span></span></a>
+  <a href="./08_life_cycle_model_part2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Life Cycle Model (Population Model) Habitat &amp; Stressors</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./09_case_study_applications.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Example Datasets</span></span></a>
+  <a href="./09_stressor_response_library.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Stressor-Response Library</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./10_r_package_tutorials.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">R Package Tutorials</span></span></a>
+  <a href="./10_case_study_applications.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Example Datasets</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./11_conclusions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Concluding Remarks</span></span></a>
+  <a href="./11_r_package_tutorials.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">R Package Tutorials</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12_conclusions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Concluding Remarks</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -334,7 +340,7 @@ cookieconsent.run({
 <h2 data-number="5.1" class="anchored" data-anchor-id="stressor-response-workbook"><span class="header-section-number">5.1</span> Stressor-Response Workbook</h2>
 <section id="purpose" class="level3" data-number="5.1.1">
 <h3 data-number="5.1.1" class="anchored" data-anchor-id="purpose"><span class="header-section-number">5.1.1</span> Purpose</h3>
-<p>The stressor-response workbook contains all the stressor-response curves applicable to a target study system (e.g., Athabasca Rainbow Trout). These stressor-response curves are used within the CEMPRA (Joe Model) tool to predict cumulative effects additively given stressor magnitude values (discussed in the next section).</p>
+<p>The stressor-response workbook contains all the <a href="./02_stressor_response.html">stressor-response curves</a> applicable to a target study system (e.g., Athabasca Rainbow Trout). These stressor-response curves are used within the CEMPRA (<a href="./03_pathways_endpoints.html">Joe Model</a>) tool to predict cumulative effects additively given stressor magnitude values (discussed in the next section). Stressor-response functions can also be linked to specific vital rates in the <a href="./07_life_cycle_model.html">life cycle model</a>.</p>
 </section>
 <section id="layout" class="level3" data-number="5.1.2">
 <h3 data-number="5.1.2" class="anchored" data-anchor-id="layout"><span class="header-section-number">5.1.2</span> Layout</h3>
@@ -352,7 +358,7 @@ Figure&nbsp;5.1: Main worksheet in the Stressor-Response workbook.
 </figcaption>
 </figure>
 </div>
-<p><a href="#fig-main-worksheet" class="quarto-xref">Figure&nbsp;<span>5.1</span></a> shows the main worksheet in the Stressor-Response workbook.</p>
+<p><a href="#fig-main-worksheet" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-main-worksheet</span></a> shows the main worksheet in the Stressor-Response workbook.</p>
 <p>The purpose of the “Main” worksheet is to organize and summarize stressor-response functions within the workbook. The columns within this worksheet are set up as follows. Inputs must be diligently followed in order for the code to work:</p>
 <!-- Table describing the column names and descriptions of the Main worksheet -->
 <!-- Details on how to use empirical data to develop stressor-response functions -->
@@ -458,7 +464,7 @@ Figure&nbsp;5.2: Example of an individual stressor worksheet within the stressor
 </section>
 <section id="how-to-build-your-own-stressor-response-function" class="level3" data-number="5.1.3">
 <h3 data-number="5.1.3" class="anchored" data-anchor-id="how-to-build-your-own-stressor-response-function"><span class="header-section-number">5.1.3</span> How to Build Your Own Stressor-Response Function</h3>
-<p>CEMPRA (Joe Model) users can either select pre-assembled stressor-response functions or define their own stressor-response functions for use in the model. A library is currently being developed to host pre-assembled stressor-response functions and their associated documentation (Appendix A). Users who develop their own stressor-response functions are encouraged to fill out the appropriate documentation for their function and upload it to this public stressor-response library for future use (Appendix A). Please see <span class="citation" data-cites="macpherson2020alberta">(<a href="references.html#ref-macpherson2020alberta" role="doc-biblioref">MacPherson et al., 2020</a>)</span> and <span class="citation" data-cites="rosenfeld2022stressor">(<a href="references.html#ref-rosenfeld2022stressor" role="doc-biblioref">Rosenfeld et al., 2022</a>)</span> for further discussion on fundamental considerations in the development of customized stressor-response functions.</p>
+<p>CEMPRA (Joe Model) users can either select pre-assembled stressor-response functions or define their own stressor-response functions for use in the model. A library is currently being developed to host pre-assembled stressor-response functions and their associated documentation (Appendix A). Users who develop their own stressor-response functions are encouraged to fill out the appropriate documentation for their function and upload it to this public stressor-response library for future use (Appendix A). Please see <span class="citation" data-cites="macpherson2020alberta">(<a href="#ref-macpherson2020alberta" role="doc-biblioref">MacPherson et al., 2020</a>)</span> and <span class="citation" data-cites="rosenfeld2022stressor">(<a href="#ref-rosenfeld2022stressor" role="doc-biblioref">Rosenfeld et al., 2022</a>)</span> for further discussion on fundamental considerations in the development of customized stressor-response functions.</p>
 <section id="methodology" class="level4" data-number="5.1.3.1">
 <h4 data-number="5.1.3.1" class="anchored" data-anchor-id="methodology"><span class="header-section-number">5.1.3.1</span> Methodology</h4>
 <p>Depending on data availability, stressor-response functions may be developed from available empirical data, from the elicitation of experts and stakeholders, or from existing literature.</p>
@@ -605,7 +611,7 @@ Figure&nbsp;5.6: Example life cycles profile CSV file.
 <p>A detailed discussion of the life cycles profile (csv file) is included in Section 8.2 with accompanying background information. It’s possible to run the Joe Model and omit the life cycle model entirely. Therefore, the life cycles profile csv should be considered as an optional input for advanced use cases of the CEMPRA tool.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
 <div id="ref-macpherson2020alberta" class="csl-entry" role="listitem">
 MacPherson, L., Sullivan, M., Reilly, J., &amp; Paul, A. (2020). <em>Alberta’s fisheries sustainability assessment: A guide to assessing population status, and quantifying cumulative effects using the joe modelling technique</em>. Canadian Science Advisory Secretariat (CSAS).
 </div>
