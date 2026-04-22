@@ -11,7 +11,7 @@
 
 ### Purpose
 
-The stressor-response workbook contains all the stressor-response curves applicable to a target study system (e.g., Athabasca Rainbow Trout). These stressor-response curves are used within the CEMPRA (Joe Model) tool to predict cumulative effects additively given stressor magnitude values (discussed in the next section).
+The stressor-response workbook contains all the [stressor-response curves](02_stressor_response.qmd) applicable to a target study system (e.g., Athabasca Rainbow Trout). These stressor-response curves are used within the CEMPRA ([Joe Model](03_pathways_endpoints.qmd)) tool to predict cumulative effects additively given stressor magnitude values (discussed in the next section). Stressor-response functions can also be linked to specific vital rates in the [life cycle model](07_life_cycle_model.qmd).
 
 ### Layout
 

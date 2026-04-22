@@ -2,9 +2,9 @@
 
 ## About {#08_stressor_response_library-sec-about}
 
-The stressor-response library is designed as a public reference archive to house generalizable stressor-response functions for use in the Cumulative Effects Model for Prioritizing Recovery Actions (CEMPRA) tool. The functions archived in the stressor-response library are widely applicable to numerous applications and use cases.
+The stressor-response library is designed as a public reference archive to house generalizable [stressor-response functions](02_stressor_response.qmd) for use in the Cumulative Effects Model for Prioritizing Recovery Actions (CEMPRA) tool. The functions archived in the stressor-response library are widely applicable to numerous applications and use cases.
 
-Users of the CEMPRA tool can select a subset of stressor-response functions applicable to their study area and focal species of interest. Selected stressor-response functions can be used to construct a customized stressor-response input workbook for the CEMPRA tool. The stressor-response library is a valuable resource for reference as it can expedite assessments with shared knowledge of common impact pathways. Although a suite of default stressor-response functions is available, the stressor-response library will continually be updated with novel stressor-response functions uploaded, edited, and validated by the community of users.
+Users of the CEMPRA tool can select a subset of stressor-response functions applicable to their study area and focal species of interest. Selected stressor-response functions can be used to construct a customized stressor-response input workbook for the CEMPRA tool (see [Data Inputs](05_data_inputs.qmd)). These functions are used in both the [Joe Model](03_pathways_endpoints.qmd) and the [life cycle model](07_life_cycle_model.qmd). The stressor-response library is a valuable resource for reference as it can expedite assessments with shared knowledge of common impact pathways. Although a suite of default stressor-response functions is available, the stressor-response library will continually be updated with novel stressor-response functions uploaded, edited, and validated by the community of users.
 
 Access the Library: [Draft Stressor-Response Library](https://mjbayly.com/stressor-response)
 

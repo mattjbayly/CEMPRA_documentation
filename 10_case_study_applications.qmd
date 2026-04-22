@@ -1,5 +1,7 @@
 # Example Datasets {#example-datasets}
 
+The following example datasets demonstrate different applications of the CEMPRA framework. Each includes the input files needed to run the [Joe Model](03_pathways_endpoints.qmd) and/or the [life cycle model](07_life_cycle_model.qmd) in the [R Shiny application](06_r_shiny_app.qmd). See [Data Inputs](05_data_inputs.qmd) for guidance on preparing your own input files.
+
 ## Athabasca Rainbow Trout {#09_case_study_applications-09_case_study_applications-athabasca-rainbow-trout}
 
 [@macpherson2020alberta] leveraged the Joe Modelling framework to support recovery action planning and threat analysis of Athabasca Rainbow Trout. The Joe Model was a valuable resource for synthesizing stressors due to its ease of and utility as a design and communication tool. Stressors were developed in a near real-time workshop-like setting to game out alternative management scenarios. The flexibility of the stressor-response input data allows for the inclusion of synthetic proxies and hypothetical impact pathways, weaving together academic knowledge, anecdotal descriptions and expert opinion. The Joe Model was ultimately used as a prioritization tool to help design actions, programs, and priorities across a large geographic and complex region.
