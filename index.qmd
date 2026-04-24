@@ -69,3 +69,32 @@ There are two modelling pathways and associated endpoints within the CEMPRA fram
 Additional supporting resources are being developed to facilitate ease of use and collaboration between individuals studying cumulative effects. These resources include the development of an online stressor-response library (digital archive), example species profiles of population vital rates for running the life cycle model, case studies, and tutorial resources.
 
 {{< video https://youtu.be/Ln9EYi_NVPo >}}
+
+
+## Bibliography of Selected Joe Model / CEMPRA Applications
+
+Bayly, M. J., Mushet, G. B., Alexander, C., & Bruns, A. (2025). Informing cumulative effects management for Chinook salmon in the Nicola Watershed. Prepared by ESSA Technologies Ltd. for Nooaitch Indian Band. 89 pp.
+
+Bayly, M. J., Tekatch, A., & Rosenfeld, J. (2026). Application of a cumulative effects model for prioritizing recovery actions in Nooksack dace and Salish sucker critical reaches. Report prepared by ESSA Technologies Ltd. for the University of British Columbia (UBC). 42 pp. + Appendices.
+
+Bayly, M. J., Tekatch, A. M., & Rosenfeld, J. (2023). Cumulative effects model for prioritizing recovery actions (CEMPRA). Documentation prepared by ESSA Technologies Ltd. for the BC Ministry of Environment. 77 pp.
+
+Bayly, M. J., Tekatch, A., & Crew, A. (2025). Application of the cumulative effects model for the prioritization of recovery actions (CEMPRA) to support the Nanaimo summer Chinook rebuilding plan. Canadian Contract Report of Hydrography and Ocean Sciences, 65, vii + 78 p. https://publications.gc.ca/collections/collection_2025/mpo-dfo/Fs97-17-65-eng.pdf
+
+Canadian Science Advisory Secretariat. (2019, August). Review of Alberta Environment and Parks cumulative effects assessment Joe Model (Central and Arctic Region Science Advisory Report 2019/045). Fisheries and Oceans Canada. https://publications.gc.ca/collections/collection_2019/mpo-dfo/fs70-6/Fs70-6-2019-045-eng.pdf
+
+FWCP Peace Region. (2024). Collaborations with the Ministry of Water, Land, and Resource Stewardship (WLRS), University of Northern British Columbia (UNBC), local fisheries experts, FWCP, and the Cumulative Effects Model for Prioritizing Recovery Actions (CEMPRA) Project working group (additional details unknown). https://a100.gov.bc.ca/pub/acat/documents/r63248/PEA_F25_F_4090_DCA_1749665283363_A169AC8317.pdf
+
+Jarvis, L. (2022). Unpublished case study for the Plains sucker using a cumulative effects model for prioritizing recovery actions. Fisheries and Oceans Canada.
+
+Jarvis, L., Rosenfeld, J., Gonzalez-Espinosa, P. C., & Enders, E. C. (2024). A process framework for integrating stressor-response functions into cumulative effects models. Science of the Total Environment, 906, 167456. https://espace.inrs.ca/id/eprint/13754/1/P4383.pdf
+
+MacPherson, L., Sullivan, M., Reilly, J., & Paul, A. (2020). Alberta’s fisheries sustainability assessment: A guide to assessing population status, and quantifying cumulative effects using the Joe modelling technique. DFO Canadian Science Advisory Secretariat Research Document 2019/058, vii + 45 p. https://waves-vagues.dfo-mpo.gc.ca/Library/40948110.pdf
+
+MacPherson, L. M., Reilly, J. R., Neufeld, K. R., Sullivan, M. G., Paul, A. J., & Johnston, F. D. (2023). Prioritizing bull trout recovery actions using a novel cumulative effects modelling framework. Fisheries Management and Ecology. https://doi.org/10.1111/fme.12649
+
+Rosenfeld, J., Gonzalez-Espinosa, P., Jarvis, L., Enders, E., Bayly, M., Paul, A., MacPherson, L., Moore, J., Sullivan, M., Ulaski, M., et al. (2022). Stressor-response functions as a generalizable model for context dependence. Trends in Ecology & Evolution. https://klwilson.org/wp-content/uploads/2022/10/stressor-response-functions-and-context-dependence-in-ecology-rosenfeld-et-al.-2022.pdf
+
+Rossi, K., O’Connor, B., & Hagen, J. (2025, May 22). Bull trout spawner abundance and critical habitats: Monitoring migratory bull trout in Williston Reservoir to support conservation and enhancement action (FWCP Project No. PEA-F25-F-4054). Chu Cho Environmental LLP. https://a100.gov.bc.ca/pub/acat/documents/r63274/PEA_F25_F_4054_REDACTED_1753887935311_9E0BADAF9D.pdf
+
+Sullivan, M., & Reilly, J. (2023). Alberta bull trout (Saskatchewan-Nelson DU): Estimates of mature individuals, redd areas and future population trends to support COSEWIC status assessment. Technical Fisheries Memorandum to Robin Gutsell, September 21, 2023. 24 pp.

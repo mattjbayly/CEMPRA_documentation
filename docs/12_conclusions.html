@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>10&nbsp; R Package Tutorials – CEMPRA Guidance Document</title>
+<title>12&nbsp; Concluding Remarks – CEMPRA Guidance Document</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -30,8 +50,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./11_conclusions.html" rel="next">
-<link href="./09_case_study_applications.html" rel="prev">
+<link href="./references.html" rel="next">
+<link href="./11_r_package_tutorials.html" rel="prev">
 <link href="./favicon.ico" rel="icon">
 <script src="site_libs/cookie-consent/cookie-consent.js"></script>
 <link href="site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
@@ -113,7 +133,7 @@ cookieconsent.run({
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10_r_package_tutorials.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">R Package Tutorials</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./12_conclusions.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Concluding Remarks</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -186,31 +206,37 @@ cookieconsent.run({
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./07_life_cycle_model.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Life Cycle Model (Population Model)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Life Cycle Model (Population Model) Overview</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08_stressor_response_library.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Stressor-Response Library</span></span></a>
+  <a href="./08_life_cycle_model_part2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Life Cycle Model (Population Model) Habitat &amp; Stressors</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./09_case_study_applications.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Example Datasets</span></span></a>
+  <a href="./09_stressor_response_library.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Stressor-Response Library</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./10_r_package_tutorials.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">R Package Tutorials</span></span></a>
+  <a href="./10_case_study_applications.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Example Datasets</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./11_conclusions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Concluding Remarks</span></span></a>
+  <a href="./11_r_package_tutorials.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">R Package Tutorials</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12_conclusions.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Concluding Remarks</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -259,15 +285,21 @@ cookieconsent.run({
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#11_conclusions-benefits-and-limitations" id="toc-11_conclusions-benefits-and-limitations" class="nav-link active" data-scroll-target="#11_conclusions-benefits-and-limitations"><span class="header-section-number">12.1</span> Benefits and Limitations</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="r-package-tutorials" class="quarto-section-identifier"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">R Package Tutorials</span></span></h1>
+<h1 class="title"><span id="concluding-remarks" class="quarto-section-identifier"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Concluding Remarks</span></span></h1>
 </div>
 
 
@@ -284,16 +316,20 @@ cookieconsent.run({
 </header>
 
 
-<p>The <em>CEMPRA</em> R Package (available on GitHub: <a href="https://github.com/essatech/CEMPRA/" class="uri">https://github.com/essatech/CEMPRA/</a>) can be used for custom model applications and batch processing. The R Package allows users to run the model offline and customize the code, inputs, and outputs. Users can also conduct batch runs of the life cycle model, which allows for faster, automated processing over a large number of spatial units and/or scenarios. For more information about the use and installation of the <em>CEMPRA</em> R Package, see the following tutorials:</p>
-<ul>
-<li><strong>Tutorial 1: Joe Model Overview:</strong> <a href="https://essatech.github.io/CEMPRA/articles/a01-joe-model.html" class="uri">https://essatech.github.io/CEMPRA/articles/a01-joe-model.html</a></li>
-<li><strong>Tutorial 2: Joe Model Batch Run:</strong> <a href="https://essatech.github.io/CEMPRA/articles/a02-joe-model-batch-run.html" class="uri">https://essatech.github.io/CEMPRA/articles/a02-joe-model-batch-run.html</a></li>
-<li><strong>Tutorial 3: Population Model Overview:</strong> <a href="https://essatech.github.io/CEMPRA/articles/a03-population-model.html" class="uri">https://essatech.github.io/CEMPRA/articles/a03-population-model.html</a></li>
-<li><strong>Tutorial 4: Population Model Scenarios:</strong> <a href="https://essatech.github.io/CEMPRA/articles/a04-population-model-batch-run.html" class="uri">https://essatech.github.io/CEMPRA/articles/a04-population-model-batch-run.html</a></li>
-<li><strong>Tutorial 5: BC CEF Data Import:</strong> <a href="https://essatech.github.io/CEMPRA/articles/a05-bc-cef.html" class="uri">https://essatech.github.io/CEMPRA/articles/a05-bc-cef.html</a></li>
-</ul>
+<section id="11_conclusions-benefits-and-limitations" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="11_conclusions-benefits-and-limitations"><span class="header-section-number">12.1</span> Benefits and Limitations</h2>
+<p>The CEMPRA tool has the flexibility to perform cumulative effects assessments for both data-rich and data-poor species, allowing for the analysis of a range of study systems, including species-at-risk. Various assessment endpoints are available for different use cases. With only four generic input datasets, onboarding new users is intended to be relatively simple.</p>
+<p>The <a href="./03_pathways_endpoints.html">Joe Modelling</a> component of the CEMPRA tool is a generic assessment framework widely applicable to data-rich and data-limited species. The Joe Model acts as a simplified stressor roll-up framework for watershed assessments. Stressors can be added and manipulated in near real-time in a workshop-like setting. Proven use cases on numerous study systems show how it can be a critical asset to facilitate a shared understanding of watershed stewardship and high-level strategy development for watershed planning.</p>
+<p>The <a href="./07_life_cycle_model.html">life cycle modelling</a> component of the CEMPRA tool offers the ability to link stressors to key vital rates in a demographic modelling framework. User groups and practitioners can solicit the life cycle models to help develop high-level goals for restoration and recovery programs (<span class="citation" data-cites="roni2018review">(<a href="#ref-roni2018review" role="doc-biblioref">Roni et al., 2018</a>)</span>). Life cycle models are useful to identify key demographic bottlenecks and the sensitivity of those bottlenecks to the range of stressor values observed on the landscape (or projected through scenario simulation).</p>
+<p>The CEMPRA framework should be considered a simple approach to cumulative effects assessments. It provides the greatest utility for large-scale planning activities at the intersection between different user groups and stakeholders. The intent of the CEMPRA tool is to provide a working framework for both data-rich and data-limited species with alternative assessment endpoints. Stressor-response relationships are the underlying theme of the CEMPRA tool. Our hope is that the CEMPRA will support the development of a collaborative user community, reducing duplicated efforts in the development of stressor variables, species profiles and assessment frameworks.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-roni2018review" class="csl-entry" role="listitem">
+Roni, P., Anders, P. J., Beechie, T. J., &amp; Kaplowe, D. J. (2018). Review of tools for identifying, planning, and implementing habitat restoration for pacific salmon and steelhead. <em>North American Journal of Fisheries Management</em>, <em>38</em>(2), 355–376.
+</div>
+</div>
+</section>
 
 <p>Leave questions and comments below (via your GitHub account)</p></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -700,13 +736,13 @@ cookieconsent.run({
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./09_case_study_applications.html" class="pagination-link" aria-label="Example Datasets">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Example Datasets</span></span>
+      <a href="./11_r_package_tutorials.html" class="pagination-link" aria-label="R Package Tutorials">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">R Package Tutorials</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./11_conclusions.html" class="pagination-link" aria-label="Concluding Remarks">
-        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Concluding Remarks</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

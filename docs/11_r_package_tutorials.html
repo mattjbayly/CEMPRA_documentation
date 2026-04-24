@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>8&nbsp; Stressor-Response Library – CEMPRA Guidance Document</title>
+<title>11&nbsp; R Package Tutorials – CEMPRA Guidance Document</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./09_case_study_applications.html" rel="next">
-<link href="./07_life_cycle_model.html" rel="prev">
+<link href="./12_conclusions.html" rel="next">
+<link href="./10_case_study_applications.html" rel="prev">
 <link href="./favicon.ico" rel="icon">
 <script src="site_libs/cookie-consent/cookie-consent.js"></script>
 <link href="site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
@@ -113,7 +113,7 @@ cookieconsent.run({
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08_stressor_response_library.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Stressor-Response Library</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./11_r_package_tutorials.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">R Package Tutorials</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -186,31 +186,37 @@ cookieconsent.run({
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./07_life_cycle_model.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Life Cycle Model (Population Model)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Life Cycle Model (Population Model) Overview</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08_stressor_response_library.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Stressor-Response Library</span></span></a>
+  <a href="./08_life_cycle_model_part2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Life Cycle Model (Population Model) Habitat &amp; Stressors</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./09_case_study_applications.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Example Datasets</span></span></a>
+  <a href="./09_stressor_response_library.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Stressor-Response Library</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./10_r_package_tutorials.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">R Package Tutorials</span></span></a>
+  <a href="./10_case_study_applications.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Example Datasets</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./11_conclusions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Concluding Remarks</span></span></a>
+  <a href="./11_r_package_tutorials.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">R Package Tutorials</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12_conclusions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Concluding Remarks</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -259,26 +265,15 @@ cookieconsent.run({
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#08_stressor_response_library-sec-about" id="toc-08_stressor_response_library-sec-about" class="nav-link active" data-scroll-target="#08_stressor_response_library-sec-about"><span class="header-section-number">8.1</span> About</a></li>
-  <li><a href="#stressor-response-database" id="toc-stressor-response-database" class="nav-link" data-scroll-target="#stressor-response-database"><span class="header-section-number">8.2</span> Stressor-Response Database</a></li>
-  <li><a href="#create-multi-stressor-response-overview-plots" id="toc-create-multi-stressor-response-overview-plots" class="nav-link" data-scroll-target="#create-multi-stressor-response-overview-plots"><span class="header-section-number">8.3</span> Create Multi-Stressor-Response Overview Plots</a></li>
-  <li><a href="#download-stressor-response-relationships" id="toc-download-stressor-response-relationships" class="nav-link" data-scroll-target="#download-stressor-response-relationships"><span class="header-section-number">8.4</span> Download Stressor-Response Relationships</a></li>
-  <li><a href="#add-edit-and-update-the-database" id="toc-add-edit-and-update-the-database" class="nav-link" data-scroll-target="#add-edit-and-update-the-database"><span class="header-section-number">8.5</span> Add, Edit, and Update the Database</a></li>
-  <li><a href="#stressor-response-curve-tracing-tool" id="toc-stressor-response-curve-tracing-tool" class="nav-link" data-scroll-target="#stressor-response-curve-tracing-tool"><span class="header-section-number">8.6</span> Stressor-Response Curve Tracing Tool</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-stressor-response-library" class="quarto-section-identifier"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Stressor-Response Library</span></span></h1>
+<h1 class="title"><span id="r-package-tutorials" class="quarto-section-identifier"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">R Package Tutorials</span></span></h1>
 </div>
 
 
@@ -295,86 +290,15 @@ cookieconsent.run({
 </header>
 
 
-<section id="08_stressor_response_library-sec-about" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="08_stressor_response_library-sec-about"><span class="header-section-number">8.1</span> About</h2>
-<p>The stressor-response library is designed as a public reference archive to house generalizable stressor-response functions for use in the Cumulative Effects Model for Prioritizing Recovery Actions (CEMPRA) tool. The functions archived in the stressor-response library are widely applicable to numerous applications and use cases.</p>
-<p>Users of the CEMPRA tool can select a subset of stressor-response functions applicable to their study area and focal species of interest. Selected stressor-response functions can be used to construct a customized stressor-response input workbook for the CEMPRA tool. The stressor-response library is a valuable resource for reference as it can expedite assessments with shared knowledge of common impact pathways. Although a suite of default stressor-response functions is available, the stressor-response library will continually be updated with novel stressor-response functions uploaded, edited, and validated by the community of users.</p>
-<p>Access the Library: <a href="https://mjbayly.com/stressor-response">Draft Stressor-Response Library</a></p>
+<p>The <em>CEMPRA</em> R Package (available on GitHub: <a href="https://github.com/essatech/CEMPRA/" class="uri">https://github.com/essatech/CEMPRA/</a>) can be used for custom model applications and batch processing. The R Package allows users to run the model offline and customize the code, inputs, and outputs. Users can also conduct batch runs of the life cycle model, which allows for faster, automated processing over a large number of spatial units and/or scenarios. Tutorials 1-2 cover the <a href="./03_pathways_endpoints.html">Joe Model</a> while Tutorials 3-4 cover the <a href="./07_life_cycle_model.html">life cycle model</a>. See also <a href="./05_data_inputs.html">Data Inputs</a> for preparing input files and <a href="./04_initial_setup.html">Setup and Installation</a> for getting started. For more information about the use and installation of the <em>CEMPRA</em> R Package, see the following tutorials:</p>
 <ul>
-<li>See Sierra Sullivan and Jordan Rosenfeld for Content.</li>
-<li>See Matthew Bayly for login credentials to edit and upload data (info@mjbayly.com).</li>
+<li><strong>Tutorial 1: Joe Model Overview:</strong> <a href="https://essatech.github.io/CEMPRA/articles/a01-joe-model.html" class="uri">https://essatech.github.io/CEMPRA/articles/a01-joe-model.html</a></li>
+<li><strong>Tutorial 2: Joe Model Batch Run:</strong> <a href="https://essatech.github.io/CEMPRA/articles/a02-joe-model-batch-run.html" class="uri">https://essatech.github.io/CEMPRA/articles/a02-joe-model-batch-run.html</a></li>
+<li><strong>Tutorial 3: Population Model Overview:</strong> <a href="https://essatech.github.io/CEMPRA/articles/a03-population-model.html" class="uri">https://essatech.github.io/CEMPRA/articles/a03-population-model.html</a></li>
+<li><strong>Tutorial 4: Population Model Scenarios:</strong> <a href="https://essatech.github.io/CEMPRA/articles/a04-population-model-batch-run.html" class="uri">https://essatech.github.io/CEMPRA/articles/a04-population-model-batch-run.html</a></li>
 </ul>
-</section>
-<section id="stressor-response-database" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="stressor-response-database"><span class="header-section-number">8.2</span> Stressor-Response Database</h2>
-<p><strong><em>Custom filters by species, stressor, endpoint etc.</em></strong></p>
-<p>Filter library of stressor-response relationships with dynamic filters. Review stressor-response relationships and apply filters to refine search. It’s most useful to enter a term of interest in the “Search all text” input field such as “fines”, “sediment”, or “temperature”, and the click the blue “Apply” button to filter results. Scroll down the list below to review stressor-response relationships with their associated attributes (source, study area, species, life stage, reference etc.).</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://mjbayly.com/stressor-response"><img src="images/srlib001.png" class="img-fluid figure-img" alt="gggg"></a></p>
-<figcaption>Stressor-Response Database List View</figcaption>
-</figure>
-</div>
-<p>One you find a stressor-response relationship of interest, click on the stressor-response relationship from the list view to switch to detail view. The detail view of each stressor-response relationship includes descriptive details, citations, data, and all other attributes. Interactive plots are included at the bottom of the page. Some relationships are feature rich and contain descriptive background, source citations, file attachments, and other material. Other relationships are more simplified. Click the back button to return to the list view.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://mjbayly.com/stressor-response/chinook-temperature-and-prespawn"><img src="images/srlib002.png" class="img-fluid figure-img" alt="ggg"></a></p>
-<figcaption>Stressor-response database detail view</figcaption>
-</figure>
-</div>
-</section>
-<section id="create-multi-stressor-response-overview-plots" class="level2" data-number="8.3">
-<h2 data-number="8.3" class="anchored" data-anchor-id="create-multi-stressor-response-overview-plots"><span class="header-section-number">8.3</span> Create Multi-Stressor-Response Overview Plots</h2>
-<p>The library allows for the creation of simple multi-stressor overlay plots. These can be especially useful to compare and contrast similar stressor-response relationships across study systems or species. For example, we may wish to compare the relationship between substrate embeddedness and fry capacity across several trout and salmonids.</p>
-<p>In the example below we will use the multi-stressor overlay plots to compare several different relationships between stream temperature and vital rates of Chinook Salmon. Be sure ensure that the stressor metric is the same (or comparable) between each resource. For example, mean August stream temperature vs MWAT etc. Select several SR relationships of interest with the checkbox select inputs and then click the “Overlay Plot” button to create plots:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://mjbayly.com/stressor-plot/53,78,54"><img src="images/srlib003.png" class="img-fluid figure-img" alt="ggg"></a></p>
-<figcaption>Multiple stressor-response overview comparison plots</figcaption>
-</figure>
-</div>
-</section>
-<section id="download-stressor-response-relationships" class="level2" data-number="8.4">
-<h2 data-number="8.4" class="anchored" data-anchor-id="download-stressor-response-relationships"><span class="header-section-number">8.4</span> Download Stressor-Response Relationships</h2>
-<p>For most users the goal will be simply exporting the stressor-response relationships out of the library for use in external software and modelling excercises.</p>
-<p>Select one or more stressor-response relationships of interest and click download. Several download formats are available including a format for the CEMPRA tool (Excel), JSON, etc. The JSON file format exports the entire database archive for selected stressors.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://mjbayly.com/stressor-response"><img src="images/srlib004.png" class="img-fluid figure-img" alt="ggg"></a></p>
-<figcaption>Download/Export stressor-response relationships of interest.</figcaption>
-</figure>
-</div>
-</section>
-<section id="add-edit-and-update-the-database" class="level2" data-number="8.5">
-<h2 data-number="8.5" class="anchored" data-anchor-id="add-edit-and-update-the-database"><span class="header-section-number">8.5</span> Add, Edit, and Update the Database</h2>
-<p>Authenticated users can login, add, edit and update relationships. Once logged in, options appear in the detail view to edit data for relationships. New stressors can be added in the detail view.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://mjbayly.com/stressor-response"><img src="images/srlib005.png" class="img-fluid figure-img" alt="ggg"></a></p>
-<figcaption>ggg</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://mjbayly.com/stressor-response"><img src="images/srlib006.png" class="img-fluid figure-img" alt="ggg"></a></p>
-<figcaption>Login as an authenticated user to add, edit and update relationships.</figcaption>
-</figure>
-</div>
-</section>
-<section id="stressor-response-curve-tracing-tool" class="level2" data-number="8.6">
-<h2 data-number="8.6" class="anchored" data-anchor-id="stressor-response-curve-tracing-tool"><span class="header-section-number">8.6</span> Stressor-Response Curve Tracing Tool</h2>
-<p>Sometimes we need to extract data in figures from older reports. This can be a tedious task, even when using software like ImageJ. A specialized online tool has been developed to upload an image (from file or clipboard), trace the mean response, sd, lower, and upper limits and extract the data in a csv file pre-formatted for the SR database and CEMPRA tool.</p>
-<p><a href="https://mjbayly.com/sr-curve-trace">Access the SR curve tracing tool</a></p>
-<p>(Ass the link to the video tutorial for a quick demo that describes how to use the tool).</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://mjbayly.com/sr-curve-trace"><img src="images/srlib007.png" class="img-fluid figure-img" alt="ggg"></a></p>
-<figcaption>Stressor-response curve tracing tool. Exract data from older figures.</figcaption>
-</figure>
-</div>
 
 
-</section>
 
 <p>Leave questions and comments below (via your GitHub account)</p></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -781,13 +705,13 @@ cookieconsent.run({
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./07_life_cycle_model.html" class="pagination-link" aria-label="Life Cycle Model (Population Model)">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Life Cycle Model (Population Model)</span></span>
+      <a href="./10_case_study_applications.html" class="pagination-link" aria-label="Example Datasets">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Example Datasets</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./09_case_study_applications.html" class="pagination-link" aria-label="Example Datasets">
-        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Example Datasets</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./12_conclusions.html" class="pagination-link" aria-label="Concluding Remarks">
+        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Concluding Remarks</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -206,31 +206,37 @@ cookieconsent.run({
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./07_life_cycle_model.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Life Cycle Model (Population Model)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Life Cycle Model (Population Model) Overview</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08_stressor_response_library.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Stressor-Response Library</span></span></a>
+  <a href="./08_life_cycle_model_part2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Life Cycle Model (Population Model) Habitat &amp; Stressors</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./09_case_study_applications.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Example Datasets</span></span></a>
+  <a href="./09_stressor_response_library.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Stressor-Response Library</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./10_r_package_tutorials.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">R Package Tutorials</span></span></a>
+  <a href="./10_case_study_applications.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Example Datasets</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./11_conclusions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Concluding Remarks</span></span></a>
+  <a href="./11_r_package_tutorials.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">R Package Tutorials</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12_conclusions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Concluding Remarks</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -341,7 +347,7 @@ Figure&nbsp;6.1: About page in the R Shiny web application. 1) Tutorial video fo
 </section>
 <section id="upload-data" class="level2" data-number="6.2">
 <h2 data-number="6.2" class="anchored" data-anchor-id="upload-data"><span class="header-section-number">6.2</span> Upload Data</h2>
-<p>If you would like to import a custom set of stressor-response functions, spatial polygons, or vital rates (for the life cycle model), select the <strong>Upload Data</strong> page in the menu on the left side of the screen. This page allows you to upload four key input files from your computer: the stressor-response workbook (.xlsx), the stressor-magnitude workbook (.xlsx), a spatial polygons file (.gpkg or .shp), and a life cycle profile (.csv). To upload a file from your computer, click “Browse…” on the toolbar below the associated file heading. Next, select the desired file from the file window and click “Open”. The file will begin to upload. A status bar will appear below the file name, indicating the upload status. Once the file has been successfully uploaded, the status bar will display “Upload complete”.</p>
+<p>If you would like to import a custom set of <a href="./02_stressor_response.html">stressor-response functions</a>, spatial polygons, or vital rates (for the <a href="./07_life_cycle_model.html">life cycle model</a>), select the <strong>Upload Data</strong> page in the menu on the left side of the screen. See <a href="./05_data_inputs.html">Data Inputs</a> for detailed guidance on preparing these files. This page allows you to upload four key input files from your computer: the stressor-response workbook (.xlsx), the stressor-magnitude workbook (.xlsx), a spatial polygons file (.gpkg or .shp), and a life cycle profile (.csv). To upload a file from your computer, click “Browse…” on the toolbar below the associated file heading. Next, select the desired file from the file window and click “Open”. The file will begin to upload. A status bar will appear below the file name, indicating the upload status. Once the file has been successfully uploaded, the status bar will display “Upload complete”.</p>
 <div id="fig-figure15" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-figure15-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -435,14 +441,14 @@ Figure&nbsp;6.6: Example of single or multi-location stressor magnitude adjustme
 <p><em>Applications:</em> Locations represent non-standardized units such as stream reaches, watershed polygons etc. and there is rationale for assigning location-specific weighting to score summaries, i.e., habitat capacity and local population size will be proportional to habitat area.</p>
 <p><strong>Summary Method 3: Multiply Joe Model Response Scores and Another Metric (e.g., N) to Weight Results Across Locations</strong></p>
 <p><em>Overview:</em> Ultimately, if we can (roughly) estimate habitat capacity (the hypothetical maximum number of individuals) at a location, then we can use the Joe Model system capacity response scores to estimate a change in habitat capacity by taking the product of the Joe Model response scores (0% to 100%, converted to 0 to 1) and an appropriate weighting variable (e.g., habitat capacity (N) by location, calculated as the product of habitat area × density). We can then report the final values in units of the weighting variable (e.g., Predicted Capacity, N). This calculation method provides a myriad of benefits since we can move away from reporting cumulative effect scores as a scale-independent “response percent” and report final values as more concrete units such as habitat capacity in terms of predicted population size (e.g., N) or habitat area (e.g., m²), etc. that are more easily interpretable to a wider audience.</p>
-<p><em>Calculation Method:</em> By taking the product of the Joe Model response score and a weighting variable we convert final scores from a percent to units of the weighting variable. This method is similar to the basic Channel Unit Method described by <span class="citation" data-cites="cramer2009linking">(<a href="references.html#ref-cramer2009linking" role="doc-biblioref">Cramer &amp; Ackerman, 2009</a>)</span> to estimate habitat suitability and cumulative effects. Where <em>i</em> is the individual location (channel unit, stream reach, etc.), and the equation represents that change in the capacity across locations as each location is multiplied by all location-specific stressors (scaled from 0 to 1). The sum is taken across all (<em>n</em>) locations and reported as a final value across batch replicates.</p>
+<p><em>Calculation Method:</em> By taking the product of the Joe Model response score and a weighting variable we convert final scores from a percent to units of the weighting variable. This method is similar to the basic Channel Unit Method described by <span class="citation" data-cites="cramer2009linking">(<a href="#ref-cramer2009linking" role="doc-biblioref">Cramer &amp; Ackerman, 2009</a>)</span> to estimate habitat suitability and cumulative effects. Where <em>i</em> is the individual location (channel unit, stream reach, etc.), and the equation represents that change in the capacity across locations as each location is multiplied by all location-specific stressors (scaled from 0 to 1). The sum is taken across all (<em>n</em>) locations and reported as a final value across batch replicates.</p>
 <p><em>Applications:</em></p>
 <ul>
 <li><p><strong>Estimating a Quantitative Change in Habitat Carrying Capacity</strong>: If it is possible to estimate habitat capacity per location (e.g., by multiplying stream area (m²) and an estimate of fish density [hypothetical max N/m²]), we can roughly estimate carrying capacity (N = N/m² × m²). We can then use this metric as the weighting variable in the calculation to report the final score as a change in capacity.</p></li>
 <li><p><strong>Estimating an Absolute Change in the Weighted Usable Area (WUA)</strong>: In many instream flow studies, WUA is described as the habitat area in a stream that is considered to be “functional” for a given species/life stage. The WUA value is reported in units of m² but is less than the total stream area. Various Habitat Suitability Index (HSI) curves for depth, velocity, cover, substrate, channel type etc. are multiplied together and then multiplied by the total stream wetted area to calculate the weighted usable area (WUA, m²). We can mimic this calculation in the toolbox if we treat HSI curves as stressors and then take the product of the Joe Model score (0-1) and stream area (m²).</p></li>
 </ul>
 <p>Various other creative methods can be integrated with any metric of interest if there is a rationale to report final values in a specific unit.</p>
-<p>The following section describes how to implement each of the different calculation methods in the CEMPRA R-Shiny Application. First, we need to run the Joe Model in the Main Overview tab. After the model is run we can review results in the Scenario Results section. We can also apply weighting in the socio-economic module (<a href="#fig-figure19a" class="quarto-xref">Figure&nbsp;<span>6.7</span></a>).</p>
+<p>The following section describes how to implement each of the different calculation methods in the CEMPRA R-Shiny Application. First, we need to run the Joe Model in the Main Overview tab. After the model is run we can review results in the Scenario Results section. We can also apply weighting in the socio-economic module (<a href="#fig-figure19a" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-figure19a</span></a>).</p>
 <div id="fig-figure19a" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-figure19a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -453,7 +459,7 @@ Figure&nbsp;6.7: Where to apply weighting in the Joe Model.
 </figcaption>
 </figure>
 </div>
-<p>Next, we can choose to summarize values across locations with either a weighted or unweighted mean (<a href="#fig-figure19b" class="quarto-xref">Figure&nbsp;<span>6.8</span></a>, <a href="#fig-figure19c" class="quarto-xref">Figure&nbsp;<span>6.9</span></a>). By default, the Joe Model results are summarized across locations with an unweighted mean (Summary Method 1). By adjusting the ‘Product or Weight’ input box to ‘Weighted Mean’ and selecting a specific weighting variable we can generate results using Summary Method 2 (a weighted mean).</p>
+<p>Next, we can choose to summarize values across locations with either a weighted or unweighted mean (<a href="#fig-figure19b" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-figure19b</span></a>, <a href="#fig-figure19c" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-figure19c</span></a>). By default, the Joe Model results are summarized across locations with an unweighted mean (Summary Method 1). By adjusting the ‘Product or Weight’ input box to ‘Weighted Mean’ and selecting a specific weighting variable we can generate results using Summary Method 2 (a weighted mean).</p>
 <div id="fig-figure19b" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-figure19b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -474,7 +480,7 @@ Figure&nbsp;6.9: By adjusting the ‘Product or Weight’ input box to ‘Weight
 </figcaption>
 </figure>
 </div>
-<p>We can apply Summary Method 3 ‘Multiply Joe Model Response Scores and Another Metric to Summarize Results Across Locations’ by setting the ‘Product or Weight’ input select box to ‘Product’ (<a href="#fig-figure19d" class="quarto-xref">Figure&nbsp;<span>6.10</span></a>). We then need to select our metric that will be used as the weighting variables to multiply scores by. Remember to define the new y-axis units appropriately.</p>
+<p>We can apply Summary Method 3 ‘Multiply Joe Model Response Scores and Another Metric to Summarize Results Across Locations’ by setting the ‘Product or Weight’ input select box to ‘Product’ (<a href="#fig-figure19d" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-figure19d</span></a>). We then need to select our metric that will be used as the weighting variables to multiply scores by. Remember to define the new y-axis units appropriately.</p>
 <div id="fig-figure19d" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-figure19d-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -506,7 +512,7 @@ Figure&nbsp;6.11: Download the Data page of the R Shiny Application. 1) Model pa
 <h2 data-number="6.8" class="anchored" data-anchor-id="section"><span class="header-section-number">6.8</span> </h2>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
 <div id="ref-cramer2009linking" class="csl-entry" role="listitem">
 Cramer, S. P., &amp; Ackerman, N. K. (2009). Linking stream carrying capacity for salmonids to habitat features. <em>American Fisheries Society Symposium</em>, <em>71</em>, 225–254.
 </div>
@@ -923,8 +929,8 @@ Cramer, S. P., &amp; Ackerman, N. K. (2009). Linking stream carrying capacity fo
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./07_life_cycle_model.html" class="pagination-link" aria-label="Life Cycle Model (Population Model)">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Life Cycle Model (Population Model)</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./07_life_cycle_model.html" class="pagination-link" aria-label="Life Cycle Model (Population Model) Overview">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Life Cycle Model (Population Model) Overview</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
