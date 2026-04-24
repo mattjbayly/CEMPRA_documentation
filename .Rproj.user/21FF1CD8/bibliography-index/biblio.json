@@ -1,0 +1,1599 @@
+{
+    "sources": [
+        {
+            "author": [
+                {
+                    "family": "Alexander",
+                    "given": "S. M."
+                },
+                {
+                    "family": "Provencher",
+                    "given": "J. F."
+                },
+                {
+                    "family": "Henri",
+                    "given": "D. A."
+                },
+                {
+                    "family": "Taylor",
+                    "given": "J. J."
+                },
+                {
+                    "family": "Lloren",
+                    "given": "J. I."
+                },
+                {
+                    "family": "Nanayakkara",
+                    "given": "L."
+                },
+                {
+                    "literal": "others"
+                }
+            ],
+            "container-title": "Environmental Evidence",
+            "id": "alexander2019bridging",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ]
+            },
+            "page": "1-24",
+            "title": "Bridging indigenous and science-based knowledge in coastal and marine research, monitoring, and management in canada",
+            "type": "article-journal",
+            "volume": "8"
+        },
+        {
+            "DOI": "10.1577/T06-072.1",
+            "author": [
+                {
+                    "family": "Bear",
+                    "given": "E. A."
+                },
+                {
+                    "family": "McMahon",
+                    "given": "T. T."
+                },
+                {
+                    "family": "Zale",
+                    "given": "A. V."
+                }
+            ],
+            "container-title": "Transactions of the American Fisheries Society",
+            "id": "bear2007comparative",
+            "issued": {
+                "date-parts": [
+                    [
+                        2007
+                    ]
+                ]
+            },
+            "page": "1113-1121",
+            "title": "Comparative thermal requirements for westslope cutthroat trout and rainbow trout: Implications for species interactions and development of thermal protection standards",
+            "title-short": "Comparative thermal requirements for westslope cutthroat trout and rainbow trout",
+            "type": "article-journal",
+            "volume": "136"
+        },
+        {
+            "author": [
+                {
+                    "family": "Beechie",
+                    "given": "T. J."
+                },
+                {
+                    "family": "Nicol",
+                    "given": "C."
+                },
+                {
+                    "family": "Fogel",
+                    "given": "C."
+                },
+                {
+                    "family": "Jorgensen",
+                    "given": "J."
+                },
+                {
+                    "family": "Timpane-Padgham",
+                    "given": "B."
+                }
+            ],
+            "id": "beechie2021chum",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021
+                    ]
+                ]
+            },
+            "number": "NMFS-NWFSC-CR-2021-02",
+            "publisher": "U.S. Department of Commerce, NOAA",
+            "title": "Chum salmon life-cycle model description and results for the chehalis river basin",
+            "type": "report"
+        },
+        {
+            "author": [
+                {
+                    "family": "Beechie",
+                    "given": "T. J."
+                },
+                {
+                    "family": "Nicol",
+                    "given": "C."
+                },
+                {
+                    "family": "Fogel",
+                    "given": "C."
+                },
+                {
+                    "family": "Jorgensen",
+                    "given": "J."
+                },
+                {
+                    "family": "Thompson",
+                    "given": "J."
+                },
+                {
+                    "family": "Seixas",
+                    "given": "G."
+                },
+                {
+                    "family": "Chamberlin",
+                    "given": "J."
+                },
+                {
+                    "family": "Hall",
+                    "given": "J."
+                },
+                {
+                    "family": "Timpane-Padgham",
+                    "given": "B."
+                },
+                {
+                    "family": "Kiffney",
+                    "given": "P."
+                },
+                {
+                    "family": "Kubo",
+                    "given": "S."
+                },
+                {
+                    "family": "Keaton",
+                    "given": "J."
+                }
+            ],
+            "id": "beechie2021modeling",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021
+                    ]
+                ]
+            },
+            "number": "NMFS-NWFSC-CR-2021-01",
+            "publisher": "U.S. Department of Commerce, NOAA",
+            "title": "Modeling effects of habitat change and restoration alternatives on salmon in the chehalis river basin using a salmonid life-cycle model",
+            "type": "report"
+        },
+        {
+            "author": [
+                {
+                    "family": "Chen",
+                    "given": "Emily Katherine"
+                }
+            ],
+            "genre": "Ph.D. dissertation",
+            "id": "Chen2024ChinookCV",
+            "issued": {
+                "date-parts": [
+                    [
+                        2024
+                    ]
+                ]
+            },
+            "note": "Department of Environmental Science, Policy, and Management. Committee: Stephanie M. Carlson (Chair), Theodore E. Grantham, Carl Boettiger, William H. Satterthwaite.",
+            "publisher": "University of California, Berkeley",
+            "publisher-place": "Berkeley, CA",
+            "title": "Life history and population dynamics of chinook salmon in the central valley",
+            "type": "thesis"
+        },
+        {
+            "author": [
+                {
+                    "family": "Cox-Rogers",
+                    "given": "S."
+                },
+                {
+                    "family": "Hume",
+                    "given": "J. M. B."
+                },
+                {
+                    "family": "Shortreed",
+                    "given": "K. S."
+                },
+                {
+                    "family": "Spilsted",
+                    "given": "B."
+                }
+            ],
+            "collection-title": "Canadian manuscript report of fisheries and aquatic sciences",
+            "id": "CoxRogersEtAl2010SkeenaSockeye",
+            "issued": {
+                "date-parts": [
+                    [
+                        2010
+                    ]
+                ]
+            },
+            "note": "Science Branch, Pacific Region, North Coast Stock Assessment Unit",
+            "number": "2920",
+            "publisher": "Fisheries; Oceans Canada",
+            "publisher-place": "Prince Rupert, BC, Canada",
+            "title": "A risk assessment model for skeena river sockeye salmon",
+            "type": "report"
+        },
+        {
+            "author": [
+                {
+                    "family": "Cramer",
+                    "given": "S. P."
+                },
+                {
+                    "family": "Ackerman",
+                    "given": "N. K."
+                }
+            ],
+            "container-title": "American fisheries society symposium",
+            "id": "cramer2009linking",
+            "issued": {
+                "date-parts": [
+                    [
+                        2009
+                    ]
+                ]
+            },
+            "page": "225-254",
+            "title": "Linking stream carrying capacity for salmonids to habitat features",
+            "type": "paper-conference",
+            "volume": "71"
+        },
+        {
+            "author": [
+                {
+                    "family": "Halpern",
+                    "given": "B. S."
+                },
+                {
+                    "family": "Fujita",
+                    "given": "R."
+                }
+            ],
+            "container-title": "Ecosphere",
+            "id": "halpern2013assumptions",
+            "issued": {
+                "date-parts": [
+                    [
+                        2013
+                    ]
+                ]
+            },
+            "page": "1-11",
+            "title": "Assumptions, challenges, and future directions in cumulative impact analysis",
+            "type": "article-journal",
+            "volume": "4"
+        },
+        {
+            "author": [
+                {
+                    "family": "Houde",
+                    "given": "N."
+                }
+            ],
+            "container-title": "Ecology and Society",
+            "id": "houde2007six",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2007
+                    ]
+                ]
+            },
+            "title": "The six faces of traditional ecological knowledge: Challenges and opportunities for canadian co-management arrangements",
+            "title-short": "The six faces of traditional ecological knowledge",
+            "type": "article-journal",
+            "volume": "12"
+        },
+        {
+            "author": [
+                {
+                    "family": "Jarvis",
+                    "given": "L."
+                },
+                {
+                    "family": "Rosenfeld",
+                    "given": "J."
+                },
+                {
+                    "family": "Gonzalez-Espinosa",
+                    "given": "P."
+                },
+                {
+                    "family": "Enders",
+                    "given": "E."
+                }
+            ],
+            "container-title": "Science of the Total Environment",
+            "id": "jarvis2023process",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023
+                    ]
+                ]
+            },
+            "page": "167456",
+            "title": "A process framework for integrating stressor-response functions into cumulative effects models",
+            "type": "article-journal",
+            "volume": "XXX"
+        },
+        {
+            "DOI": "10.1080/10641260902716954",
+            "author": [
+                {
+                    "family": "Jensen",
+                    "given": "D. W."
+                },
+                {
+                    "family": "Steel",
+                    "given": "E. A."
+                },
+                {
+                    "family": "Fullerton",
+                    "given": "A. H."
+                },
+                {
+                    "family": "Pess",
+                    "given": "G. R."
+                }
+            ],
+            "container-title": "Reviews in Fisheries Science",
+            "id": "jensen2009impact",
+            "issue": "3",
+            "issued": {
+                "date-parts": [
+                    [
+                        2009
+                    ]
+                ]
+            },
+            "page": "348-359",
+            "title": "Impact of fine sediment on incubation survival of pacific salmon: A meta-analysis of published studies",
+            "title-short": "Impact of fine sediment on incubation survival of pacific salmon",
+            "type": "article-journal",
+            "volume": "17"
+        },
+        {
+            "author": [
+                {
+                    "family": "Jorgensen",
+                    "given": "J. C."
+                },
+                {
+                    "family": "Nicol",
+                    "given": "C."
+                },
+                {
+                    "family": "Fogel",
+                    "given": "C."
+                },
+                {
+                    "family": "Beechie",
+                    "given": "T. J."
+                }
+            ],
+            "container-title": "Plos one",
+            "id": "jorgensen2021identifying",
+            "issue": "9",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021
+                    ]
+                ]
+            },
+            "page": "e0256792",
+            "title": "Identifying the potential of anadromous salmonid habitat restoration with life cycle models",
+            "type": "article-journal",
+            "volume": "16"
+        },
+        {
+            "author": [
+                {
+                    "family": "Kendall",
+                    "given": "N. W."
+                },
+                {
+                    "family": "Unrein",
+                    "given": "J."
+                },
+                {
+                    "family": "Volk",
+                    "given": "C."
+                },
+                {
+                    "family": "Beauchamp",
+                    "given": "D. A."
+                },
+                {
+                    "family": "Fresh",
+                    "given": "K. L."
+                },
+                {
+                    "family": "Quinn",
+                    "given": "T. P."
+                }
+            ],
+            "container-title": "North American Journal of Fisheries Management",
+            "id": "kendall2023life",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023
+                    ]
+                ]
+            },
+            "page": "203-230",
+            "title": "Life cycle model reveals sensitive life stages and evaluates recovery options for a dwindling pacific salmon population",
+            "type": "article-journal",
+            "volume": "43"
+        },
+        {
+            "author": [
+                {
+                    "family": "Larned",
+                    "given": "S. T."
+                },
+                {
+                    "family": "Schallenberg",
+                    "given": "M."
+                }
+            ],
+            "container-title": "New Zealand Journal of Marine and Freshwater Research",
+            "id": "larned2019stressor",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ]
+            },
+            "page": "489-512",
+            "title": "Stressor-response relationships and the prospective management of aquatic ecosystems",
+            "type": "article-journal",
+            "volume": "53"
+        },
+        {
+            "author": [
+                {
+                    "family": "MacPherson",
+                    "given": "L."
+                },
+                {
+                    "family": "Sullivan",
+                    "given": "M."
+                },
+                {
+                    "family": "Reilly",
+                    "given": "J."
+                },
+                {
+                    "family": "Paul",
+                    "given": "A."
+                }
+            ],
+            "id": "macpherson2020alberta",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "publisher": "Canadian Science Advisory Secretariat (CSAS)",
+            "title": "Alberta’s fisheries sustainability assessment: A guide to assessing population status, and quantifying cumulative effects using the joe modelling technique",
+            "title-short": "Alberta’s fisheries sustainability assessment",
+            "type": "report"
+        },
+        {
+            "author": [
+                {
+                    "family": "MacPherson",
+                    "given": "L. M."
+                },
+                {
+                    "family": "Reilly",
+                    "given": "J. R."
+                },
+                {
+                    "family": "Neufeld",
+                    "given": "K. R."
+                },
+                {
+                    "family": "Sullivan",
+                    "given": "M. G."
+                },
+                {
+                    "family": "Paul",
+                    "given": "A. J."
+                },
+                {
+                    "family": "Johnston",
+                    "given": "F. D."
+                }
+            ],
+            "container-title": "Fisheries Management and Ecology",
+            "id": "macpherson2023prioritizing",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023
+                    ]
+                ]
+            },
+            "page": "1-17",
+            "title": "Prioritizing bull trout recovery actions using a novel cumulative effects modelling framework",
+            "type": "article-journal"
+        },
+        {
+            "author": [
+                {
+                    "family": "Murray",
+                    "given": "A. M."
+                },
+                {
+                    "family": "Sullivan",
+                    "given": "M. G."
+                },
+                {
+                    "family": "Acorn",
+                    "given": "J."
+                }
+            ],
+            "container-title": "Can. Field-Nat.",
+            "id": "murray2012tribute",
+            "issued": {
+                "date-parts": [
+                    [
+                        2012
+                    ]
+                ]
+            },
+            "page": "373-380",
+            "title": "A tribute to joseph schieser nelson, 1937–2011",
+            "type": "article-journal",
+            "volume": "125"
+        },
+        {
+            "author": [
+                {
+                    "family": "Pearsall",
+                    "given": "et al."
+                }
+            ],
+            "id": "pearsall2022nicola",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022
+                    ]
+                ]
+            },
+            "publisher": "A Process Developed with the Nicola Collaborative Research; Technical Committee",
+            "title": "Nicola watershed RAMS final report 2022: Nicola basin chinook risk assessment final report",
+            "title-short": "Nicola watershed RAMS final report 2022",
+            "type": "report"
+        },
+        {
+            "author": [
+                {
+                    "family": "Piet",
+                    "given": "G. J."
+                },
+                {
+                    "family": "Tamis",
+                    "given": "J. E."
+                },
+                {
+                    "family": "Volwater",
+                    "given": "J."
+                },
+                {
+                    "dropping-particle": "de",
+                    "family": "Vries",
+                    "given": "P."
+                },
+                {
+                    "dropping-particle": "van der",
+                    "family": "Wal",
+                    "given": "J. T."
+                },
+                {
+                    "family": "Jongbloed",
+                    "given": "R. H."
+                }
+            ],
+            "container-title": "Science of The Total Environment",
+            "id": "piet2021roadmap",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021
+                    ]
+                ]
+            },
+            "page": "146847",
+            "title": "A roadmap towards quantitative cumulative impact assessments: Every step of the way",
+            "title-short": "A roadmap towards quantitative cumulative impact assessments",
+            "type": "article-journal",
+            "volume": "784"
+        },
+        {
+            "author": [
+                {
+                    "family": "Pirotta",
+                    "given": "E."
+                },
+                {
+                    "family": "Thomas",
+                    "given": "L."
+                },
+                {
+                    "family": "Costa",
+                    "given": "D. P."
+                },
+                {
+                    "family": "Hall",
+                    "given": "A. J."
+                },
+                {
+                    "family": "Harris",
+                    "given": "C. M."
+                },
+                {
+                    "family": "Harwood",
+                    "given": "J."
+                },
+                {
+                    "literal": "others"
+                }
+            ],
+            "container-title": "Science of the Total Environment",
+            "id": "pirotta2022understanding",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022
+                    ]
+                ]
+            },
+            "page": "153322",
+            "title": "Understanding the combined effects of multiple stressors: A new perspective on a longstanding challenge",
+            "title-short": "Understanding the combined effects of multiple stressors",
+            "type": "article-journal",
+            "volume": "821"
+        },
+        {
+            "author": [
+                {
+                    "family": "Roni",
+                    "given": "P."
+                },
+                {
+                    "family": "Anders",
+                    "given": "P. J."
+                },
+                {
+                    "family": "Beechie",
+                    "given": "T. J."
+                },
+                {
+                    "family": "Kaplowe",
+                    "given": "D. J."
+                }
+            ],
+            "container-title": "North American Journal of Fisheries Management",
+            "id": "roni2018review",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "page": "355-376",
+            "publisher": "Chicago",
+            "title": "Review of tools for identifying, planning, and implementing habitat restoration for pacific salmon and steelhead",
+            "type": "article-journal",
+            "volume": "38"
+        },
+        {
+            "author": [
+                {
+                    "family": "Rosenfeld",
+                    "given": "J. S."
+                }
+            ],
+            "container-title": "Freshwater Biology",
+            "id": "rosenfeld2017developing",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017
+                    ]
+                ]
+            },
+            "page": "1305-1324",
+            "title": "Developing flow–ecology relationships: Implications of nonlinear biological responses for water management",
+            "title-short": "Developing flow–ecology relationships",
+            "type": "article-journal",
+            "volume": "62"
+        },
+        {
+            "author": [
+                {
+                    "family": "Rosenfeld",
+                    "given": "Jordan"
+                },
+                {
+                    "family": "Gonzalez-Espinosa",
+                    "given": "Pedro"
+                },
+                {
+                    "family": "Jarvis",
+                    "given": "Lauren"
+                },
+                {
+                    "family": "Enders",
+                    "given": "Eva"
+                },
+                {
+                    "family": "Bayly",
+                    "given": "Matthew"
+                },
+                {
+                    "family": "Paul",
+                    "given": "Andrew"
+                },
+                {
+                    "family": "MacPherson",
+                    "given": "Laura"
+                },
+                {
+                    "family": "Moore",
+                    "given": "Jonathan"
+                },
+                {
+                    "family": "Sullivan",
+                    "given": "Michael"
+                },
+                {
+                    "family": "Ulaski",
+                    "given": "Marta"
+                },
+                {
+                    "literal": "others"
+                }
+            ],
+            "container-title": "Trends in Ecology & Evolution",
+            "id": "rosenfeld2022stressor",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022
+                    ]
+                ]
+            },
+            "publisher": "Elsevier",
+            "title": "Stressor-response functions as a generalizable model for context dependence",
+            "type": "article-journal"
+        },
+        {
+            "author": [
+                {
+                    "family": "Rosenfeld",
+                    "given": "J. S."
+                },
+                {
+                    "family": "Ayllón",
+                    "given": "D."
+                },
+                {
+                    "family": "Grant",
+                    "given": "J. W."
+                },
+                {
+                    "family": "Naman",
+                    "given": "S. M."
+                },
+                {
+                    "family": "Post",
+                    "given": "J. R."
+                },
+                {
+                    "family": "Matte",
+                    "given": "J.-M."
+                },
+                {
+                    "literal": "others"
+                }
+            ],
+            "container-title": "Advances in the ecology of stream-dwelling salmonids",
+            "editor": [
+                {
+                    "family": "Lobon-Cervia",
+                    "given": "J."
+                },
+                {
+                    "family": "Budy",
+                    "given": "P."
+                },
+                {
+                    "family": "Gresswell",
+                    "given": "R."
+                }
+            ],
+            "id": "rosenfeld2024determinants",
+            "issued": {
+                "date-parts": [
+                    [
+                        2024
+                    ]
+                ]
+            },
+            "page": "1-12",
+            "publisher": "Springer Life Sciences",
+            "title": "Determinants of productive capacity for stream salmonids",
+            "type": "chapter"
+        },
+        {
+            "DOI": "10.1080/10641260902716954",
+            "author": [
+                {
+                    "family": "Jensen",
+                    "given": "D. W."
+                },
+                {
+                    "family": "Steel",
+                    "given": "E. A."
+                },
+                {
+                    "family": "Fullerton",
+                    "given": "A. H."
+                },
+                {
+                    "family": "Pess",
+                    "given": "G. R."
+                }
+            ],
+            "container-title": "Reviews in Fisheries Science",
+            "id": "jensen2009impact",
+            "issue": "3",
+            "issued": {
+                "date-parts": [
+                    [
+                        2009
+                    ]
+                ]
+            },
+            "page": "348-359",
+            "title": "Impact of fine sediment on incubation survival of pacific salmon: A meta-analysis of published studies",
+            "title-short": "Impact of fine sediment on incubation survival of pacific salmon",
+            "type": "article-journal",
+            "volume": "17"
+        },
+        {
+            "author": [
+                {
+                    "family": "Jorgensen",
+                    "given": "J. C."
+                },
+                {
+                    "family": "Nicol",
+                    "given": "C."
+                },
+                {
+                    "family": "Fogel",
+                    "given": "C."
+                },
+                {
+                    "family": "Beechie",
+                    "given": "T. J."
+                }
+            ],
+            "container-title": "Plos one",
+            "id": "jorgensen2021identifying",
+            "issue": "9",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021
+                    ]
+                ]
+            },
+            "page": "e0256792",
+            "title": "Identifying the potential of anadromous salmonid habitat restoration with life cycle models",
+            "type": "article-journal",
+            "volume": "16"
+        },
+        {
+            "author": [
+                {
+                    "family": "Kendall",
+                    "given": "N. W."
+                },
+                {
+                    "family": "Unrein",
+                    "given": "J."
+                },
+                {
+                    "family": "Volk",
+                    "given": "C."
+                },
+                {
+                    "family": "Beauchamp",
+                    "given": "D. A."
+                },
+                {
+                    "family": "Fresh",
+                    "given": "K. L."
+                },
+                {
+                    "family": "Quinn",
+                    "given": "T. P."
+                }
+            ],
+            "container-title": "North American Journal of Fisheries Management",
+            "id": "kendall2023life",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023
+                    ]
+                ]
+            },
+            "page": "203-230",
+            "title": "Life cycle model reveals sensitive life stages and evaluates recovery options for a dwindling pacific salmon population",
+            "type": "article-journal",
+            "volume": "43"
+        },
+        {
+            "author": [
+                {
+                    "family": "Larned",
+                    "given": "S. T."
+                },
+                {
+                    "family": "Schallenberg",
+                    "given": "M."
+                }
+            ],
+            "container-title": "New Zealand Journal of Marine and Freshwater Research",
+            "id": "larned2019stressor",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ]
+            },
+            "page": "489-512",
+            "title": "Stressor-response relationships and the prospective management of aquatic ecosystems",
+            "type": "article-journal",
+            "volume": "53"
+        },
+        {
+            "author": [
+                {
+                    "family": "MacPherson",
+                    "given": "L."
+                },
+                {
+                    "family": "Sullivan",
+                    "given": "M."
+                },
+                {
+                    "family": "Reilly",
+                    "given": "J."
+                },
+                {
+                    "family": "Paul",
+                    "given": "A."
+                }
+            ],
+            "id": "macpherson2020alberta",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "publisher": "Canadian Science Advisory Secretariat (CSAS)",
+            "title": "Alberta’s fisheries sustainability assessment: A guide to assessing population status, and quantifying cumulative effects using the joe modelling technique",
+            "title-short": "Alberta’s fisheries sustainability assessment",
+            "type": "report"
+        },
+        {
+            "author": [
+                {
+                    "family": "MacPherson",
+                    "given": "L. M."
+                },
+                {
+                    "family": "Reilly",
+                    "given": "J. R."
+                },
+                {
+                    "family": "Neufeld",
+                    "given": "K. R."
+                },
+                {
+                    "family": "Sullivan",
+                    "given": "M. G."
+                },
+                {
+                    "family": "Paul",
+                    "given": "A. J."
+                },
+                {
+                    "family": "Johnston",
+                    "given": "F. D."
+                }
+            ],
+            "container-title": "Fisheries Management and Ecology",
+            "id": "macpherson2023prioritizing",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023
+                    ]
+                ]
+            },
+            "page": "1-17",
+            "title": "Prioritizing bull trout recovery actions using a novel cumulative effects modelling framework",
+            "type": "article-journal"
+        },
+        {
+            "author": [
+                {
+                    "family": "Murray",
+                    "given": "A. M."
+                },
+                {
+                    "family": "Sullivan",
+                    "given": "M. G."
+                },
+                {
+                    "family": "Acorn",
+                    "given": "J."
+                }
+            ],
+            "container-title": "Canadian Field-Naturalist",
+            "id": "murray2012tribute",
+            "issued": {
+                "date-parts": [
+                    [
+                        2012
+                    ]
+                ]
+            },
+            "page": "373-380",
+            "title": "A tribute to joseph schieser nelson, 1937–2011",
+            "type": "article-journal",
+            "volume": "125"
+        },
+        {
+            "author": [
+                {
+                    "family": "Pearsall",
+                    "given": "et al."
+                }
+            ],
+            "id": "pearsall2022nicola",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022
+                    ]
+                ]
+            },
+            "title": "Nicola watershed RAMS final report 2022: Nicola basin chinook risk assessment final report. A process developed with the nicola collaborative research and technical committee",
+            "title-short": "Nicola watershed RAMS final report 2022",
+            "type": "report"
+        },
+        {
+            "author": [
+                {
+                    "family": "Piet",
+                    "given": "G. J."
+                },
+                {
+                    "family": "Tamis",
+                    "given": "J. E."
+                },
+                {
+                    "family": "Volwater",
+                    "given": "J."
+                },
+                {
+                    "dropping-particle": "de",
+                    "family": "Vries",
+                    "given": "P."
+                },
+                {
+                    "dropping-particle": "van der",
+                    "family": "Wal",
+                    "given": "J. T."
+                },
+                {
+                    "family": "Jongbloed",
+                    "given": "R. H."
+                }
+            ],
+            "container-title": "Science of The Total Environment",
+            "id": "piet2021roadmap",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021
+                    ]
+                ]
+            },
+            "page": "146847",
+            "title": "A roadmap towards quantitative cumulative impact assessments: Every step of the way",
+            "title-short": "A roadmap towards quantitative cumulative impact assessments",
+            "type": "article-journal",
+            "volume": "784"
+        },
+        {
+            "author": [
+                {
+                    "family": "Pirotta",
+                    "given": "E."
+                },
+                {
+                    "family": "Thomas",
+                    "given": "L."
+                },
+                {
+                    "family": "Costa",
+                    "given": "D. P."
+                },
+                {
+                    "family": "Hall",
+                    "given": "A. J."
+                },
+                {
+                    "family": "Harris",
+                    "given": "C. M."
+                },
+                {
+                    "family": "Harwood",
+                    "given": "J."
+                },
+                {
+                    "literal": "others"
+                }
+            ],
+            "container-title": "Science of the Total Environment",
+            "id": "pirotta2022understanding",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022
+                    ]
+                ]
+            },
+            "page": "153322",
+            "title": "Understanding the combined effects of multiple stressors: A new perspective on a longstanding challenge",
+            "title-short": "Understanding the combined effects of multiple stressors",
+            "type": "article-journal",
+            "volume": "821"
+        },
+        {
+            "author": [
+                {
+                    "family": "Roni",
+                    "given": "P."
+                },
+                {
+                    "family": "Anders",
+                    "given": "P. J."
+                },
+                {
+                    "family": "Beechie",
+                    "given": "T. J."
+                },
+                {
+                    "family": "Kaplowe",
+                    "given": "D. J."
+                }
+            ],
+            "container-title": "North American Journal of Fisheries Management",
+            "id": "roni2018review",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "page": "355-376",
+            "publisher": "Chicago",
+            "title": "Review of tools for identifying, planning, and implementing habitat restoration for pacific salmon and steelhead",
+            "type": "article-journal",
+            "volume": "38"
+        },
+        {
+            "author": [
+                {
+                    "family": "Rosenfeld",
+                    "given": "J. S."
+                }
+            ],
+            "container-title": "Freshwater Biology",
+            "id": "rosenfeld2017developing",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017
+                    ]
+                ]
+            },
+            "page": "1305-1324",
+            "title": "Developing flow–ecology relationships: Implications of nonlinear biological responses for water management",
+            "title-short": "Developing flow–ecology relationships",
+            "type": "article-journal",
+            "volume": "62"
+        },
+        {
+            "author": [
+                {
+                    "family": "Rosenfeld",
+                    "given": "J. S."
+                },
+                {
+                    "family": "Ayllón",
+                    "given": "D."
+                },
+                {
+                    "family": "Grant",
+                    "given": "J. W."
+                },
+                {
+                    "family": "Naman",
+                    "given": "S. M."
+                },
+                {
+                    "family": "Post",
+                    "given": "J. R."
+                },
+                {
+                    "family": "Matte",
+                    "given": "J.-M."
+                },
+                {
+                    "literal": "others"
+                }
+            ],
+            "container-title": "Advances in the ecology of stream-dwelling salmonids",
+            "editor": [
+                {
+                    "family": "Lobon-Cervia",
+                    "given": "J."
+                },
+                {
+                    "family": "Budy",
+                    "given": "P."
+                },
+                {
+                    "family": "Gresswell",
+                    "given": "R."
+                }
+            ],
+            "id": "rosenfeld2024determinants",
+            "issued": {
+                "date-parts": [
+                    [
+                        2024
+                    ]
+                ]
+            },
+            "page": "1-12",
+            "publisher": "Springer Life Sciences",
+            "title": "Determinants of productive capacity for stream salmonids",
+            "type": "chapter"
+        },
+        {
+            "author": [
+                {
+                    "family": "Schäfer",
+                    "given": "R. B."
+                },
+                {
+                    "family": "Piggott",
+                    "given": "J. J."
+                }
+            ],
+            "container-title": "Global Change Biology",
+            "id": "schafer2018advancing",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "page": "1817-1826",
+            "title": "Advancing understanding and prediction in multiple stressor research through a mechanistic basis for null models",
+            "type": "article-journal",
+            "volume": "24"
+        },
+        {
+            "author": [
+                {
+                    "family": "Schaub",
+                    "given": "M."
+                },
+                {
+                    "family": "Kéry",
+                    "given": "M."
+                }
+            ],
+            "id": "schaub2021integrated",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021
+                    ]
+                ]
+            },
+            "publisher": "Academic Press",
+            "title": "Integrated life cycle models: Theory and ecological applications with r and JAGS",
+            "title-short": "Integrated life cycle models",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Sorel",
+                    "given": "M."
+                }
+            ],
+            "genre": "PhD thesis",
+            "id": "sorel2022informing",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022
+                    ]
+                ]
+            },
+            "publisher": "University of Washington",
+            "title": "Informing salmon conservation with life cycle models that account for individual heterogeneity",
+            "type": "thesis"
+        },
+        {
+            "author": [
+                {
+                    "family": "Sullivan",
+                    "given": "M."
+                }
+            ],
+            "id": "sullivan2017adaptive",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017
+                    ]
+                ]
+            },
+            "publisher": "Alberta Environment; Parks; Fisheries Management Branch",
+            "title": "Adaptive management of athabasca rainbow trout; cumulative effects modelling and potential management actions",
+            "type": "report"
+        },
+        {
+            "author": [
+                {
+                    "family": "Van der Lee",
+                    "given": "A. S."
+                },
+                {
+                    "family": "Koops",
+                    "given": "M. A."
+                }
+            ],
+            "id": "vanderlee2020recovery",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "publisher": "Canadian Science Advisory Secretariat",
+            "title": "Recovery potential modelling of westslope cutthroat trout (oncorhynchus clarkii lewisi) in designatable unit 1: Saskatchewan-nelson river populations",
+            "title-short": "Recovery potential modelling of westslope cutthroat trout (oncorhynchus clarkii lewisi) in designatable unit 1",
+            "type": "report"
+        },
+        {
+            "author": [
+                {
+                    "family": "Walters",
+                    "given": "C."
+                }
+            ],
+            "container-title": "Conservation Ecology [online]",
+            "id": "walters1997challenges",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        1997
+                    ]
+                ]
+            },
+            "page": "1",
+            "title": "Challenges in adaptive management of riparian and coastal ecosystems",
+            "type": "article-journal",
+            "volume": "1"
+        },
+        {
+            "author": [
+                {
+                    "family": "Ward",
+                    "given": "B. R."
+                },
+                {
+                    "family": "Slaney",
+                    "given": "P. A."
+                }
+            ],
+            "container-title": "Canadian Special Publication of Fisheries and Aquatic Sciences",
+            "id": "ward1993egg",
+            "issued": {
+                "date-parts": [
+                    [
+                        1993
+                    ]
+                ]
+            },
+            "page": "209-217",
+            "title": "Egg-to-smolt survival and fry-to-smolt density dependence of keough river steelhead trout",
+            "type": "article-journal"
+        },
+        {
+            "DOI": "10.1111/nrm.12109",
+            "author": [
+                {
+                    "family": "Davison",
+                    "given": "R. J."
+                },
+                {
+                    "family": "Satterthwaite",
+                    "given": "W. H."
+                }
+            ],
+            "container-title": "Natural Resource Modeling",
+            "id": "davison2016",
+            "issue": "4",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016
+                    ]
+                ]
+            },
+            "page": "538-558",
+            "title": "Use of age and stage structured matrix models to predict life history schedules for semelparous populations",
+            "type": "article-journal",
+            "volume": "29"
+        },
+        {
+            "ISBN": "978-0128200215",
+            "author": [
+                {
+                    "family": "Schaub",
+                    "given": "Michael"
+                },
+                {
+                    "family": "Kéry",
+                    "given": "Marc"
+                }
+            ],
+            "id": "schaub2021",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021
+                    ]
+                ]
+            },
+            "publisher": "Academic Press",
+            "publisher-place": "Cambridge, MA",
+            "title": "Integrated population models: Theory and ecological applications with r and JAGS",
+            "title-short": "Integrated population models",
+            "type": "book"
+        },
+        {
+            "URL": "https://www.dfo-mpo.gc.ca/csas-sccs/publications/resdocs-docrech/2020/2020_020-eng.html",
+            "author": [
+                {
+                    "family": "Van der Lee",
+                    "given": "A. S."
+                },
+                {
+                    "family": "Koops",
+                    "given": "M. A."
+                }
+            ],
+            "genre": "Research Document",
+            "id": "vanderlee2020",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "number": "2020/020",
+            "publisher": "Canadian Science Advisory Secretariat",
+            "publisher-place": "Ottawa, ON",
+            "title": "Recovery potential modelling of westslope cutthroat trout (oncorhynchus clarkii lewisi) in designatable unit 1: Saskatchewan-nelson river populations",
+            "title-short": "Recovery potential modelling of westslope cutthroat trout (oncorhynchus clarkii lewisi) in designatable unit 1",
+            "type": "report"
+        },
+        {
+            "DOI": "10.1007/978-1-4615-6005-0_2",
+            "author": [
+                {
+                    "family": "Caswell",
+                    "given": "Hal"
+                }
+            ],
+            "container-title": "Structured-population models in marine, terrestrial, and freshwater systems",
+            "editor": [
+                {
+                    "family": "Tuljapurkar",
+                    "given": "S."
+                },
+                {
+                    "family": "Caswell",
+                    "given": "H."
+                }
+            ],
+            "id": "caswell1997",
+            "issued": {
+                "date-parts": [
+                    [
+                        1997
+                    ]
+                ]
+            },
+            "page": "19-58",
+            "publisher": "Springer US",
+            "publisher-place": "Boston, MA",
+            "title": "Matrix methods for population analysis",
+            "type": "chapter"
+        }
+    ],
+    "project_biblios": [
+        "references.bib"
+    ]
+}

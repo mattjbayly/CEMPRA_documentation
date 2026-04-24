@@ -1,0 +1,68 @@
+{
+  "index.qmd": {
+    "index.html": "c9650751"
+  },
+  "01_intro.qmd": {
+    "01_intro.html": "bdb52580"
+  },
+  "02_stressor_response.qmd": {
+    "02_stressor_response.html": "95c7bc01"
+  },
+  "03_pathways_endpoints.qmd": {
+    "03_pathways_endpoints.html": "b171c94f"
+  },
+  "04_initial_setup.qmd": {
+    "04_initial_setup.html": "de4ac6ae"
+  },
+  "05_data_inputs.qmd": {
+    "05_data_inputs.html": "a9801fe3"
+  },
+  "06_r_shiny_app.qmd": {
+    "06_r_shiny_app.html": "099a188c"
+  },
+  "07_life_cycle_model.qmd": {
+    "07_life_cycle_model.html": "62c24598"
+  },
+  "08_stressor_response_library.qmd": {
+    "08_stressor_response_library.html": "8e1eb18b"
+  },
+  "09_case_study_applications.qmd": {
+    "09_case_study_applications.html": "266bfa55"
+  },
+  "10_r_package_tutorials.qmd": {
+    "10_r_package_tutorials.html": "8be51a29"
+  },
+  "11_conclusions.qmd": {
+    "11_conclusions.html": "0856d856"
+  },
+  "references.qmd": {
+    "references.html": "7a2f631d"
+  },
+  "appendix_ndss_case_study.qmd": {
+    "appendix_ndss_case_study.html": "1a783cca"
+  },
+  "appendix_interaction_matrix.qmd": {
+    "appendix_interaction_matrix.html": "0e1c4d00"
+  },
+  "appendix_socio_economic.qmd": {
+    "appendix_socio_economic.html": "af1b8fad"
+  },
+  "appendix_formula_builder.qmd": {
+    "appendix_formula_builder.html": "97407341"
+  },
+  "08_life_cycle_model_part2.qmd": {
+    "08_life_cycle_model_part2.html": "9130279e"
+  },
+  "09_stressor_response_library.qmd": {
+    "09_stressor_response_library.html": "b9a95c2f"
+  },
+  "10_case_study_applications.qmd": {
+    "10_case_study_applications.html": "f41178ea"
+  },
+  "11_r_package_tutorials.qmd": {
+    "11_r_package_tutorials.html": "5accf435"
+  },
+  "12_conclusions.qmd": {
+    "12_conclusions.html": "b900da88"
+  }
+}

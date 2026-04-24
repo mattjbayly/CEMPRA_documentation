@@ -1,0 +1,100 @@
+# CEMPRA {.unnumbered}
+
+### Editors {.unnumbered}
+
+-   Matthew Bayly, M.J. Bayly Analytics Ltd.
+-   Alexandra Tekatch, ESSA Technologies Ltd.
+-   Jordan Rosenfeld, the University of British Columbia, BC WLRS
+-   Sierra Lynn Sullivan, the University of British Columbia
+-   Eva Enders, INRS
+-   Lauren Jarvis, Department of Fisheries and Oceans
+
+### Contributors {.unnumbered}
+
+::: {.column width="30%"}
+-   Matthew Bayly, MJBA
+-   Alexandra Tekatch, ESSA
+-   Jordan Rosenfeld, UBC/BC-WLRS
+-   Sierra Lynn Sullivan, UBC
+-   Eva Enders, INRS
+-   Lauren Jarvis, DFO
+-   Julian Heavyside, ESSA
+:::
+
+::: {.column width="30%"}
+-   Andrew Paul, AEP
+-   Kyle Wilson, CCIRA
+-   Pedro Gonzalez, UBC
+-   Laura MacPherson, AEP
+-   Isuru Dharmasena
+-   Marc Porter, ESSA
+:::
+
+[*Project funded (in part) throught the British Columbia Salmon Restoration and Innovation Fund (BCSRIF).*]{style="color: grey;"}
+
+### Suggested Citation
+
+Bayly, M., J., Tekatch, A., M., Rosenfeld, J., Jarvis, L., Enders, E., 2024. Cumulative Effects Model for Prioritizing Recovery Actions (CEMPRA): User Guide. Documentation prepared by ESSA Technologies Ltd. for the BC Water, Land and Resource S. 77 pp. https://essatech.github.io/CEMPRA/
+
+## Project Components
+
+-   GitHub Repository for CEMPRA R-Package (<https://github.com/essatech/CEMPRA>)
+-   GitHub Repository for CEMPRA R-Shiny Application (<https://github.com/essatech/CEMPRAShiny>)
+-   LIVE (online R-Shiny Application) (<https://essa.shinyapps.io/CEMPRAShiny/>)
+-   R-Package Tutorials (<https://essatech.github.io/CEMPRA/index.html>)
+-   Guidance Document (Real-time Updates): (<https://mattjbayly.github.io/CEMPRA_documentation/>)
+-   (old static version) Guidance Document (2024 pdf): (<https://www.essa.com/wp-content/uploads/2024/05/Guideline_Documentation_Report-2024.03.14.pdf>)
+-   Stressor-Response Library: (<https://mjbayly.com/stressor-response>)
+
+## Purpose
+
+This document is the primary guidance document for the Cumulative Effects Model for Prioritizing Recovery Actions (CEMPRA). It includes a walkthrough of the model, its components, inputs and outputs, benefits and limitations, and instructions for using it in two available formats: an R package and an R Shiny Web Application. For further details on the model and examples of its implementation, please refer to [@macpherson2020alberta], [@macpherson2023prioritizing].
+
+## Acknowledgements
+
+## 'Joe Model' Testimonial to Joe Nelson
+
+The CEMPRA model contains the *Joe Model* as a subcomponent. The Joe Model nickname was given in honour of the University of Alberta Ichthyologist Dr. Joseph Nelson ([@macpherson2020alberta]; [@murray2012tribute]). We acknowledge Dr. Nelson's profound impact on ichthyology and the original Alberta cumulative effects modelling framework acting as the foundation of the CEMPRA tool.
+
+## Executive Summary
+
+The Cumulative Effects Model for Prioritizing Recovery Actions (CEMPRA) is a cumulative effects modelling framework. The CEMPRA tool uses a series of standardized user-defined stressor-response functions to link environmental attributes to the system capacity and productivity of a target species/system. This framework design is as generalizable, simple, and versatile as possible so that users can apply the model to various geographic regions, contexts, systems, and species. As the name suggests, the CEMPRA tool helps prioritize recovery actions for data-limited species and species-at-risk, with the flexibility to accommodate both data-rich and data-poor study systems and to facilitate and efficient transition from simple to complex modelling within a single platform as more information becomes available for a target species. The CEMPRA is intended as a low-barrier tool and is accessible as an open-source R package (<https://github.com/essatech/CEMPRA>) and R Shiny interactive web application (<https://github.com/essatech/CEMPRAShiny>).
+
+Stressor-response functions form the foundation of the CEMPRA tool. A stressor variable is broadly characterized as an environmental driver resulting in an observable biological response in a target population ([@pirotta2022understanding]; [@rosenfeld2022stressor]; [@jarvis2023process]). Within the CEMPRA tool, stressors represent and capture various metrics of cumulative effects (direct or proximal) and their associated impact pathways (e.g., stream temperature, sedimentation, habitat loss).
+
+Stressor-response functions are developed for each metric in a standardized format and linked to population-level productivity (mean system capacity, usually expressed as density or total abundance of the adult population in the basic Joe model) or specific vital rates within a life cycle modelling framework. Users then populate a matching table of stressor-magnitude values linked to various locations (spatial units) of interest. Finally, the CEMPRA tool runs to generate stochastic simulations of the study system under different user-defined management or recovery scenarios. Comparisons between scenarios are commonly made against a default reference (status quo) scenario. Scenarios generally consist of various "alternative futures" to characterize potential impacts from development activities and/or alternative restoration/recovery efforts. Comparisons between scenarios can be quantitative (e.g., looking at a weighted mean system capacity or relative productivity) or qualitative by simply looking at a heatmap of stressors across the landscape.
+
+There are two modelling pathways and associated endpoints within the CEMPRA framework: 1) the first is the basic Joe Model that estimates system capacity (a generalized response metric, typically represented by percent of maximum adult population size since it is a single-stage model); and 2) a stage-structured life cycle model, where stressor-response relationships are directly linked to specific life stages and vital rates. The life cycle model allows users to adjust vital rate parameters to estimate cumulative effects at the population level and is intended for data-rich populations or species. The combination of the Joe model and life-cycle model embedded within the CEMPRA framework allows flexibility to handle data-poor and data-rich species within the same platform.
+
+Additional supporting resources are being developed to facilitate ease of use and collaboration between individuals studying cumulative effects. These resources include the development of an online stressor-response library (digital archive), example species profiles of population vital rates for running the life cycle model, case studies, and tutorial resources.
+
+{{< video https://youtu.be/Ln9EYi_NVPo >}}
+
+
+## Bibliography of Selected Joe Model / CEMPRA Applications
+
+Bayly, M. J., Mushet, G. B., Alexander, C., & Bruns, A. (2025). Informing cumulative effects management for Chinook salmon in the Nicola Watershed. Prepared by ESSA Technologies Ltd. for Nooaitch Indian Band. 89 pp.
+
+Bayly, M. J., Tekatch, A., & Rosenfeld, J. (2026). Application of a cumulative effects model for prioritizing recovery actions in Nooksack dace and Salish sucker critical reaches. Report prepared by ESSA Technologies Ltd. for the University of British Columbia (UBC). 42 pp. + Appendices.
+
+Bayly, M. J., Tekatch, A. M., & Rosenfeld, J. (2023). Cumulative effects model for prioritizing recovery actions (CEMPRA). Documentation prepared by ESSA Technologies Ltd. for the BC Ministry of Environment. 77 pp.
+
+Bayly, M. J., Tekatch, A., & Crew, A. (2025). Application of the cumulative effects model for the prioritization of recovery actions (CEMPRA) to support the Nanaimo summer Chinook rebuilding plan. Canadian Contract Report of Hydrography and Ocean Sciences, 65, vii + 78 p. https://publications.gc.ca/collections/collection_2025/mpo-dfo/Fs97-17-65-eng.pdf
+
+Canadian Science Advisory Secretariat. (2019, August). Review of Alberta Environment and Parks cumulative effects assessment Joe Model (Central and Arctic Region Science Advisory Report 2019/045). Fisheries and Oceans Canada. https://publications.gc.ca/collections/collection_2019/mpo-dfo/fs70-6/Fs70-6-2019-045-eng.pdf
+
+FWCP Peace Region. (2024). Collaborations with the Ministry of Water, Land, and Resource Stewardship (WLRS), University of Northern British Columbia (UNBC), local fisheries experts, FWCP, and the Cumulative Effects Model for Prioritizing Recovery Actions (CEMPRA) Project working group (additional details unknown). https://a100.gov.bc.ca/pub/acat/documents/r63248/PEA_F25_F_4090_DCA_1749665283363_A169AC8317.pdf
+
+Jarvis, L. (2022). Unpublished case study for the Plains sucker using a cumulative effects model for prioritizing recovery actions. Fisheries and Oceans Canada.
+
+Jarvis, L., Rosenfeld, J., Gonzalez-Espinosa, P. C., & Enders, E. C. (2024). A process framework for integrating stressor-response functions into cumulative effects models. Science of the Total Environment, 906, 167456. https://espace.inrs.ca/id/eprint/13754/1/P4383.pdf
+
+MacPherson, L., Sullivan, M., Reilly, J., & Paul, A. (2020). Alberta’s fisheries sustainability assessment: A guide to assessing population status, and quantifying cumulative effects using the Joe modelling technique. DFO Canadian Science Advisory Secretariat Research Document 2019/058, vii + 45 p. https://waves-vagues.dfo-mpo.gc.ca/Library/40948110.pdf
+
+MacPherson, L. M., Reilly, J. R., Neufeld, K. R., Sullivan, M. G., Paul, A. J., & Johnston, F. D. (2023). Prioritizing bull trout recovery actions using a novel cumulative effects modelling framework. Fisheries Management and Ecology. https://doi.org/10.1111/fme.12649
+
+Rosenfeld, J., Gonzalez-Espinosa, P., Jarvis, L., Enders, E., Bayly, M., Paul, A., MacPherson, L., Moore, J., Sullivan, M., Ulaski, M., et al. (2022). Stressor-response functions as a generalizable model for context dependence. Trends in Ecology & Evolution. https://klwilson.org/wp-content/uploads/2022/10/stressor-response-functions-and-context-dependence-in-ecology-rosenfeld-et-al.-2022.pdf
+
+Rossi, K., O’Connor, B., & Hagen, J. (2025, May 22). Bull trout spawner abundance and critical habitats: Monitoring migratory bull trout in Williston Reservoir to support conservation and enhancement action (FWCP Project No. PEA-F25-F-4054). Chu Cho Environmental LLP. https://a100.gov.bc.ca/pub/acat/documents/r63274/PEA_F25_F_4054_REDACTED_1753887935311_9E0BADAF9D.pdf
+
+Sullivan, M., & Reilly, J. (2023). Alberta bull trout (Saskatchewan-Nelson DU): Estimates of mature individuals, redd areas and future population trends to support COSEWIC status assessment. Technical Fisheries Memorandum to Robin Gutsell, September 21, 2023. 24 pp.
