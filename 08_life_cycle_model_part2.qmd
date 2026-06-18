@@ -618,6 +618,18 @@ For anadromous species, additional Life_stages column tags target pre-breeder (P
 -   **Underscores and spaces are removed** during processing (e.g., `stage_1` and `stage1` are equivalent)
 -   You can specify **multiple life stages** separated by commas (e.g., `stage_1, stage_2`), but we recommend having a 1:1 relationship between a stressor-response relationship and a vital rate linkage. We recommend duplicating stressors in the stressor-magnitude and stressor-response relationship workbook for 1:many relationships between stressors and vital rates.
 
+## Setting Up the Stressor Magnitude File
+
+The stressor magnitude file defines the dose (mean, standard deviation, distribution, and limits) of each stressor at each location (HUC). For the full description of this file and its required columns, refer back to the [Stressor Magnitude File](https://mattjbayly.github.io/CEMPRA_documentation/05_data_inputs.html#stressor-magnitude-file) section of the Data Inputs chapter. The notes below describe an optional feature that is specific to the population model.
+
+### Optional Stressor Activation Window (`From_Year` and `To_Year`)
+
+By default, every stressor is applied to all years of a population model simulation. You can optionally restrict a stressor to a specific time window by adding two columns to the stressor magnitude file: `From_Year` and `To_Year`. When supplied for a given stressor–location combination, the stressor only affects vital rates between those simulation years (inclusive); outside that window the stressor is treated as having no effect. For example, if a stressor called `Drawdown` at location #44 is given a `From_Year` of 50 and a `To_Year` of 70, then `Drawdown` is switched off before simulation year 50 and after year 70, and is only active in years 50 through 70. This is useful for representing time-limited pressures such as a temporary construction impact, a planned restoration action that takes effect partway through a run, or a stressor that is only expected to occur during a defined period.
+
+The feature is fully backwards compatible and entirely optional. If the `From_Year` and `To_Year` columns are absent, or if they are left blank for a particular stressor, that stressor is applied to all years exactly as before — existing stressor magnitude files do not need to change. The columns can be populated for only a subset of stressors; any stressor with missing values is simply applied across the whole simulation. You can also supply only one of the two bounds: providing only `From_Year` activates the stressor from that year onward (to the end of the run), while providing only `To_Year` runs the stressor from the start of the simulation up to that year. If `From_Year` is greater than `To_Year` the window is empty, so the stressor is treated as inactive for all years and a warning is issued to flag the likely data-entry error.
+
+Note that `From_Year` and `To_Year` are used **only by the population model**. They are ignored by the Joe Model, which continues to evaluate cumulative system capacity across all stressors without any time restriction. The years refer to the simulation time step (1 to the number of years in the run), not calendar years.
+
 ## Tips on Building a New Life Cycle Profile From Scratch
 
 A customized life cycle profile can be developed using the following template: [Life Cycle Profile Template](https://github.com/essatech/CEMPRAShiny/blob/main/data/demo/life%20cycles.csv).
