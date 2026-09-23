@@ -311,10 +311,10 @@ cookieconsent.run({
   <li><a href="#stochastic-simulations" id="toc-stochastic-simulations" class="nav-link" data-scroll-target="#stochastic-simulations"><span class="header-section-number">7.5</span> Stochastic Simulations</a>
   <ul class="collapse">
   <li><a href="#eps_sd-standard-deviation-in-eggs-per-spawner" id="toc-eps_sd-standard-deviation-in-eggs-per-spawner" class="nav-link" data-scroll-target="#eps_sd-standard-deviation-in-eggs-per-spawner"><span class="header-section-number">7.5.1</span> eps_sd: Standard Deviation in Eggs-per-Spawner</a></li>
-  <li><a href="#egg_rho-correlation-in-egg-fecundity-through-time" id="toc-egg_rho-correlation-in-egg-fecundity-through-time" class="nav-link" data-scroll-target="#egg_rho-correlation-in-egg-fecundity-through-time"><span class="header-section-number">7.5.2</span> egg_rho: Correlation in Egg Fecundity Through Time</a></li>
-  <li><a href="#m.cv-coefficient-of-variation-cv-in-interannual-stage-specific-mortality" id="toc-m.cv-coefficient-of-variation-cv-in-interannual-stage-specific-mortality" class="nav-link" data-scroll-target="#m.cv-coefficient-of-variation-cv-in-interannual-stage-specific-mortality"><span class="header-section-number">7.5.3</span> M.cv: Coefficient of Variation (CV) in Interannual Stage-Specific Mortality</a></li>
-  <li><a href="#m.rho-correlation-in-stage-class-mortality-through-time" id="toc-m.rho-correlation-in-stage-class-mortality-through-time" class="nav-link" data-scroll-target="#m.rho-correlation-in-stage-class-mortality-through-time"><span class="header-section-number">7.5.4</span> M.rho: Correlation in Stage-Class Mortality Through Time</a></li>
-  <li><a href="#p.cat-probability-of-catastrophe-per-generation" id="toc-p.cat-probability-of-catastrophe-per-generation" class="nav-link" data-scroll-target="#p.cat-probability-of-catastrophe-per-generation"><span class="header-section-number">7.5.5</span> p.cat: Probability of Catastrophe per Generation</a></li>
+  <li><a href="#egg_rho-correlation-in-fecundity-across-stage-classes" id="toc-egg_rho-correlation-in-fecundity-across-stage-classes" class="nav-link" data-scroll-target="#egg_rho-correlation-in-fecundity-across-stage-classes"><span class="header-section-number">8.0.1</span> egg_rho: Correlation in Fecundity Across Stage Classes</a></li>
+  <li><a href="#m.cv-coefficient-of-variation-cv-in-interannual-stage-specific-mortality" id="toc-m.cv-coefficient-of-variation-cv-in-interannual-stage-specific-mortality" class="nav-link" data-scroll-target="#m.cv-coefficient-of-variation-cv-in-interannual-stage-specific-mortality"><span class="header-section-number">9.0.1</span> M.cv: Coefficient of Variation (CV) in Interannual Stage-Specific Mortality</a></li>
+  <li><a href="#m.rho-correlation-in-mortality-across-stage-classes" id="toc-m.rho-correlation-in-mortality-across-stage-classes" class="nav-link" data-scroll-target="#m.rho-correlation-in-mortality-across-stage-classes"><span class="header-section-number">9.0.2</span> M.rho: Correlation in Mortality Across Stage Classes</a></li>
+  <li><a href="#p.cat-probability-of-catastrophe-per-generation" id="toc-p.cat-probability-of-catastrophe-per-generation" class="nav-link" data-scroll-target="#p.cat-probability-of-catastrophe-per-generation"><span class="header-section-number">10.0.1</span> p.cat: Probability of Catastrophe per Generation</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -370,7 +370,7 @@ cookieconsent.run({
 <li><strong>Name</strong>: The short form name of the parameter used in the model. The names of these parameters are referenced by the model code and should not be modified (apart from adding or removing stage classes). <em>Feel free to add or remove rows, depending on the number of stages, but do not change the text in this column.</em></li>
 <li><strong>Value</strong>: The numeric value of the parameter used in the model. The values are adjusted for each species profile.</li>
 </ul>
-<p>The following table shows an example life cycle parameters file for Athabasca Rainbow Trout (non-anadromous).</p>
+<p>The following table shows an example life cycle parameters file for Athabasca Rainbow Trout (non-anadromous). Note that the life cycle model supports between <strong>2 and 10 life stages</strong> (<code>Nstage</code>); files outside this range are rejected with an error.</p>
 <table class="caption-top table">
 <caption>Example life cycle parameters file for Athabasca Rainbow Trout (non-anadromous)</caption>
 <colgroup>
@@ -407,152 +407,184 @@ cookieconsent.run({
 <td>1</td>
 </tr>
 <tr class="odd">
-<td>Eggs per female spawn</td>
-<td>eps</td>
-<td>3000</td>
+<td>Eggs per female spawn (stage 1, immature)</td>
+<td>eps_1</td>
+<td>0</td>
 </tr>
 <tr class="even">
+<td>Eggs per female spawn (stage 2, immature)</td>
+<td>eps_2</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>Eggs per female spawn (stage 3, immature)</td>
+<td>eps_3</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Eggs per female spawn (stage 4, mature)</td>
+<td>eps_4</td>
+<td>3000</td>
+</tr>
+<tr class="odd">
 <td>spawning interval</td>
 <td>int</td>
 <td>1</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>egg survival</td>
 <td>SE</td>
 <td>0.1</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>yoy survival</td>
 <td>S0</td>
 <td>0.3</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>sex ratio</td>
 <td>SR</td>
 <td>0.5</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Hatchling Survival</td>
 <td>surv_1</td>
 <td>0.3</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Juvenile Survival</td>
 <td>surv_2</td>
 <td>0.3</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Sub-adult Survival</td>
 <td>surv_3</td>
 <td>0.9</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Adult Survival</td>
 <td>surv_4</td>
 <td>0.9</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Years as hatchling</td>
 <td>year_1</td>
 <td>1</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>years as juvenile</td>
 <td>year_2</td>
 <td>2</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>years as subadult</td>
 <td>year_3</td>
 <td>2</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>years as adult</td>
 <td>year_4</td>
 <td>5</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>egg survival compensation ratio</td>
 <td>cr_E</td>
 <td>1</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>yoy survival compensation ratio</td>
 <td>cr_0</td>
 <td>3</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>hatchling survival compensation ratio</td>
 <td>cr_1</td>
 <td>2.5</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>juvenile survival compensation ratio</td>
 <td>cr_2</td>
 <td>2</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>subadult survival compensation ratio</td>
 <td>cr_3</td>
 <td>1.1</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>adult survival compensation ratio</td>
 <td>cr_4</td>
 <td>1</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>maturity as hatchling</td>
 <td>mat_1</td>
 <td>0</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>maturity as juvenile</td>
 <td>mat_2</td>
 <td>0</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>maturity as subadult</td>
 <td>mat_3</td>
 <td>0</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>maturity as adult</td>
 <td>mat_4</td>
 <td>1</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>variance in eggs per female</td>
 <td>eps_sd</td>
 <td>1.00E+03</td>
 </tr>
-<tr class="odd">
-<td>correlation in egg fecundity through time</td>
+<tr class="even">
+<td>correlation in fecundity across stage classes</td>
 <td>egg_rho</td>
 <td>0.1</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>coefficient of variation in stage-specific mortality</td>
 <td>M.cv</td>
 <td>1.00E-01</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>correlation in mortality through time</td>
 <td>M.rho</td>
 <td>0.1</td>
 </tr>
 </tbody>
 </table>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Fecundity input format.</strong> Per-stage fecundity rows (<code>eps_1</code>, <code>eps_2</code>, …) are the canonical format for all model types: each stage carries its own eggs-per-female value, with 0 for immature stages. Older profiles that use a single legacy <code>eps</code> row are still accepted — on import, the legacy value is automatically spread across the mature stages (every stage with <code>mat_x &gt; 0</code> receives the value; immature stages get 0) and the legacy row is removed. If a file contains both formats, the per-stage values win and the legacy value only fills mature stages that are missing an <code>eps_x</code> row.</p>
+</div>
+</div>
 </section>
 </section>
 <section id="matrix-life-cycle-model" class="level2" data-number="7.3">
 <h2 data-number="7.3" class="anchored" data-anchor-id="matrix-life-cycle-model"><span class="header-section-number">7.3</span> Matrix Life Cycle Model</h2>
 <p>The stage-structured matrix modelling framework, embedded within the CEMPRA tool, can be represented graphically by a life cycle diagram or a transition matrix. The transition matrix can be represented symbolically with equations or with numerical values (see the Matrix Representations section below). The structure of the life cycle diagram and transition matrix will be different depending on whether the <strong>anadromous</strong> input is set to TRUE (for anadromous/semelparous life histories e.g., salmon) or FALSE (for non-anadromous/iteroparous life histories e.g., most trout and char).</p>
 <p>The life cycle diagram figure (below) shows stage class transitions for Athabasca Rainbow Trout. In the diagram and input file, we see that there are four main stages (stage_1 to stage_4). stage_1 individuals can become stage_4 individuals after three years in the simulation, but it is also possible for some individuals to spend more than one year in stages 2, 3, and 4 (denoted by the circular loop). We also see that stage_4 individuals are sexually mature and have the capacity to generate new stage_1 individuals. There are also special year 0 (Age-0) events that occur before new stage_1 (Age-1) individuals are secured in the simulation. These events include egg survival (SE) and Age-0 fry survival (S0).</p>
-<div id="07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-fig-figure28" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="images/image040.png" class="img-fluid figure-img"></p>
-<figcaption>Sample life cycle diagram for Athabasca Rainbow Trout.</figcaption>
+<div id="fig-figure28" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figure28-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/image040.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figure28-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.1: Sample life cycle diagram for Athabasca Rainbow Trout.
+</figcaption>
 </figure>
 </div>
 <p>The life cycle modelling component of the CEMPRA tool is set up as a pre-birth pulse census (see Caswell 2000). Since the design of stage-structured matrix models does not easily allow for the initial number of eggs and fry to be represented as independent matrix elements (cells), their transitions are included within the fecundity term. In a pre-birth pulse census, we assume that the demographic census takes place immediately before spawning (fecundity), meaning that yearlings of the previous spawning year have survived a full time-step (Age-0/stage-0 to Age-1/stage-1). Yearlings (Age-0: egg &amp; fry) must survive the entire census period to the start of the next census. Therefore, the Age-0 transitions (egg-to-fry survivorship: SE and fry-to-parr survivorship: S0) are accounted for within the fecundity element (cells) of the transition matrix (Table 1).</p>
@@ -639,7 +671,7 @@ cookieconsent.run({
 </table>
 <p><em>Table: Vital rates for survivorship and growth in the life cycle model.</em></p>
 <p>Ensure that all survivorship estimates represent hypothetical density-independent survivorship in the absence of density-dependent constraints. Density-dependent survivorship is accounted for in the next section. If density-independent survivorship is unknown, but strong, density-dependent constraints are to be included in the species profile, then it might be possible to simply set the density-independent survivorship estimate to a value close to 1.0 (e.g., S0: 0.999).</p>
-<p>For fecundity, we have to consider the proportion of each age class that is sexually mature (mat), the proportion of the population that is female (SR: 0.5), the fecundity (eps: eggs per spawner) per spawning event, the spawning events per year (events), and the spawning interval (int). The calculation of individuals in stage class 1 (stage_1) also must account for the Age-0 survivorship of eggs and fry.</p>
+<p>For fecundity, we have to consider the proportion of each age class that is sexually mature (mat), the proportion of the population that is female (SR: 0.5), the stage-specific fecundity (eps_X: eggs per spawner for stage X) per spawning event, the spawning events per year (events), and the spawning interval (int). Each mature stage uses its own <code>eps_X</code> value, so fecundity can increase with age/size; values entered for immature stages (mat_X = 0) have no effect on the projection. The calculation of individuals in stage class 1 (stage_1) also must account for the Age-0 survivorship of eggs and fry.</p>
 <p><em>Sample fecundity function for stage class 4:</em></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -677,16 +709,14 @@ cookieconsent.run({
 <td>Spawning events per female per year. This parameter will almost always be set to 1 for most species to indicate one spawning event per year per mature female. Even for populations with complex life history variants (e.g., systems with both Spring Chinook &amp; Fall Chinook), we still recommend keeping this value at one and using two different species profiles to represent each life history variant.</td>
 </tr>
 <tr class="odd">
-<td><p><u><em>Fixed Fecundity:</em></u></p>
-<p>eps</p>
-<p><u><em>Stage-specific Fecundity (anadromous):</em></u></p>
+<td><p><u><em>Stage-specific Fecundity:</em></u></p>
+<p>eps_1</p>
+<p>eps_2</p>
 <p>eps_3</p>
-<p>eps_4</p>
-<p>eps_5</p>
-<p>eps_…</p></td>
-<td><p>Eggs per spawning female (eps). The mean fecundity per female per spawning event.</p>
-<p>Anadromous simulations: For most species we can simply enter an estimate of the mean eggs per female spawner as a fixed global value (e.g., 500 eggs/spawner). However, for some species we may wish to enter in a separate fecundity value for each stage/age class (e.g., Age-3 spawners, eps_3: 3,700; Age-4 spawners, 4,200 eggs/spawner; Age-5 spawners, 5,000 eggs/spawner).</p>
-<p>If you choose to enter in age/stage-specific fecundity estimates please delete the row for ‘eps’. If you choose to enter in a fixed global fecundity then delete the age-specific fecundity estimates. Currently age-specific fecundities only works for anadromous simulations.</p></td>
+<p>eps_…</p>
+<p>(1 to Nstage)</p></td>
+<td><p>Eggs per spawning female for each stage/age class (mean fecundity per female per spawning event). This is the canonical input format for both anadromous and non-anadromous simulations: enter one eps_X row per stage, with the value set to 0 for immature stages. Each mature stage uses its own value, so fecundity can increase with age/size (e.g., Age-3 spawners, eps_3: 3,700; Age-4 spawners, eps_4: 4,200; Age-5 spawners, eps_5: 5,000). Values entered for immature stages (mat_X = 0) have no effect on the projection. At least one mature stage must have a positive fecundity, otherwise the model stops with a clear error.</p>
+<p><em>Legacy format:</em> a single ‘eps’ row (one fixed fecundity for the whole population) is still accepted for backwards compatibility. On import, the legacy value is spread across the mature stages - every stage with mat_X &gt; 0 receives the value, immature stages get 0 - and the legacy row is removed. If both formats are present, the per-stage eps_X values win and the legacy value only fills mature stages missing a row.</p></td>
 </tr>
 <tr class="even">
 <td>SR</td>
@@ -728,7 +758,7 @@ cookieconsent.run({
 <section id="iteroparous-non-anadromous-species" class="level3" data-number="7.4.1">
 <h3 data-number="7.4.1" class="anchored" data-anchor-id="iteroparous-non-anadromous-species"><span class="header-section-number">7.4.1</span> Iteroparous (Non-anadromous) Species</h3>
 <p>We can combine all parameters discussed in this section along with the example species profile to construct a symbolic (mathematical) representation of the transition matrix (Table 1). The stage-to-stage transitions account for the probability of staying within each stage or advancing to the next stage based on the <code>surv_X</code> and n-year spent within a stage <code>year_X</code>. The fecundity element of the matrix (top row) includes elements for fecundity and Age-0 survivorship.</p>
-<div id="07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-tbl:transition-matrix">
+<div id="tbl:transition-matrix">
 <p>Table 1. Symbolic Representation of the Transition Matrix for non-anadromous species</p>
 <table class="caption-top table">
 <colgroup>
@@ -742,9 +772,11 @@ cookieconsent.run({
 <tbody>
 <tr class="odd">
 <td rowspan="2">=============== <strong>stage_1</strong></td>
-<td colspan="5" rowspan="2"><strong>stage_1</strong> | <strong>stage_2</strong> | <strong>stage_3</strong> | <strong>stage_4</strong> | =====================================================================+======================================================================+======================================================================+===============================================+ surv_1 * (1 - surv_1^( year_1 - 1))/(1 - surv_1^ year_1) | (mat2 * events * eps * sE * s0 * sR)/int | (mat3 * events * eps * sE * s0 * sR)/int | (mat4 * events * eps * sE * s0 * sR)/int |</td>
+<td colspan="4" rowspan="2"><strong>stage_1</strong> | <strong>stage_2</strong> | <strong>stage_3</strong> | <strong>stage_4</strong> =====================================================================+======================================================================+======================================================================+=============================================== surv_1 * (1 - surv_1^( year_1 - 1))/(1 - surv_1^ year_1) | (mat2 * events * eps2 * sE * s0 * sR)/int | (mat3 * events * eps3 * sE * s0 * sR)/int | (mat4 * events * eps4 * sE * s0 * sR)/int</td>
+<td></td>
 </tr>
 <tr class="even">
+<td></td>
 </tr>
 <tr class="odd">
 <td><strong>stage_2</strong></td>
@@ -775,7 +807,7 @@ cookieconsent.run({
 <p><strong>Reading the matrix — a guide for new users</strong></p>
 <p>The matrix has three structural zones:</p>
 <ul>
-<li><strong>Top row (fecundity)</strong>: Only columns corresponding to mature stages have non-zero entries. These convert mature individuals back into new stage-1 recruits, incorporating egg survival (<code>sE</code>), fry survival (<code>s0</code>), sex ratio (<code>sR</code>), maturity (<code>mat_X</code>), fecundity (<code>eps</code>), and spawning parameters. Columns for immature stages are zero because those stages do not reproduce.</li>
+<li><strong>Top row (fecundity)</strong>: Only columns corresponding to mature stages have non-zero entries. These convert mature individuals back into new stage-1 recruits, incorporating egg survival (<code>sE</code>), fry survival (<code>s0</code>), sex ratio (<code>sR</code>), maturity (<code>mat_X</code>), the stage-specific fecundity (<code>eps_X</code>), and spawning parameters. Each column uses its own stage’s <code>eps_X</code> value, so fecundity can differ between mature stages. Columns for immature stages are zero because those stages do not reproduce (<code>mat_X</code> = 0 zeroes the element regardless of the <code>eps_X</code> value entered).</li>
 <li><strong>Diagonal (stage-staying)</strong>: The probability that an individual survives and remains in the same stage for another year. This is only non-zero when <code>year_X &gt; 1</code> (i.e., the stage spans multiple years). The formula <code>surv_X * (1 - surv_X^(year_X - 1)) / (1 - surv_X^year_X)</code> calculates the staying probability. If <code>year_X = 1</code>, the diagonal is zero and all survivors advance.</li>
 <li><strong>Sub-diagonal (stage-advancing)</strong>: The probability that an individual survives and advances to the next stage. Calculated as the complement: <code>surv_X - (staying probability)</code>. The staying and advancing probabilities always sum to exactly <code>surv_X</code>.</li>
 </ul>
@@ -788,9 +820,9 @@ cookieconsent.run({
 </figure>
 </div>
 <p>We can continue with the working example to represent the transition matrix numerically (Table 2). The fecundity element for <code>stage_4</code> is set at 45 since it accounts for the vital rates relating to maturity and Age-0 survivorship.</p>
-<p>Net Fecundity (stage-4) = (mat4 * events * eps * sE * s0 * sR)/int</p>
+<p>Net Fecundity (stage-4) = (mat4 * events * eps4 * sE * s0 * sR)/int</p>
 <p>45 = (1 * 1 * 3,000 * 0.1 * 0.3 * 0.5)/1</p>
-<div id="07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-tbl:numerical-transition-matrix">
+<div id="tbl:numerical-transition-matrix">
 <p>Table 2. Numerical representation of the transition matrix</p>
 <table class="caption-top table">
 <thead>
@@ -966,64 +998,79 @@ cookieconsent.run({
 <h3 data-number="7.5.1" class="anchored" data-anchor-id="eps_sd-standard-deviation-in-eggs-per-spawner"><span class="header-section-number">7.5.1</span> eps_sd: Standard Deviation in Eggs-per-Spawner</h3>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 2%">
-<col style="width: 97%">
+<col style="width: 1%">
+<col style="width: 98%">
 </colgroup>
-<thead>
-<tr class="header">
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead>
 <tbody>
 <tr class="odd">
-<td><code>eps_sd</code></td>
-<td>The Standard Deviation in Eggs-per-Spawner controls the variability in fecundity across simulation years and batch replicates. The example below shows a sample projection with <code>eps_sd</code> set to 250 and 750. In the example with <code>eps_sd</code> set to 750, there are several years with very high fecundity. Density-dependent constraints (if implemented) may attenuate the apparent effect of high <code>eps_sd</code> inputs.</td>
+<td rowspan="2"><h1 id="parameter" data-number="8"><span class="header-section-number">8</span> Parameter</h1>
+<p><code>eps_sd</code></p></td>
+<td rowspan="2">Description | ===================================================================================================================================================================================================================================================================================================================================================================================================================+ The Standard Deviation in Eggs-per-Spawner controls the variability in fecundity across simulation years and batch replicates. The example below shows a sample projection with <code>eps_sd</code> set to 250 and 750. In the example with <code>eps_sd</code> set to 750, there are several years with very high fecundity. Density-dependent constraints (if implemented) may attenuate the apparent effect of high <code>eps_sd</code> inputs. Yearly values are drawn from a log-normal distribution whose mean and SD match the <code>eps_X</code> and <code>eps_sd</code> inputs (draws can never go negative). Note that <code>eps_sd</code> is a single <strong>absolute</strong> SD (in eggs) shared by all stage classes — when stage-specific fecundities differ (e.g., eps_3 = 1,000 and eps_4 = 5,000), the same SD implies proportionally more relative variability for the lower-fecundity stage. If <code>eps_sd</code> is left blank or omitted, fecundity does not vary between years (treated as SD = 0; a console message is printed).</td>
+</tr>
+<tr class="even">
 </tr>
 </tbody>
 </table>
-<div id="07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-fig-eps-sd" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="images/image051.png" class="img-fluid figure-img"></p>
-<figcaption>eps_sd Standard Deviation in Eggs-per-Spawner</figcaption>
+<div id="fig-eps-sd" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-eps-sd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/image051.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-eps-sd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8.1: eps_sd Standard Deviation in Eggs-per-Spawner
+</figcaption>
 </figure>
 </div>
 <div>
 <p>eps_sd Standard Deviation in Eggs-per-Spawner</p>
 </div>
 </section>
-<section id="egg_rho-correlation-in-egg-fecundity-through-time" class="level3" data-number="7.5.2">
-<h3 data-number="7.5.2" class="anchored" data-anchor-id="egg_rho-correlation-in-egg-fecundity-through-time"><span class="header-section-number">7.5.2</span> egg_rho: Correlation in Egg Fecundity Through Time</h3>
+<section id="egg_rho-correlation-in-fecundity-across-stage-classes" class="level3" data-number="8.0.1">
+<h3 data-number="8.0.1" class="anchored" data-anchor-id="egg_rho-correlation-in-fecundity-across-stage-classes"><span class="header-section-number">8.0.1</span> egg_rho: Correlation in Fecundity Across Stage Classes</h3>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 1%">
 <col style="width: 98%">
 </colgroup>
-<thead>
-<tr class="header">
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead>
 <tbody>
 <tr class="odd">
-<td><code>egg_rho</code></td>
-<td>In natural populations, there will be good years and bad years. It’s assumed that good years will be good for large adults and small adults. If multiple mature stage classes contribute to spawning (fecundity) (i.e., maturity values are greater than 0), it is assumed that fecundity will be correlated between good and bad years across stage classes (i.e., stage_5, stage_6 &amp; stage_7). <code>egg_rho</code> controls the degree of correlation in interannual fecundity between stage classes. See the following figure for an illustrative example. If <code>egg_rho</code> is low, and multiple stage classes contribute to spawning, then some stage classes may compensate for good/bad years. Conversely, if <code>egg_rho</code> is high, then the population may be highly volatile as all cohorts experience good/bad years simultaneously.</td>
+<td rowspan="2"><h1 id="parameter-1" data-number="9"><span class="header-section-number">9</span> Parameter</h1>
+<p><code>egg_rho</code></p></td>
+<td rowspan="2">Description | ==============================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================+ In natural populations, there will be good years and bad years. It’s assumed that good years will be good for large adults and small adults. If multiple mature stage classes contribute to spawning (fecundity) (i.e., maturity values are greater than 0), it is assumed that fecundity will be correlated between good and bad years across stage classes (i.e., stage_5, stage_6 &amp; stage_7). <code>egg_rho</code> controls the degree of correlation in fecundity <strong>between stage classes within each simulation year</strong> (compound-symmetry correlation on the stage-specific draws). See the following figure for an illustrative example. If <code>egg_rho</code> is low, and multiple stage classes contribute to spawning, then some stage classes may compensate for good/bad years. Conversely, if <code>egg_rho</code> is high, then the population may be highly volatile as all cohorts experience good/bad years simultaneously.</td>
+</tr>
+<tr class="even">
 </tr>
 </tbody>
 </table>
-<div id="07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-fig-egg-rho" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="images/image052.png" class="img-fluid figure-img"></p>
-<figcaption>egg_rho: correlation in egg fecundity through time</figcaption>
+<div id="fig-egg-rho" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-egg-rho-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/image052.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-egg-rho-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.1: egg_rho: correlation in egg fecundity through time
+</figcaption>
 </figure>
 </div>
 <div>
-<p>egg_rho: correlation in egg fecundity through time</p>
+<p>egg_rho: correlation in fecundity across stage classes</p>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>How the fecundity draws work.</strong> Each simulation year, one fecundity value is drawn per stage class from a log-normal distribution centred on that stage’s <code>eps_X</code> (with spread <code>eps_sd</code>), and <code>egg_rho</code> correlates the draws <strong>across stage classes within that year</strong>. There is currently no year-to-year autocorrelation in fecundity: each year is drawn independently. <code>egg_rho</code> therefore only has an effect when two or more stage classes with <em>different</em> fecundity values contribute to spawning. In non-anadromous models where all mature stages share the same <code>eps_X</code> value (including any profile converted from the legacy single-<code>eps</code> format), a single yearly value is drawn and shared by all mature stages — i.e., they are perfectly correlated, matching the model’s historical behaviour. If <code>egg_rho</code> is left blank or omitted, it is treated as 0 (uncorrelated draws) with a console message.</p>
+</div>
 </div>
 </section>
-<section id="m.cv-coefficient-of-variation-cv-in-interannual-stage-specific-mortality" class="level3" data-number="7.5.3">
-<h3 data-number="7.5.3" class="anchored" data-anchor-id="m.cv-coefficient-of-variation-cv-in-interannual-stage-specific-mortality"><span class="header-section-number">7.5.3</span> M.cv: Coefficient of Variation (CV) in Interannual Stage-Specific Mortality</h3>
+<section id="m.cv-coefficient-of-variation-cv-in-interannual-stage-specific-mortality" class="level3" data-number="9.0.1">
+<h3 data-number="9.0.1" class="anchored" data-anchor-id="m.cv-coefficient-of-variation-cv-in-interannual-stage-specific-mortality"><span class="header-section-number">9.0.1</span> M.cv: Coefficient of Variation (CV) in Interannual Stage-Specific Mortality</h3>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 3%">
@@ -1043,38 +1090,39 @@ cookieconsent.run({
 </tbody>
 </table>
 </section>
-<section id="m.rho-correlation-in-stage-class-mortality-through-time" class="level3" data-number="7.5.4">
-<h3 data-number="7.5.4" class="anchored" data-anchor-id="m.rho-correlation-in-stage-class-mortality-through-time"><span class="header-section-number">7.5.4</span> M.rho: Correlation in Stage-Class Mortality Through Time</h3>
+<section id="m.rho-correlation-in-mortality-across-stage-classes" class="level3" data-number="9.0.2">
+<h3 data-number="9.0.2" class="anchored" data-anchor-id="m.rho-correlation-in-mortality-across-stage-classes"><span class="header-section-number">9.0.2</span> M.rho: Correlation in Mortality Across Stage Classes</h3>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 1%">
 <col style="width: 98%">
 </colgroup>
-<thead>
-<tr class="header">
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead>
 <tbody>
 <tr class="odd">
-<td><code>M.rho</code></td>
-<td><code>M.rho</code>, the correlation in mortality through time, plays a critical role in modeling the variability of survivorship across life stages. In natural populations, the occurrence of good and bad years is often correlated across all stage classes, excluding eggs (<code>SE</code>). <code>M.rho</code> determines the degree of this correlation. A low <code>M.rho</code> value suggests that certain stage classes may compensate for good/bad years based on random sampling of survivorship, while a high <code>M.rho</code> implies that all cohorts may experience good/bad years simultaneously, leading to higher volatility in population dynamics.</td>
+<td rowspan="2"><h1 id="parameter-2" data-number="10"><span class="header-section-number">10</span> Parameter</h1>
+<p><code>M.rho</code></p></td>
+<td rowspan="2">Description | =====================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================+ <code>M.rho</code> plays a critical role in modeling the variability of survivorship across life stages. In natural populations, the occurrence of good and bad years is often correlated across all stage classes, excluding eggs (<code>SE</code>). <code>M.rho</code> determines the degree of this correlation: like <code>egg_rho</code>, it is applied <strong>between stage classes within each simulation year</strong> (an AR1 structure, so adjacent stages are more strongly correlated than distant ones; egg survival is kept independent), and each year’s survival draws are independent of the previous year’s. A low <code>M.rho</code> value suggests that certain stage classes may compensate for good/bad years based on random sampling of survivorship, while a high <code>M.rho</code> implies that all cohorts may experience good/bad years simultaneously, leading to higher volatility in population dynamics. If <code>M.cv</code> or <code>M.rho</code> are left blank or omitted, survival does not vary (CV treated as 0) or draws are uncorrelated (rho treated as 0), respectively, each with a console message.</td>
+</tr>
+<tr class="even">
 </tr>
 </tbody>
 </table>
-<div id="07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-fig-m-rho" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="images/image053.png" class="img-fluid figure-img"></p>
-<figcaption>M.rho: correlation in survivorship through time</figcaption>
+<div id="fig-m-rho" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-m-rho-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/image053.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-m-rho-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;10.1: M.rho: correlation in survivorship through time
+</figcaption>
 </figure>
 </div>
 <div>
 <p>M.rho: correlation in survivorship through time</p>
 </div>
 </section>
-<section id="p.cat-probability-of-catastrophe-per-generation" class="level3" data-number="7.5.5">
-<h3 data-number="7.5.5" class="anchored" data-anchor-id="p.cat-probability-of-catastrophe-per-generation"><span class="header-section-number">7.5.5</span> p.cat: Probability of Catastrophe per Generation</h3>
+<section id="p.cat-probability-of-catastrophe-per-generation" class="level3" data-number="10.0.1">
+<h3 data-number="10.0.1" class="anchored" data-anchor-id="p.cat-probability-of-catastrophe-per-generation"><span class="header-section-number">10.0.1</span> p.cat: Probability of Catastrophe per Generation</h3>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 3%">
@@ -1093,10 +1141,14 @@ cookieconsent.run({
 </tr>
 </tbody>
 </table>
-<div id="07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-fig-p-cat" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="images/image054.png" class="img-fluid figure-img"></p>
-<figcaption>Probability of Catastrophe per Generation</figcaption>
+<div id="fig-p-cat" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-p-cat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/image054.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-p-cat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;10.2: Probability of Catastrophe per Generation
+</figcaption>
 </figure>
 </div>
 <div>

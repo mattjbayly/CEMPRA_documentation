@@ -380,7 +380,7 @@ Figure&nbsp;5.1: Main worksheet in the Stressor-Response workbook.
 </tr>
 <tr class="even">
 <td><strong>Stressor_cat</strong></td>
-<td>Category of the stressor. Only relevant if multiple stressors are linked with a defined interaction. If there is no interaction, simply copy the stressor name here.</td>
+<td>OPTIONAL. A user label for organizing stressors; it may be omitted entirely, left blank, or filled with the stressor name. On load, this column is overwritten with the stressor name (the original label is preserved in a <code>Stressor_cat_orig</code> column). One exception: if the same stressor name appears on multiple rows and each copy carries a distinct, non-blank <code>Stressor_cat</code>, the rows are automatically renamed <code>&lt;Stressor&gt;_&lt;Stressor_cat&gt;</code> (e.g., <code>Pools</code> with categories <code>Winter Habitat</code> and <code>Summer Rear</code> becomes <code>Pools_Winter Habitat</code> and <code>Pools_Summer Rear</code>), with a warning. In that case the stressor-response worksheets must be named with the full concatenated names (note Excel limits worksheet names to 31 characters), and the stressor magnitude workbook must use the same categories so both files resolve to identical final names. Any <code>Linked</code> groups or interaction matrices must also reference the final names. The value <code>Total_Mortality</code> is reserved (see the stressor magnitude workbook notes below).</td>
 </tr>
 <tr class="odd">
 <td><strong>Interaction</strong></td>
@@ -520,7 +520,7 @@ Figure&nbsp;5.3: Example of a stressor magnitude workbook.
 </tr>
 <tr class="even">
 <td><strong>Stressor_cat</strong></td>
-<td>Name of the Stressor category. This column must match the spelling used in the stressor-response workbook.</td>
+<td>OPTIONAL. A user label for organizing stressors; it may be omitted entirely or filled with the stressor name. Two reserved behaviors: (1) rows tagged with the exact value <code>Total_Mortality</code> are aggregated (see footnote below the table); (2) if the stressor-response workbook disambiguated duplicate stressor names as <code>&lt;Stressor&gt;_&lt;Stressor_cat&gt;</code>, dose rows with the matching short name and category are aligned to those full names when the model runs (with a warning) — the categories must match the spelling used in the stressor-response workbook. Duplicate stressor rows whose short name still matches a single stressor-response curve are left untouched (legacy component-row workbooks).</td>
 </tr>
 <tr class="odd">
 <td><strong>Mean</strong></td>
@@ -548,6 +548,7 @@ Figure&nbsp;5.3: Example of a stressor magnitude workbook.
 </tr>
 </tbody>
 </table>
+<p><strong>Footnote — the reserved <code>Total_Mortality</code> category.</strong> Rows in the stressor magnitude workbook whose <code>Stressor_cat</code> is exactly <code>Total_Mortality</code> are combined, per location, into a single synthetic stressor named <code>Total_Mortality</code>: the Mean values are summed and the SD values are pooled in quadrature (<code>sqrt(sum(SD^2))</code>, dropping blank/NA components; if every SD is blank the pooled SD is 0). This supports legacy workbooks that split total mortality into components (e.g., angling, dewatering, predation) while applying a single mortality stressor-response curve. For the aggregate to have any effect, the stressor-response workbook must contain a curve worksheet named <code>Total_Mortality</code>. The spelling must match exactly — near-miss spellings (e.g., <code>total_mortality</code>) are not aggregated and will trigger a warning.</p>
 </section>
 <section id="assembling-your-own-stressor-magnitude-data" class="level3" data-number="5.2.3">
 <h3 data-number="5.2.3" class="anchored" data-anchor-id="assembling-your-own-stressor-magnitude-data"><span class="header-section-number">5.2.3</span> Assembling Your Own Stressor-Magnitude Data</h3>

@@ -253,7 +253,7 @@ Beverton-Holt (BH) and Hockey-Stick (HS) are **not** interchangeable — they co
 
 -   **BH (`bh_stage_X`)**: Constrains the **transition INTO** stage X. It is a *flow constraint* — it uses the survival rate and abundance from the previous stage to compute an asymptotic recruitment curve. At low abundance, many individuals survive the transition (up to the Nt \* density-independent survivorship alpha value); However, at high abundance, the number entering stage X saturates toward K. The output is always less than K (approaching it asymptotically).
 -   **HS (`hs_stage_X`)**: Constrains the **population OF** stage X. It is a *state constraint* — a hard cap applied after the matrix projection. If the projected number of individuals in stage X exceeds K, it is truncated to K. No transition math is involved.
--   **Spawner caps (`bh_spawners` / `hs_spawners`)**: Constrain the **total population across all mature stages**. For `hs_spawners`, this is a hard cap with proportional reduction across spawning age classes. For `bh_spawners`, K is redistributed proportionally across spawning stages and individual BH constraints are applied per-stage.
+-   **Spawner caps (`bh_spawners` / `hs_spawners`)**: Constrain the **total number of spawners across all mature stages** (counted as the maturity-weighted abundance, N × mat). For `hs_spawners`, this is a hard cap with proportional reduction across spawning age classes. For `bh_spawners`, K is redistributed proportionally across spawning stages and individual BH constraints are applied per-stage. In both model types, fish removed by the cap **die** — they are removed from the population vector, not held back from spawning. For anadromous (semelparous) populations this distinction is moot: excess returners die without spawning, which is what would happen anyway. For **non-anadromous (iteroparous) populations, the spawner capacity should therefore be interpreted as an *adult capacity***: excess adults are culled each year to hold the spawner count at K, so the cap limits the standing stock of the mature stages (and their entire future reproductive contribution), not just the current year's spawning. Individuals do not survive as non-breeders to spawn in a later year.
 
 **Switching between `bh_stage_X` and `hs_stage_X` changes *what* is being constrained, not just *how* it is constrained.** For example, `bh_stage_1` constrains the fry → stage 1 transition (using fry count and s0), while `hs_stage_1` caps the current population in stage 1 regardless of how they got there. This is by design, but users should be aware of this distinction when choosing between the two mechanisms.
 :::
@@ -270,7 +270,7 @@ The population values stored and reported by the model are always the **post-DD*
 This means that when you see abundance values in the model output (plots, tables, or the N matrix), you are seeing the number of individuals **after** any density-dependent bottleneck has been applied — not the unconstrained projection. For example, if `bh_stage_1` is set with K = 5,000, the reported stage-1 abundance will never exceed 5,000 (and in practice will be somewhat below K due to the asymptotic shape of the BH curve).
 :::
 
-![Simulation of Steelhead Spawners with stage_1 capacity set to 160,000](images/image047.png){#07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-fig-steelhead-spawners}
+![Simulation of Steelhead Spawners with stage_1 capacity set to 160,000](images/image047.png){#fig-steelhead-spawners}
 
 <div>
 
@@ -297,10 +297,14 @@ For non-anadromous (iteroparous) populations of resident trout and char, spawnin
 +---------------------------------+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | `hs_stage_1`, `hs_stage_2`, ... | Hockey-Stick  | Hard cap on the population OF the named stage. If N in that stage exceeds K, it is truncated to K. For example, `hs_stage_1` caps stage-1 abundance at K1; `hs_stage_2` caps stage-2 abundance at K2. Note: HS caps the current population (a state constraint), while BH constrains the transition (a flow constraint). |
 +---------------------------------+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| `bh_spawners`                   | Beverton-Holt | Total spawner capacity across all mature age classes. Mature stages are identified via the maturity vector (mat \> 0). When total spawners exceed the cap, K is redistributed proportionally across spawning stages, and BH is applied per-stage. Requires `k_stage_B_mean` in the habitat capacities file.              |
+| `bh_spawners`                   | Beverton-Holt | Total spawner capacity across all mature age classes. Mature stages are identified via the maturity vector (mat \> 0) and spawners are counted as the maturity-weighted abundance (N × mat). When total spawners exceed the cap, K is redistributed proportionally across spawning stages, and BH is applied per-stage. Requires `k_stage_B_mean` in the habitat capacities file. |
 +---------------------------------+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| `hs_spawners`                   | Hockey-Stick  | Total spawner hard cap across all mature age classes. When total spawners exceed the cap, all spawning stages are reduced proportionally. Requires `k_stage_B_mean` in the habitat capacities file.                                                                                                                      |
+| `hs_spawners`                   | Hockey-Stick  | Total spawner hard cap across all mature age classes (counted as the maturity-weighted abundance, N × mat). When total spawners exceed the cap, all spawning stages are reduced proportionally. Requires `k_stage_B_mean` in the habitat capacities file.                                                                |
 +---------------------------------+---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+::: callout-note
+**Interpretation for non-anadromous (iteroparous) populations:** fish removed by a spawner cap die — they are removed from the population, not held back from breeding — so `bh_spawners`/`hs_spawners` should be interpreted as an **adult capacity** in the non-anadromous model. Excess adults are culled each year to hold the (maturity-weighted) spawner count at K, limiting the standing stock of the mature stages and all of their future spawning, not just the current year's reproduction. In stages with partial maturity (0 \< mat \< 1), the proportional reduction also removes the co-occurring immature fraction of those stages.
+:::
 
 **For Anadromous Populations like Chinook, Coho, Sockeye, Chum, Pink etc.**
 
@@ -410,6 +414,27 @@ Each `k_stage_X_mean` column specifies the capacity **of stage X** (the destinat
 
 *Note: only include K columns for stages that have density-dependent flags set in the life cycle file. Columns with NA or missing values are allowed — the model will skip density dependence for those stages at that location.*
 
+#### Optional: Capacity Uncertainty (`_cv` columns)
+
+**This feature is entirely optional.** If you only supply `k_..._mean` columns (as in all the examples above), every capacity value is treated as exact and nothing described in this section applies — this is the default and recommended starting point.
+
+If you want to represent **uncertainty in a capacity estimate**, add a companion `_cv` column holding the coefficient of variation for the matching `_mean` column. The `_cv` column name must mirror the `_mean` column name, for example:
+
+| **Mean column**       | **Companion uncertainty column** |
+|-----------------------|----------------------------------|
+| `k_stage_1_mean`      | `k_stage_1_cv`                   |
+| `k_stage_Pb_1_mean`   | `k_stage_Pb_1_cv`                |
+| `k_stage_B_4_mean`    | `k_stage_B_4_cv`                 |
+| `k_spawners_mean`     | `k_spawners_cv`                  |
+
+When a capacity has a cv greater than zero, the model no longer uses a single fixed K for that stage. Instead, a new K value is drawn **for every simulation year and for every batch replicate** from a normal distribution with a mean equal to the `_mean` value and a standard deviation of `mean × cv`, truncated at zero (a draw can never produce a negative capacity). Within each batch replicate, the baseline run and the stressor (CE) run share the same sequence of capacity draws, so comparisons between the two are not confounded by different random capacities. If a cumulative-effects stressor also modifies that capacity, the two effects combine multiplicatively. The initial (year-0) population vector is always seeded from the mean capacities.
+
+A few practical notes:
+
+-   **Blank cells, NA values, or a missing `_cv` column all mean cv = 0** — the capacity is treated as exact and no random draws are made. You can mix exact and uncertain capacities freely within one file (e.g., an exact fry capacity alongside an uncertain spawner capacity).
+-   Choose cv values thoughtfully: a cv of 0.1–0.3 represents modest uncertainty; values much above ~0.5 produce highly volatile year-to-year capacities (and increasingly frequent truncation at zero, which shifts the effective mean upward slightly).
+-   **R package only:** capacity uncertainty is currently supported when running the model through the CEMPRA R package (`PopulationModel_Run()`). The Shiny web app does not use `_cv` columns — if a habitat capacities file containing them is uploaded to the app, the `_cv` columns are dropped and all K values are treated as exact (a note in the app's upload panel says the same).
+
 #### Step 3: Final Checks
 
 -   Define stage/age classes with known or expected density dependent constraints
@@ -432,13 +457,13 @@ Compensation ratios (CR values) are a reparameterization of the classical Bevert
 
 Compensation Ratios (CR) adjust the survivorship of each life stage based on the observed densities (abundance, Ni,t) and stage-specific carrying capacities (Ki):
 
-![Compensation Ratio CR for life stage i](images/image048.png){#07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-fig-compensation-ratio}
+![Compensation Ratio CR for life stage i](images/image048.png){#fig-compensation-ratio}
 
 In the CR equation above, Si,0 is the baseline survivorship (surv_X) under density-independent growth conditions; wi is the compensation ratio (CR value) of life stage i; Ni,t is the current number of individuals in life stage i in a given time step (t); and Ki is the carrying capacity of life stage i. The compensation ratios, in essence, modify the survivorship of each life stage based on how far the stage-specific abundance (Ni,t) has departed from its assumed carrying capacity (Ki).
 
 A plot of compensation ratios is provided below to illustrate their effects on stage-specific survivorship transitions. In this example, abundance values of a hypothetical stage class (i) are plotted along the x-axis with a carrying capacity (Ki) set to 100 individuals (blue vertical line). The hypothetical stage class (i) has a baseline survivorship (productivity) value of 0.8 in the absence of density-dependent growth conditions (horizontal red line). The y-axis on the plot shows how the default survivorship value of 0.8 is modified based on the stage-specific compensation ratio for stage class (CRi). The survivorship value for the stage class is suppressed as the abundance values exceed the carrying capacity K. The effects are amplified as compensation ratios are increased. Compensation ratios of 1.0 leave the vital rate unmodified. Compensation ratios less than 1.0 increase survivorship values (allowing for a potential positive effect of density). When the abundance of the age class is less than the carrying capacity, baseline survivorship values can actually increase. However, within the model code, adjusted survivorship values are fixed so that they never exceed 1.0 for any stage transition.
 
-![Influence of compensation ratios on stage-specific survivorship](images/image049.jpg){#07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-fig-compensation-ratios-effect}
+![Influence of compensation ratios on stage-specific survivorship](images/image049.jpg){#fig-compensation-ratios-effect}
 
 <div>
 
@@ -459,11 +484,11 @@ Stage-specific capacities (K) with compensation ratios:
 -   K (Stage-3): Calculated from the stable-stage distribution of the transition matrix (B) after setting the adult stage (Stage-4) to K (e.g., 100).
 -   K (Stage-4): Manually input by the user for the population of interest. This assumes that stage-4 is the only mature age class.
 
-Stable-stage distribution (portions) under the example species profile @fig-figure27:
+Stable-stage distribution (portions) under the example species profile (@fig-stable-stage-distributions):
 
 #### Stable Stage Distributions (as a fraction 0 - 1) & Stage-specific Carrying Capacities (K):
 
-![Stable Stage Distributions and Stage-specific Carrying Capacities](images/image050.png){#07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-fig-stable-stage-distributions}
+![Stable Stage Distributions and Stage-specific Carrying Capacities](images/image050.png){#fig-stable-stage-distributions}
 
 #### Compensation Ratios and the Density-Dependence Matrix (D):
 
@@ -506,7 +531,9 @@ Recall from earlier chapters and the [Joe Model Tutorials](https://essatech.gith
 
 By carefully defining these columns we can effectively link stressor-response relationships to specific vital rates. Each stressor-response relationship should be linked to only one vital rate. If multiple linkages are desired, duplicate the stressor and its stressor-response relationship accordingly in the Stressor-Magnitude and Stressor-Response workbooks (e.g., `SummerStreamTemp_Parr`, `SummerStreamTemp_Prespawn`).
 
-Alternatively, the R package supports a comma-separated list of life stages in the `Life_stages` column to link a single stressor-response relationship to multiple vital rates (e.g., `stage_1, stage_2`). Internally, the code duplicates the stressor-response relationship for each life stage specified. See the [Life_stages Column](#the-stressor-response-workbook-life_stages-column) section below for more details on how to specify life stages. However, this comma-separated functionality is only supported in the R package and is not available in the R Shiny application. For simplicity and reproducibility, if a given stressor is linked to two or more vital rates, we recommend duplicating the stressor in the Stressor-Magnitude and Stressor-Response workbooks rather than using a comma separator (e.g., `SummerStreamTemp_Parr`, `SummerStreamTemp_Prespawn`).
+Alternatively, the R package supports a comma-separated list of life stages in the `Life_stages` column to link a single stressor-response relationship to multiple vital rates (e.g., `stage_1, stage_2`). Internally, the code duplicates the stressor-response relationship for each life stage specified. See the [Life_stages Column](#the-stressor-response-workbook-life_stages-column) section below for more details on how to specify life stages. However, this comma-separated functionality is only supported in the R package and is not available in the R Shiny application. For simplicity and reproducibility, if a given stressor is linked to two or more vital rates, we recommend creating separate, distinctly named stressors in the Stressor-Magnitude and Stressor-Response workbooks rather than using a comma separator (e.g., `SummerStreamTemp_Parr`, `SummerStreamTemp_Prespawn`).
+
+Note that each stressor name may appear only **once** on the Main worksheet: one stressor is always linked to exactly one stressor-response relationship. Repeating a stressor name on a second row (e.g., to target a second parameter such as capacity) is not supported, and `StressorResponseWorkbook()` will stop with an error identifying the duplicated name. Use a comma-separated `Life_stages` list to reach multiple life stages, or create distinctly named stressors (each with its own stressor-response worksheet) to affect multiple parameters. Unrecognized `Life_stages` or `Parameters` values do not stop a model run, but they have no effect and the population model will issue a warning so typos can be caught.
 
 ### The Stressor-Response Workbook 'Parameters' Column
 
@@ -609,8 +636,8 @@ For anadromous species, additional Life_stages column tags target pre-breeder (P
 
 | Tag                   | Target                                   |
 |-----------------------|------------------------------------------|
-| `eps`                 | Eggs per spawner (all ages)              |
-| `eps_3`, `eps_4`, ... | Age-specific fecundity (anadromous only) |
+| `eps`                 | Eggs per spawner (all stages/ages)       |
+| `eps_3`, `eps_4`, ... | Stage/age-specific fecundity             |
 
 #### Notes on **'Life_stages' linkage Tags** Tags
 
@@ -628,6 +655,8 @@ By default, every stressor is applied to all years of a population model simulat
 
 The feature is fully backwards compatible and entirely optional. If the `From_Year` and `To_Year` columns are absent, or if they are left blank for a particular stressor, that stressor is applied to all years exactly as before — existing stressor magnitude files do not need to change. The columns can be populated for only a subset of stressors; any stressor with missing values is simply applied across the whole simulation. You can also supply only one of the two bounds: providing only `From_Year` activates the stressor from that year onward (to the end of the run), while providing only `To_Year` runs the stressor from the start of the simulation up to that year. If `From_Year` is greater than `To_Year` the window is empty, so the stressor is treated as inactive for all years and a warning is issued to flag the likely data-entry error.
 
+**One window per stressor.** Each stressor at a location supports a *single* activation window: supplying multiple rows for the same stressor–location combination with different `From_Year`/`To_Year` values stops the run with an error (the rows cannot be processed independently through the dose-sampling machinery). To model a stressor that occurs in **two or more separate periods** — for example a construction impact in years 1–5 and a drawdown in years 20–25 — give each period its **own stressor name** (e.g., `Drawdown_early` and `Drawdown_late`), each with its own row, window, and magnitude in the stressor magnitude file, and add a matching entry (which can share the identical response curve) for each name in the stressor-response workbook. Each named stressor is then processed fully independently, giving genuine multi-period behaviour.
+
 Note that `From_Year` and `To_Year` are used **only by the population model**. They are ignored by the Joe Model, which continues to evaluate cumulative system capacity across all stressors without any time restriction. The years refer to the simulation time step (1 to the number of years in the run), not calendar years.
 
 ## Tips on Building a New Life Cycle Profile From Scratch
@@ -638,7 +667,7 @@ Appendix B includes sample species profiles for case study systems, such as Nico
 
 It's recommended to first summarize the species' life cycle using a simple diagram to represent key life stages. This diagram can be converted into a periodicity table (or life history schedule) to represent time spent in each life stage, as shown in the figure. A life history diagram coupled with a periodicity table can be helpful in mapping out transitions between key stages in the life cycle model. Recall that the life cycle model works with annual time steps. "Census" periods within the matrix model do not need to fall precisely at the one-year interval, but care should be taken to ensure that key transitions are not missed or double-counted. It is best to start from the spawning period and work forward, following a whole generation to its progeny
 
-![Sample life cycle diagram and periodicity table for Coho Salmon](images/image055.png){#07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-07_life_cycle_model-fig-coho-salmon-lifecycle}
+![Sample life cycle diagram and periodicity table for Coho Salmon](images/image055.png){#fig-coho-salmon-lifecycle}
 
 <div>
 
