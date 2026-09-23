@@ -34,7 +34,7 @@
 
 ### Suggested Citation
 
-Bayly, M., J., Tekatch, A., M., Rosenfeld, J., Jarvis, L., Enders, E., 2024. Cumulative Effects Model for Prioritizing Recovery Actions (CEMPRA): User Guide. Documentation prepared by ESSA Technologies Ltd. for the BC Water, Land and Resource S. 77 pp. https://essatech.github.io/CEMPRA/
+Bayly, M., J., Tekatch, A., M., Rosenfeld, J., Jarvis, L., Enders, E., 2026. Cumulative Effects Model for Prioritizing Recovery Actions (CEMPRA): User Guide. Documentation prepared by ESSA Technologies Ltd. for the BC Water, Land and Resource S. 77 pp. <https://github.com/essatech/CEMPRA/>
 
 ## Project Components
 
@@ -43,7 +43,6 @@ Bayly, M., J., Tekatch, A., M., Rosenfeld, J., Jarvis, L., Enders, E., 2024. Cum
 -   LIVE (online R-Shiny Application) (<https://essa.shinyapps.io/CEMPRAShiny/>)
 -   R-Package Tutorials (<https://essatech.github.io/CEMPRA/index.html>)
 -   Guidance Document (Real-time Updates): (<https://mattjbayly.github.io/CEMPRA_documentation/>)
--   (old static version) Guidance Document (2024 pdf): (<https://www.essa.com/wp-content/uploads/2024/05/Guideline_Documentation_Report-2024.03.14.pdf>)
 -   Stressor-Response Library: (<https://mjbayly.com/stressor-response>)
 
 ## Purpose
