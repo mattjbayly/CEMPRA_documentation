@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -270,9 +305,23 @@ cookieconsent.run({
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#customizable-two-factor-interaction-matrix" id="toc-customizable-two-factor-interaction-matrix" class="nav-link active" data-scroll-target="#customizable-two-factor-interaction-matrix">Customizable Two-Factor Interaction Matrix</a></li>
-  <li><a href="#data-preparation" id="toc-data-preparation" class="nav-link" data-scroll-target="#data-preparation">Data Preparation</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#what-goes-in-the-main-worksheet-and-what-does-not" id="toc-what-goes-in-the-main-worksheet-and-what-does-not" class="nav-link" data-scroll-target="#what-goes-in-the-main-worksheet-and-what-does-not">What Goes in the Main Worksheet (and What Does Not)</a></li>
+  <li><a href="#building-the-mint_-worksheet" id="toc-building-the-mint_-worksheet" class="nav-link" data-scroll-target="#building-the-mint_-worksheet">Building the MInt_ Worksheet</a>
+  <ul class="collapse">
+  <li><a href="#header-cells" id="toc-header-cells" class="nav-link" data-scroll-target="#header-cells">Header cells</a></li>
+  <li><a href="#the-data-tables" id="toc-the-data-tables" class="nav-link" data-scroll-target="#the-data-tables">The data tables</a></li>
+  </ul></li>
+  <li><a href="#main-effect-included-vs.-excluded" id="toc-main-effect-included-vs.-excluded" class="nav-link" data-scroll-target="#main-effect-included-vs.-excluded">Main Effect: Included vs.&nbsp;Excluded</a></li>
+  <li><a href="#how-the-matrix-is-evaluated-at-run-time" id="toc-how-the-matrix-is-evaluated-at-run-time" class="nav-link" data-scroll-target="#how-the-matrix-is-evaluated-at-run-time">How the Matrix Is Evaluated at Run Time</a></li>
+  <li><a href="#including-matrices-in-a-joe-model-run" id="toc-including-matrices-in-a-joe-model-run" class="nav-link" data-scroll-target="#including-matrices-in-a-joe-model-run">Including Matrices in a Joe Model Run</a></li>
+  <li><a href="#common-errors-and-issues" id="toc-common-errors-and-issues" class="nav-link" data-scroll-target="#common-errors-and-issues">Common Errors and Issues</a></li>
   <li><a href="#population-model" id="toc-population-model" class="nav-link" data-scroll-target="#population-model">Population Model</a></li>
+  <li><a href="#worked-examples" id="toc-worked-examples" class="nav-link" data-scroll-target="#worked-examples">Worked Examples</a>
+  <ul class="collapse">
+  <li><a href="#matrix-interaction-example-1-template" id="toc-matrix-interaction-example-1-template" class="nav-link" data-scroll-target="#matrix-interaction-example-1-template">Matrix Interaction (Example 1: Template)</a></li>
+  <li><a href="#matrix-interaction-example-2-application" id="toc-matrix-interaction-example-2-application" class="nav-link" data-scroll-target="#matrix-interaction-example-2-application">Matrix Interaction (Example 2: Application)</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -298,83 +347,169 @@ cookieconsent.run({
 </header>
 
 
-<section id="customizable-two-factor-interaction-matrix" class="level2">
-<h2 class="anchored" data-anchor-id="customizable-two-factor-interaction-matrix">Customizable Two-Factor Interaction Matrix</h2>
-<p>Customizable 2-factor interaction matrices may be (optionally) included by users to specify non-additive interactions between stressor variables (e.g., antagonistic, synergistic, etc.). If included, these matrices define the mean system capacity at different combination levels between two stressors. This can be especially important to capture conditional effects, attenuating or exacerbating factors, and/or compound variance and uncertainties. The 2-factor interaction matrices can also be a convenient mechanism to explore hypothetical and experimental scenarios.</p>
-<p>The 2-factor interaction matrices are defined in the Stressor-Response Excel workbook. Template matrices are available in the R-Shiny application and sample datasets (<em>see upload data tab</em>). The data input format of the 2-factor interaction matrix is designed to be relatively flexible and accommodate both simple and more complex use cases. Similar to the single stressor-response functions, the 2-factor matrix is constructed by the user using data or expert opinion, depending on data availability.</p>
-<p>A hypothetical example (Figure 1) is included to show the interaction between stream canopy cover (low to high) and nutrients (as total Phosphorous). At low nutrients, habitat capacity for trout is highest under low canopy cover, where high light maximizes algal and invertebrate production (red circle). However, at high nutrients (eutrophic conditions), habitat capacity is highest under a closed canopy that suppresses algal growth and associated high temperatures and poor water quality (blue circle).</p>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>Most stressors in the CEMPRA tool act independently: each one has its own stressor-response curve, and their system capacity scores are multiplied together. Sometimes that is not realistic - the effect of one stressor depends on the level of another (antagonistic or synergistic interactions, conditional effects, attenuating or exacerbating factors). The optional <strong>two-factor interaction matrix</strong> lets you describe the combined effect of two stressors directly: a simple lookup table of mean system capacity (%) at each combination of the two stressor levels.</p>
+<p>A hypothetical example (<a href="#fig-figure1" class="quarto-xref">Figure&nbsp;<span>1</span></a>) shows the interaction between stream canopy cover (low to high) and nutrients (as total phosphorus). At low nutrients, habitat capacity for trout is highest under low canopy cover, where high light maximizes algal and invertebrate production (red circle). However, at high nutrients (eutrophic conditions), habitat capacity is highest under a closed canopy that suppresses algal growth and the associated high temperatures and poor water quality (blue circle). A single canopy-cover curve could never capture this reversal - the interaction matrix can.</p>
 <div id="fig-figure1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-figure1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/image001.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figure1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Example interaction surface for the CEMPRA 2-factor interaction matrix between trout capacity canopy cover and nutrients.
+Figure&nbsp;1: Example interaction surface for the CEMPRA 2-factor interaction matrix between trout capacity, canopy cover and nutrients.
 </figcaption>
 </figure>
 </div>
+<p>Interaction matrices are built from data or expert opinion, just like the single-stressor curves. They are also a convenient way to explore hypothetical or experimental scenarios.</p>
 </section>
-<section id="data-preparation" class="level2">
-<h2 class="anchored" data-anchor-id="data-preparation">Data Preparation</h2>
-<p>The 2-factor interaction matrices are optionally included as additional tabs in the stressor response workbook. The formatting must follow Figure 2. The worksheet name must begin with “<strong>MInt_</strong>” followed by a unique name (ideally without spaces). In this example we used “MInt_AB”.</p>
+<section id="what-goes-in-the-main-worksheet-and-what-does-not" class="level2">
+<h2 class="anchored" data-anchor-id="what-goes-in-the-main-worksheet-and-what-does-not">What Goes in the Main Worksheet (and What Does Not)</h2>
+<p>This is the most common point of confusion, so let’s be explicit:</p>
+<ul>
+<li><strong>The two main-effect stressors NEED entries in the Main worksheet.</strong> The two stressors on the matrix axes are ordinary stressors in every respect: each needs its own row in the Main worksheet, its own stressor-response worksheet (named exactly after it), and its own rows in the stressor <em>magnitude</em> workbook. The matrix reads its input doses from their magnitude values.</li>
+<li><strong>The matrix itself gets NO entry in the Main worksheet.</strong> An interaction matrix exists only as its own <code>MInt_</code> worksheet. It is recognized purely by its worksheet name.</li>
+<li><strong>What happens if you add a Main row for the matrix anyway?</strong> The workbook fails to load. The Main worksheet enforces a strict pairing - every row must have a same-named curve worksheet - and <code>MInt_</code> sheets are excluded from that pairing. A Main row named <code>MInt_AB</code> therefore has no matching curve worksheet, and the upload stops with <em>“Bad worksheet names: … Stressors with no matching worksheet: MInt_AB”</em>.</li>
+<li>The matrix also gets <strong>no rows in the stressor magnitude workbook</strong> - only its two axis stressors do.</li>
+</ul>
+<p>If an axis stressor name in the matrix header does not match any stressor in the Main worksheet (a typo or a stray space), you now get a clear warning when the workbook is uploaded, naming the sheet and the missing stressor. A matrix with an unmatched axis is skipped at run time.</p>
+</section>
+<section id="building-the-mint_-worksheet" class="level2">
+<h2 class="anchored" data-anchor-id="building-the-mint_-worksheet">Building the MInt_ Worksheet</h2>
+<p>Interaction matrices are added as extra tabs in the stressor response workbook. The worksheet name must begin with “<strong>MInt_</strong>” followed by a unique name, ideally without spaces (e.g., <code>MInt_AB</code>). Template workbooks are available in the R Shiny application sample datasets (<em>see the upload data tab</em>) and in the Worked Examples at the bottom of this appendix. The formatting must follow <a href="#fig-figure2" class="quarto-xref">Figure&nbsp;<span>2</span></a>.</p>
 <div id="fig-figure2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-figure2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/image002.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figure2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Example Matrix interaction surface for stressor variables A and B.
+Figure&nbsp;2: Example matrix interaction surface for stressor variables A and B.
 </figcaption>
 </figure>
 </div>
-<p>The header section of the workbook must include several inputs:</p>
+<section id="header-cells" class="level3">
+<h3 class="anchored" data-anchor-id="header-cells">Header cells</h3>
+<p>The header section (cells A1:D3 plus A4:B4) must include:</p>
 <ul>
-<li><p><strong>Matrix Name (cell B1):</strong> A custom name given to the 2-way interaction (for personal reference purposes). This name should match the worksheet name (e.g., MInt_AB). Try to avoid using spaces or special characters outside of MInt_.</p></li>
-<li><p><strong>Columns (cell B2):</strong> The name of the stressor variable representing the column header values in the system capacity table. In the previous example column header values in the subsequent tables will map onto this stressor. Ensure that the spelling of the stressor matches the spelling throughout the rest of the workbook.</p></li>
-<li><p><strong>Rows (B3):</strong> The name of the stressor variable representing the row names in the system capacity table. In the previous example row names in the subsequent tables will map onto this stressor. Ensure that the spelling of the stressor matches the spelling throughout the rest of the workbook.</p></li>
-<li><p><strong>Main Effects:</strong> Specify whether the system capacity estimates in the 2-factor interaction matrix account for (include) the main effects. Options for cell B4 can be either “Included” or “Excluded”.</p>
-<ul>
-<li><p><strong>Included:</strong> When cell B4 is set to “Included” the system capacity estimates are intended to represent the entire relationship between the two stressors at their respective levels (main effects and interactive effects combined). If the main effects option is set to “Included” the cumulative system capacity calculation will be adjusted to automatically omit both of the univariate stressor-response relationships (if they have been specified in the stressor-response workbook) and only evaluate their combined effect from the 2-factor interaction matrix. This modification is necessary to avoid double counting the effects of each stressor.</p>
-<p><em>For example, if the Stressor-Response workbook contained stressor-response worksheets for “Nutrients”, “Canopy_Cover” and an interactive matrix (e.g., “Matrix_1”) for “Nutrients and Canopy_Cover”, then the Joe Model would only evaluate system capacity values from the matrix and discard the univariate effects with the assumption that they are already accounted for in the matrix capacity data (Y = “VarA” + “VarB” + “Nutrients and Canopy_Cover”).</em></p></li>
-<li><p><strong>Excluded (experimental – apply with caution):</strong> Setting cell B4 (Main Effects) to “Excluded” indicates that the interaction surface only describes the interactive effects and that the main effects (defined in the other stressor-response worksheets) must remain in the cumulative system capacity calculation. If the “Excluded” option is selected, the 2-factor interaction matrix ultimately acts as an additional stressor variable to modify the system capacity score. Setting the main effects to “Excluded” is convenient when users wish to quickly evaluate scenarios with and without customized interactive effects.</p></li>
-</ul></li>
+<li><strong>Matrix Name (cell B1):</strong> A display name for the interaction. By convention this matches the worksheet name (e.g., <code>MInt_AB</code>). The worksheet name is the matrix’s identity everywhere in the tool (checkboxes, results, the <code>stressors</code> argument); the Matrix Name is what gets displayed on cards and plots.</li>
+<li><strong>Columns (cell B2):</strong> The stressor whose dose values run <strong>across the top</strong> of each table (the x-axis). Spelling must match the Main worksheet exactly.</li>
+<li><strong>Rows (cell B3):</strong> The stressor whose dose values run <strong>down the left side</strong> of each table (the y-axis). Spelling must match the Main worksheet exactly.</li>
+<li><strong>Main Effect (cell B4):</strong> <code>Included</code> or <code>Excluded</code> - see the next section. Blank defaults to <code>Included</code>.</li>
+<li><strong>Life_stages (cell D1):</strong> <code>adult</code> for the standard Joe Model. A blank cell defaults to <code>adult</code>. (Capitalization does not matter.)</li>
+<li><strong>Parameters (cell D2):</strong> e.g., <code>capacity</code> - informational.</li>
+<li><strong>Model (cell D3):</strong> informational for now; interaction matrices currently apply in the Joe Model only (see the Population Model section below).</li>
 </ul>
-<p><strong>Important Note:</strong> The implementation of interactive effects and main effects in the CEMPRA tool is different from a conventional logistic regression equation. There is no intercept, context-dependent coefficients, or link function. The interactive effect is simply added into the formula like any other stressor. For example, if the Stressor-Response workbook contained stressor-response worksheets for “Nutrients”, “Canopy_Cover” and an interactive matrix (e.g., “Matrix_1”) for “Nutrients and Canopy_Cover”, then the Joe Model would incorporate all three terms into the equation as stressor-response terms (Y = “VarA” + “VarB” + “Nutrients” + “Canopy Cover” + “Nutrients and Canopy_Cover”).</p>
-<p>The difference between the 2-factor interaction matrix calculations with the main effects “Included” and “Excluded” is further illustrated in the following figure:</p>
-<div id="fig-figure3" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-figure3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/image003.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figure3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Difference between main effects being included or excluded from 2-factor interaction matrix summary. The Interaction factor for main effects Excluded (X) will be different (in this case lower) than for main effects Included.
-</figcaption>
-</figure>
-</div>
-<p>The formatting of the matrix worksheet allows for some flexibility (see example below), but the variable inputs in cells B1:B4 must be kept in their original positions. For each stressor variable, the user can define any number of steps (intervals) provided that the stressor column variable (x-axis) starts in cell C6 and extends right (associated with columns – B2), and the stressor row variable (y-axis) starts in cell B7 and extends downward (associated with rows – B3 stressor). See figure Figure 4.</p>
+</section>
+<section id="the-data-tables" class="level3">
+<h3 class="anchored" data-anchor-id="the-data-tables">The data tables</h3>
+<p>Below the header sit up to four tables, each introduced by its label in column B: <strong>Mean System Capacity (%)</strong>, <strong>SD</strong>, <strong>low.limit</strong> and <strong>up.limit</strong>. In each table, the label row also carries the <em>Columns</em> stressor’s dose values extending to the right (starting in cell C6), and the first column carries the <em>Rows</em> stressor’s dose values extending downward (starting in cell B7). The grid cells hold values in <strong>percent (0-100)</strong>.</p>
+<p>Reading the example in <a href="#fig-figure2" class="quarto-xref">Figure&nbsp;<span>2</span></a>: for stressor A = 10 and stressor B = 5, look under column header 10 in the row labelled 5.</p>
+<p>Rules for the tables:</p>
+<ul>
+<li><strong>Only the mean table is required, and it must be completely filled.</strong> A blank or non-numeric cell in the Mean System Capacity table is an error at upload (previously it silently zeroed the matrix’s effect over part of the dose range).</li>
+<li><strong>The SD, low.limit and up.limit tables are optional.</strong> If a table is missing - or has blank cells - the defaults are <strong>SD = 0</strong> (deterministic), <strong>low.limit = 0</strong> and <strong>up.limit = 100</strong>. With SD = 0 everywhere, the matrix always returns the interpolated mean. With a nonzero SD, each simulation draws the matrix’s system capacity from a truncated beta distribution between the low and up limits.</li>
+<li><strong>All tables present must share the same dose axes</strong> (same dimensions). A mismatch - usually caused by extra or missing blank rows between the tables - is a clear error at upload naming the offending tables.</li>
+<li>You can use <strong>any number of dose steps</strong> on either axis, and the two axes do not need the same number of steps (<a href="#fig-figure4" class="quarto-xref">Figure&nbsp;<span>3</span></a>). Dose values may be entered ascending or descending - they are sorted automatically.</li>
+<li><strong>Keep the area to the right of and below the tables clean.</strong> Stray notes are tolerated (blank-header columns are stripped automatically), but it is better not to rely on that.</li>
+</ul>
 <div id="fig-figure4" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-figure4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/image004.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figure4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: Matrices of different resolutions.
+Figure&nbsp;3: Matrices of different resolutions.
 </figcaption>
 </figure>
 </div>
-<p>If values in the stressor magnitude workbook do not align exactly with stressor values in the column and row heads of the interaction matrix, then the system capacity value will be calculated with linear interpolation. NULL or missing values from the stressor magnitude workbook will omit the HUC or subbasin assessment unit from any calculation of habitat capacity or cumulative effects.</p>
-<p><strong>Common Errors and Issues:</strong></p>
+</section>
+</section>
+<section id="main-effect-included-vs.-excluded" class="level2">
+<h2 class="anchored" data-anchor-id="main-effect-included-vs.-excluded">Main Effect: Included vs.&nbsp;Excluded</h2>
+<p>The <strong>Main Effect</strong> cell answers one question: <em>do the numbers in your matrix already account for the individual (main) effects of the two stressors, or only the extra interactive effect?</em></p>
 <ul>
-<li><p><strong>Order stressors with values increasing:</strong> Matrix column and row header values must be sorted non-decreasingly and contain no NA values or blank values. For example, 800, 600, 400 should be reordered as 400, 600, 800 in either the row or column headers for each stressor.</p></li>
-<li><p><strong>Keep template clean:</strong> Format of template has been altered or additional content is placed in rows or columns to the left or below matrix tables.</p></li>
-<li><p><strong>Errors in header and meta data</strong></p></li>
+<li><strong>Included (the default):</strong> The matrix values represent the <strong>entire</strong> combined relationship - main effects and interaction together. The cumulative effect calculation therefore automatically <strong>drops the two standalone stressor-response terms</strong> and uses only the matrix, so nothing is double-counted. For example, with worksheets for “Nutrients”, “Canopy_Cover” and a matrix for the pair, the Joe Model evaluates only the matrix for those two stressors (Y = other stressors + “Nutrients and Canopy_Cover”).</li>
+<li><strong>Excluded (experimental - apply with caution):</strong> The matrix values represent <strong>only the extra interactive effect</strong>, over and above the main effects. The two standalone stressor-response terms stay in the calculation and the matrix is multiplied in as an additional term (Y = other stressors + “Nutrients” + “Canopy_Cover” + “Nutrients and Canopy_Cover”). This is convenient for quickly comparing scenarios with and without a customized interactive effect.</li>
+</ul>
+<p><strong>Important note:</strong> this is not a regression model - there is no intercept, no coefficients, and no link function. The matrix simply contributes a system capacity score that is multiplied into the cumulative effect like any other stressor.</p>
+<p>The difference between the two settings is illustrated in <a href="#fig-figure3" class="quarto-xref">Figure&nbsp;<span>4</span></a>:</p>
+<div id="fig-figure3" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figure3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/image003.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figure3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Difference between main effects being Included or Excluded from the 2-factor interaction matrix. The interaction factor for main effects Excluded (X) will be different (in this case lower) than for main effects Included.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="how-the-matrix-is-evaluated-at-run-time" class="level2">
+<h2 class="anchored" data-anchor-id="how-the-matrix-is-evaluated-at-run-time">How the Matrix Is Evaluated at Run Time</h2>
+<p>For each location (HUC) and each Monte Carlo simulation, the model:</p>
+<ol type="1">
+<li>takes the two axis stressors’ sampled dose values from the stressor magnitude workbook;</li>
+<li>clamps each dose to the matrix’s axis range (doses beyond the edge of the grid use the edge value - no extrapolation);</li>
+<li>bilinearly interpolates the mean, SD and limit surfaces at that dose pair (dose values between grid steps are interpolated linearly on both axes);</li>
+<li>draws the matrix’s system capacity from a truncated beta distribution (or returns the interpolated mean exactly, when SD = 0).</li>
+</ol>
+<p>If a location is missing a magnitude value for either axis stressor, the matrix produces no result (NA) for that location - a console note reports how many location-simulation combinations were affected. The rest of the run continues normally.</p>
+</section>
+<section id="including-matrices-in-a-joe-model-run" class="level2">
+<h2 class="anchored" data-anchor-id="including-matrices-in-a-joe-model-run">Including Matrices in a Joe Model Run</h2>
+<p><strong>In the R package</strong>, interaction matrices load automatically with the stressor response workbook (<code>StressorResponseWorkbook()</code> returns them as <code>sr_wb_dat$MInt</code>, a named list keyed by worksheet name) and <code>JoeModel_Run()</code> applies every matrix by default. The <code>stressors</code> argument scopes both regular stressors and matrices:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Everything in the workbook (all stressors + all matrices):</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>jm <span class="ot">&lt;-</span> <span class="fu">JoeModel_Run</span>(<span class="at">dose =</span> dose, <span class="at">sr_wb_dat =</span> sr_wb_dat, <span class="at">MC_sims =</span> <span class="dv">100</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Main effects only - leave the matrix out of the selection:</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>jm <span class="ot">&lt;-</span> <span class="fu">JoeModel_Run</span>(dose, sr_wb_dat, <span class="at">MC_sims =</span> <span class="dv">100</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>                   <span class="at">stressors =</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>))</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Interaction only - select just the matrix by its worksheet name:</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>jm <span class="ot">&lt;-</span> <span class="fu">JoeModel_Run</span>(dose, sr_wb_dat, <span class="at">MC_sims =</span> <span class="dv">100</span>,</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>                   <span class="at">stressors =</span> <span class="st">"MInt_AB"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>A matrix-only selection computes the two axis stressors internally (their doses feed the interpolation) but excludes them from the cumulative effect. When a matrix <em>and</em> its main effects are all selected, the matrix’s Main Effect setting governs exactly as in a full run - an “Included” matrix absorbs its mains, so nothing is double-counted. In the results, the matrix appears in <code>sc.dose.df</code> under its own name with the interpolated system capacity (<code>dose</code> is NA - the matrix has no single dose of its own).</p>
+<p><strong>In the R Shiny app</strong>, matrices appear in two places:</p>
+<ul>
+<li><strong>Main map page:</strong> each matrix is a clickable card below the stressor list (under the “Interaction Matrices” header). Clicking the card colours the map by the matrix’s interpolated surface for each location; the chart button opens the matrix tables for review.</li>
+<li><strong>Joe Model run dialog:</strong> each matrix has its own checkbox alongside the stressors. Check the matrix (and uncheck its two main effects, if you wish) to run interaction-only scenarios; leave everything checked and the Main Effect setting decides, exactly as above.</li>
+</ul>
+</section>
+<section id="common-errors-and-issues" class="level2">
+<h2 class="anchored" data-anchor-id="common-errors-and-issues">Common Errors and Issues</h2>
+<ul>
+<li><strong>Axis name mismatches.</strong> The Columns/Rows cells must spell the two stressor names exactly as they appear in the Main worksheet. Mismatches produce a warning at upload and the matrix is skipped at run time.</li>
+<li><strong>A Main worksheet row for the matrix.</strong> Do not add one - the workbook will fail to load (see <em>What Goes in the Main Worksheet</em> above).</li>
+<li><strong>Blank cells in the mean table.</strong> Not allowed - fill every cell (blank cells in the optional SD/limit tables are fine and take the defaults).</li>
+<li><strong>Altered template layout.</strong> The header cells (B1:B4, D1:D3) must stay in their original positions, and content in rows/columns adjacent to the tables can confuse the reader. Start from the template workbook in the Worked Examples below.</li>
 </ul>
 </section>
 <section id="population-model" class="level2">
 <h2 class="anchored" data-anchor-id="population-model">Population Model</h2>
-<p>The 2-factor interaction matrix can also be used to define interactions linked to vital rates in the population model. The parameterization and setup for this is identical to how other variables are described in the stressor-response workbook. Ensure that linkages are properly defined in the “Main” coversheet for each of the input stressors being used as rows and columns.</p>
+<p><em>Placeholder / TODO: interaction matrices are currently a Joe Model feature only. They are <strong>not yet applied in the population model</strong> - a stressor response workbook containing <code>MInt_</code> worksheets runs the population model normally, with the matrices ignored (the two axis stressors still act individually through their own worksheets). Support for linking interaction matrices to vital rates in the population model is planned for a future release.</em></p>
+</section>
+<section id="worked-examples" class="level2">
+<h2 class="anchored" data-anchor-id="worked-examples">Worked Examples</h2>
+<section id="matrix-interaction-example-1-template" class="level3">
+<h3 class="anchored" data-anchor-id="matrix-interaction-example-1-template">Matrix Interaction (Example 1: Template)</h3>
+<p>This example is designed to demonstrate the two-factor matrix interaction surface. Given that the matrix interaction surface necessitates a specialized stressor response Excel workbook, this example can be utilized as a practical template for customization.</p>
+<ul>
+<li><a href=".\sample_data/matrix_simple/stressor_response_matrix.xlsx">Stressor Response Workbook</a></li>
+<li><a href=".\sample_data/matrix_simple/stressor_magnitude_matrix.xlsx">Stressor Magnitude Workbook</a></li>
+<li><a href=".\sample_data/matrix_simple/poly.zip">Watershed Locations .shp (ZIP folder)</a></li>
+</ul>
+</section>
+<section id="matrix-interaction-example-2-application" class="level3">
+<h3 class="anchored" data-anchor-id="matrix-interaction-example-2-application">Matrix Interaction (Example 2: Application)</h3>
+<p>The purpose of this second example is to demonstrate the matrix interaction surface through a practical case study. To simplify, we apply the British Columbia Freshwater Atlas (BCFWA) Assessment Watersheds. Here, we estimate hydrological runoff potential by multiplying two factors: a) the Biogeoclimatic Ecosystem Classification (BEC) Unit Score, and b) the percentage of Alpine non-Forested Area. It’s important to note that hydrological runoff potential is not a standard stressor in the Joe Model; it is used here solely for illustration. See the original report here: <a href="https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/cumulative-effects/protocols/cef-aquatic-ecosystems-protocol-dec2020.pdf">BC-CEF Interim Interim Assessment Protocol for Aquatic Ecosystems in British Columbia</a> for more details).</p>
+<ul>
+<li><a href=".\sample_data/coldwater_matrix/coldwater_bc_sr_matrix.xlsx">Stressor Response Workbook</a></li>
+<li><a href=".\sample_data/coldwater_matrix/coldwater_bc_stressor_magnitude.xlsx">Stressor Magnitude Workbook</a></li>
+<li><a href=".\sample_data/coldwater_matrix/coldwater_bc_locations.zip">Watershed Locations .shp (ZIP folder)</a></li>
+</ul>
 
 
+</section>
 </section>
 
 <p>Leave questions and comments below (via your GitHub account)</p></main> <!-- /main -->
