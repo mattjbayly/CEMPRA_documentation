@@ -397,7 +397,7 @@ Figure&nbsp;2: Example matrix interaction surface for stressor variables A and B
 <li><strong>Main Effect (cell B4):</strong> <code>Included</code> or <code>Excluded</code> - see the next section. Blank defaults to <code>Included</code>.</li>
 <li><strong>Life_stages (cell D1):</strong> <code>adult</code> for the standard Joe Model. A blank cell defaults to <code>adult</code>. (Capitalization does not matter.)</li>
 <li><strong>Parameters (cell D2):</strong> e.g., <code>capacity</code> - informational.</li>
-<li><strong>Model (cell D3):</strong> informational for now; interaction matrices currently apply in the Joe Model only (see the Population Model section below).</li>
+<li><strong>Model (cell D3):</strong> informational only. Matrices are available to both the Joe Model and the population model - which runs actually include a matrix is controlled by the run selections (the <code>stressors</code> argument in the R package, or the checkboxes in the Shiny app), not by this cell.</li>
 </ul>
 </section>
 <section id="the-data-tables" class="level3">
@@ -486,7 +486,19 @@ Figure&nbsp;4: Difference between main effects being Included or Excluded from t
 </section>
 <section id="population-model" class="level2">
 <h2 class="anchored" data-anchor-id="population-model">Population Model</h2>
-<p><em>Placeholder / TODO: interaction matrices are currently a Joe Model feature only. They are <strong>not yet applied in the population model</strong> - a stressor response workbook containing <code>MInt_</code> worksheets runs the population model normally, with the matrices ignored (the two axis stressors still act individually through their own worksheets). Support for linking interaction matrices to vital rates in the population model is planned for a future release.</em></p>
+<p>Interaction matrices can also be linked to vital rates in the population model. The same <code>MInt_</code> worksheet drives both models - only the interpretation of two header cells changes:</p>
+<ul>
+<li><strong>Life_stages (cell D1)</strong> names the population-model life stage(s) the matrix acts on (e.g., <code>stage_1</code>, <code>adult</code>, <code>eps_2</code>) - the same tags used in the Main worksheet’s Life_stages column for regular stressors.</li>
+<li><strong>Parameters (cell D2)</strong> names the vital-rate parameter (<code>survival</code>, <code>capacity</code>, or <code>fecundity</code>).</li>
+</ul>
+<p>Each simulation year, the matrix’s system capacity is interpolated from the two axis stressors’ sampled magnitudes and applied to the linked vital rate, multiplicatively alongside any other active stressors.</p>
+<p>The behaviour differs from the Joe Model in one deliberate way: <strong>the Main Effect setting is ignored in the population model.</strong> You choose what contributes - run the two main-effect stressors, the matrix, or both. Whatever is selected acts, and a matrix selected together with its mains simply combines multiplicatively like any other pair of stressors. Nothing is absorbed or double-counted on your behalf.</p>
+<ul>
+<li><strong>In the R package</strong>, matrices in the workbook apply by default in <code>PopulationModel_Run()</code>, and the <code>stressors</code> argument selects them by worksheet name exactly as in <code>JoeModel_Run()</code> - matrix-only, mains-only, or both all work.</li>
+<li><strong>In the R Shiny app</strong> (Population Model page, <em>Stressor Magnitude Values</em>), matrices appear as cards below the stressors - each with a checkbox, the life stage / parameter linkage, and optional From Year / To Year inputs. There are no Mean/SD/limit boxes on a matrix card: the interaction surface provides the values. The cards only appear when the uploaded stressor response workbook actually contains <code>MInt_</code> worksheets. Enter magnitude values for both axis stressors (checked or not - the matrix reads their values either way), then check the matrix to include it in the projection.</li>
+<li>A From/To year window on the matrix card restricts the matrix’s effect to those simulation years, exactly like the windows on regular stressor cards.</li>
+</ul>
+<p>If an axis stressor has no magnitude value, the matrix cannot be interpolated - the app shows a warning and the matrix is skipped for that run.</p>
 </section>
 <section id="worked-examples" class="level2">
 <h2 class="anchored" data-anchor-id="worked-examples">Worked Examples</h2>

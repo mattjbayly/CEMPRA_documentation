@@ -37,7 +37,7 @@ The header section (cells A1:D3 plus A4:B4) must include:
 -   **Main Effect (cell B4):** `Included` or `Excluded` - see the next section. Blank defaults to `Included`.
 -   **Life_stages (cell D1):** `adult` for the standard Joe Model. A blank cell defaults to `adult`. (Capitalization does not matter.)
 -   **Parameters (cell D2):** e.g., `capacity` - informational.
--   **Model (cell D3):** informational for now; interaction matrices currently apply in the Joe Model only (see the Population Model section below).
+-   **Model (cell D3):** informational only. Matrices are available to both the Joe Model and the population model - which runs actually include a matrix is controlled by the run selections (the `stressors` argument in the R package, or the checkboxes in the Shiny app), not by this cell.
 
 ### The data tables
 
@@ -112,7 +112,20 @@ A matrix-only selection computes the two axis stressors internally (their doses 
 
 ## Population Model
 
-*Placeholder / TODO: interaction matrices are currently a Joe Model feature only. They are **not yet applied in the population model** - a stressor response workbook containing `MInt_` worksheets runs the population model normally, with the matrices ignored (the two axis stressors still act individually through their own worksheets). Support for linking interaction matrices to vital rates in the population model is planned for a future release.*
+Interaction matrices can also be linked to vital rates in the population model. The same `MInt_` worksheet drives both models - only the interpretation of two header cells changes:
+
+-   **Life_stages (cell D1)** names the population-model life stage(s) the matrix acts on (e.g., `stage_1`, `adult`, `eps_2`) - the same tags used in the Main worksheet's Life_stages column for regular stressors.
+-   **Parameters (cell D2)** names the vital-rate parameter (`survival`, `capacity`, or `fecundity`).
+
+Each simulation year, the matrix's system capacity is interpolated from the two axis stressors' sampled magnitudes and applied to the linked vital rate, multiplicatively alongside any other active stressors.
+
+The behaviour differs from the Joe Model in one deliberate way: **the Main Effect setting is ignored in the population model.** You choose what contributes - run the two main-effect stressors, the matrix, or both. Whatever is selected acts, and a matrix selected together with its mains simply combines multiplicatively like any other pair of stressors. Nothing is absorbed or double-counted on your behalf.
+
+-   **In the R package**, matrices in the workbook apply by default in `PopulationModel_Run()`, and the `stressors` argument selects them by worksheet name exactly as in `JoeModel_Run()` - matrix-only, mains-only, or both all work.
+-   **In the R Shiny app** (Population Model page, *Stressor Magnitude Values*), matrices appear as cards below the stressors - each with a checkbox, the life stage / parameter linkage, and optional From Year / To Year inputs. There are no Mean/SD/limit boxes on a matrix card: the interaction surface provides the values. The cards only appear when the uploaded stressor response workbook actually contains `MInt_` worksheets. Enter magnitude values for both axis stressors (checked or not - the matrix reads their values either way), then check the matrix to include it in the projection.
+-   A From/To year window on the matrix card restricts the matrix's effect to those simulation years, exactly like the windows on regular stressor cards.
+
+If an axis stressor has no magnitude value, the matrix cannot be interpolated - the app shows a warning and the matrix is skipped for that run.
 
 ## Worked Examples
 
